@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { ThemeContext } from "../layouts";
-import Article from "../components/Article";
-import Headline from "../components/Article/Headline";
-import Seo from "../components/Seo";
+import { graphql } from "gatsby";
+import { ThemeContext } from "../../layouts";
+import Article from "../../components/Article";
+import Contact from "../../components/Contact";
+import Headline from "../../components/Article/Headline";
+import Seo from "../../components/Seo";
 
 const ContactPage = props => {
   const {
@@ -14,20 +16,22 @@ const ContactPage = props => {
     }
   } = props;
 
-  return <React.Fragment>
+  return (
+    <React.Fragment>
       <ThemeContext.Consumer>
-        {theme => <Article theme={theme}>
+        {theme => (
+          <Article theme={theme}>
             <header>
               <Headline title="Contact" theme={theme} />
             </header>
-            <p>
-              Informations de contact. info@jeuxdegenie.qc.ca
-            </p>
-          </Article>}
+            <Contact theme={theme} />
+          </Article>
+        )}
       </ThemeContext.Consumer>
 
       <Seo facebook={facebook} />
-    </React.Fragment>;
+    </React.Fragment>
+  );
 };
 
 ContactPage.propTypes = {
@@ -38,7 +42,7 @@ export default ContactPage;
 
 //eslint-disable-next-line no-undef
 export const query = graphql`
-  query ContactQuery {
+  query ContactOldQuery {
     site {
       siteMetadata {
         facebook {

@@ -5,7 +5,7 @@ import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 
-const ContactPage = props => {
+const UniversitesPage = props => {
   const {
     data: {
       site: {
@@ -18,10 +18,10 @@ const ContactPage = props => {
       <ThemeContext.Consumer>
         {theme => <Article theme={theme}>
             <header>
-              <Headline title="Contact" theme={theme} />
+              <Headline title="Universités" theme={theme} />
             </header>
             <p>
-              Informations de contact. info@jeuxdegenie.qc.ca
+              Grille avec les logos de toutes les délégations
             </p>
           </Article>}
       </ThemeContext.Consumer>
@@ -30,15 +30,15 @@ const ContactPage = props => {
     </React.Fragment>;
 };
 
-ContactPage.propTypes = {
+UniversitesPage.propTypes = {
   data: PropTypes.object.isRequired
 };
 
-export default ContactPage;
+export default UniversitesPage;
 
 //eslint-disable-next-line no-undef
 export const query = graphql`
-  query ContactQuery {
+  query UniversitesQuery {
     site {
       siteMetadata {
         facebook {

@@ -1,14 +1,14 @@
 module.exports = {
-  siteTitle: "HeroBlog - a GatsbyJS starter", // <title>
-  shortSiteTitle: "HeroBlog - GatsbyJS starter", // <title> ending for posts and pages
+  siteTitle: "Jeux de Génie du Québec 2020", // <title>
+  shortSiteTitle: "JdG 2020", // <title> ending for posts and pages
   siteDescription: "HeroBlog is a GatsbyJS starter.",
-  siteUrl: "https://gatsby-starter-hero-blog.greglobinski.com",
+  siteUrl: "https://jdg-2020-dev.netlify.com/",
   // pathPrefix: "",
   siteImage: "preview.jpg",
   siteLanguage: "en",
 
   /* author */
-  authorName: "greg lobinski",
+  authorName: "Maxence Frenette",
   authorTwitterAccount: "greglobinski",
 
   /* info */
