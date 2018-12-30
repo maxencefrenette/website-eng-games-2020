@@ -22,6 +22,11 @@ const ComiteOrganisateurPage = props => {
     ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
     ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
     ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
+    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
+    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
+    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
+    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
+    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
     ["anneSo", "Anne-Sophie Lachapelle", "Présidente"]
   ];
 
@@ -38,9 +43,11 @@ const ComiteOrganisateurPage = props => {
               {CO.map(membreCO => (
                 <div className="membre-co" key={membreCO[0]}>
                   <Img fixed={data[membreCO[0]].fixed} />
-                  <p>
-                    {membreCO[1]}, {membreCO[2]}
-                  </p>
+                  <div className="description">
+                    <p className="name">{membreCO[1]}</p>
+                    <hr />
+                    <p className="role">{membreCO[2]}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -53,11 +60,32 @@ const ComiteOrganisateurPage = props => {
       <style jsx>{`
         .container {
           display: flex;
-          justify-content: center;
+          flex-wrap: wrap;
         }
 
         .membre-co {
-          margin: 20px;
+          margin-left: 30px;
+          margin-bottom: 40px;
+
+          &:nth-child(3n-2) {
+            margin-left: 0;
+          }
+        }
+
+        .description {
+          text-align: center;
+
+          .name {
+            margin-top: 4px;
+          }
+
+          hr {
+            width: 60px;
+            height: 3px;
+            border: 0;
+            background-color: #333;
+            margin: 12px auto;
+          }
         }
       `}</style>
     </React.Fragment>
@@ -73,7 +101,7 @@ export default ComiteOrganisateurPage;
 //eslint-disable-next-line no-undef
 export const query = graphql`
   fragment squareImage on ImageSharp {
-    fixed(width: 300, height: 300, quality: 90, cropFocus: CENTER) {
+    fixed(width: 370, height: 370, quality: 90, cropFocus: CENTER) {
       ...GatsbyImageSharpFixed
     }
   }
