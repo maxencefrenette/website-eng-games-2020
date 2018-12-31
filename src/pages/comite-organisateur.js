@@ -19,15 +19,14 @@ const ComiteOrganisateurPage = props => {
 
   const CO = [
     ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"]
+    ["anneSo", "Alyssa Bouchenak", "VP Communications"],
+    ["anneSo", "Jasmine Dufort", "VP Finances"],
+    ["anneSo", "Iman Hassanein", "VP Affaires Sociales"],
+    ["anneSo", "Jérémie Lesuise", "VP Partenariats"],
+    ["anneSo", "Gabriel Lévesque", "VP Machine"],
+    ["anneSo", "François Pelletier", "VP Compétitions"],
+    ["anneSo", "Sacha Terral", "VP Logistique"],
+    ["anneSo", "Marie-Aude Ardizzon", "Conseillère à la production"]
   ];
 
   return (
@@ -77,6 +76,7 @@ const ComiteOrganisateurPage = props => {
 
           .name {
             margin-top: 4px;
+            font-size: 18px;
           }
 
           hr {
