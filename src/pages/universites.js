@@ -18,32 +18,43 @@ const UniversitesPage = props => {
   } = props;
 
   const universities = [
-    ["concordia", "Université Concordia"],
-    ["epm", "École polytechnique de Montréal"],
-    ["ets", "École de technologie supérieure"],
-    ["itr", "Université du Québec à Trois-Rivières"],
-    ["laval", "Université Laval"],
-    ["mcgill", "Université McGill"],
-    ["sherbrooke", "Université de Sherbrooke"],
-    ["uqac", "Université du Québec à Chicoutimi"],
+    ["concordia", "Université Concordia", "https://www.facebook.com/ConcordiaEngineeringGames/"],
+    ["epm", "École polytechnique de Montréal", "http://www.jdg.aep.polymtl.ca/"],
+    ["ets", "École de technologie supérieure", "https://jdgets.com/"],
+    ["itr", "Université du Québec à Trois-Rivières", "https://www.facebook.com/JDGUQTR/"],
+    ["laval", "Université Laval", "http://www.jdglaval.com/"],
+    ["mcgill", "Université McGill", "http://enggames.mcgilleus.ca/"],
+    ["sherbrooke", "Université de Sherbrooke", "https://jdgsherbrooke.com/"],
+    ["uqac", "Université du Québec à Chicoutimi", "http://aeg.uqac.ca/jdguqac/"],
     ["uqar", "Université du Québec à Rimouski"],
     ["uqat", "Université du Québec en Abitibi-Témiscamingue"],
-    ["uqottawa", "Université du Québec en Outaouais & Université d'Ottawa"]
+    ["uqottawa", "Université du Québec en Outaouais & Université d'Ottawa", "http://uqottawa.ca/"]
   ];
 
-  return <React.Fragment>
+  return (
+    <React.Fragment>
       <ThemeContext.Consumer>
-        {theme => <Article theme={theme}>
+        {theme => (
+          <Article theme={theme}>
             <header>
               <Headline title="Universités" theme={theme} />
             </header>
             <div className="container">
-              {universities.map(uni => <div className="university" key={uni[0]}>
-                  <Img fixed={data[uni[0]].fixed} />
+              {universities.map(uni => (
+                <div className="university" key={uni[0]}>
+                  {uni[2] ? (
+                    <a href={uni[2]}>
+                      <Img fixed={data[uni[0]].fixed} />
+                    </a>
+                  ) : (
+                    <Img fixed={data[uni[0]].fixed} />
+                  )}
                   <div className="description">{uni[1]}</div>
-                </div>)}
+                </div>
+              ))}
             </div>
-          </Article>}
+          </Article>
+        )}
       </ThemeContext.Consumer>
 
       <Seo facebook={facebook} />
@@ -65,13 +76,24 @@ const UniversitesPage = props => {
           &:nth-child(4n + 1) {
             margin-left: 0;
           }
+
+          a {
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+
+            &:hover {
+              opacity: 0.75;
+            }
+          }
         }
 
         .description {
           text-align: center;
           font-size: 18px;
-        }`}</style>
-    </React.Fragment>;
+        }
+      `}</style>
+    </React.Fragment>
+  );
 };
 
 UniversitesPage.propTypes = {
