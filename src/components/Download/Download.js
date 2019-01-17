@@ -20,7 +20,7 @@ const DownloadLink = styled.a`
 
   display: flex;
   height: 50px;
-  width: 350px;
+  width: 400px;
   align-items: center;
 
   font-size: 20px;

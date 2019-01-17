@@ -40,7 +40,19 @@ const EspaceParticipantsPage = props => {
             <Section>
               <HContainer>
                 <Download url="/downloads/placeholder.txt">Cahier du participant (fr)</Download>
-                <Download url="/downloads/placeholder.txt">Cahier du participant (en)</Download>
+                <Download url="/downloads/placeholder.txt">Participant&#39;s handbook (en)</Download>
+              </HContainer>
+              <HContainer>
+                <Download url="/downloads/placeholder.txt">Cahier de délégation (fr)</Download>
+                <Download url="/downloads/placeholder.txt">{"Delegation's package (en)"}</Download>
+              </HContainer>
+              <HContainer>
+                <Download url="/downloads/placeholder.txt">Cahier de compétitions (fr)</Download>
+                <Download url="/downloads/placeholder.txt">Competition handbook (en)</Download>
+              </HContainer>
+              <HContainer>
+                <Download url="/downloads/placeholder.txt">Cahier de la machine robotique (fr)</Download>
+                <Download url="/downloads/placeholder.txt">Machine package (en)</Download>
               </HContainer>
             </Section>
           </Article>
