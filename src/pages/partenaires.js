@@ -5,8 +5,10 @@ import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
 
 const PartenairesPage = props => {
+  const { data } = props;
   const {
     data: {
       site: {
@@ -15,20 +17,25 @@ const PartenairesPage = props => {
     }
   } = props;
 
-  return <React.Fragment>
+  return (
+    <React.Fragment>
       <ThemeContext.Consumer>
-        {theme => <Article theme={theme}>
+        {theme => (
+          <Article theme={theme}>
             <header>
               <Headline title="Partenaires" theme={theme} />
             </header>
+            <h1>Partenaire Officiel</h1>
             <p>
-              Logos des partenaires !
+              <Img fixed={data.officiel.fixed} />
             </p>
-          </Article>}
+          </Article>
+        )}
       </ThemeContext.Consumer>
 
       <Seo facebook={facebook} />
-    </React.Fragment>;
+    </React.Fragment>
+  );
 };
 
 PartenairesPage.propTypes = {
@@ -39,13 +46,23 @@ export default PartenairesPage;
 
 //eslint-disable-next-line no-undef
 export const query = graphql`
-  query PartenairesQuery {
-    site {
-      siteMetadata {
-        facebook {
-          appId
-        }
-      }
-    }
-  }
-`;
+         fragment ImageXl on ImageSharp {
+           fixed(width: 600, quality: 90) {
+             ...GatsbyImageSharpFixed
+           }
+         }
+
+         query PartenairesQuery {
+           site {
+             siteMetadata {
+               facebook {
+                 appId
+               }
+             }
+           }
+
+           officiel: imageSharp(fixed: { originalName: { regex: "/logo-ets/" } }) {
+             ...ImageXl
+           }
+         }
+       `;
