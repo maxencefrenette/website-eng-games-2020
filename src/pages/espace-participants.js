@@ -6,6 +6,7 @@ import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 import Download from "../components/Download";
 import styled from "styled-components";
+import { graphql } from "gatsby";
 
 const Section = styled.div`
   margin-bottom: 10px;

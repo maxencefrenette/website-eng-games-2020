@@ -4,6 +4,7 @@ import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
+import { graphql } from "gatsby";
 
 const PartenairesPage = props => {
   const {
