@@ -54,10 +54,10 @@ color:
       k: '#2b2826'
     black: '#000000'
   brand:
-    primary: &color-brand-primary '#709425'
-    primaryActive: '#709425'
-    light: '#709425'
-    lightActive: '#709425'
+    primary: &color-brand-primary '#2A2B7A'
+    primaryActive: '#2A2B7A'
+    light: '#d55c0d'
+    lightActive: '#d55c0d'
     dark: '#709425'
     darkActive: '#709425'
   special:
