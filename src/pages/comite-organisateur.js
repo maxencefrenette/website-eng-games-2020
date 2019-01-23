@@ -63,8 +63,8 @@ const ComiteOrganisateurPage = props => {
         }
 
         .membre-co {
-          margin-left: 30px;
-          margin-bottom: 40px;
+          margin-left: 75px;
+          margin-bottom: 50px;
 
           &:nth-child(3n-2) {
             margin-left: 0;
@@ -101,7 +101,7 @@ export default ComiteOrganisateurPage;
 //eslint-disable-next-line no-undef
 export const query = graphql`
   fragment squareImage on ImageSharp {
-    fixed(width: 370, height: 370, quality: 90, cropFocus: CENTER) {
+    fixed(width: 350, height: 350, quality: 90, cropFocus: CENTER) {
       ...GatsbyImageSharpFixed
     }
   }
