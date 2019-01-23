@@ -3,9 +3,15 @@ import React from "react";
 import { graphql } from "gatsby";
 import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
-import Headline from "../components/Article/Headline";
 import Hero from "../components/Hero";
 import Seo from "../components/Seo";
+import { FacebookProvider, Page } from "react-facebook";
+import styled from "styled-components";
+
+const Centered = styled.div`
+  width: 500px;
+  margin: 20px auto;
+`;
 
 class IndexPage extends React.Component {
   separator = React.createRef();
@@ -74,6 +80,12 @@ class IndexPage extends React.Component {
                 scelerisque. In nunc nibh, commodo ut pellentesque in, venenatis vel turpis.
                 Maecenas consequat pulvinar auctor. Integer et dapibus est, non mollis leo.
               </p>
+              <h1>Actualités</h1>
+              <Centered>
+                <FacebookProvider appId="372145173617264">
+                  <Page href="https://www.facebook.com/jeuxdegenie/" tabs="timeline" width="500" />
+                </FacebookProvider>
+              </Centered>
             </Article>
           )}
         </ThemeContext.Consumer>
