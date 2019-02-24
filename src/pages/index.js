@@ -185,12 +185,12 @@ export const query = graphql`
       }
     }
     bgTablet: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
-      resize(width: 800, height: 1100, quality: 90, cropFocus: CENTER) {
+      resize(width: 800, height: 300, quality: 90, cropFocus: CENTER) {
         src
       }
     }
     bgMobile: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
-      resize(width: 450, height: 850, quality: 90, cropFocus: CENTER) {
+      resize(width: 450, height: 200, quality: 90, cropFocus: CENTER) {
         src
       }
     }

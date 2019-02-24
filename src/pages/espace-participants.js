@@ -5,6 +5,7 @@ import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 import Download from "../components/Download";
+import MiniHero from "../components/MiniHero";
 import styled from "styled-components";
 import { graphql } from "gatsby";
 
@@ -22,17 +23,36 @@ const EspaceParticipantsPage = props => {
     data: {
       site: {
         siteMetadata: { facebook }
+      },
+      bgDesktop: {
+        resize: { src: desktop }
+      },
+      bgTablet: {
+        resize: { src: tablet }
+      },
+      bgMobile: {
+        resize: { src: mobile }
       }
     }
   } = props;
 
+  const backgrounds = {
+    desktop,
+    tablet,
+    mobile
+  };
+
   return (
-    <React.Fragment>
+    <>
+      <ThemeContext.Consumer>
+        {theme => <MiniHero backgrounds={backgrounds} theme={theme} />}
+      </ThemeContext.Consumer>
+      <hr />
       <ThemeContext.Consumer>
         {theme => (
           <Article theme={theme}>
             <header>
-              <Headline title="Espace Participants" theme={theme} />
+              <Headline title="Espace Paaaaarticipants" theme={theme} />
             </header>
             <Section>
               Vous trouverez ici toutes les informations dont vous aurez besoin pour participer aux
@@ -41,7 +61,9 @@ const EspaceParticipantsPage = props => {
             <Section>
               <HContainer>
                 <Download url="/downloads/placeholder.txt">Cahier du participant (fr)</Download>
-                <Download url="/downloads/placeholder.txt">Participant&#39;s handbook (en)</Download>
+                <Download url="/downloads/placeholder.txt">
+                  Participant&#39;s handbook (en)
+                </Download>
               </HContainer>
               <HContainer>
                 <Download>Cahier de délégation (fr)</Download>
@@ -59,9 +81,8 @@ const EspaceParticipantsPage = props => {
           </Article>
         )}
       </ThemeContext.Consumer>
-
       <Seo facebook={facebook} />
-    </React.Fragment>
+    </>
   );
 };
 
@@ -79,6 +100,21 @@ export const query = graphql`
         facebook {
           appId
         }
+      }
+    }
+    bgDesktop: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
+      resize(width: 1200, quality: 90, cropFocus: CENTER) {
+        src
+      }
+    }
+    bgTablet: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
+      resize(width: 800, height: 1100, quality: 90, cropFocus: CENTER) {
+        src
+      }
+    }
+    bgMobile: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
+      resize(width: 450, height: 850, quality: 90, cropFocus: CENTER) {
+        src
       }
     }
   }
