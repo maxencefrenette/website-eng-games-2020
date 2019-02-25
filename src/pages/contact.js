@@ -5,30 +5,37 @@ import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
+import MiniHero from "../components/MiniHero";
 
 const ContactPage = props => {
   const {
     data: {
       site: {
         siteMetadata: { facebook }
-      }
+      },
+      backgrounds
     }
   } = props;
 
-  return <React.Fragment>
+  return (
+    <React.Fragment>
       <ThemeContext.Consumer>
-        {theme => <Article theme={theme}>
-            <header>
-              <Headline title="Contact" theme={theme} />
-            </header>
-            <p>
-              Informations de contact. info@jeuxdegenie.qc.ca
-            </p>
-          </Article>}
+        {theme => (
+          <>
+            <MiniHero backgrounds={backgrounds} theme={theme} />
+            <Article theme={theme}>
+              <header>
+                <Headline title="Contact" theme={theme} />
+              </header>
+              <p>Informations de contact. info@jeuxdegenie.qc.ca</p>
+            </Article>
+          </>
+        )}
       </ThemeContext.Consumer>
 
       <Seo facebook={facebook} />
-    </React.Fragment>;
+    </React.Fragment>
+  );
 };
 
 ContactPage.propTypes = {
@@ -46,6 +53,10 @@ export const query = graphql`
           appId
         }
       }
+    }
+
+    backgrounds: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
+      ...MiniHero
     }
   }
 `;

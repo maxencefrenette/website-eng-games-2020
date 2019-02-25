@@ -6,6 +6,39 @@ import Headline from "../components/Article/Headline";
 import { graphql } from "gatsby";
 import Seo from "../components/Seo";
 import Img from "gatsby-image";
+import MiniHero from "../components/MiniHero";
+import styled from "styled-components";
+
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const MembreCO = styled.div`
+  margin-left: 75px;
+  margin-bottom: 50px;
+
+  &:nth-child(3n-2) {
+    margin-left: 0;
+  }
+`;
+
+const Description = styled.div`
+  text-align: center;
+
+  & .name {
+    margin-top: 4px;
+    font-size: 18px;
+  }
+
+  & hr {
+    width: 60px;
+    height: 3px;
+    border: 0;
+    background-color: #333;
+    margin: 12px auto;
+  }
+`;
 
 const ComiteOrganisateurPage = props => {
   const { data } = props;
@@ -13,7 +46,8 @@ const ComiteOrganisateurPage = props => {
     data: {
       site: {
         siteMetadata: { facebook }
-      }
+      },
+      backgrounds
     }
   } = props;
 
@@ -30,65 +64,35 @@ const ComiteOrganisateurPage = props => {
   ];
 
   return (
-    <React.Fragment>
+    <>
       <ThemeContext.Consumer>
         {theme => (
-          <Article theme={theme}>
-            <header>
-              <Headline title="Comité Organisateur" theme={theme} />
-            </header>
+          <>
+            <MiniHero backgrounds={backgrounds} theme={theme} />
+            <Article theme={theme}>
+              <header>
+                <Headline title="Comité Organisateur" theme={theme} />
+              </header>
 
-            <div className="container">
-              {CO.map(membreCO => (
-                <div className="membre-co" key={membreCO[0]}>
-                  <Img fixed={data[membreCO[0]].fixed} />
-                  <div className="description">
-                    <p className="name">{membreCO[1]}</p>
-                    <hr />
-                    <p className="role">{membreCO[2]}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Article>
+              <Container>
+                {CO.map(membreCO => (
+                  <MembreCO key={membreCO[0]}>
+                    <Img fixed={data[membreCO[0]].fixed} />
+                    <Description>
+                      <p className="name">{membreCO[1]}</p>
+                      <hr />
+                      <p className="role">{membreCO[2]}</p>
+                    </Description>
+                  </MembreCO>
+                ))}
+              </Container>
+            </Article>
+          </>
         )}
       </ThemeContext.Consumer>
 
       <Seo facebook={facebook} />
-
-      <style jsx>{`
-        .container {
-          display: flex;
-          flex-wrap: wrap;
-        }
-
-        .membre-co {
-          margin-left: 75px;
-          margin-bottom: 50px;
-
-          &:nth-child(3n-2) {
-            margin-left: 0;
-          }
-        }
-
-        .description {
-          text-align: center;
-
-          .name {
-            margin-top: 4px;
-            font-size: 18px;
-          }
-
-          hr {
-            width: 60px;
-            height: 3px;
-            border: 0;
-            background-color: #333;
-            margin: 12px auto;
-          }
-        }
-      `}</style>
-    </React.Fragment>
+    </>
   );
 };
 
@@ -117,6 +121,10 @@ export const query = graphql`
 
     anneSo: imageSharp(fluid: { originalName: { regex: "/cat/" } }) {
       ...squareImage
+    }
+
+    backgrounds: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
+      ...MiniHero
     }
   }
 `;

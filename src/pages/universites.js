@@ -6,6 +6,8 @@ import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
+import MiniHero from "../components/MiniHero";
+import styled from "styled-components";
 
 const UniversitesPage = props => {
   const { data } = props;
@@ -13,7 +15,8 @@ const UniversitesPage = props => {
     data: {
       site: {
         siteMetadata: { facebook }
-      }
+      },
+      backgrounds
     }
   } = props;
 
@@ -35,25 +38,28 @@ const UniversitesPage = props => {
     <React.Fragment>
       <ThemeContext.Consumer>
         {theme => (
-          <Article theme={theme}>
-            <header>
-              <Headline title="Universités" theme={theme} />
-            </header>
-            <div className="container">
-              {universities.map(uni => (
-                <div className="university" key={uni[0]}>
-                  {uni[2] ? (
-                    <a href={uni[2]}>
+          <>
+            <MiniHero backgrounds={backgrounds} theme={theme}></MiniHero>
+            <Article theme={theme}>
+              <header>
+                <Headline title="Universités" theme={theme} />
+              </header>
+              <div className="container">
+                {universities.map(uni => (
+                  <div className="university" key={uni[0]}>
+                    {uni[2] ? (
+                      <a href={uni[2]}>
+                        <Img fixed={data[uni[0]].fixed} />
+                      </a>
+                    ) : (
                       <Img fixed={data[uni[0]].fixed} />
-                    </a>
-                  ) : (
-                    <Img fixed={data[uni[0]].fixed} />
-                  )}
-                  <div className="description">{uni[1]}</div>
-                </div>
-              ))}
-            </div>
-          </Article>
+                    )}
+                    <div className="description">{uni[1]}</div>
+                  </div>
+                ))}
+              </div>
+            </Article>
+          </>
         )}
       </ThemeContext.Consumer>
 
@@ -117,6 +123,10 @@ export const query = graphql`
           appId
         }
       }
+    }
+
+    backgrounds: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
+      ...MiniHero
     }
 
     concordia: imageSharp(fluid: { originalName: { regex: "/concordia/" } }) {

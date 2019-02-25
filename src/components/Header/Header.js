@@ -24,9 +24,19 @@ class Header extends React.Component {
 
   getHeaderSize = () => {
     const fixed = this.state.fixed ? "fixed" : "";
-    const homepage = this.props.path === "/" || this.props.path === "/espace-participants/" ? "homepage" : "";
+    const homepage = this.props.path === "/" ? "homepage" : "";
 
-    return `${fixed} ${homepage}`;
+    const heroPaths = [
+      "/",
+      "/espace-participants/",
+      "/partenaires/",
+      "/comite-organisateur/",
+      "/universites/",
+      "/contact/",
+    ]
+    const heroMenu = heroPaths.includes(this.props.path) ? "hero-menu" : "";
+
+    return `${fixed} ${homepage} ${heroMenu}`;
   };
 
   render() {
@@ -90,7 +100,7 @@ class Header extends React.Component {
               }
             }
 
-            &.homepage {
+            &.hero-menu {
               position: absolute;
               background-color: transparent;
               height: ${theme.header.height.homepage};

@@ -52,7 +52,7 @@ const Item = props => {
               border-radius: ${theme.size.radius.small};
             }
 
-            :global(.homepage):not(.fixed) & :global(a) {
+            :global(.hero-menu):not(.fixed) & :global(a) {
               color: ${theme.color.neutral.white};
             }
 

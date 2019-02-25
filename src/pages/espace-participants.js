@@ -31,39 +31,39 @@ const EspaceParticipantsPage = props => {
   return (
     <>
       <ThemeContext.Consumer>
-        {theme => <MiniHero backgrounds={backgrounds} theme={theme} />}
-      </ThemeContext.Consumer>
-      <ThemeContext.Consumer>
         {theme => (
-          <Article theme={theme}>
-            <header>
-              <Headline title="Espace Participants" theme={theme} />
-            </header>
-            <Section>
-              Vous trouverez ici toutes les informations dont vous aurez besoin pour participer aux
-              Jeux de génie 2020.
-            </Section>
-            <Section>
-              <HContainer>
-                <Download url="/downloads/placeholder.txt">Cahier du participant (fr)</Download>
-                <Download url="/downloads/placeholder.txt">
-                  Participant&#39;s handbook (en)
-                </Download>
-              </HContainer>
-              <HContainer>
-                <Download>Cahier de délégation (fr)</Download>
-                <Download>{"Delegation's package (en)"}</Download>
-              </HContainer>
-              <HContainer>
-                <Download>Cahier de compétitions (fr)</Download>
-                <Download>Competition handbook (en)</Download>
-              </HContainer>
-              <HContainer>
-                <Download>Cahier de la machine robotique (fr)</Download>
-                <Download>{"Machine package (en)"}</Download>
-              </HContainer>
-            </Section>
-          </Article>
+          <>
+            <MiniHero backgrounds={backgrounds} theme={theme} />
+            <Article theme={theme}>
+              <header>
+                <Headline title="Espace Participants" theme={theme} />
+              </header>
+              <Section>
+                Vous trouverez ici toutes les informations dont vous aurez besoin pour participer
+                aux Jeux de génie 2020.
+              </Section>
+              <Section>
+                <HContainer>
+                  <Download url="/downloads/placeholder.txt">Cahier du participant (fr)</Download>
+                  <Download url="/downloads/placeholder.txt">
+                    Participant&#39;s handbook (en)
+                  </Download>
+                </HContainer>
+                <HContainer>
+                  <Download>Cahier de délégation (fr)</Download>
+                  <Download>{"Delegation's package (en)"}</Download>
+                </HContainer>
+                <HContainer>
+                  <Download>Cahier de compétitions (fr)</Download>
+                  <Download>Competition handbook (en)</Download>
+                </HContainer>
+                <HContainer>
+                  <Download>Cahier de la machine robotique (fr)</Download>
+                  <Download>{"Machine package (en)"}</Download>
+                </HContainer>
+              </Section>
+            </Article>
+          </>
         )}
       </ThemeContext.Consumer>
       <Seo facebook={facebook} />

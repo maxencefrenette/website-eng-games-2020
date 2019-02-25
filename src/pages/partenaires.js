@@ -6,6 +6,7 @@ import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
+import MiniHero from "../components/MiniHero"
 
 const PartenairesPage = props => {
   const { data } = props;
@@ -13,7 +14,8 @@ const PartenairesPage = props => {
     data: {
       site: {
         siteMetadata: { facebook }
-      }
+      },
+      backgrounds
     }
   } = props;
 
@@ -21,6 +23,8 @@ const PartenairesPage = props => {
     <React.Fragment>
       <ThemeContext.Consumer>
         {theme => (
+          <>
+            <MiniHero backgrounds={backgrounds} theme={theme} />
           <Article theme={theme}>
             <header>
               <Headline title="Partenaires" theme={theme} />
@@ -30,6 +34,7 @@ const PartenairesPage = props => {
               <Img fixed={data.officiel.fixed} />
             </p>
           </Article>
+          </>
         )}
       </ThemeContext.Consumer>
 
@@ -59,6 +64,10 @@ export const query = graphql`
           appId
         }
       }
+    }
+
+    backgrounds: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
+      ...MiniHero
     }
 
     officiel: imageSharp(fixed: { originalName: { regex: "/logo-ets/" } }) {
