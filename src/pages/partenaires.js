@@ -6,7 +6,7 @@ import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
-import MiniHero from "../components/MiniHero"
+import MiniHero from "../components/MiniHero";
 
 const PartenairesPage = props => {
   const { data } = props;
@@ -25,15 +25,19 @@ const PartenairesPage = props => {
         {theme => (
           <>
             <MiniHero backgrounds={backgrounds} theme={theme} />
-          <Article theme={theme}>
-            <header>
-              <Headline title="Partenaires" theme={theme} />
-            </header>
-            <h1>Partenaire Officiel</h1>
-            <p>
-              <Img fixed={data.officiel.fixed} />
-            </p>
-          </Article>
+            <Article theme={theme}>
+              <header>
+                <Headline title="Partenaires" theme={theme} />
+              </header>
+              <h1>Hôte</h1>
+              <p>
+                <Img fixed={data.ets.fixed} />
+              </p>
+              <h1>Platine</h1>
+              <p>
+                <Img fixed={data.aeets.fixed} />
+              </p>
+            </Article>
           </>
         )}
       </ThemeContext.Consumer>
@@ -70,7 +74,10 @@ export const query = graphql`
       ...MiniHero
     }
 
-    officiel: imageSharp(fixed: { originalName: { regex: "/logo-ets/" } }) {
+    ets: imageSharp(fixed: { originalName: { regex: "/school-ets/" } }) {
+      ...ImageXl
+    }
+    aeets: imageSharp(fixed: { originalName: { regex: "/aeets/" } }) {
       ...ImageXl
     }
   }

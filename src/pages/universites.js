@@ -135,7 +135,7 @@ export const query = graphql`
     epm: imageSharp(fluid: { originalName: { regex: "/epm/" } }) {
       ...universityImage
     }
-    ets: imageSharp(fluid: { originalName: { regex: "/ets/" } }) {
+    ets: imageSharp(fluid: { originalName: { regex: "/dele-ets/" } }) {
       ...universityImage
     }
     itr: imageSharp(fluid: { originalName: { regex: "/itr/" } }) {
