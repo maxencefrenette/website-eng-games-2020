@@ -2,19 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const MiniHero = props => {
-    const { backgrounds, theme } = props;
+  const { backgrounds, theme } = props;
 
-    return <React.Fragment>
-        <section className="mini-hero">
-            <h1>Jeux de Génie 2020</h1>
-        </section>
+  return (
+    <React.Fragment>
+      <section className="mini-hero">
+        <h1>Jeux de Génie 2020</h1>
+      </section>
 
-        {/* --- STYLES --- */}
-        <style jsx>{`
+      {/* --- STYLES --- */}
+      <style jsx>{`
         .mini-hero {
           align-items: center;
           background: ${theme.hero.background};
-          background-image: url(${backgrounds.mobile});
+          background-image: url(${backgrounds.mobile.src});
           background-size: cover;
           background-position: center center;
           color: ${theme.text.color.primary.inverse};
@@ -83,7 +84,8 @@ const MiniHero = props => {
           }
         }
 
-        @keyframes buttonIconMove {0% {
+        @keyframes buttonIconMove {
+          0% {
             transform: translateY(0);
           }
           50% {
@@ -91,10 +93,12 @@ const MiniHero = props => {
           }
           100% {
             transform: translateY(0);
-          }}
+          }
+        }
 
-        @from-width tablet {.mini-hero {
-            background-image: url(${backgrounds.tablet});
+        @from-width tablet {
+          .mini-hero {
+            background-image: url(${backgrounds.tablet.src});
           }
 
           h1 {
@@ -104,10 +108,12 @@ const MiniHero = props => {
 
           button {
             font-size: ${theme.font.size.l};
-          }}
+          }
+        }
 
-        @from-width desktop {.mini-hero {
-            background-image: url(${backgrounds.desktop});
+        @from-width desktop {
+          .mini-hero {
+            background-image: url(${backgrounds.desktop.src});
           }
 
           h1 {
@@ -117,14 +123,49 @@ const MiniHero = props => {
 
           button {
             font-size: ${theme.font.size.xl};
-          }}`}</style>
-    </React.Fragment>;
+          }
+        }
+      `}</style>
+    </React.Fragment>
+  );
 };
 
 MiniHero.propTypes = {
-    scrollToContent: PropTypes.func.isRequired,
-    backgrounds: PropTypes.object.isRequired,
-    theme: PropTypes.object.isRequired
+  backgrounds: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired
 };
+
+export const query = graphql`
+  fragment MiniHero on ImageSharp {
+    desktop: resize(
+      width: 1200
+      quality: 90
+      cropFocus: CENTER
+      duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
+    ) {
+      src
+    }
+
+    tablet: resize(
+      width: 800
+      height: 1100
+      quality: 90
+      cropFocus: CENTER
+      duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
+    ) {
+      src
+    }
+
+    mobile: resize(
+      width: 450
+      height: 850
+      quality: 90
+      cropFocus: CENTER
+      duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
+    ) {
+      src
+    }
+  }
+`;
 
 export default MiniHero;

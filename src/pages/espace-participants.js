@@ -24,23 +24,9 @@ const EspaceParticipantsPage = props => {
       site: {
         siteMetadata: { facebook }
       },
-      bgDesktop: {
-        resize: { src: desktop }
-      },
-      bgTablet: {
-        resize: { src: tablet }
-      },
-      bgMobile: {
-        resize: { src: mobile }
-      }
+      backgrounds
     }
   } = props;
-
-  const backgrounds = {
-    desktop,
-    tablet,
-    mobile
-  };
 
   return (
     <>
@@ -101,37 +87,8 @@ export const query = graphql`
         }
       }
     }
-    bgDesktop: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
-      resize(
-        width: 1200
-        quality: 90
-        cropFocus: CENTER
-        duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
-      ) {
-        src
-      }
-    }
-    bgTablet: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
-      resize(
-        width: 800
-        height: 1100
-        quality: 90
-        cropFocus: CENTER
-        duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
-      ) {
-        src
-      }
-    }
-    bgMobile: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
-      resize(
-        width: 450
-        height: 850
-        quality: 90
-        cropFocus: CENTER
-        duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
-      ) {
-        src
-      }
+    backgrounds: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
+      ...MiniHero
     }
   }
 `;
