@@ -32,6 +32,7 @@ const Hero = props => {
           height: 100px;
           padding: ${theme.space.inset.l};
           padding-top: ${theme.header.height.homepage};
+          padding-bottom: 200px;
         }
 
         h1 {

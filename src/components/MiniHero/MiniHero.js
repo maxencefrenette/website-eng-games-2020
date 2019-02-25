@@ -16,12 +16,13 @@ const MiniHero = props => {
           background: ${theme.hero.background};
           background-image: url(${backgrounds.mobile});
           background-size: cover;
+          background-position: center center;
           color: ${theme.text.color.primary.inverse};
           display: flex;
           flex-flow: column nowrap;
           justify-content: center;
-          min-height: 100vh;
-          height: 100px;
+          min-height: 300px;
+          height: 300px;
           padding: ${theme.space.inset.l};
           padding-top: ${theme.header.height.homepage};
         }
@@ -92,7 +93,7 @@ const MiniHero = props => {
             transform: translateY(0);
           }}
 
-        @from-width tablet {.hero {
+        @from-width tablet {.mini-hero {
             background-image: url(${backgrounds.tablet});
           }
 
@@ -105,7 +106,7 @@ const MiniHero = props => {
             font-size: ${theme.font.size.l};
           }}
 
-        @from-width desktop {.hero {
+        @from-width desktop {.mini-hero {
             background-image: url(${backgrounds.desktop});
           }
 

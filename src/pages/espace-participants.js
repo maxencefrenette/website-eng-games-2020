@@ -47,12 +47,11 @@ const EspaceParticipantsPage = props => {
       <ThemeContext.Consumer>
         {theme => <MiniHero backgrounds={backgrounds} theme={theme} />}
       </ThemeContext.Consumer>
-      <hr />
       <ThemeContext.Consumer>
         {theme => (
           <Article theme={theme}>
             <header>
-              <Headline title="Espace Paaaaarticipants" theme={theme} />
+              <Headline title="Espace Participants" theme={theme} />
             </header>
             <Section>
               Vous trouverez ici toutes les informations dont vous aurez besoin pour participer aux
@@ -103,17 +102,34 @@ export const query = graphql`
       }
     }
     bgDesktop: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
-      resize(width: 1200, quality: 90, cropFocus: CENTER) {
+      resize(
+        width: 1200
+        quality: 90
+        cropFocus: CENTER
+        duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
+      ) {
         src
       }
     }
     bgTablet: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
-      resize(width: 800, height: 1100, quality: 90, cropFocus: CENTER) {
+      resize(
+        width: 800
+        height: 1100
+        quality: 90
+        cropFocus: CENTER
+        duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
+      ) {
         src
       }
     }
     bgMobile: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
-      resize(width: 450, height: 850, quality: 90, cropFocus: CENTER) {
+      resize(
+        width: 450
+        height: 850
+        quality: 90
+        cropFocus: CENTER
+        duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
+      ) {
         src
       }
     }

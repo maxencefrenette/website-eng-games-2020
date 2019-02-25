@@ -24,7 +24,7 @@ class Header extends React.Component {
 
   getHeaderSize = () => {
     const fixed = this.state.fixed ? "fixed" : "";
-    const homepage = this.props.path === "/" || this.props.path === "/espace-participants" ? "homepage" : "";
+    const homepage = this.props.path === "/" || this.props.path === "/espace-participants/" ? "homepage" : "";
 
     return `${fixed} ${homepage}`;
   };

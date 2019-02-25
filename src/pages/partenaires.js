@@ -46,23 +46,23 @@ export default PartenairesPage;
 
 //eslint-disable-next-line no-undef
 export const query = graphql`
-         fragment ImageXl on ImageSharp {
-           fixed(width: 600, quality: 90) {
-             ...GatsbyImageSharpFixed
-           }
-         }
+  fragment ImageXl on ImageSharp {
+    fixed(width: 600, quality: 90) {
+      ...GatsbyImageSharpFixed
+    }
+  }
 
-         query PartenairesQuery {
-           site {
-             siteMetadata {
-               facebook {
-                 appId
-               }
-             }
-           }
+  query PartenairesQuery {
+    site {
+      siteMetadata {
+        facebook {
+          appId
+        }
+      }
+    }
 
-           officiel: imageSharp(fixed: { originalName: { regex: "/logo-ets/" } }) {
-             ...ImageXl
-           }
-         }
-       `;
+    officiel: imageSharp(fixed: { originalName: { regex: "/logo-ets/" } }) {
+      ...ImageXl
+    }
+  }
+`;
