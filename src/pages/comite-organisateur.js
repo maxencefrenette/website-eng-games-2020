@@ -53,17 +53,18 @@ const ComiteOrganisateurPage = props => {
 
   const CO = [
     ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Alyssa Bouchenak", "VP Communications"],
-    ["anneSo", "Jasmine Dufort", "VP Finances"],
-    ["anneSo", "Iman Hassanein", "VP Affaires Sociales"],
-    ["anneSo", "Jérémie Lesuise", "VP Partenariats"],
-    ["anneSo", "Gabriel Lévesque", "VP Machine"],
-    ["anneSo", "François Pelletier", "VP Compétitions"],
-    ["anneSo", "Sacha Terral", "VP Logistique"],
-    ["anneSo", "Marie-Aude Ardizzon", "Conseillère à la production"]
+    ["alyssa", "Alyssa Bouchenak", "VP Communications"],
+    ["cat", "Vacant", "VP Finances"],
+    ["cat", "Iman Hassanein", "VP Affaires Sociales"],
+    ["jeremie", "Jérémie Lesuise", "VP Partenariats"],
+    ["gabriel", "Gabriel Lévesque", "VP Machine"],
+    ["francois", "François Pelletier", "VP Compétitions"],
+    ["sacha", "Sacha Terral", "VP Logistique"],
+    ["marieAude", "Marie-Aude Ardizzon", "Conseillère à la production"]
   ];
 
   return (
+    console.log(data),
     <>
       <ThemeContext.Consumer>
         {theme => (
@@ -105,7 +106,7 @@ export default ComiteOrganisateurPage;
 //eslint-disable-next-line no-undef
 export const query = graphql`
   fragment squareImage on ImageSharp {
-    fixed(width: 350, height: 350, quality: 90, cropFocus: CENTER) {
+    fixed(width: 350, height: 350, quality: 90, cropFocus: NORTH) {
       ...GatsbyImageSharpFixed
     }
   }
@@ -119,12 +120,40 @@ export const query = graphql`
       }
     }
 
-    anneSo: imageSharp(fluid: { originalName: { regex: "/cat/" } }) {
+    backgrounds: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
+      ...MiniHero
+    }
+
+    cat: imageSharp(fluid: { originalName: { regex: "/cat/" } }) {
       ...squareImage
     }
 
-    backgrounds: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
-      ...MiniHero
+    anneSo: imageSharp(fluid: { originalName: { regex: "/anne-sophie/" } }) {
+      ...squareImage
+    }
+
+    alyssa: imageSharp(fluid: { originalName: { regex: "/alyssa/" } }) {
+      ...squareImage
+    }
+
+    jeremie: imageSharp(fluid: { originalName: { regex: "/jeremie/" } }) {
+      ...squareImage
+    }
+
+    gabriel: imageSharp(fluid: { originalName: { regex: "/gabriel/" } }) {
+      ...squareImage
+    }
+
+    francois: imageSharp(fluid: { originalName: { regex: "/francois/" } }) {
+      ...squareImage
+    }
+
+    sacha: imageSharp(fluid: { originalName: { regex: "/sacha/" } }) {
+      ...squareImage
+    }
+
+    marieAude: imageSharp(fluid: { originalName: { regex: "/marie-aude/" } }) {
+      ...squareImage
     }
   }
 `;
