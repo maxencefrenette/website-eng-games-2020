@@ -54,8 +54,8 @@ const ComiteOrganisateurPage = props => {
   const CO = [
     ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
     ["alyssa", "Alyssa Bouchenak", "VP Communications"],
-    ["cat", "Vacant", "VP Finances"],
-    ["cat", "Iman Hassanein", "VP Affaires Sociales"],
+    ["celia", "Célia-Nour Mahrour-Venturelli", "VP Finances"],
+    ["iman", "Iman Hassanein", "VP Affaires Sociales"],
     ["jeremie", "Jérémie Lesuise", "VP Partenariats"],
     ["gabriel", "Gabriel Lévesque", "VP Machine"],
     ["francois", "François Pelletier", "VP Compétitions"],
@@ -65,35 +65,37 @@ const ComiteOrganisateurPage = props => {
 
   return (
     console.log(data),
-    <>
-      <ThemeContext.Consumer>
-        {theme => (
-          <>
-            <MiniHero backgrounds={backgrounds} theme={theme} />
-            <Article theme={theme}>
-              <header>
-                <Headline title="Comité Organisateur" theme={theme} />
-              </header>
+    (
+      <>
+        <ThemeContext.Consumer>
+          {theme => (
+            <>
+              <MiniHero backgrounds={backgrounds} theme={theme} />
+              <Article theme={theme}>
+                <header>
+                  <Headline title="Comité Organisateur" theme={theme} />
+                </header>
 
-              <Container>
-                {CO.map(membreCO => (
-                  <MembreCO key={membreCO[0]}>
-                    <Img fixed={data[membreCO[0]].fixed} />
-                    <Description>
-                      <p className="name">{membreCO[1]}</p>
-                      <hr />
-                      <p className="role">{membreCO[2]}</p>
-                    </Description>
-                  </MembreCO>
-                ))}
-              </Container>
-            </Article>
-          </>
-        )}
-      </ThemeContext.Consumer>
+                <Container>
+                  {CO.map(membreCO => (
+                    <MembreCO key={membreCO[0]}>
+                      <Img fixed={data[membreCO[0]].fixed} />
+                      <Description>
+                        <p className="name">{membreCO[1]}</p>
+                        <hr />
+                        <p className="role">{membreCO[2]}</p>
+                      </Description>
+                    </MembreCO>
+                  ))}
+                </Container>
+              </Article>
+            </>
+          )}
+        </ThemeContext.Consumer>
 
-      <Seo facebook={facebook} />
-    </>
+        <Seo facebook={facebook} />
+      </>
+    )
   );
 };
 
@@ -124,15 +126,19 @@ export const query = graphql`
       ...MiniHero
     }
 
-    cat: imageSharp(fluid: { originalName: { regex: "/cat/" } }) {
-      ...squareImage
-    }
-
     anneSo: imageSharp(fluid: { originalName: { regex: "/anne-sophie/" } }) {
       ...squareImage
     }
 
     alyssa: imageSharp(fluid: { originalName: { regex: "/alyssa/" } }) {
+      ...squareImage
+    }
+
+    celia: imageSharp(fluid: { originalName: { regex: "/cat/" } }) {
+      ...squareImage
+    }
+
+    iman: imageSharp(fluid: { originalName: { regex: "/cat/" } }) {
       ...squareImage
     }
 
