@@ -6,6 +6,25 @@ import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
 import MiniHero from "../components/MiniHero";
+import styled from "styled-components";
+import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const ContactInfo = styled.div`
+  flex: 0 0 250px;
+  margin: 0 25px;
+  text-align: center;
+
+  & > svg {
+    font-size: 100px;
+    fill: #2A2B7A
+    margin-bottom: 20px;
+  }
+`;
 
 const ContactPage = props => {
   const {
@@ -27,7 +46,26 @@ const ContactPage = props => {
               <header>
                 <Headline title="Contact" theme={theme} />
               </header>
-              <p>Informations de contact. info@jeuxdegenie.qc.ca</p>
+
+              <Container>
+                <ContactInfo>
+                  <FaEnvelope />
+                  <div>
+                    <a href="mailto:info@jeuxdegenie.qc.ca">info@jeuxdegenie.qc.ca</a>
+                  </div>
+                </ContactInfo>
+                <ContactInfo>
+                  <FaMapMarkerAlt />
+                  <div>
+                    <b>Association étudiante de l’ÉTS</b>
+                    <br />
+                    École de technologie supérieure<br />
+                    1100, rue Notre-Dame Ouest<br />
+                    Local A-1840<br />
+                    Montréal (Québec) H3C 1K3<br />
+                  </div>
+                </ContactInfo>
+              </Container>
             </Article>
           </>
         )}
