@@ -1,31 +1,6 @@
 require("dotenv").config();
 const config = require("./content/meta/config");
 
-const query = `{
-  allMarkdownRemark( filter: { fields: { slug: { ne: null } } }) {
-    edges {
-      node {
-        objectID: fileAbsolutePath
-        fields {
-          slug
-        }
-        internal {
-          content
-        }
-        frontmatter {
-          title
-        }
-      }
-    }
-  }
-}`;
-
-const queries = [
-  {
-    query,
-  }
-];
-
 module.exports = {
   // pathPrefix: config.pathPrefix,
   siteMetadata: {
@@ -50,13 +25,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images/`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/posts/`,
-        name: "posts"
       }
     },
     {

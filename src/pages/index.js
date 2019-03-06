@@ -28,7 +28,6 @@ class IndexPage extends React.Component {
   render() {
     const {
       data: {
-        posts: { edges: posts = [] },
         bgDesktop: {
           resize: { src: desktop }
         },
@@ -131,34 +130,6 @@ export default IndexPage;
 //eslint-disable-next-line no-undef
 export const query = graphql`
   query IndexQuery {
-    posts: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//posts/[0-9]+.*--/" } }
-      sort: { fields: [fields___prefix], order: DESC }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-            prefix
-          }
-          frontmatter {
-            title
-            category
-            author
-            cover {
-              children {
-                ... on ImageSharp {
-                  fluid(maxWidth: 800, maxHeight: 360) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
     site {
       siteMetadata {
         facebook {
@@ -183,5 +154,3 @@ export const query = graphql`
     }
   }
 `;
-
-//hero-background
