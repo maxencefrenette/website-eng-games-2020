@@ -96,10 +96,6 @@ class Layout extends React.Component {
                 }
               }
             }
-            footnote: markdownRemark(fileAbsolutePath: { regex: "/footnote/" }) {
-              id
-              html
-            }
 
             ...Header
           }
@@ -107,7 +103,6 @@ class Layout extends React.Component {
         render={data => {
           const { children } = this.props;
           const {
-            footnote: { html: footnoteHTML },
             pages: { edges: pages }
           } = data;
 
@@ -123,7 +118,7 @@ class Layout extends React.Component {
                       data={data}
                     />
                     <main>{children}</main>
-                    <Footer html={footnoteHTML} theme={this.state.theme} />
+                    <Footer theme={this.state.theme} />
 
                     {/* --- STYLES --- */}
                     <style jsx>{`
@@ -191,33 +186,3 @@ Layout.propTypes = {
 };
 
 export default Layout;
-
-//eslint-disable-next-line no-undef
-/*
-export const postQuery = graphql`
-  query LayoutQuery {
-    pages: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
-      sort: { fields: [fields___prefix], order: ASC }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-            prefix
-          }
-          frontmatter {
-            title
-            menuTitle
-          }
-        }
-      }
-    }
-    footnote: markdownRemark(fileAbsolutePath: { regex: "/footnote/" }) {
-      id
-      html
-    }
-  }
-`;
-
-*/
