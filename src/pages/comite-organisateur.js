@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import React from "react";
 import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
-import Headline from "../components/Article/Headline";
 import { graphql } from "gatsby";
 import Seo from "../components/Seo";
 import Img from "gatsby-image";
@@ -73,7 +72,7 @@ const ComiteOrganisateurPage = props => {
               <MiniHero backgrounds={backgrounds} theme={theme} />
               <Article theme={theme}>
                 <header>
-                  <Headline title="Comité Organisateur" theme={theme} />
+                  <h1>Comité Organisateur</h1>
                 </header>
 
                 <Container>

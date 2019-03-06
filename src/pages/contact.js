@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import React from "react";
 import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
-import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
 import MiniHero from "../components/MiniHero";
@@ -43,9 +42,9 @@ const ContactPage = props => {
         {theme => (
           <>
             <MiniHero backgrounds={backgrounds} theme={theme} />
-            <Article theme={theme}>
+            <Article>
               <header>
-                <Headline title="Contact" theme={theme} />
+                <h1>Contact</h1>
               </header>
 
               <Container>

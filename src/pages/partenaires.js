@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import React from "react";
 import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
-import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
@@ -53,7 +52,7 @@ const PartenairesPage = props => {
             <MiniHero backgrounds={backgrounds} theme={theme} />
             <Article theme={theme}>
               <header>
-                <Headline title="Partenaires" theme={theme} />
+                <h1>Partenaires</h1>
               </header>
 
               <Centered>

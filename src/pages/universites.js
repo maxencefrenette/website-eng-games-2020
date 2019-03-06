@@ -2,12 +2,10 @@ import PropTypes from "prop-types";
 import React from "react";
 import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
-import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import MiniHero from "../components/MiniHero";
-import styled from "styled-components";
 
 const UniversitesPage = props => {
   const { data } = props;
@@ -42,7 +40,7 @@ const UniversitesPage = props => {
             <MiniHero backgrounds={backgrounds} theme={theme}></MiniHero>
             <Article theme={theme}>
               <header>
-                <Headline title="Universités" theme={theme} />
+                <h1>Universités</h1>
               </header>
               <div className="container">
                 {universities.map(uni => (

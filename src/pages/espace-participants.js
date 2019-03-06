@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import React from "react";
 import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
-import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 import Download from "../components/Download";
 import MiniHero from "../components/MiniHero";
@@ -34,9 +33,9 @@ const EspaceParticipantsPage = props => {
         {theme => (
           <>
             <MiniHero backgrounds={backgrounds} theme={theme} />
-            <Article theme={theme}>
+            <Article>
               <header>
-                <Headline title="Espace Participants" theme={theme} />
+                <h1>Espace Participants</h1>
               </header>
               <Section>
                 Vous trouverez ici toutes les informations dont vous aurez besoin pour participer
