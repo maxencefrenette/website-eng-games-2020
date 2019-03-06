@@ -8,6 +8,7 @@ import { graphql } from "gatsby";
 import MiniHero from "../components/MiniHero";
 import styled from "styled-components";
 import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import theme from "../theme/theme";
 
 const Container = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ const ContactInfo = styled.div`
 
   & > svg {
     font-size: 100px;
-    fill: #2A2B7A
+    fill: ${theme.colors.primary};
     margin-bottom: 20px;
   }
 `;

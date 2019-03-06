@@ -9,6 +9,7 @@ import Img from "gatsby-image";
 import MiniHero from "../components/MiniHero";
 import styled from "styled-components";
 import Download from "../components/Download";
+import theme from "../theme/theme";
 
 const HContainer = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ const HContainer = styled.div`
 `;
 
 const Big = styled.div`
-  color: #2a2b7a;
+  color: ${theme.colors.primary};
   font-weight: bold;
   font-size: 35px;
   margin-bottom: 10px;
