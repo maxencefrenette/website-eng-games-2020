@@ -71,13 +71,10 @@ const PartenairesPage = props => {
               <br />
 
               <h1>Hôte</h1>
-              <p>
-                <Img fixed={data.ets.fixed} />
-              </p>
+              <Img fixed={data.ets.fixed} />
+
               <h1>Platine</h1>
-              <p>
-                <Img fixed={data.aeets.fixed} />
-              </p>
+              <Img fixed={data.aeets.fixed} />
 
               <br />
               <SponsorshipPackageDownload />
