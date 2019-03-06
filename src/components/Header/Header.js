@@ -3,7 +3,7 @@ import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
 import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import Menu from "../Menu";
-import Img from "gatsby-image";
+import { graphql } from "gatsby";
 
 class Header extends React.Component {
   state = {

@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { graphql } from "gatsby";
 
 const MiniHero = props => {
   const { backgrounds, theme, children } = props;
@@ -65,7 +66,6 @@ const MiniHero = props => {
               font-size: ${`calc(${theme.hero.h1.size} * 1.3)`};
             }
           }
-
         }
 
         @from-width desktop {
