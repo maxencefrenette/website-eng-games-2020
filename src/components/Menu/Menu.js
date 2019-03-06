@@ -1,11 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "core-js/fn/array/from";
-
-import { FaHome } from "react-icons/fa/";
-import { FaSearch } from "react-icons/fa/";
-import { FaEnvelope } from "react-icons/fa/";
-import { FaTag } from "react-icons/fa/";
+import { FaHome, FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa/";
 
 import Item from "./Item";
 import Expand from "./Expand";
@@ -23,12 +19,16 @@ class Menu extends React.Component {
     }));
 
     this.items = [
-      { to: "/", label: "Home", icon: FaHome },
+      { to: "/", label: "Home" },
       { to: "/espace-participants/", label: "Espace Participants" },
       { to: "/partenaires/", label: "Partenaires" },
       { to: "/comite-organisateur/", label: "Comité Organisateur" },
       { to: "/universites/", label: "Universités" },
       { to: "/contact/", label: "Contact" },
+      { to: "https://www.facebook.com/jeuxdegenie/", icon: FaFacebook, label: "" },
+      { to: "https://www.instagram.com/jeuxdegenieduquebec/", icon: FaInstagram, label: "" },
+      { to: "https://www.linkedin.com/company/jdg-qc/", icon: FaLinkedin, label: "" },
+      { to: "https://twitter.com/jdgqc", icon: FaTwitter, label: "" },
       // ...pages,
     ];
 

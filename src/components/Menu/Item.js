@@ -5,17 +5,33 @@ import { Link } from "gatsby";
 const Item = props => {
   const { theme, item: { label, to, icon: Icon } = {}, onClick } = props;
 
+  const inner = (
+    <>
+      {Icon && <Icon />} {label}
+    </>
+  );
+
   return (
     <React.Fragment>
       <li className={"hiddenItem" in props ? "hiddenItem" : "item"} key={label}>
-        <Link
-          to={to}
-          className={"hiddenItem" in props ? "inHiddenItem" : ""}
-          onClick={onClick}
-          data-slug={to}
-        >
-          {Icon && <Icon />} {label}
-        </Link>
+        {to.match(/^http/) ? (
+          <a
+            href={to}
+            className={"hiddenItem" in props ? "inHiddenItem" : ""}
+            onClick={onClick}
+          >
+            {inner}
+          </a>
+        ) : (
+          <Link
+            to={to}
+            className={"hiddenItem" in props ? "inHiddenItem" : ""}
+            onClick={onClick}
+            data-slug={to}
+          >
+            {inner}
+          </Link>
+        )}
       </li>
 
       {/* --- STYLES --- */}
@@ -35,7 +51,7 @@ const Item = props => {
 
           :global(svg) {
             margin: 0 ${theme.space.inset.xs} 0 0;
-            opacity: 0.3;
+            opacity: 1;
           }
         }
 
@@ -66,7 +82,7 @@ const Item = props => {
             }
 
             &:hover :global(svg) {
-              fill: ${theme.color.brand.primary};
+              /* fill: ${theme.color.brand.primary}; */
               opacity: 1;
 
               :global(.hero) & :global(svg) {
