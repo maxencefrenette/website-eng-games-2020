@@ -101,6 +101,8 @@ class Layout extends React.Component {
               id
               html
             }
+
+            ...Header
           }
         `}
         render={data => {
@@ -119,6 +121,7 @@ class Layout extends React.Component {
                       path={this.props.location.pathname}
                       pages={pages}
                       theme={this.state.theme}
+                      data={data}
                     />
                     <main>{children}</main>
                     <Footer html={footnoteHTML} theme={this.state.theme} />
