@@ -11,13 +11,6 @@ class Menu extends React.Component {
     super(props);
     this.itemList = React.createRef();
 
-    const pages = props.pages.map(page => ({
-      to: page.node.fields.slug,
-      label: page.node.frontmatter.menuTitle
-        ? page.node.frontmatter.menuTitle
-        : page.node.frontmatter.title
-    }));
-
     this.items = [
       { to: "/", label: "Home" },
       { to: "/espace-participants/", label: "Espace Participants" },
@@ -29,7 +22,6 @@ class Menu extends React.Component {
       { to: "https://www.instagram.com/jeuxdegenieduquebec/", icon: FaInstagram, label: "" },
       { to: "https://www.linkedin.com/company/jdg-qc/", icon: FaLinkedin, label: "" },
       { to: "https://twitter.com/jdgqc", icon: FaTwitter, label: "" },
-      // ...pages,
     ];
 
     this.renderedItems = []; // will contain references to rendered DOM elements of menu
@@ -45,7 +37,6 @@ class Menu extends React.Component {
     fixed: PropTypes.bool.isRequired,
     screenWidth: PropTypes.number.isRequired,
     fontLoaded: PropTypes.bool.isRequired,
-    pages: PropTypes.array.isRequired,
     theme: PropTypes.object.isRequired
   };
 

@@ -79,32 +79,11 @@ class Layout extends React.Component {
       <StaticQuery
         query={graphql`
           query LayoutgQuery {
-            pages: allMarkdownRemark(
-              filter: { fileAbsolutePath: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
-              sort: { fields: [fields___prefix], order: ASC }
-            ) {
-              edges {
-                node {
-                  fields {
-                    slug
-                    prefix
-                  }
-                  frontmatter {
-                    title
-                    menuTitle
-                  }
-                }
-              }
-            }
-
             ...Header
           }
         `}
         render={data => {
           const { children } = this.props;
-          const {
-            pages: { edges: pages }
-          } = data;
 
           return (
             <ThemeContext.Provider value={this.state.theme}>
@@ -113,7 +92,6 @@ class Layout extends React.Component {
                   <React.Fragment>
                     <Header
                       path={this.props.location.pathname}
-                      pages={pages}
                       theme={this.state.theme}
                       data={data}
                     />
