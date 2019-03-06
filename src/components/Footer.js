@@ -2,11 +2,38 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Footer = props => {
-  const { html, theme } = props;
+  const { theme } = props;
 
   return (
     <React.Fragment>
-      <footer className="footer" dangerouslySetInnerHTML={{ __html: html }} />
+      <footer className="footer">
+        <ul>
+          <li>
+            Thème:{" "}
+            <a href="https://github.com/greglobinski/gatsby-starter-hero-blog">
+              gatsby-starter-hero-blog
+            </a>
+          </li>
+          <li>
+            <a href="https://www.creiq.qc.ca/">CRÉIQ</a>
+          </li>
+          <li>
+            <a href="https://cqi-qec.qc.ca">Compétition québécoise d’ingénérie</a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/jeuxdegenie/">Facebook</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/jeuxdegenieduquebec/">Instagram</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/jdg-qc/">LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://twitter.com/jdgqc">Twitter</a>
+          </li>
+        </ul>
+      </footer>
 
       {/* --- STYLES --- */}
       <style jsx>{`
