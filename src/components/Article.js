@@ -87,6 +87,7 @@ const Article = styled.article`
     font-size: 1.1em;
     line-height: 1.6;
     margin: 0 0 1.5em;
+    text-align: justify;
   }
   ul {
     list-style: circle;

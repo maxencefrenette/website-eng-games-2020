@@ -13,6 +13,7 @@ class Menu extends React.Component {
 
     this.items = [
       { to: "/", label: "Home" },
+      { to: "/competitions/", label: "Compétitions" },
       { to: "/espace-participants/", label: "Espace Participants" },
       { to: "/partenaires/", label: "Partenaires" },
       { to: "/comite-organisateur/", label: "Comité Organisateur" },
