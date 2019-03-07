@@ -91,6 +91,7 @@ export const query = graphql`
   fragment MiniHero on ImageSharp {
     desktop: resize(
       width: 1200
+      height: 300
       quality: 90
       cropFocus: CENTER
       duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
@@ -100,7 +101,7 @@ export const query = graphql`
 
     tablet: resize(
       width: 800
-      height: 1100
+      height: 300
       quality: 90
       cropFocus: CENTER
       duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
@@ -110,7 +111,7 @@ export const query = graphql`
 
     mobile: resize(
       width: 450
-      height: 850
+      height: 300
       quality: 90
       cropFocus: CENTER
       duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
