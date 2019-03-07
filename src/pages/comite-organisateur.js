@@ -133,11 +133,11 @@ export const query = graphql`
       ...squareImage
     }
 
-    celia: imageSharp(fluid: { originalName: { regex: "/cat/" } }) {
+    celia: imageSharp(fluid: { originalName: { regex: "/celia/" } }) {
       ...squareImage
     }
 
-    iman: imageSharp(fluid: { originalName: { regex: "/cat/" } }) {
+    iman: imageSharp(fluid: { originalName: { regex: "/iman/" } }) {
       ...squareImage
     }
 
