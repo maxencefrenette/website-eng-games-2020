@@ -70,11 +70,11 @@ const Article = styled.article`
 
   h2,
   h3 {
-    margin: 1.5em 0 1em;
+    margin: 1.7em 0 0.8em;
   }
 
   h2 {
-    font-size: 1.7em;
+    font-size: 2.2em;
     line-height: 1.2;
   }
 

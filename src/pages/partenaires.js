@@ -55,6 +55,10 @@ const PartenairesPage = props => {
                 <h1>Partenaires</h1>
               </header>
 
+              <SponsorshipPackageDownload />
+              <br />
+              <br />
+
               <Centered>
                 <Big>Merci à nos partenaires!</Big>
                 <p>
@@ -66,17 +70,31 @@ const PartenairesPage = props => {
               <br />
               <br />
 
-              <SponsorshipPackageDownload />
-
-              <br />
-
-              <h1>Hôte</h1>
+              <h2>Hôte</h2>
               <Img fixed={data.ets.fixed} />
 
-              <h1>Platine</h1>
+              <h2>Platine</h2>
               <Img fixed={data.aeets.fixed} />
 
+              {/* <h2>Diamant</h2> */}
+
+
+              {/* <h2>Or</h2> */}
+
+
+              {/* <h2>Argent</h2> */}
+
+
+              <h2>Bronze</h2>
+              <Img fixed={data.boralex.fixed} />
+
+
+              {/* <h2>Supporteur</h2> */}
+
+
               <br />
+              <br />
+
               <SponsorshipPackageDownload />
             </Article>
           </>
@@ -102,6 +120,30 @@ export const query = graphql`
     }
   }
 
+  fragment ImageL on ImageSharp {
+    fixed(width: 400, quality: 90) {
+      ...GatsbyImageSharpFixed
+    }
+  }
+
+  fragment ImageM on ImageSharp {
+    fixed(width: 300, quality: 90) {
+      ...GatsbyImageSharpFixed
+    }
+  }
+
+  fragment ImageS on ImageSharp {
+    fixed(width: 200, quality: 90) {
+      ...GatsbyImageSharpFixed
+    }
+  }
+
+  fragment ImageXs on ImageSharp {
+    fixed(width: 200, quality: 90) {
+      ...GatsbyImageSharpFixed
+    }
+  }
+
   query PartenairesQuery {
     site {
       siteMetadata {
@@ -120,6 +162,11 @@ export const query = graphql`
     }
     aeets: imageSharp(fixed: { originalName: { regex: "/aeets/" } }) {
       ...ImageXl
+    }
+
+    # Bronze
+    boralex: imageSharp(fixed: { originalName: { regex: "/boralex/" } }) {
+      ...ImageXs
     }
   }
 `;
