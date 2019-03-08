@@ -7,6 +7,7 @@ import Hero from "../components/Hero";
 import Seo from "../components/Seo";
 import { FacebookProvider, Page } from "react-facebook";
 import styled from "styled-components";
+import { FormattedMessage } from "react-intl";
 
 const PhantomHr = styled.hr`
   margin: 0;
@@ -40,7 +41,8 @@ class IndexPage extends React.Component {
         site: {
           siteMetadata: { facebook }
         }
-      }
+      },
+      pageContext: { locale }
     } = this.props;
 
     const backgrounds = {
@@ -61,7 +63,7 @@ class IndexPage extends React.Component {
 
         <Article>
           <h2>
-            Message de <i>commanditaire 1</i>
+            <FormattedMessage id="message" /> <i>commanditaire 1</i>
           </h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet velit nec mi
@@ -74,7 +76,7 @@ class IndexPage extends React.Component {
             justo ut urna molestie tempor at vitae enim.
           </p>
           <h2>
-            Message de <i>commanditaire 2</i>
+            <FormattedMessage id="message" /> <i>commanditaire 2</i>
           </h2>
           <p>
             Sed scelerisque ex eu facilisis vestibulum. Aliquam interdum est lacus, gravida posuere

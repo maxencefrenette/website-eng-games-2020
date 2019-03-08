@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "core-js/fn/array/from";
-import { FaHome, FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa/";
-
+import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa/";
 import Item from "./Item";
 import Expand from "./Expand";
 

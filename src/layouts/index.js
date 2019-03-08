@@ -6,6 +6,7 @@ import { graphql, StaticQuery } from "gatsby";
 import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import I18n from "../components/I18n";
 
 export const ThemeContext = React.createContext(null);
 export const ScreenWidthContext = React.createContext(0);
@@ -83,70 +84,75 @@ class Layout extends React.Component {
           }
         `}
         render={data => {
-          const { children } = this.props;
+          const {
+            children,
+            pageContext: { locale }
+          } = this.props;
 
           return (
             <ThemeContext.Provider value={this.state.theme}>
               <FontLoadedContext.Provider value={this.state.font400loaded}>
                 <ScreenWidthContext.Provider value={this.state.screenWidth}>
-                  <React.Fragment>
-                    <Header
-                      path={this.props.location.pathname}
-                      theme={this.state.theme}
-                      data={data}
-                    />
-                    <main>{children}</main>
-                    <Footer theme={this.state.theme} />
+                  <I18n locale={locale}>
+                    <React.Fragment>
+                      <Header
+                        path={this.props.location.pathname}
+                        theme={this.state.theme}
+                        data={data}
+                      />
+                      <main>{children}</main>
+                      <Footer theme={this.state.theme} />
 
-                    {/* --- STYLES --- */}
-                    <style jsx>{`
-                      main {
-                        min-height: 80vh;
-                      }
-                    `}</style>
-                    <style jsx global>{`
-                      html {
-                        box-sizing: border-box;
-                      }
-                      *,
-                      *:after,
-                      *:before {
-                        box-sizing: inherit;
-                        margin: 0;
-                        padding: 0;
-                      }
-                      body {
-                        font-family: ${this.state.font400loaded
-                          ? "'Open Sans', sans-serif;"
-                          : "Arial, sans-serif;"};
-                      }
-                      h1,
-                      h2,
-                      h3 {
-                        font-weight: ${this.state.font600loaded ? 600 : 400};
-                        line-height: 1.1;
-                        letter-spacing: -0.03em;
-                        margin: 0;
-                      }
-                      h1 {
-                        letter-spacing: -0.04em;
-                      }
-                      p {
-                        margin: 0;
-                      }
-                      strong {
-                        font-weight: ${this.state.font600loaded ? 600 : 400};
-                      }
-                      a {
-                        text-decoration: none;
-                        color: #666;
-                      }
-                      main {
-                        width: auto;
-                        display: block;
-                      }
-                    `}</style>
-                  </React.Fragment>
+                      {/* --- STYLES --- */}
+                      <style jsx>{`
+                        main {
+                          min-height: 80vh;
+                        }
+                      `}</style>
+                      <style jsx global>{`
+                        html {
+                          box-sizing: border-box;
+                        }
+                        *,
+                        *:after,
+                        *:before {
+                          box-sizing: inherit;
+                          margin: 0;
+                          padding: 0;
+                        }
+                        body {
+                          font-family: ${this.state.font400loaded
+                            ? "'Open Sans', sans-serif;"
+                            : "Arial, sans-serif;"};
+                        }
+                        h1,
+                        h2,
+                        h3 {
+                          font-weight: ${this.state.font600loaded ? 600 : 400};
+                          line-height: 1.1;
+                          letter-spacing: -0.03em;
+                          margin: 0;
+                        }
+                        h1 {
+                          letter-spacing: -0.04em;
+                        }
+                        p {
+                          margin: 0;
+                        }
+                        strong {
+                          font-weight: ${this.state.font600loaded ? 600 : 400};
+                        }
+                        a {
+                          text-decoration: none;
+                          color: #666;
+                        }
+                        main {
+                          width: auto;
+                          display: block;
+                        }
+                      `}</style>
+                    </React.Fragment>
+                  </I18n>
                 </ScreenWidthContext.Provider>
               </FontLoadedContext.Provider>
             </ThemeContext.Provider>

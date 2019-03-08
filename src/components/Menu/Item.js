@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
+import LLink from "../LLink";
 
 const Item = props => {
   const { theme, item: { label, to, icon: Icon } = {}, onClick } = props;
@@ -23,14 +23,14 @@ const Item = props => {
             {inner}
           </a>
         ) : (
-          <Link
+          <LLink
             to={to}
             className={"hiddenItem" in props ? "inHiddenItem" : ""}
             onClick={onClick}
             data-slug={to}
           >
             {inner}
-          </Link>
+          </LLink>
         )}
       </li>
 

@@ -22,17 +22,7 @@ class Header extends React.Component {
     const fixed = this.state.fixed ? "fixed" : "";
     const homepage = this.props.path === "/" ? "homepage" : "";
 
-    const heroPaths = [
-      "/",
-      "/espace-participants/",
-      "/partenaires/",
-      "/comite-organisateur/",
-      "/universites/",
-      "/contact/"
-    ];
-    const heroMenu = heroPaths.includes(this.props.path) ? "hero-menu" : "";
-
-    return `${fixed} ${homepage} ${heroMenu}`;
+    return `${fixed} ${homepage} hero-menu`;
   };
 
   render() {
