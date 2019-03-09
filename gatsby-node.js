@@ -7,13 +7,14 @@ const locales = require("./src/i18n/locales");
 
 exports.createPages = ({ graphql, actions }) => {
   const { createRedirect } = actions;
+  const redirectInBrowser = process.env.NODE_ENV === 'development';
 
-  createRedirect({ fromPath: "/", toPath: "/fr", redirectInBrowser: true });
-  createRedirect({ fromPath: "/", toPath: "/en", redirectInBrowser: true, Language: "en" });
-  createRedirect({ fromPath: "/", toPath: "/en", redirectInBrowser: true, Language: "en-ca" });
-  createRedirect({ fromPath: "/", toPath: "/en", redirectInBrowser: true, Language: "en-us" });
-  createRedirect({ fromPath: "/", toPath: "/fr", redirectInBrowser: true, Language: "fr" });
-  createRedirect({ fromPath: "/", toPath: "/fr", redirectInBrowser: true, Language: "fr-ca" });
+  createRedirect({ fromPath: "/", toPath: "/fr", redirectInBrowser });
+  createRedirect({ fromPath: "/", toPath: "/en", redirectInBrowser, Language: "en" });
+  createRedirect({ fromPath: "/", toPath: "/en", redirectInBrowser, Language: "en-ca" });
+  createRedirect({ fromPath: "/", toPath: "/en", redirectInBrowser, Language: "en-us" });
+  createRedirect({ fromPath: "/", toPath: "/fr", redirectInBrowser, Language: "fr" });
+  createRedirect({ fromPath: "/", toPath: "/fr", redirectInBrowser, Language: "fr-ca" });
 };
 
 exports.onCreatePage = ({ page, actions }) => {
