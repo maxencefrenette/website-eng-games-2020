@@ -3,10 +3,25 @@ const _ = require("lodash");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const locales = require('./src/i18n/locales');
+const locales = require("./src/i18n/locales");
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createRedirect } = actions;
+
+  createRedirect({ fromPath: "/", toPath: "/fr", redirectInBrowser: true });
+  createRedirect({ fromPath: "/", toPath: "/en", redirectInBrowser: true, Language: "en" });
+  createRedirect({ fromPath: "/", toPath: "/en", redirectInBrowser: true, Language: "en-ca" });
+  createRedirect({ fromPath: "/", toPath: "/en", redirectInBrowser: true, Language: "en-us" });
+  createRedirect({ fromPath: "/", toPath: "/fr", redirectInBrowser: true, Language: "fr" });
+  createRedirect({ fromPath: "/", toPath: "/fr", redirectInBrowser: true, Language: "fr-ca" });
+};
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
+
+  if (page.path.match(/404/)) {
+    return;
+  }
 
   return new Promise(resolve => {
     deletePage(page);
