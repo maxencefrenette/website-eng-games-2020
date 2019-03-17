@@ -11,13 +11,13 @@ class Menu extends React.Component {
     this.itemList = React.createRef();
 
     this.items = [
-      { to: "/", label: "Home" },
-      { to: "/competitions/", label: "Compétitions" },
-      { to: "/espace-participants/", label: "Espace Participants" },
-      { to: "/partenaires/", label: "Partenaires" },
-      { to: "/comite-organisateur/", label: "Comité Organisateur" },
-      { to: "/universites/", label: "Universités" },
-      { to: "/contact/", label: "Contact" },
+      { to: "/", label: "home" },
+      { to: "/competitions/", label: "competitions" },
+      { to: "/espace-participants/", label: "participants" },
+      { to: "/partenaires/", label: "sponsors" },
+      { to: "/comite-organisateur/", label: "oc" },
+      { to: "/universites/", label: "universities" },
+      { to: "/contact/", label: "contact" },
       { to: "https://www.facebook.com/jeuxdegenie/", icon: FaFacebook, label: "" },
       { to: "https://www.instagram.com/jeuxdegenieduquebec/", icon: FaInstagram, label: "" },
       { to: "https://www.linkedin.com/company/jdg-qc/", icon: FaLinkedin, label: "" },

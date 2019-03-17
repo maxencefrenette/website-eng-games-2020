@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import LLink from "../LLink";
+import { FormattedMessage } from "react-intl";
 
 const Item = props => {
   const { theme, item: { label, to, icon: Icon } = {}, onClick } = props;
 
   const inner = (
     <>
-      {Icon && <Icon />} {label}
+      {Icon && <Icon />} {label && <FormattedMessage id={label} />}
     </>
   );
 
@@ -15,11 +16,7 @@ const Item = props => {
     <React.Fragment>
       <li className={"hiddenItem" in props ? "hiddenItem" : "item"} key={label}>
         {to.match(/^http/) ? (
-          <a
-            href={to}
-            className={"hiddenItem" in props ? "inHiddenItem" : ""}
-            onClick={onClick}
-          >
+          <a href={to} className={"hiddenItem" in props ? "inHiddenItem" : ""} onClick={onClick}>
             {inner}
           </a>
         ) : (
