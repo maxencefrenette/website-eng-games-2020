@@ -63,7 +63,6 @@ const ComiteOrganisateurPage = props => {
   ];
 
   return (
-    console.log(data),
     (
       <>
         <ThemeContext.Consumer>
