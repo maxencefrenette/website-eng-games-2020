@@ -6,8 +6,8 @@ import enData from "react-intl/locale-data/en";
 import frData from "react-intl/locale-data/fr";
 
 // Messages
-import fr from "../i18n/fr.json";
-import en from "../i18n/en.json";
+import fr from "../i18n/fr.yaml";
+import en from "../i18n/en.yaml";
 
 const messages = { en, fr };
 
