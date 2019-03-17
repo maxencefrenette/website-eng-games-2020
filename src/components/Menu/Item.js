@@ -2,9 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import LLink from "../LLink";
 import { FormattedMessage } from "react-intl";
+import { Link } from "gatsby";
 
 const Item = props => {
-  const { theme, item: { label, to, icon: Icon } = {}, onClick } = props;
+  const { theme, item: { label, to, icon: Icon }, noLocalize = {}, onClick } = props;
 
   const inner = (
     <>
@@ -19,6 +20,15 @@ const Item = props => {
           <a href={to} className={"hiddenItem" in props ? "inHiddenItem" : ""} onClick={onClick}>
             {inner}
           </a>
+        ) : noLocalize ? (
+          <Link
+            to={to}
+            className={"hiddenItem" in props ? "inHiddenItem" : ""}
+            onClick={onClick}
+            data-slug={to}
+          >
+            {inner}
+          </Link>
         ) : (
           <LLink
             to={to}

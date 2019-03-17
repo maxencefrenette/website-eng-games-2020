@@ -4,6 +4,7 @@ import "core-js/fn/array/from";
 import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa/";
 import Item from "./Item";
 import Expand from "./Expand";
+import LangSwitcher from "./LangSwitcher";
 
 class Menu extends React.Component {
   constructor(props) {
@@ -142,6 +143,7 @@ class Menu extends React.Component {
             {this.items.map(item => (
               <Item item={item} key={item.to} icon={item.icon} theme={theme} />
             ))}
+            <LangSwitcher theme={theme}></LangSwitcher>
           </ul>
           {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
           {open &&
