@@ -148,7 +148,7 @@ class Menu extends React.Component {
             screenWidth >= 1024 && (
               <ul className="hiddenItemList">
                 {this.state.hiddenItems.map(item => (
-                  <Item item={item} key={item.label} hiddenItem theme={theme} />
+                  <Item item={item} key={item.to} hiddenItem theme={theme} />
                 ))}
               </ul>
             )}
