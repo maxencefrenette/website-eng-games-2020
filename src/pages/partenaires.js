@@ -153,7 +153,7 @@ export const query = graphql`
       }
     }
 
-    backgrounds: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
+    backgrounds: imageSharp(fluid: { originalName: { regex: "/sponsors-edited/" } }) {
       ...MiniHero
     }
 

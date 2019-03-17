@@ -5,7 +5,7 @@ import { FormattedMessage } from "react-intl";
 import { Link } from "gatsby";
 
 const Item = props => {
-  const { theme, item: { label, to, icon: Icon }, noLocalize = {}, onClick } = props;
+  const { theme, item: { label, to, icon: Icon }, noLocalize, onClick } = props;
 
   const inner = (
     <>

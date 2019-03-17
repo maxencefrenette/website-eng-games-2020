@@ -23,8 +23,8 @@ const MiniHero = props => {
           display: flex;
           flex-flow: column nowrap;
           justify-content: center;
-          min-height: 300px;
-          height: 300px;
+          min-height: 400px;
+          height: 400px;
           padding: ${theme.space.inset.l};
           padding-top: ${theme.header.height.homepage};
         }
@@ -91,7 +91,7 @@ export const query = graphql`
   fragment MiniHero on ImageSharp {
     desktop: resize(
       width: 1200
-      height: 300
+      height: 400
       quality: 90
       cropFocus: CENTER
       duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
@@ -101,7 +101,7 @@ export const query = graphql`
 
     tablet: resize(
       width: 800
-      height: 300
+      height: 400
       quality: 90
       cropFocus: CENTER
       duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
@@ -111,7 +111,7 @@ export const query = graphql`
 
     mobile: resize(
       width: 450
-      height: 300
+      height: 400
       quality: 90
       cropFocus: CENTER
       duotone: { highlight: "#EF9D4F", shadow: "#502F69" }

@@ -66,6 +66,9 @@ const ContactPage = props => {
                   </div>
                 </ContactInfo>
               </Container>
+
+              <br />
+              <br />
             </Article>
           </>
         )}
@@ -93,7 +96,7 @@ export const query = graphql`
       }
     }
 
-    backgrounds: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
+    backgrounds: imageSharp(fluid: { originalName: { regex: "/contact/" } }) {
       ...MiniHero
     }
   }
