@@ -1,14 +1,20 @@
 import React from "react";
 import Item from "./Item";
+import { Location } from "@reach/router";
 
 export default function LangSwitcher({ theme }) {
-  let to = "/404";
+  return (
+    <Location>
+      {({ location }) => {
+        let to = "/404";
 
-  if (window.location.pathname.startsWith("/fr")) {
-    to = window.location.pathname.replace(/^\/fr/, "/en");
-  } else if (window.location.pathname.startsWith("/en")) {
-    to = window.location.pathname.replace(/^\/en/, "/fr");
-  }
-
-  return <Item item={{to, label: "switch-lang"}} theme={theme} noLocalize />;
+        if (location.pathname.startsWith("/fr")) {
+          to = location.pathname.replace(/^\/fr/, "/en");
+        } else if (location.pathname.startsWith("/en")) {
+          to = location.pathname.replace(/^\/en/, "/fr");
+        }
+        return <Item item={{ to, label: "switch-lang" }} theme={theme} noLocalize />;
+      }}
+    </Location>
+  );
 }
