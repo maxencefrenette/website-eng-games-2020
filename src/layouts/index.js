@@ -1,5 +1,3 @@
-import "typeface-open-sans";
-import FontFaceObserver from "fontfaceobserver";
 import PropTypes from "prop-types";
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
@@ -7,6 +5,7 @@ import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import I18n from "../components/I18n";
+import theme from "../theme/theme2.yaml";
 
 export const ThemeContext = React.createContext(null);
 export const ScreenWidthContext = React.createContext(0);
@@ -19,17 +18,10 @@ class Layout extends React.Component {
     super();
 
     this.state = {
-      font400loaded: false,
-      font600loaded: false,
       screenWidth: 0,
       headerMinimized: false,
       theme: themeObjectFromYaml
     };
-
-    if (typeof window !== `undefined`) {
-      this.loadFont("font400", "Open Sans", 400);
-      this.loadFont("font600", "Open Sans", 600);
-    }
   }
 
   timeouts = {};
@@ -57,22 +49,6 @@ class Layout extends React.Component {
     }
 
     return false;
-  };
-
-  loadFont = (name, family, weight) => {
-    const font = new FontFaceObserver(family, {
-      weight: weight
-    });
-
-    font.load(null, 10000).then(
-      () => {
-        console.log(`${name} is available`);
-        this.setState({ [`${name}loaded`]: true });
-      },
-      () => {
-        console.log(`${name} is not available`);
-      }
-    );
   };
 
   render() {
@@ -121,10 +97,13 @@ class Layout extends React.Component {
                           padding: 0;
                         }
                         body {
-                          font-family: ${this.state.font400loaded
-                            ? "'Open Sans', sans-serif;"
-                            : "Arial, sans-serif;"};
+                          font-family: ${theme.font.body};
                         }
+
+                        h1, h2, h3, h4, h5, h6 {
+                          font-family: ${theme.font.heading}
+                        }
+
                         h1,
                         h2,
                         h3 {
