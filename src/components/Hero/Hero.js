@@ -6,8 +6,7 @@ import { FormattedMessage } from "react-intl";
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
 
-  return (
-    <React.Fragment>
+  return <React.Fragment>
       <section className="hero">
         <h1>
           <FormattedMessage id="jdg" />
@@ -46,6 +45,7 @@ const Hero = props => {
           color: ${theme.hero.h1.color};
           line-height: ${theme.hero.h1.lineHeight};
           text-remove-gap: both 0 "Open Sans";
+          text-transform: uppercase;
 
           :global(strong) {
             position: relative;
@@ -95,8 +95,7 @@ const Hero = props => {
           }
         }
 
-        @keyframes buttonIconMove {
-          0% {
+        @keyframes buttonIconMove {0% {
             transform: translateY(0);
           }
           50% {
@@ -104,11 +103,9 @@ const Hero = props => {
           }
           100% {
             transform: translateY(0);
-          }
-        }
+          }}
 
-        @from-width tablet {
-          .hero {
+        @from-width tablet {.hero {
             background-image: url(${backgrounds.tablet});
           }
 
@@ -119,11 +116,9 @@ const Hero = props => {
 
           button {
             font-size: ${theme.font.size.l};
-          }
-        }
+          }}
 
-        @from-width desktop {
-          .hero {
+        @from-width desktop {.hero {
             background-image: url(${backgrounds.desktop});
           }
 
@@ -134,11 +129,8 @@ const Hero = props => {
 
           button {
             font-size: ${theme.font.size.xl};
-          }
-        }
-      `}</style>
-    </React.Fragment>
-  );
+          }}`}</style>
+    </React.Fragment>;
 };
 
 Hero.propTypes = {

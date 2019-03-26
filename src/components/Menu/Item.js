@@ -49,6 +49,7 @@ const Item = props => {
           transition: all ${theme.time.duration.default};
           display: flex;
           align-items: center;
+          text-transform: uppercase;
 
           :global(a) {
             padding: ${theme.space.inset.s};

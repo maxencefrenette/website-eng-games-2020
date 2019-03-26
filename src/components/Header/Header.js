@@ -4,6 +4,7 @@ import VisibilitySensor from "react-visibility-sensor";
 import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import Menu from "../Menu";
 import { graphql } from "gatsby";
+import LLink from "../LLink";
 
 class Header extends React.Component {
   state = {
@@ -34,7 +35,9 @@ class Header extends React.Component {
         <header className={`header ${this.getHeaderSize()}`}>
           <div className="logoType">
             <div className="logo">
-              <img src={data.logo.fixed.src} />
+              <LLink to="/">
+                <img src={data.logo.fixed.src} />
+              </LLink>
             </div>
             <div className="type">
               <h1>Mission: Jeux de Génie 2020</h1>
@@ -79,7 +82,7 @@ class Header extends React.Component {
               align-items: center;
               display: flex;
               flex-direction: "column";
-              color: ${theme.text.color.primary};
+              color: white;
 
               .logo {
                 flex-shrink: 0;
