@@ -5,9 +5,6 @@ import Article from "../components/Article";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
 import MiniHero from "../components/MiniHero";
-import styled from "styled-components";
-import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import theme from "../theme/theme";
 
 const CompetitionsPage = props => {
   const {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import theme from "../theme/theme";
+import theme from "../theme/theme2.yaml";
 
 const Article = styled.article`
   padding: ${theme.space.default};
