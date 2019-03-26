@@ -15,9 +15,13 @@ const Article = styled.article`
     max-width: ${theme.maxWidth.desktop};
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+  }
+
   h1 {
     font-size: 2.2em;
-    margin: 0 0 40px 0;
+    margin: 0 0 0.5em;
     animation-name: headlineEntry;
     animation-duration: 1s;
 
@@ -70,7 +74,7 @@ const Article = styled.article`
 
   h2,
   h3 {
-    margin: 1.7em 0 0.8em;
+    margin: 1.7em 0 0.5em;
   }
 
   h2 {
