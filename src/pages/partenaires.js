@@ -71,26 +71,25 @@ const PartenairesPage = props => {
               <br />
 
               <h2>Hôte</h2>
-              <Img fixed={data.ets.fixed} />
+              <a href="https://www.etsmtl.ca/">
+                <Img fixed={data.ets.fixed} />
+              </a>
 
               <h2>Platine</h2>
-              <Img fixed={data.aeets.fixed} />
+              <a href="https://aeets.com/">
+                <Img fixed={data.aeets.fixed} />
+              </a>
 
               {/* <h2>Diamant</h2> */}
 
-
               {/* <h2>Or</h2> */}
 
-
               {/* <h2>Argent</h2> */}
-
 
               <h2>Bronze</h2>
               <Img fixed={data.boralex.fixed} />
 
-
               {/* <h2>Supporteur</h2> */}
-
 
               <br />
               <br />
