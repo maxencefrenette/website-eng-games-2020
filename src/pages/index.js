@@ -89,17 +89,20 @@ class IndexPage extends React.Component {
       mobile
     };
 
-    return (
-      <>
+    return <>
         <ThemeContext.Consumer>
           {theme => (
-            <Hero scrollToContent={this.scrollToContent} backgrounds={backgrounds} theme={theme} />
+            <Hero
+              scrollToContent={this.scrollToContent}
+              backgrounds={backgrounds}
+              theme={theme}
+            />
           )}
         </ThemeContext.Consumer>
 
         <PhantomHr ref={this.separator} />
 
-        <Article>
+        <Article noPadding={true}>
           <h2>Nos 3 pilliers</h2>
           <PillarContainer>
             <Pillar>
@@ -107,8 +110,8 @@ class IndexPage extends React.Component {
               <div>
                 <h3>Diversité et inclusion</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis cursus libero,
-                  sed ullamcorper enim.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis cursus
+                  libero, sed ullamcorper enim.
                 </p>
               </div>
             </Pillar>
@@ -117,8 +120,8 @@ class IndexPage extends React.Component {
               <div>
                 <h3>Développement durable</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis cursus libero,
-                  sed ullamcorper enim.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis cursus
+                  libero, sed ullamcorper enim.
                 </p>
               </div>
             </Pillar>
@@ -127,8 +130,8 @@ class IndexPage extends React.Component {
               <div>
                 <h3>Excellence technique</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis cursus libero,
-                  sed ullamcorper enim.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis cursus
+                  libero, sed ullamcorper enim.
                 </p>
               </div>
             </Pillar>
@@ -139,30 +142,32 @@ class IndexPage extends React.Component {
           <div style={{ height: "500px" }} />
         </Parallax>
 
-        <Article>
+        <Article noPadding={true}>
           <Sides>
             <Left>
               <h2>Historique</h2>
               <p>
-                Quisque eleifend eget ante sodales laoreet. Fusce molestie condimentum sapien, et
-                gravida urna vestibulum id. Sed a sem elit. Proin viverra gravida laoreet. Ut ultrices
-                eu lectus eu dictum. Cras urna felis, aliquam at lectus ut, facilisis pretium turpis.
-                Etiam dignissim, elit vel cursus consequat, sem ipsum suscipit enim, id fermentum quam
-                lorem sollicitudin mauris. Phasellus a arcu ut orci ornare vulputate at eu felis. Mauris
-                cursus sit amet turpis sit amet maximus. Vivamus nec vestibulum lacus. Pellentesque
-                porttitor nisl quis nulla lacinia, sed vulputate tellus blandit. Maecenas bibendum dolor
-                et erat semper ullamcorper.
+                Quisque eleifend eget ante sodales laoreet. Fusce molestie condimentum sapien,
+                et gravida urna vestibulum id. Sed a sem elit. Proin viverra gravida laoreet. Ut
+                ultrices eu lectus eu dictum. Cras urna felis, aliquam at lectus ut, facilisis
+                pretium turpis. Etiam dignissim, elit vel cursus consequat, sem ipsum suscipit
+                enim, id fermentum quam lorem sollicitudin mauris. Phasellus a arcu ut orci
+                ornare vulputate at eu felis. Mauris cursus sit amet turpis sit amet maximus.
+                Vivamus nec vestibulum lacus. Pellentesque porttitor nisl quis nulla lacinia,
+                sed vulputate tellus blandit. Maecenas bibendum dolor et erat semper
+                ullamcorper.
               </p>
               <h2>Les Jeux 2020</h2>
               <p>
-                Proin bibendum, tellus nec accumsan volutpat, metus tortor placerat tortor, vitae
-                consectetur nisl risus nec nisl. Integer porta arcu et efficitur faucibus. Suspendisse
-                tincidunt quam et laoreet mollis. Aliquam aliquet facilisis odio, et lobortis leo
-                sagittis ac. Maecenas a ipsum vitae ante fermentum tempus. Vestibulum eget gravida est.
-                Cras ultrices dui ipsum, sed molestie felis vestibulum quis. Donec at mi eget neque
-                luctus suscipit eget vel ex. Aenean facilisis lorem nec aliquet scelerisque. In nunc
-                nibh, commodo ut pellentesque in, venenatis vel turpis. Maecenas consequat pulvinar
-                auctor. Integer et dapibus est, non mollis leo.
+                Proin bibendum, tellus nec accumsan volutpat, metus tortor placerat tortor,
+                vitae consectetur nisl risus nec nisl. Integer porta arcu et efficitur faucibus.
+                Suspendisse tincidunt quam et laoreet mollis. Aliquam aliquet facilisis odio, et
+                lobortis leo sagittis ac. Maecenas a ipsum vitae ante fermentum tempus.
+                Vestibulum eget gravida est. Cras ultrices dui ipsum, sed molestie felis
+                vestibulum quis. Donec at mi eget neque luctus suscipit eget vel ex. Aenean
+                facilisis lorem nec aliquet scelerisque. In nunc nibh, commodo ut pellentesque
+                in, venenatis vel turpis. Maecenas consequat pulvinar auctor. Integer et dapibus
+                est, non mollis leo.
               </p>
             </Left>
             <Right>
@@ -177,8 +182,7 @@ class IndexPage extends React.Component {
         </Article>
 
         <Seo facebook={facebook} />
-      </>
-    );
+      </>;
   }
 }
 
