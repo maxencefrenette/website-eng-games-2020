@@ -54,25 +54,24 @@ class IndexPage extends React.Component {
             <Article theme={theme}>
               <h1>Historique</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet velit nec
-                mi tincidunt aliquet. Fusce id neque congue, pellentesque nulla vel, sagittis eros.
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-                Curae; Mauris quis faucibus enim. Donec tempus sem eu lectus condimentum, non
-                maximus felis posuere. Praesent non arcu ac dolor mattis accumsan. Nunc accumsan ut
-                eros non volutpat. Suspendisse potenti. In ultricies libero eget magna facilisis, in
-                gravida nisl lobortis. Aliquam felis mauris, molestie eget pharetra in, dignissim
-                sit amet eros. Phasellus sed justo ut urna molestie tempor at vitae enim.
+                Depuis maintenant 29 ans, les Jeux de génie du Québec représentent la plus grande compétition 
+                d’ingénierie au Québec et le plus important rassemblement d’étudiant.e.s en génie de la province. 
+                Les participant.e.s, provenant de 12 universités du Québec et de l’Ontario, mettent à l’épreuve leurs 
+                compétences générales et spécifiques, complémentaires à celles de la profession d’ingénieur en s’affrontant 
+                dans des défis de nature variée. Pour la trentième édition, l’événement se déroulera du 3 au 7 janvier 2020 
+                à l’École de technologie supérieure de Montréal. 
               </p>
-              <h1>Les Jeux 2020</h1>
+              <h1>La mission JDG 2020</h1>
               <p>
-                Proin bibendum, tellus nec accumsan volutpat, metus tortor placerat tortor, vitae
-                consectetur nisl risus nec nisl. Integer porta arcu et efficitur faucibus.
-                Suspendisse tincidunt quam et laoreet mollis. Aliquam aliquet facilisis odio, et
-                lobortis leo sagittis ac. Maecenas a ipsum vitae ante fermentum tempus. Vestibulum
-                eget gravida est. Cras ultrices dui ipsum, sed molestie felis vestibulum quis. Donec
-                at mi eget neque luctus suscipit eget vel ex. Aenean facilisis lorem nec aliquet
-                scelerisque. In nunc nibh, commodo ut pellentesque in, venenatis vel turpis.
-                Maecenas consequat pulvinar auctor. Integer et dapibus est, non mollis leo.
+                Les conséquences néfastes des activités humaines provoquent la dégradation de la couche d’ozone. 
+                Les climatologues du Bureau d’Ingénierie et de Planification des Compétitions Officielles Multidisciplinaires 
+                (BIPCOM) assurent l’imminence d’une suite de catastrophes naturelles qui auront pour effet de décimer à un rythme 
+                alarmant toute forme de vie sur Terre. Ces événements sans précédent débuteront dès septembre 2019. 
+                En vue de la mission “JDG2020” qui aura lieu en janvier prochain, chaque université québécoise est mandatée 
+                de sélectionner, parmi les survivants, 40 étudiants et étudiantes en génie. Cette sélection se fera sur la base 
+                de leur aptitude à résoudre les problématiques complexes liées à la reconstruction d’un monde meilleur, durable 
+                et à leur image. L’objectif de cette mission est d’améliorer la situation sur la Terre, préserver le savoir, 
+                exploiter responsablement les ressources restantes et relancer les activités de manière durable.
               </p>
             </Article>
           )}
