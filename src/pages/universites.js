@@ -74,12 +74,10 @@ const UniversitesPage = props => {
 
         .university {
           width: 150px;
-          margin-left: 100px;
+          margin-left: 50px;
+          margin-right: 50px;
           margin-bottom: 50px;
 
-          &:nth-child(4n + 1) {
-            margin-left: 0;
-          }
 
           a {
             transition-duration: 0.3s;
