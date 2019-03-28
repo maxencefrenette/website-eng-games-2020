@@ -147,48 +147,24 @@ class IndexPage extends React.Component {
             <Left>
               <h2>Historique</h2>
               <p>
-<<<<<<< HEAD
-                Depuis maintenant 29 ans, les Jeux de génie du Québec représentent la plus grande compétition 
-                d’ingénierie au Québec et le plus important rassemblement d’étudiant.e.s en génie de la province. 
-                Les participant.e.s, provenant de 12 universités du Québec et de l’Ontario, mettent à l’épreuve leurs 
-                compétences générales et spécifiques, complémentaires à celles de la profession d’ingénieur en s’affrontant 
-                dans des défis de nature variée. Pour la trentième édition, l’événement se déroulera du 3 au 7 janvier 2020 
-                à l’École de technologie supérieure de Montréal. 
+                Depuis maintenant 29 ans, les Jeux de génie du Québec représentent la plus grande compétition
+                d’ingénierie au Québec et le plus important rassemblement d’étudiant.e.s en génie de la province.
+                Les participant.e.s, provenant de 12 universités du Québec et de l’Ontario, mettent à l’épreuve leurs
+                compétences générales et spécifiques, complémentaires à celles de la profession d’ingénieur en s’affrontant
+                dans des défis de nature variée. Pour la trentième édition, l’événement se déroulera du 3 au 7 janvier 2020
+                à l’École de technologie supérieure de Montréal.
               </p>
               <h1>La mission JDG 2020</h1>
               <p>
-                Les conséquences néfastes des activités humaines provoquent la dégradation de la couche d’ozone. 
-                Les climatologues du Bureau d’Ingénierie et de Planification des Compétitions Officielles Multidisciplinaires 
-                (BIPCOM) assurent l’imminence d’une suite de catastrophes naturelles qui auront pour effet de décimer à un rythme 
-                alarmant toute forme de vie sur Terre. Ces événements sans précédent débuteront dès septembre 2019. 
-                En vue de la mission “JDG2020” qui aura lieu en janvier prochain, chaque université québécoise est mandatée 
-                de sélectionner, parmi les survivants, 40 étudiants et étudiantes en génie. Cette sélection se fera sur la base 
-                de leur aptitude à résoudre les problématiques complexes liées à la reconstruction d’un monde meilleur, durable 
-                et à leur image. L’objectif de cette mission est d’améliorer la situation sur la Terre, préserver le savoir, 
+                Les conséquences néfastes des activités humaines provoquent la dégradation de la couche d’ozone.
+                Les climatologues du Bureau d’Ingénierie et de Planification des Compétitions Officielles Multidisciplinaires
+                (BIPCOM) assurent l’imminence d’une suite de catastrophes naturelles qui auront pour effet de décimer à un rythme
+                alarmant toute forme de vie sur Terre. Ces événements sans précédent débuteront dès septembre 2019.
+                En vue de la mission “JDG2020” qui aura lieu en janvier prochain, chaque université québécoise est mandatée
+                de sélectionner, parmi les survivants, 40 étudiants et étudiantes en génie. Cette sélection se fera sur la base
+                de leur aptitude à résoudre les problématiques complexes liées à la reconstruction d’un monde meilleur, durable
+                et à leur image. L’objectif de cette mission est d’améliorer la situation sur la Terre, préserver le savoir,
                 exploiter responsablement les ressources restantes et relancer les activités de manière durable.
-=======
-                Quisque eleifend eget ante sodales laoreet. Fusce molestie condimentum sapien,
-                et gravida urna vestibulum id. Sed a sem elit. Proin viverra gravida laoreet. Ut
-                ultrices eu lectus eu dictum. Cras urna felis, aliquam at lectus ut, facilisis
-                pretium turpis. Etiam dignissim, elit vel cursus consequat, sem ipsum suscipit
-                enim, id fermentum quam lorem sollicitudin mauris. Phasellus a arcu ut orci
-                ornare vulputate at eu felis. Mauris cursus sit amet turpis sit amet maximus.
-                Vivamus nec vestibulum lacus. Pellentesque porttitor nisl quis nulla lacinia,
-                sed vulputate tellus blandit. Maecenas bibendum dolor et erat semper
-                ullamcorper.
-              </p>
-              <h2>Les Jeux 2020</h2>
-              <p>
-                Proin bibendum, tellus nec accumsan volutpat, metus tortor placerat tortor,
-                vitae consectetur nisl risus nec nisl. Integer porta arcu et efficitur faucibus.
-                Suspendisse tincidunt quam et laoreet mollis. Aliquam aliquet facilisis odio, et
-                lobortis leo sagittis ac. Maecenas a ipsum vitae ante fermentum tempus.
-                Vestibulum eget gravida est. Cras ultrices dui ipsum, sed molestie felis
-                vestibulum quis. Donec at mi eget neque luctus suscipit eget vel ex. Aenean
-                facilisis lorem nec aliquet scelerisque. In nunc nibh, commodo ut pellentesque
-                in, venenatis vel turpis. Maecenas consequat pulvinar auctor. Integer et dapibus
-                est, non mollis leo.
->>>>>>> 218593ecf6c1a8e88671ad5bd89207dda01fa923
               </p>
             </Left>
             <Right>
