@@ -2,7 +2,8 @@ tablet: '(min-width: 600px)'
 desktop: '(min-width: 1024px)'
 font:
   heading: Osvald
-  body: Lato Light
+  body: Lato
+  bodyWeight: 300
 colors:
   primary: '#2A2B7A'
 space:

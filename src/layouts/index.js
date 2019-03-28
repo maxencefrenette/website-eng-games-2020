@@ -98,6 +98,7 @@ class Layout extends React.Component {
                         }
                         body {
                           font-family: ${theme.font.body};
+                          font-size: ${theme.font.bodyWeight};
                         }
 
                         h1, h2, h3, h4, h5, h6 {
