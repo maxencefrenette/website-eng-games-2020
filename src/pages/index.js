@@ -103,7 +103,7 @@ class IndexPage extends React.Component {
         <PhantomHr ref={this.separator} />
 
         <Article noPadding={true}>
-          <h2>Nos 3 pilliers</h2>
+          <h2>Nos 3 piliers</h2>
           <PillarContainer>
             <Pillar>
               <FaChild />
