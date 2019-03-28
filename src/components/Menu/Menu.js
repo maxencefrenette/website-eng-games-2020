@@ -37,7 +37,6 @@ class Menu extends React.Component {
     path: PropTypes.string.isRequired,
     fixed: PropTypes.bool.isRequired,
     screenWidth: PropTypes.number.isRequired,
-    fontLoaded: PropTypes.bool.isRequired,
     theme: PropTypes.object.isRequired
   };
 
