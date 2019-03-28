@@ -23,7 +23,9 @@ const MembreCO = styled.div`
 `;
 
 const Description = styled.div`
-  text-align: center;
+  & > p {
+    text-align: center;
+  }
 
   & .name {
     margin-top: 4px;
@@ -63,37 +65,35 @@ const ComiteOrganisateurPage = props => {
   ];
 
   return (
-    (
-      <>
-        <ThemeContext.Consumer>
-          {theme => (
-            <>
-              <MiniHero backgrounds={backgrounds} theme={theme} />
-              <Article theme={theme}>
-                <header>
-                  <h1>Comité Organisateur</h1>
-                </header>
+    <>
+      <ThemeContext.Consumer>
+        {theme => (
+          <>
+            <MiniHero backgrounds={backgrounds} theme={theme} />
+            <Article theme={theme}>
+              <header>
+                <h1>Comité Organisateur</h1>
+              </header>
 
-                <Container>
-                  {CO.map(membreCO => (
-                    <MembreCO key={membreCO[0]}>
-                      <Img fixed={data[membreCO[0]].fixed} />
-                      <Description>
-                        <p className="name">{membreCO[1]}</p>
-                        <hr />
-                        <p className="role">{membreCO[2]}</p>
-                      </Description>
-                    </MembreCO>
-                  ))}
-                </Container>
-              </Article>
-            </>
-          )}
-        </ThemeContext.Consumer>
+              <Container>
+                {CO.map(membreCO => (
+                  <MembreCO key={membreCO[0]}>
+                    <Img fixed={data[membreCO[0]].fixed} />
+                    <Description>
+                      <p className="name">{membreCO[1]}</p>
+                      <hr />
+                      <p className="role">{membreCO[2]}</p>
+                    </Description>
+                  </MembreCO>
+                ))}
+              </Container>
+            </Article>
+          </>
+        )}
+      </ThemeContext.Consumer>
 
-        <Seo facebook={facebook} />
-      </>
-    )
+      <Seo facebook={facebook} />
+    </>
   );
 };
 
