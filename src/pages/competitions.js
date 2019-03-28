@@ -5,16 +5,29 @@ import Article from "../components/Article";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
 import MiniHero from "../components/MiniHero";
+import Carousel from "../components/Carousel";
+import styled from "styled-components";
+
+const FloatRight = styled.div`
+  float: right;
+  margin-top: 5px;
+  margin-left: 25px;
+`;
+
+const FloatLeft = styled.div`
+  float: left;
+  margin-top: 5px;
+  margin-right: 25px;
+`;
 
 const CompetitionsPage = props => {
+  const { data } = props;
   const {
-    data: {
-      site: {
-        siteMetadata: { facebook }
-      },
-      backgrounds
-    }
-  } = props;
+    site: {
+      siteMetadata: { facebook }
+    },
+    backgrounds
+  } = data;
 
   return (
     <React.Fragment>
@@ -38,6 +51,9 @@ const CompetitionsPage = props => {
 
               <h2>La Machine</h2>
               <p>
+                <FloatRight>
+                  <Carousel>{[data.machine1, data.machine2]}</Carousel>
+                </FloatRight>
                 La compétition de la machine robotique est l’épreuve maîtresse et le défi le plus
                 difficile à relever des Jeux de Génie. Il s’agit de la seule compétition où les
                 délégations travaillent à sa réalisation tout l’automne précédant les Jeux. Le défi
@@ -58,6 +74,9 @@ const CompetitionsPage = props => {
 
               <h2>La compétition entrepreunariale</h2>
               <p>
+                <FloatLeft>
+                  <Carousel>{[data.entr1]}</Carousel>
+                </FloatLeft>
                 La compétition d’entrepreneuriat est une nouvelle épreuve qui va mener ses
                 participants à mettre en pratique des compétences connexes et importantes dans un
                 milieu innovant. Il s’agit de l’une des deux compétitions qui requiert une forte
@@ -77,6 +96,9 @@ const CompetitionsPage = props => {
 
               <h2>Les compétitions académiques</h2>
               <p>
+                <FloatRight>
+                  <Carousel>{[data.acad1, data.acad2]}</Carousel>
+                </FloatRight>
                 Les épreuves académiques regroupent les six disciplines de génie les plus enseignés
                 au Québec en plus de la catégorie génie-conseil. Les compétitions se déroulent lors
                 d’un avant-midi durant lequel les équipes doivent répondre à un questionnaire
@@ -91,6 +113,9 @@ const CompetitionsPage = props => {
 
               <h2>Les compétitions sportives</h2>
               <p>
+                <FloatLeft>
+                  <Carousel>{[data.acad1, data.acad2]}</Carousel>
+                </FloatLeft>
                 C’est en s’inspirant de l’adage « un esprit sain dans un corps sain » que les
                 compétitions sportives se sont frayées une place au sein du programme de la
                 compétition. La journée dédiée à ces épreuves est une occasion pour les délégations
@@ -102,6 +127,9 @@ const CompetitionsPage = props => {
 
               <h2>Les compétitions culturelles</h2>
               <p>
+                <FloatRight>
+                  <Carousel>{[data.culturelle1]}</Carousel>
+                </FloatRight>
                 Pour ajouter un peu de divertissement à toutes ces épreuves, des compétitions
                 culturelles sont au rendez-vous, soit l’improvisation, les débats oratoires et le
                 génie en herbe. Elles permettent aux délégations de faire valoir leurs talents
@@ -137,6 +165,12 @@ export default CompetitionsPage;
 
 //eslint-disable-next-line no-undef
 export const query = graphql`
+  fragment CarouselImage on ImageSharp {
+    fixed(width: 500, quality: 90) {
+      ...GatsbyImageSharpFixed
+    }
+  }
+
   query CompetitionsQuery {
     site {
       siteMetadata {
@@ -148,6 +182,47 @@ export const query = graphql`
 
     backgrounds: imageSharp(fluid: { originalName: { regex: "/volley/" } }) {
       ...MiniHero
+    }
+
+    machine1: imageSharp(fluid: { originalName: { regex: "/machine1/" } }) {
+      ...CarouselImage
+    }
+    machine2: imageSharp(fluid: { originalName: { regex: "/machine2/" } }) {
+      ...CarouselImage
+    }
+    machine3: imageSharp(fluid: { originalName: { regex: "/machine3/" } }) {
+      ...CarouselImage
+    }
+    machine4: imageSharp(fluid: { originalName: { regex: "/machine4/" } }) {
+      ...CarouselImage
+    }
+    machine5: imageSharp(fluid: { originalName: { regex: "/machine5/" } }) {
+      ...CarouselImage
+    }
+
+    entr1: imageSharp(fluid: { originalName: { regex: "/machine1/" } }) {
+      ...CarouselImage
+    }
+
+    acad1: imageSharp(fluid: { originalName: { regex: "/acad1/" } }) {
+      ...CarouselImage
+    }
+    acad2: imageSharp(fluid: { originalName: { regex: "/acad2/" } }) {
+      ...CarouselImage
+    }
+
+    sports1: imageSharp(fluid: { originalName: { regex: "/sports1/" } }) {
+      ...CarouselImage
+    }
+    sports2: imageSharp(fluid: { originalName: { regex: "/sports2/" } }) {
+      ...CarouselImage
+    }
+    sports3: imageSharp(fluid: { originalName: { regex: "/sports3/" } }) {
+      ...CarouselImage
+    }
+
+    culturelle1: imageSharp(fluid: { originalName: { regex: "/machine1/" } }) {
+      ...CarouselImage
     }
   }
 `;

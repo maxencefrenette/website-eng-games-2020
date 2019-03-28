@@ -15,7 +15,12 @@ const Article = styled.article`
     max-width: ${theme.maxWidth.desktop};
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     text-transform: uppercase;
   }
 
@@ -92,6 +97,12 @@ const Article = styled.article`
     line-height: 1.6;
     margin: 0 0 1.5em;
     text-align: justify;
+
+    &::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
   }
   ul {
     list-style: circle;
