@@ -2,10 +2,44 @@ import PropTypes from "prop-types";
 import React from "react";
 import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
-import Headline from "../components/Article/Headline";
 import { graphql } from "gatsby";
 import Seo from "../components/Seo";
 import Img from "gatsby-image";
+import MiniHero from "../components/MiniHero";
+import styled from "styled-components";
+
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const MembreCO = styled.div`
+  margin-left: 75px;
+  margin-bottom: 50px;
+
+  &:nth-child(3n-2) {
+    margin-left: 0;
+  }
+`;
+
+const Description = styled.div`
+  & > p {
+    text-align: center;
+  }
+
+  & .name {
+    margin-top: 4px;
+    font-size: 18px;
+  }
+
+  & hr {
+    width: 60px;
+    height: 3px;
+    border: 0;
+    background-color: #333;
+    margin: 12px auto;
+  }
+`;
 
 const ComiteOrganisateurPage = props => {
   const { data } = props;
@@ -13,82 +47,53 @@ const ComiteOrganisateurPage = props => {
     data: {
       site: {
         siteMetadata: { facebook }
-      }
+      },
+      backgrounds
     }
   } = props;
 
   const CO = [
     ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"]
+    ["alyssa", "Alyssa Bouchenak", "VP Communications"],
+    ["celia", "Célia-Nour Mahrour-Venturelli", "VP Finances"],
+    ["iman", "Iman Hassanein", "VP Affaires Sociales"],
+    ["jeremie", "Jérémie Lesuise", "VP Partenariats"],
+    ["gabriel", "Gabriel Lévesque", "VP Machine"],
+    ["francois", "François Pelletier", "VP Compétitions"],
+    ["sacha", "Sacha Terral", "VP Logistique"],
+    ["marieAude", "Marie-Aude Ardizzon", "Conseillère à la production"]
   ];
 
   return (
-    <React.Fragment>
+    <>
       <ThemeContext.Consumer>
         {theme => (
-          <Article theme={theme}>
-            <header>
-              <Headline title="Comité Organisateur" theme={theme} />
-            </header>
+          <>
+            <MiniHero backgrounds={backgrounds} theme={theme} />
+            <Article theme={theme}>
+              <header>
+                <h1>Comité Organisateur</h1>
+              </header>
 
-            <div className="container">
-              {CO.map(membreCO => (
-                <div className="membre-co" key={membreCO[0]}>
-                  <Img fixed={data[membreCO[0]].fixed} />
-                  <div className="description">
-                    <p className="name">{membreCO[1]}</p>
-                    <hr />
-                    <p className="role">{membreCO[2]}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Article>
+              <Container>
+                {CO.map(membreCO => (
+                  <MembreCO key={membreCO[0]}>
+                    <Img fixed={data[membreCO[0]].fixed} />
+                    <Description>
+                      <p className="name">{membreCO[1]}</p>
+                      <hr />
+                      <p className="role">{membreCO[2]}</p>
+                    </Description>
+                  </MembreCO>
+                ))}
+              </Container>
+            </Article>
+          </>
         )}
       </ThemeContext.Consumer>
 
       <Seo facebook={facebook} />
-
-      <style jsx>{`
-        .container {
-          display: flex;
-          flex-wrap: wrap;
-        }
-
-        .membre-co {
-          margin-left: 30px;
-          margin-bottom: 40px;
-
-          &:nth-child(3n-2) {
-            margin-left: 0;
-          }
-        }
-
-        .description {
-          text-align: center;
-
-          .name {
-            margin-top: 4px;
-          }
-
-          hr {
-            width: 60px;
-            height: 3px;
-            border: 0;
-            background-color: #333;
-            margin: 12px auto;
-          }
-        }
-      `}</style>
-    </React.Fragment>
+    </>
   );
 };
 
@@ -101,7 +106,7 @@ export default ComiteOrganisateurPage;
 //eslint-disable-next-line no-undef
 export const query = graphql`
   fragment squareImage on ImageSharp {
-    fixed(width: 370, height: 370, quality: 90, cropFocus: CENTER) {
+    fixed(width: 350, height: 350, quality: 90, cropFocus: NORTH) {
       ...GatsbyImageSharpFixed
     }
   }
@@ -115,7 +120,43 @@ export const query = graphql`
       }
     }
 
-    anneSo: imageSharp(fluid: { originalName: { regex: "/cat/" } }) {
+    backgrounds: imageSharp(fluid: { originalName: { regex: "/group-smile-cropped/" } }) {
+      ...MiniHero
+    }
+
+    anneSo: imageSharp(fluid: { originalName: { regex: "/anne-sophie/" } }) {
+      ...squareImage
+    }
+
+    alyssa: imageSharp(fluid: { originalName: { regex: "/alyssa/" } }) {
+      ...squareImage
+    }
+
+    celia: imageSharp(fluid: { originalName: { regex: "/celia/" } }) {
+      ...squareImage
+    }
+
+    iman: imageSharp(fluid: { originalName: { regex: "/iman/" } }) {
+      ...squareImage
+    }
+
+    jeremie: imageSharp(fluid: { originalName: { regex: "/jeremie/" } }) {
+      ...squareImage
+    }
+
+    gabriel: imageSharp(fluid: { originalName: { regex: "/gabriel/" } }) {
+      ...squareImage
+    }
+
+    francois: imageSharp(fluid: { originalName: { regex: "/francois/" } }) {
+      ...squareImage
+    }
+
+    sacha: imageSharp(fluid: { originalName: { regex: "/sacha/" } }) {
+      ...squareImage
+    }
+
+    marieAude: imageSharp(fluid: { originalName: { regex: "/marie-aude/" } }) {
       ...squareImage
     }
   }

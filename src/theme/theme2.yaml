@@ -1,0 +1,13 @@
+tablet: '(min-width: 600px)'
+desktop: '(min-width: 1024px)'
+font:
+  heading: Osvald
+  body: Lato
+  bodyWeight: 300
+colors:
+  primary: '#2A2B7A'
+space:
+  default: 20px
+maxWidth:
+  tablet: 650px
+  desktop: 1200px

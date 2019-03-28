@@ -1,21 +1,44 @@
 import React from "react";
 import PropTypes from "prop-types";
+import LLink from "../LLink";
+import { FormattedMessage } from "react-intl";
 import { Link } from "gatsby";
 
 const Item = props => {
-  const { theme, item: { label, to, icon: Icon } = {}, onClick } = props;
+  const { theme, item: { label, to, icon: Icon }, noLocalize, onClick } = props;
+
+  const inner = (
+    <>
+      {Icon && <Icon />} {label && <FormattedMessage id={label} />}
+    </>
+  );
 
   return (
     <React.Fragment>
       <li className={"hiddenItem" in props ? "hiddenItem" : "item"} key={label}>
-        <Link
-          to={to}
-          className={"hiddenItem" in props ? "inHiddenItem" : ""}
-          onClick={onClick}
-          data-slug={to}
-        >
-          {Icon && <Icon />} {label}
-        </Link>
+        {to.match(/^http/) ? (
+          <a href={to} className={"hiddenItem" in props ? "inHiddenItem" : ""} onClick={onClick}>
+            {inner}
+          </a>
+        ) : noLocalize ? (
+          <Link
+            to={to}
+            className={"hiddenItem" in props ? "inHiddenItem" : ""}
+            onClick={onClick}
+            data-slug={to}
+          >
+            {inner}
+          </Link>
+        ) : (
+          <LLink
+            to={to}
+            className={"hiddenItem" in props ? "inHiddenItem" : ""}
+            onClick={onClick}
+            data-slug={to}
+          >
+            {inner}
+          </LLink>
+        )}
       </li>
 
       {/* --- STYLES --- */}
@@ -26,6 +49,7 @@ const Item = props => {
           transition: all ${theme.time.duration.default};
           display: flex;
           align-items: center;
+          text-transform: uppercase;
 
           :global(a) {
             padding: ${theme.space.inset.s};
@@ -34,8 +58,7 @@ const Item = props => {
           }
 
           :global(svg) {
-            margin: 0 ${theme.space.inset.xs} 0 0;
-            opacity: 0.3;
+            opacity: 1;
           }
         }
 
@@ -52,7 +75,7 @@ const Item = props => {
               border-radius: ${theme.size.radius.small};
             }
 
-            :global(.homepage):not(.fixed) & :global(a) {
+            :global(.hero-menu):not(.fixed) & :global(a) {
               color: ${theme.color.neutral.white};
             }
 
@@ -66,7 +89,7 @@ const Item = props => {
             }
 
             &:hover :global(svg) {
-              fill: ${theme.color.brand.primary};
+              /* fill: ${theme.color.brand.primary}; */
               opacity: 1;
 
               :global(.hero) & :global(svg) {

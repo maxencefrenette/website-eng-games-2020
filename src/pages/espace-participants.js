@@ -2,39 +2,72 @@ import PropTypes from "prop-types";
 import React from "react";
 import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
-import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
+import Download from "../components/Download";
+import MiniHero from "../components/MiniHero";
+import styled from "styled-components";
+import { graphql } from "gatsby";
+
+const Section = styled.div`
+  margin-bottom: 10px;
+`;
+
+const HContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const EspaceParticipantsPage = props => {
   const {
     data: {
       site: {
         siteMetadata: { facebook }
-      }
+      },
+      backgrounds
     }
   } = props;
 
-  return <React.Fragment>
+  return (
+    <>
       <ThemeContext.Consumer>
-        {theme => <Article theme={theme}>
-            <header>
-              <Headline title="Espace Participants" theme={theme} />
-            </header>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet velit nec
-              mi tincidunt aliquet. Fusce id neque congue, pellentesque nulla vel, sagittis eros.
-              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-              Curae; Mauris quis faucibus enim. Donec tempus sem eu lectus condimentum, non
-              maximus felis posuere. Praesent non arcu ac dolor mattis accumsan. Nunc accumsan ut
-              eros non volutpat. Suspendisse potenti. In ultricies libero eget magna facilisis, in
-              gravida nisl lobortis. Aliquam felis mauris, molestie eget pharetra in, dignissim
-              sit amet eros. Phasellus sed justo ut urna molestie tempor at vitae enim.
-            </p>
-          </Article>}
+        {theme => (
+          <>
+            <MiniHero backgrounds={backgrounds} theme={theme} />
+            <Article>
+              <header>
+                <h1>Espace Participants</h1>
+              </header>
+              <Section>
+                Vous trouverez ici toutes les informations dont vous aurez besoin pour participer
+                aux Jeux de génie 2020.
+              </Section>
+              <Section>
+                <HContainer>
+                  <Download url="/downloads/placeholder.txt">Cahier du participant (fr)</Download>
+                  <Download url="/downloads/placeholder.txt">
+                    Participant&#39;s handbook (en)
+                  </Download>
+                </HContainer>
+                <HContainer>
+                  <Download>Cahier de délégation (fr)</Download>
+                  <Download>{"Delegation's package (en)"}</Download>
+                </HContainer>
+                <HContainer>
+                  <Download>Cahier de compétitions (fr)</Download>
+                  <Download>Competition handbook (en)</Download>
+                </HContainer>
+                <HContainer>
+                  <Download>Cahier de la machine robotique (fr)</Download>
+                  <Download>{"Machine package (en)"}</Download>
+                </HContainer>
+              </Section>
+            </Article>
+          </>
+        )}
       </ThemeContext.Consumer>
-
       <Seo facebook={facebook} />
-    </React.Fragment>;
+    </>
+  );
 };
 
 EspaceParticipantsPage.propTypes = {
@@ -52,6 +85,9 @@ export const query = graphql`
           appId
         }
       }
+    }
+    backgrounds: imageSharp(fluid: { originalName: { regex: "/participants-edited/" } }) {
+      ...MiniHero
     }
   }
 `;

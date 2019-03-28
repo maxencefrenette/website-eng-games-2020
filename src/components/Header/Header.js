@@ -1,13 +1,10 @@
-import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
-
 import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
-import config from "../../../content/meta/config";
 import Menu from "../Menu";
-
-import avatar from "../../images/jpg/avatar.jpg";
+import { graphql } from "gatsby";
+import LLink from "../LLink";
 
 class Header extends React.Component {
   state = {
@@ -26,25 +23,27 @@ class Header extends React.Component {
     const fixed = this.state.fixed ? "fixed" : "";
     const homepage = this.props.path === "/" ? "homepage" : "";
 
-    return `${fixed} ${homepage}`;
+    return `${fixed} ${homepage} hero-menu`;
   };
 
   render() {
-    const { pages, path, theme } = this.props;
+    const { data, pages, path, theme } = this.props;
     const { fixed } = this.state;
 
     return (
       <React.Fragment>
         <header className={`header ${this.getHeaderSize()}`}>
-          {/* <Link to="/" className="logoType">
+          <div className="logoType">
             <div className="logo">
-              <img src={config.gravatarImgMd5=="" ? avatar : config.gravatarImgMd5 } alt={config.siteTitle} />
+              <LLink to="/">
+                <img src={data.logo.fixed.src} />
+              </LLink>
             </div>
             <div className="type">
-              <h1>{config.headerTitle}</h1>
-              <h2>{config.headerSubTitle}</h2>
+              <h1>Mission: Jeux de Génie 2020</h1>
+              <h2>Changer le Monde</h2>
             </div>
-          </Link> */}
+          </div>
           <FontLoadedContext.Consumer>
             {loaded => (
               <ScreenWidthContext.Consumer>
@@ -79,18 +78,18 @@ class Header extends React.Component {
             width: 100%;
             align-items: center;
 
-            :global(a.logoType) {
+            :global(.logoType) {
               align-items: center;
               display: flex;
               flex-direction: "column";
-              color: ${theme.text.color.primary};
+              color: white;
 
               .logo {
                 flex-shrink: 0;
               }
             }
 
-            &.homepage {
+            &.hero-menu {
               position: absolute;
               background-color: transparent;
               height: ${theme.header.height.homepage};
@@ -112,7 +111,7 @@ class Header extends React.Component {
 
           .logo {
             border-radius: 65% 75%;
-            border: 1px solid #eee;
+            // border: 1px solid #eee;
             display: inline-block;
             height: 44px;
             margin: ${theme.space.inline.default};
@@ -157,7 +156,7 @@ class Header extends React.Component {
                 border: none;
               }
 
-              :global(a.logoType),
+              :global(.logoType),
               h1 {
                 color: ${theme.color.neutral.white};
               }
@@ -198,7 +197,7 @@ class Header extends React.Component {
               }
 
               &.homepage:not(.fixed) {
-                :global(a.logoType),
+                :global(.logoType),
                 h1 {
                   color: ${theme.color.neutral.white};
                 }
@@ -208,7 +207,7 @@ class Header extends React.Component {
               }
             }
 
-            .header :global(a.logoType) {
+            .header :global(.logoType) {
               text-align: left;
               flex-direction: row;
               flex-shrink: 0;
@@ -249,9 +248,18 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  pages: PropTypes.array.isRequired,
   path: PropTypes.string.isRequired,
   theme: PropTypes.object.isRequired
 };
 
 export default Header;
+
+export const query = graphql`
+  fragment Header on Query {
+    logo: imageSharp(fluid: { originalName: { regex: "/logo-2020/" } }) {
+      fixed(width: 60, height: 60, quality: 90, cropFocus: CENTER) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+`;

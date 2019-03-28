@@ -1,9 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Headline from "../Article/Headline";
-import Bodytext from "../Article/Bodytext";
-
 const Page = props => {
   const {
     page: {
@@ -16,9 +13,9 @@ const Page = props => {
   return (
     <React.Fragment>
       <header>
-        <Headline title={title} theme={theme} />
+        <h1>{title}</h1>
       </header>
-      <Bodytext html={html} theme={theme} />
+      {html}
     </React.Fragment>
   );
 };

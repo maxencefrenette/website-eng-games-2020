@@ -2,32 +2,81 @@ import PropTypes from "prop-types";
 import React from "react";
 import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
-import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
+import { graphql } from "gatsby";
+import MiniHero from "../components/MiniHero";
+import styled from "styled-components";
+import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import theme from "../theme/theme2.yaml";
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const ContactInfo = styled.div`
+  flex: 0 0 250px;
+  margin: 0 25px;
+  text-align: center;
+
+  & > svg {
+    font-size: 100px;
+    fill: ${theme.colors.primary};
+    margin-bottom: 20px;
+  }
+`;
 
 const ContactPage = props => {
   const {
     data: {
       site: {
         siteMetadata: { facebook }
-      }
+      },
+      backgrounds
     }
   } = props;
 
-  return <React.Fragment>
+  return (
+    <React.Fragment>
       <ThemeContext.Consumer>
-        {theme => <Article theme={theme}>
-            <header>
-              <Headline title="Contact" theme={theme} />
-            </header>
-            <p>
-              Informations de contact. info@jeuxdegenie.qc.ca
-            </p>
-          </Article>}
+        {theme => (
+          <>
+            <MiniHero backgrounds={backgrounds} theme={theme} />
+            <Article>
+              <header>
+                <h1>Contact</h1>
+              </header>
+
+              <Container>
+                <ContactInfo>
+                  <FaEnvelope />
+                  <div>
+                    <a href="mailto:info@jeuxdegenie.qc.ca">info@jeuxdegenie.qc.ca</a>
+                  </div>
+                </ContactInfo>
+                <ContactInfo>
+                  <FaMapMarkerAlt />
+                  <div>
+                    <b>Association étudiante de l’ÉTS</b>
+                    <br />
+                    École de technologie supérieure<br />
+                    1100, rue Notre-Dame Ouest<br />
+                    Local A-1840<br />
+                    Montréal (Québec) H3C 1K3<br />
+                  </div>
+                </ContactInfo>
+              </Container>
+
+              <br />
+              <br />
+            </Article>
+          </>
+        )}
       </ThemeContext.Consumer>
 
       <Seo facebook={facebook} />
-    </React.Fragment>;
+    </React.Fragment>
+  );
 };
 
 ContactPage.propTypes = {
@@ -45,6 +94,10 @@ export const query = graphql`
           appId
         }
       }
+    }
+
+    backgrounds: imageSharp(fluid: { originalName: { regex: "/contact/" } }) {
+      ...MiniHero
     }
   }
 `;

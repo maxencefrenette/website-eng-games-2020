@@ -1,35 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
-require("core-js/fn/array/from");
-
-import { FaHome } from "react-icons/fa/";
-import { FaSearch } from "react-icons/fa/";
-import { FaEnvelope } from "react-icons/fa/";
-import { FaTag } from "react-icons/fa/";
-
+import "core-js/fn/array/from";
+import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa/";
 import Item from "./Item";
 import Expand from "./Expand";
+import LangSwitcher from "./LangSwitcher";
 
 class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.itemList = React.createRef();
 
-    const pages = props.pages.map(page => ({
-      to: page.node.fields.slug,
-      label: page.node.frontmatter.menuTitle
-        ? page.node.frontmatter.menuTitle
-        : page.node.frontmatter.title
-    }));
-
     this.items = [
-      { to: "/", label: "Home", icon: FaHome },
-      { to: "/espace-participants/", label: "Espace Participants" },
-      { to: "/partenaires/", label: "Partenaires" },
-      { to: "/comite-organisateur/", label: "Comité Organisateur" },
-      { to: "/universites/", label: "Universités" },
-      { to: "/contact/", label: "Contact" },
-      // ...pages,
+      { to: "/", label: "home" },
+      { to: "/competitions/", label: "competitions" },
+      { to: "/espace-participants/", label: "participants" },
+      { to: "/partenaires/", label: "sponsors" },
+      { to: "/comite-organisateur/", label: "oc" },
+      { to: "/universites/", label: "universities" },
+      { to: "/contact/", label: "contact" },
+      { to: "https://www.facebook.com/jeuxdegenie/", icon: FaFacebook, label: "" },
+      { to: "https://www.instagram.com/jeuxdegenieduquebec/", icon: FaInstagram, label: "" },
+      { to: "https://www.linkedin.com/company/jdg-qc/", icon: FaLinkedin, label: "" },
+      { to: "https://twitter.com/jdgqc", icon: FaTwitter, label: "" },
     ];
 
     this.renderedItems = []; // will contain references to rendered DOM elements of menu
@@ -44,8 +37,6 @@ class Menu extends React.Component {
     path: PropTypes.string.isRequired,
     fixed: PropTypes.bool.isRequired,
     screenWidth: PropTypes.number.isRequired,
-    fontLoaded: PropTypes.bool.isRequired,
-    pages: PropTypes.array.isRequired,
     theme: PropTypes.object.isRequired
   };
 
@@ -149,15 +140,16 @@ class Menu extends React.Component {
         <nav className={`menu ${open ? "open" : ""}`} rel="js-menu">
           <ul className="itemList" ref={this.itemList}>
             {this.items.map(item => (
-              <Item item={item} key={item.label} icon={item.icon} theme={theme} />
+              <Item item={item} key={item.to} icon={item.icon} theme={theme} />
             ))}
+            <LangSwitcher theme={theme}></LangSwitcher>
           </ul>
           {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
           {open &&
             screenWidth >= 1024 && (
               <ul className="hiddenItemList">
                 {this.state.hiddenItems.map(item => (
-                  <Item item={item} key={item.label} hiddenItem theme={theme} />
+                  <Item item={item} key={item.to} hiddenItem theme={theme} />
                 ))}
               </ul>
             )}
@@ -207,7 +199,7 @@ class Menu extends React.Component {
                 padding: ${theme.space.inset.m};
               }
 
-              :global(.homepage):not(.fixed) & {
+              :global(.hero-menu):not(.fixed) & {
                 bottom: -100px;
               }
             }
@@ -258,7 +250,7 @@ class Menu extends React.Component {
                 border-right: 1px solid ${theme.line.color};
               }
 
-              :global(.homepage):not(.fixed) & {
+              :global(.hero-menu):not(.fixed) & {
                 border: 1px solid transparent;
                 background: color(white alpha(-10%));
                 top: 50px;

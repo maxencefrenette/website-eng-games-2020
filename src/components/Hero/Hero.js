@@ -1,16 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import { FaArrowDown } from "react-icons/fa/";
+import { FormattedMessage } from "react-intl";
 
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
 
-  return (
-    <React.Fragment>
+  return <React.Fragment>
       <section className="hero">
         <h1>
-          Jeux de Génie 2020
+          <FormattedMessage id="jdg" />
+          <br />
+          <small>
+            <FormattedMessage id="tagline" />
+          </small>
         </h1>
         <button onClick={scrollToContent} aria-label="scroll">
           <FaArrowDown />
@@ -32,6 +35,7 @@ const Hero = props => {
           height: 100px;
           padding: ${theme.space.inset.l};
           padding-top: ${theme.header.height.homepage};
+          padding-bottom: 200px;
         }
 
         h1 {
@@ -41,6 +45,7 @@ const Hero = props => {
           color: ${theme.hero.h1.color};
           line-height: ${theme.hero.h1.lineHeight};
           text-remove-gap: both 0 "Open Sans";
+          text-transform: uppercase;
 
           :global(strong) {
             position: relative;
@@ -57,10 +62,14 @@ const Hero = props => {
               margin: 0 0 0 ${theme.space.xs};
             }
           }
+
+          & > small {
+            font-size: 0.7em;
+          }
         }
 
         button {
-          background: ${theme.background.color.brand};
+          background: ${theme.color.brand.light};
           border: 0;
           border-radius: 50%;
           font-size: ${theme.font.size.m};
@@ -71,7 +80,7 @@ const Hero = props => {
 
           &:focus {
             outline-style: none;
-            background: ${theme.color.brand.primary.active};
+            background: ${theme.color.brand.lightActive};
           }
 
           :global(svg) {
@@ -86,8 +95,7 @@ const Hero = props => {
           }
         }
 
-        @keyframes buttonIconMove {
-          0% {
+        @keyframes buttonIconMove {0% {
             transform: translateY(0);
           }
           50% {
@@ -95,11 +103,9 @@ const Hero = props => {
           }
           100% {
             transform: translateY(0);
-          }
-        }
+          }}
 
-        @from-width tablet {
-          .hero {
+        @from-width tablet {.hero {
             background-image: url(${backgrounds.tablet});
           }
 
@@ -110,11 +116,9 @@ const Hero = props => {
 
           button {
             font-size: ${theme.font.size.l};
-          }
-        }
+          }}
 
-        @from-width desktop {
-          .hero {
+        @from-width desktop {.hero {
             background-image: url(${backgrounds.desktop});
           }
 
@@ -125,11 +129,8 @@ const Hero = props => {
 
           button {
             font-size: ${theme.font.size.xl};
-          }
-        }
-      `}</style>
-    </React.Fragment>
-  );
+          }}`}</style>
+    </React.Fragment>;
 };
 
 Hero.propTypes = {

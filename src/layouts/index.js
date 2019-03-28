@@ -1,12 +1,11 @@
-import "typeface-open-sans";
-import FontFaceObserver from "fontfaceobserver";
 import PropTypes from "prop-types";
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
-
 import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
-import Footer from "../components/Footer/";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
+import I18n from "../components/I18n";
+import theme from "../theme/theme2.yaml";
 
 export const ThemeContext = React.createContext(null);
 export const ScreenWidthContext = React.createContext(0);
@@ -19,17 +18,10 @@ class Layout extends React.Component {
     super();
 
     this.state = {
-      font400loaded: false,
-      font600loaded: false,
       screenWidth: 0,
       headerMinimized: false,
       theme: themeObjectFromYaml
     };
-
-    if (typeof window !== `undefined`) {
-      this.loadFont("font400", "Open Sans", 400);
-      this.loadFont("font600", "Open Sans", 600);
-    }
   }
 
   timeouts = {};
@@ -59,119 +51,88 @@ class Layout extends React.Component {
     return false;
   };
 
-  loadFont = (name, family, weight) => {
-    const font = new FontFaceObserver(family, {
-      weight: weight
-    });
-
-    font.load(null, 10000).then(
-      () => {
-        console.log(`${name} is available`);
-        this.setState({ [`${name}loaded`]: true });
-      },
-      () => {
-        console.log(`${name} is not available`);
-      }
-    );
-  };
-
   render() {
     return (
       <StaticQuery
         query={graphql`
           query LayoutgQuery {
-            pages: allMarkdownRemark(
-              filter: { fileAbsolutePath: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
-              sort: { fields: [fields___prefix], order: ASC }
-            ) {
-              edges {
-                node {
-                  fields {
-                    slug
-                    prefix
-                  }
-                  frontmatter {
-                    title
-                    menuTitle
-                  }
-                }
-              }
-            }
-            footnote: markdownRemark(fileAbsolutePath: { regex: "/footnote/" }) {
-              id
-              html
-            }
+            ...Header
           }
         `}
         render={data => {
-          const { children } = this.props;
           const {
-            footnote: { html: footnoteHTML },
-            pages: { edges: pages }
-          } = data;
+            children,
+            pageContext: { locale }
+          } = this.props;
 
           return (
             <ThemeContext.Provider value={this.state.theme}>
               <FontLoadedContext.Provider value={this.state.font400loaded}>
                 <ScreenWidthContext.Provider value={this.state.screenWidth}>
-                  <React.Fragment>
-                    <Header
-                      path={this.props.location.pathname}
-                      pages={pages}
-                      theme={this.state.theme}
-                    />
-                    <main>{children}</main>
-                    <Footer html={footnoteHTML} theme={this.state.theme} />
+                  <I18n locale={locale}>
+                    <React.Fragment>
+                      <Header
+                        path={this.props.location.pathname}
+                        theme={this.state.theme}
+                        data={data}
+                      />
+                      <main>{children}</main>
+                      <Footer theme={this.state.theme} />
 
-                    {/* --- STYLES --- */}
-                    <style jsx>{`
-                      main {
-                        min-height: 80vh;
-                      }
-                    `}</style>
-                    <style jsx global>{`
-                      html {
-                        box-sizing: border-box;
-                      }
-                      *,
-                      *:after,
-                      *:before {
-                        box-sizing: inherit;
-                        margin: 0;
-                        padding: 0;
-                      }
-                      body {
-                        font-family: ${this.state.font400loaded
-                          ? "'Open Sans', sans-serif;"
-                          : "Arial, sans-serif;"};
-                      }
-                      h1,
-                      h2,
-                      h3 {
-                        font-weight: ${this.state.font600loaded ? 600 : 400};
-                        line-height: 1.1;
-                        letter-spacing: -0.03em;
-                        margin: 0;
-                      }
-                      h1 {
-                        letter-spacing: -0.04em;
-                      }
-                      p {
-                        margin: 0;
-                      }
-                      strong {
-                        font-weight: ${this.state.font600loaded ? 600 : 400};
-                      }
-                      a {
-                        text-decoration: none;
-                        color: #666;
-                      }
-                      main {
-                        width: auto;
-                        display: block;
-                      }
-                    `}</style>
-                  </React.Fragment>
+                      {/* --- STYLES --- */}
+                      <style jsx>{`
+                        main {
+                          min-height: 80vh;
+                        }
+                      `}</style>
+                      <style jsx global>{`
+                        html {
+                          box-sizing: border-box;
+                        }
+                        *,
+                        *:after,
+                        *:before {
+                          box-sizing: inherit;
+                          margin: 0;
+                          padding: 0;
+                        }
+                        body {
+                          font-family: ${theme.font.body};
+                          font-size: ${theme.font.bodyWeight};
+                        }
+
+                        h1, h2, h3, h4, h5, h6 {
+                          font-family: ${theme.font.heading}
+                        }
+
+                        h1,
+                        h2,
+                        h3 {
+                          font-weight: ${this.state.font600loaded ? 600 : 400};
+                          line-height: 1.1;
+                          letter-spacing: -0.03em;
+                          margin: 0;
+                        }
+                        h1 {
+                          letter-spacing: -0.04em;
+                        }
+                        p {
+                          margin: 0;
+                        }
+                        strong {
+                          font-weight: ${this.state.font600loaded ? 600 : 400};
+                        }
+                        a {
+                          text-decoration: none;
+                          color: #666;
+                        }
+                        main {
+                          width: auto;
+                          display: block;
+                        }
+                      `}</style>
+                    </React.Fragment>
+                  </I18n>
                 </ScreenWidthContext.Provider>
               </FontLoadedContext.Provider>
             </ThemeContext.Provider>
@@ -189,33 +150,3 @@ Layout.propTypes = {
 };
 
 export default Layout;
-
-//eslint-disable-next-line no-undef
-/*
-export const postQuery = graphql`
-  query LayoutQuery {
-    pages: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
-      sort: { fields: [fields___prefix], order: ASC }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-            prefix
-          }
-          frontmatter {
-            title
-            menuTitle
-          }
-        }
-      }
-    }
-    footnote: markdownRemark(fileAbsolutePath: { regex: "/footnote/" }) {
-      id
-      html
-    }
-  }
-`;
-
-*/
