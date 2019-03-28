@@ -2,16 +2,13 @@ import styled from "styled-components";
 import theme from "../theme/theme2.yaml";
 
 const Article = styled.article`
-  padding: ${theme.space.default};
   margin: 0 auto;
 
   @media ${theme.tablet} {
-    padding: ${`calc(${theme.space.default}) calc(${theme.space.default} * 2)`};
     max-width: ${theme.maxWidth.tablet};
   }
 
   @media ${theme.desktop} {
-    padding: ${`calc(${theme.space.default} * 2 + 30px) 0 calc(${theme.space.default} * 2)`};
     max-width: ${theme.maxWidth.desktop};
   }
 
