@@ -8,6 +8,8 @@ import Seo from "../components/Seo";
 import { FacebookProvider, Page } from "react-facebook";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
+import { Parallax, Background } from "react-parallax";
+import Img from "gatsby-image";
 
 const PhantomHr = styled.hr`
   margin: 0;
@@ -27,23 +29,23 @@ class IndexPage extends React.Component {
   };
 
   render() {
+    const { data } = this.props;
+    console.log(data);
+
     const {
-      data: {
-        bgDesktop: {
-          resize: { src: desktop }
-        },
-        bgTablet: {
-          resize: { src: tablet }
-        },
-        bgMobile: {
-          resize: { src: mobile }
-        },
-        site: {
-          siteMetadata: { facebook }
-        }
+      bgDesktop: {
+        resize: { src: desktop }
       },
-      pageContext: { locale }
-    } = this.props;
+      bgTablet: {
+        resize: { src: tablet }
+      },
+      bgMobile: {
+        resize: { src: mobile }
+      },
+      site: {
+        siteMetadata: { facebook }
+      }
+    } = data;
 
     const backgrounds = {
       desktop,
@@ -75,6 +77,16 @@ class IndexPage extends React.Component {
             Aliquam felis mauris, molestie eget pharetra in, dignissim sit amet eros. Phasellus sed
             justo ut urna molestie tempor at vitae enim.
           </p>
+        </Article>
+
+        <Parallax
+          bgImage={data.parallax.resize.src}
+          strength={-200}
+        >
+          <div style={{ height: "500px" }} />
+        </Parallax>
+
+        <Article>
           <h2>
             <FormattedMessage id="message" /> <i>commanditaire 2</i>
           </h2>
@@ -151,6 +163,12 @@ export const query = graphql`
     }
     bgMobile: imageSharp(fluid: { originalName: { regex: "/montreal-edited/" } }) {
       resize(width: 450, height: 200, quality: 90, cropFocus: CENTER) {
+        src
+      }
+    }
+
+    parallax: imageSharp(fluid: { originalName: { regex: "/ets-aerial/" } }) {
+      resize(width: 1920, quality: 90, cropFocus: CENTER) {
         src
       }
     }
