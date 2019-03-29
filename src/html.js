@@ -31,7 +31,7 @@ export default class HTML extends React.Component {
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
 
           {/* Lato */}
-          <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" />
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
