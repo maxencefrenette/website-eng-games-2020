@@ -43,8 +43,8 @@ const EspaceParticipantsPage = props => {
               </Section>
               <Section>
                 <HContainer>
-                  <Download url="/downloads/placeholder.txt">Cahier du participant (fr)</Download>
-                  <Download url="/downloads/placeholder.txt">
+                  <Download>Cahier du participant (fr)</Download>
+                  <Download>
                     Participant&#39;s handbook (en)
                   </Download>
                 </HContainer>
