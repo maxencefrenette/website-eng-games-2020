@@ -65,17 +65,12 @@ class Layout extends React.Component {
             pageContext: { locale }
           } = this.props;
 
-          return (
-            <ThemeContext.Provider value={this.state.theme}>
+          return <ThemeContext.Provider value={this.state.theme}>
               <FontLoadedContext.Provider value={this.state.font400loaded}>
                 <ScreenWidthContext.Provider value={this.state.screenWidth}>
                   <I18n locale={locale}>
                     <React.Fragment>
-                      <Header
-                        path={this.props.location.pathname}
-                        theme={this.state.theme}
-                        data={data}
-                      />
+                      <Header path={this.props.location.pathname} theme={this.state.theme} data={data} />
                       <main>{children}</main>
                       <Footer theme={this.state.theme} />
 
@@ -83,8 +78,7 @@ class Layout extends React.Component {
                       <style jsx>{`
                         main {
                           min-height: 80vh;
-                        }
-                      `}</style>
+                        }`}</style>
                       <style jsx global>{`
                         html {
                           box-sizing: border-box;
@@ -101,8 +95,14 @@ class Layout extends React.Component {
                           font-size: ${theme.font.bodyWeight};
                         }
 
-                        h1, h2, h3, h4, h5, h6 {
-                          font-family: ${theme.font.heading}
+                        h1,
+                        h2,
+                        h3,
+                        h4,
+                        h5,
+                        h6 {
+                          font-family: ${theme.font.heading};
+                          font-size: ${theme.font.headingWeight};
                         }
 
                         h1,
@@ -129,14 +129,12 @@ class Layout extends React.Component {
                         main {
                           width: auto;
                           display: block;
-                        }
-                      `}</style>
+                        }`}</style>
                     </React.Fragment>
                   </I18n>
                 </ScreenWidthContext.Provider>
               </FontLoadedContext.Provider>
-            </ThemeContext.Provider>
-          );
+            </ThemeContext.Provider>;
         }}
       />
     );

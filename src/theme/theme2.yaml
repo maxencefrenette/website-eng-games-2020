@@ -1,8 +1,9 @@
 tablet: '(min-width: 600px)'
 desktop: '(min-width: 1024px)'
 font:
-  heading: Osvald
-  body: Lato
+  heading: Oswald, sans-serif
+  headingWeight: 300
+  body: Lato, sans-serif
   bodyWeight: 300
 colors:
   primary: '#2A2B7A'
