@@ -146,3 +146,16 @@ vp-machine: VP Machine
 vp-competitions: VP Compétitions
 vp-logistics: VP Logistique
 vp-support: Conseillère à la production
+
+# Universities
+concordia: "Université Concordia"
+epm: "École polytechnique de Montréal"
+ets: "École de technologie supérieure"
+itr: "Université du Québec à Trois-Rivières"
+laval: "Université Laval"
+mcgill: "Université McGill"
+sherbrooke: "Université de Sherbrooke"
+uqac: "Université du Québec à Chicoutimi"
+uqar: "Université du Québec à Rimouski"
+uqat: "Université du Québec en Abitibi-Témiscamingue"
+uqottawa: "Université du Québec en Outaouais & Université d'Ottawa"

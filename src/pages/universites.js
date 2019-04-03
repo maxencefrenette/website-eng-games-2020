@@ -6,6 +6,7 @@ import Seo from "../components/Seo";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import MiniHero from "../components/MiniHero";
+import { FormattedMessage } from "react-intl";
 
 const UniversitesPage = props => {
   const { data } = props;
@@ -19,17 +20,17 @@ const UniversitesPage = props => {
   } = props;
 
   const universities = [
-    ["concordia", "Université Concordia", "https://www.facebook.com/ConcordiaEngineeringGames/"],
-    ["epm", "École polytechnique de Montréal", "http://www.jdg.aep.polymtl.ca/"],
-    ["ets", "École de technologie supérieure", "https://jdgets.com/"],
-    ["itr", "Université du Québec à Trois-Rivières", "https://www.facebook.com/JDGUQTR/"],
-    ["laval", "Université Laval", "http://www.jdglaval.com/"],
-    ["mcgill", "Université McGill", "http://enggames.mcgilleus.ca/"],
-    ["sherbrooke", "Université de Sherbrooke", "https://jdgsherbrooke.com/"],
-    ["uqac", "Université du Québec à Chicoutimi", "http://aeg.uqac.ca/jdguqac/"],
-    ["uqar", "Université du Québec à Rimouski"],
-    ["uqat", "Université du Québec en Abitibi-Témiscamingue"],
-    ["uqottawa", "Université du Québec en Outaouais & Université d'Ottawa", "http://uqottawa.ca/"]
+    ["concordia", "https://www.facebook.com/ConcordiaEngineeringGames/"],
+    ["epm", "http://www.jdg.aep.polymtl.ca/"],
+    ["ets", "https://jdgets.com/"],
+    ["itr", "https://www.facebook.com/JDGUQTR/"],
+    ["laval", "http://www.jdglaval.com/"],
+    ["mcgill", "http://enggames.mcgilleus.ca/"],
+    ["sherbrooke", "https://jdgsherbrooke.com/"],
+    ["uqac", "http://aeg.uqac.ca/jdguqac/"],
+    ["uqar"],
+    ["uqat"],
+    ["uqottawa", "http://uqottawa.ca/"]
   ];
 
   return (
@@ -37,22 +38,26 @@ const UniversitesPage = props => {
       <ThemeContext.Consumer>
         {theme => (
           <>
-            <MiniHero backgrounds={backgrounds} theme={theme}></MiniHero>
+            <MiniHero backgrounds={backgrounds} theme={theme} />
             <Article theme={theme}>
               <header>
-                <h1>Universités</h1>
+                <h1>
+                  <FormattedMessage id="uiversities" />
+                </h1>
               </header>
               <div className="container">
                 {universities.map(uni => (
                   <div className="university" key={uni[0]}>
-                    {uni[2] ? (
-                      <a href={uni[2]}>
+                    {uni[1] ? (
+                      <a href={uni[1]}>
                         <Img fixed={data[uni[0]].fixed} />
                       </a>
                     ) : (
                       <Img fixed={data[uni[0]].fixed} />
                     )}
-                    <div className="description">{uni[1]}</div>
+                    <div className="description">
+                      <FormattedMessage id={uni[0]} />
+                    </div>
                   </div>
                 ))}
               </div>
@@ -77,7 +82,6 @@ const UniversitesPage = props => {
           margin-left: 50px;
           margin-right: 50px;
           margin-bottom: 50px;
-
 
           a {
             transition-duration: 0.3s;
