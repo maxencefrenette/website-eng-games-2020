@@ -9,6 +9,7 @@ import MiniHero from "../components/MiniHero";
 import styled from "styled-components";
 import Download from "../components/Download";
 import theme from "../theme/theme2.yaml";
+import { FormattedMessage } from "react-intl";
 
 const HContainer = styled.div`
   display: flex;
@@ -52,7 +53,9 @@ const PartenairesPage = props => {
             <MiniHero backgrounds={backgrounds} theme={theme} />
             <Article theme={theme}>
               <header>
-                <h1>Partenaires</h1>
+                <h1>
+                  <FormattedMessage id="sponsors" />
+                </h1>
               </header>
 
               <SponsorshipPackageDownload />
@@ -60,36 +63,43 @@ const PartenairesPage = props => {
               <br />
 
               <Centered>
-                <Big>Merci à nos partenaires!</Big>
+                <Big>
+                  <FormattedMessage id="thank-you" />
+                </Big>
                 <p>
-                  Sans qui le succès de cet événement d’envergure ne serait possible ! Vous
-                  contribuez au rayonnement de la relève en ingénierie!
+                  <FormattedMessage id="thank-you-text" />
                 </p>
               </Centered>
 
               <br />
               <br />
 
-              <h2>Hôte</h2>
+              <h2>
+                <FormattedMessage id="host" />
+              </h2>
               <a href="https://www.etsmtl.ca/">
                 <Img fixed={data.ets.fixed} />
               </a>
 
-              <h2>Platine</h2>
+              <h2>
+                <FormattedMessage id="platinum" />
+              </h2>
               <a href="https://aeets.com/">
                 <Img fixed={data.aeets.fixed} />
               </a>
 
-              {/* <h2>Diamant</h2> */}
+              {/* <h2><FormattedMessage id="diamond" /></h2> */}
 
-              {/* <h2>Or</h2> */}
+              {/* <h2><FormattedMessage id="gold" /></h2> */}
 
-              {/* <h2>Argent</h2> */}
+              {/* <h2><FormattedMessage id="silver" /></h2> */}
 
-              <h2>Bronze</h2>
+              <h2>
+                <FormattedMessage id="bronze" />
+              </h2>
               <Img fixed={data.boralex.fixed} />
 
-              {/* <h2>Supporteur</h2> */}
+              {/* <h2><FormattedMessage id="supporter" /></h2> */}
 
               <br />
               <br />

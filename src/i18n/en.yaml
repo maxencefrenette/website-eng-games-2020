@@ -123,3 +123,16 @@ cultural-text:
 participants-text:
   "TO BE TRANSLATED: Vous trouverez ici toutes les informations dont vous aurez besoin pour
   participer aux Jeux de génie 2020."
+
+# Sponsors
+thank-you: Thanks to all our sponsors!
+thank-you-text:
+  "TO BE TRANSLATED: Sans qui le succès de cet événement d’envergure ne serait possible ! Vous
+  contribuez au rayonnement de la relève en ingénierie!"
+host: Host
+platinum: Platinum
+diamond: Diamond
+gold: Gold
+silver: Silver
+bronze: Bronze
+supporter: Supporter

@@ -122,3 +122,16 @@ cultural-text:
 participants-text:
   Vous trouverez ici toutes les informations dont vous aurez besoin pour participer aux Jeux de
   génie 2020.
+
+# Sponsors
+thank-you: Merci à nos partenaires!
+thank-you-text:
+  Sans qui le succès de cet événement d’envergure ne serait possible ! Vous contribuez au
+  rayonnement de la relève en ingénierie!
+host: Hôte
+platinum: Platine
+diamond: Diamant
+gold: Or
+silver: Argent
+bronze: Bronze
+supporter: Supporteur
