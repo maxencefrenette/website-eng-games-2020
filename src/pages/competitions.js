@@ -68,8 +68,7 @@ const CompetitionsPage = props => {
                 d’administrer un budget consacré à l’achat des ressources matérielles et d’élaborer
                 les transformations pour faire de leurs idées une réalité. La compétition de la
                 machine robotique est un événement fortement médiatisé ouvert au public et fait la
-                fierté des délégations et du comité organisateur. Merci à Rheinmetall, partenaire
-                officiel de la compétition machine.
+                fierté des délégations et du comité organisateur.
               </p>
 
               <h2>La compétition entrepreunariale</h2>
