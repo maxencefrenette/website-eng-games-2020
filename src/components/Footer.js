@@ -1,24 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { FormattedMessage } from "react-intl";
 
 const Footer = props => {
   const { theme } = props;
 
-  return (
-    <React.Fragment>
+  return <React.Fragment>
       <footer className="footer">
         <ul>
           <li>
-            Thème:{" "}
-            <a href="https://github.com/greglobinski/gatsby-starter-hero-blog">
+            <FormattedMessage id="theme" />: <a href="https://github.com/greglobinski/gatsby-starter-hero-blog">
               gatsby-starter-hero-blog
             </a>
           </li>
           <li>
-            <a href="https://www.creiq.qc.ca/">CRÉIQ</a>
+            <a href="https://www.creiq.qc.ca/">
+              <FormattedMessage id="creiq" />
+            </a>
           </li>
           <li>
-            <a href="https://cqi-qec.qc.ca">Compétition québécoise d’ingénérie</a>
+          <a href="https://cqi-qec.qc.ca"><FormattedMessage id="cqi" /></a>
           </li>
           <li>
             <a href="https://www.facebook.com/jeuxdegenie/">Facebook</a>
@@ -67,14 +68,10 @@ const Footer = props => {
           }
         }
 
-        @from-width desktop {
-          .footer {
+        @from-width desktop {.footer {
             padding: 0 1em 1.5em;
-          }
-        }
-      `}</style>
-    </React.Fragment>
-  );
+          }}`}</style>
+    </React.Fragment>;
 };
 
 Footer.propTypes = {
