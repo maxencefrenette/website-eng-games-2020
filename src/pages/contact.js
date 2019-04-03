@@ -60,12 +60,17 @@ const ContactPage = props => {
                 <ContactInfo>
                   <FaMapMarkerAlt />
                   <div>
-                    <b>Association étudiante de l’ÉTS</b>
+                    <b>
+                      <FormattedMessage id="aeets" />
+                    </b>
                     <br />
-                    École de technologie supérieure<br />
-                    1100, rue Notre-Dame Ouest<br />
-                    Local A-1840<br />
-                    Montréal (Québec) H3C 1K3<br />
+                    <FormattedMessage id="aeets-address1" />
+                    <br />
+                    <FormattedMessage id="aeets-address2" />
+                    <br />
+                    <FormattedMessage id="aeets-address3" />
+                    <br />
+                    <FormattedMessage id="aeets-address4" />
                   </div>
                 </ContactInfo>
               </Container>
