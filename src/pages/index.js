@@ -89,49 +89,51 @@ class IndexPage extends React.Component {
       mobile
     };
 
-    return <>
+    return (
+      <>
         <ThemeContext.Consumer>
           {theme => (
-            <Hero
-              scrollToContent={this.scrollToContent}
-              backgrounds={backgrounds}
-              theme={theme}
-            />
+            <Hero scrollToContent={this.scrollToContent} backgrounds={backgrounds} theme={theme} />
           )}
         </ThemeContext.Consumer>
 
         <PhantomHr ref={this.separator} />
 
         <Article noPadding={true}>
-          <h2>Nos 3 piliers</h2>
+          <h2>
+            <FormattedMessage id="3-pillars" />
+          </h2>
           <PillarContainer>
             <Pillar>
               <FaChild />
               <div>
-                <h3>Diversité et inclusion</h3>
+                <h3>
+                  <FormattedMessage id="pillar1" />
+                </h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis cursus
-                  libero, sed ullamcorper enim.
+                  <FormattedMessage id="pillar1-message" />
                 </p>
               </div>
             </Pillar>
             <Pillar>
               <FaRecycle />
               <div>
-                <h3>Développement durable</h3>
+                <h3>
+                  <FormattedMessage id="pillar2" />
+                </h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis cursus
-                  libero, sed ullamcorper enim.
+                  <FormattedMessage id="pillar2-message" />
                 </p>
               </div>
             </Pillar>
             <Pillar>
               <FaCog />
               <div>
-                <h3>Excellence technique</h3>
+                <h3>
+                  <FormattedMessage id="pillar3" />
+                </h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis cursus
-                  libero, sed ullamcorper enim.
+                  <FormattedMessage id="pillar3-message" />
                 </p>
               </div>
             </Pillar>
@@ -145,33 +147,31 @@ class IndexPage extends React.Component {
         <Article noPadding={true}>
           <Sides>
             <Left>
-              <h2>Historique</h2>
+              <h2>
+                <FormattedMessage id="history" />
+              </h2>
               <p>
-                Depuis maintenant 29 ans, les Jeux de génie du Québec représentent la plus grande compétition
-                d’ingénierie au Québec et le plus important rassemblement d’étudiant.e.s en génie de la province.
-                Les participant.e.s, provenant de 12 universités du Québec et de l’Ontario, mettent à l’épreuve leurs
-                compétences générales et spécifiques, complémentaires à celles de la profession d’ingénieur en s’affrontant
-                dans des défis de nature variée. Pour la trentième édition, l’événement se déroulera du 3 au 7 janvier 2020
-                à l’École de technologie supérieure de Montréal.
+                <FormattedMessage id="history-text" />
               </p>
-              <h1>La mission JDG 2020</h1>
+              <h1>
+                <FormattedMessage id="mission-2020" />
+              </h1>
               <p>
-                Les conséquences néfastes des activités humaines provoquent la dégradation de la couche d’ozone.
-                Les climatologues du Bureau d’Ingénierie et de Planification des Compétitions Officielles Multidisciplinaires
-                (BIPCOM) assurent l’imminence d’une suite de catastrophes naturelles qui auront pour effet de décimer à un rythme
-                alarmant toute forme de vie sur Terre. Ces événements sans précédent débuteront dès septembre 2019.
-                En vue de la mission “JDG2020” qui aura lieu en janvier prochain, chaque université québécoise est mandatée
-                de sélectionner, parmi les survivants, 40 étudiants et étudiantes en génie. Cette sélection se fera sur la base
-                de leur aptitude à résoudre les problématiques complexes liées à la reconstruction d’un monde meilleur, durable
-                et à leur image. L’objectif de cette mission est d’améliorer la situation sur la Terre, préserver le savoir,
-                exploiter responsablement les ressources restantes et relancer les activités de manière durable.
+                <FormattedMessage id="mission-2020-text" />
               </p>
             </Left>
             <Right>
-              <h2>Actualités</h2>
+              <h2>
+                <FormattedMessage id="news" />
+              </h2>
               <Centered>
                 <FacebookProvider appId="372145173617264">
-                  <Page href="https://www.facebook.com/jeuxdegenie/" tabs="timeline" width="500" height="600px" />
+                  <Page
+                    href="https://www.facebook.com/jeuxdegenie/"
+                    tabs="timeline"
+                    width="500"
+                    height="600px"
+                  />
                 </FacebookProvider>
               </Centered>
             </Right>
@@ -179,7 +179,8 @@ class IndexPage extends React.Component {
         </Article>
 
         <Seo facebook={facebook} />
-      </>;
+      </>
+    );
   }
 }
 
