@@ -51,7 +51,7 @@ const Sides = styled.div`
 
 const Left = styled.div`
   flex: 1 0 500px;
-  margin-right: 15px;
+  margin-right: ${theme.space.default};
 `;
 
 const Right = styled.div`

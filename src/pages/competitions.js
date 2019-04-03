@@ -8,17 +8,18 @@ import MiniHero from "../components/MiniHero";
 import Carousel from "../components/Carousel";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
+import theme from "../theme/theme2.yaml";
 
 const FloatRight = styled.div`
   float: right;
   margin-top: 5px;
-  margin-left: 25px;
+  margin-left: ${theme.space.default};
 `;
 
 const FloatLeft = styled.div`
   float: left;
   margin-top: 5px;
-  margin-right: 25px;
+  margin-right: ${theme.space.default};
 `;
 
 const CompetitionsPage = props => {

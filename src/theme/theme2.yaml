@@ -8,7 +8,7 @@ font:
 colors:
   primary: '#2A2B7A'
 space:
-  default: 20px
+  default: 30px
 maxWidth:
   tablet: 650px
   desktop: 1200px
