@@ -136,3 +136,14 @@ gold: Gold
 silver: Silver
 bronze: Bronze
 supporter: Supporter
+
+# Organising Committee
+president: President
+vp-comm: VP Communications
+vp-finances: VP Finances
+vp-social: VP Social Affairs
+vp-sponsorship: VP Sponsorship
+vp-machine: VP Machine
+vp-competitions: VP Competitions
+vp-logistics: VP Logistics
+vp-support: "TO BE TRANSLATED, euh"

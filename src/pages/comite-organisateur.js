@@ -7,6 +7,7 @@ import Seo from "../components/Seo";
 import Img from "gatsby-image";
 import MiniHero from "../components/MiniHero";
 import styled from "styled-components";
+import { FormattedMessage } from "react-intl";
 
 const Container = styled.div`
   display: flex;
@@ -53,15 +54,15 @@ const ComiteOrganisateurPage = props => {
   } = props;
 
   const CO = [
-    ["anneSo", "Anne-Sophie Lachapelle", "Présidente"],
-    ["alyssa", "Alyssa Bouchenak", "VP Communications"],
-    ["celia", "Célia-Nour Mahrour-Venturelli", "VP Finances"],
-    ["iman", "Iman Hassanein", "VP Affaires Sociales"],
-    ["jeremie", "Jérémie Lesuise", "VP Partenariats"],
-    ["gabriel", "Gabriel Lévesque", "VP Machine"],
-    ["francois", "François Pelletier", "VP Compétitions"],
-    ["sacha", "Sacha Terral", "VP Logistique"],
-    ["marieAude", "Marie-Aude Ardizzon", "Conseillère à la production"]
+    ["anneSo", "Anne-Sophie Lachapelle", "president"],
+    ["alyssa", "Alyssa Bouchenak", "vp-comm"],
+    ["celia", "Célia-Nour Mahrour-Venturelli", "vp-finances"],
+    ["iman", "Iman Hassanein", "vp-social"],
+    ["jeremie", "Jérémie Lesuise", "vp-sponsorship"],
+    ["gabriel", "Gabriel Lévesque", "vp-machine"],
+    ["francois", "François Pelletier", "vp-competitions"],
+    ["sacha", "Sacha Terral", "vp-logistics"],
+    ["marieAude", "Marie-Aude Ardizzon", "vp-support"]
   ];
 
   return (
@@ -72,7 +73,9 @@ const ComiteOrganisateurPage = props => {
             <MiniHero backgrounds={backgrounds} theme={theme} />
             <Article theme={theme}>
               <header>
-                <h1>Comité Organisateur</h1>
+                <h1>
+                  <FormattedMessage id="oc" />
+                </h1>
               </header>
 
               <Container>
@@ -82,7 +85,9 @@ const ComiteOrganisateurPage = props => {
                     <Description>
                       <p className="name">{membreCO[1]}</p>
                       <hr />
-                      <p className="role">{membreCO[2]}</p>
+                      <p className="role">
+                        <FormattedMessage id={membreCO[2]} />
+                      </p>
                     </Description>
                   </MembreCO>
                 ))}
