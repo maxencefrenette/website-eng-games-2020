@@ -201,17 +201,17 @@ export const query = graphql`
       }
     }
     bgDesktop: imageSharp(fluid: { originalName: { regex: "/montreal-edited/" } }) {
-      resize(width: 1200, quality: 90, cropFocus: CENTER) {
+      resize(width: 1920, quality: 90, cropFocus: CENTER) {
         src
       }
     }
     bgTablet: imageSharp(fluid: { originalName: { regex: "/montreal-edited/" } }) {
-      resize(width: 800, height: 300, quality: 90, cropFocus: CENTER) {
+      resize(width: 1024, height: 384, quality: 90, cropFocus: CENTER) {
         src
       }
     }
     bgMobile: imageSharp(fluid: { originalName: { regex: "/montreal-edited/" } }) {
-      resize(width: 450, height: 200, quality: 90, cropFocus: CENTER) {
+      resize(width: 600, height: 300, quality: 90, cropFocus: CENTER) {
         src
       }
     }
