@@ -8,6 +8,7 @@ import MiniHero from "../components/MiniHero";
 import styled from "styled-components";
 import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import theme from "../theme/theme2.yaml";
+import { FormattedMessage } from "react-intl";
 
 const Container = styled.div`
   display: flex;
@@ -44,7 +45,9 @@ const ContactPage = props => {
             <MiniHero backgrounds={backgrounds} theme={theme} />
             <Article>
               <header>
-                <h1>Contact</h1>
+                <h1>
+                  <FormattedMessage id="contact" />
+                </h1>
               </header>
 
               <Container>
