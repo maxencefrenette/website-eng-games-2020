@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FaArrowDown } from "react-icons/fa/";
 import { FormattedMessage } from "react-intl";
+import theme2 from "../../theme/theme2.yaml";
 
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
@@ -40,7 +41,7 @@ const Hero = props => {
 
         h1 {
           text-align: center;
-          font-size: ${theme.hero.h1.size};
+          font-size: ${theme2.hero.size.h1.mobile};
           margin: ${theme.space.stack.l};
           color: ${theme.hero.h1.color};
           line-height: ${theme.hero.h1.lineHeight};
@@ -111,7 +112,7 @@ const Hero = props => {
 
           h1 {
             max-width: 90%;
-            font-size: ${`calc(${theme.hero.h1.size} * 1.3)`};
+            font-size: ${theme2.hero.size.h1.tablet};
           }
 
           button {
@@ -124,7 +125,7 @@ const Hero = props => {
 
           h1 {
             max-width: 80%;
-            font-size: ${`calc(${theme.hero.h1.size} * 1.5)`};
+            font-size: ${theme2.hero.size.h1.desktop};
           }
 
           button {
