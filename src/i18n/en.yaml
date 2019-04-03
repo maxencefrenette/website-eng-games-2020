@@ -56,17 +56,17 @@ competitions-text:
   afin de surmonter les défis auxquels ils feront face lors de cet événement."
 machine: The Machine
 machine-text:
-  "TO BE TRANSLATED: La compétition de la machine robotique est l’épreuve maîtresse et le défi le plus difficile à
-  relever des Jeux de Génie. Il s’agit de la seule compétition où les délégations travaillent à sa
-  réalisation tout l’automne précédant les Jeux. Le défi : fabriquer une machine robotique
-  intelligente qui surmontera les diverses épreuves d’un parcours prédéterminé en un temps donné. La
-  fabrication de cette machine nécessite la formation d’équipes multidisciplinaires qui devront
-  investir beaucoup de temps afin d’en arriver à un prototype des plus compétitifs. Chaque équipe
-  devra œuvrer d’ingéniosité et de créativité en plus de développer la synergie nécessaire à la
-  création d’une machine robotique à la hauteur des attentes des juges tout en respectant les devis.
-  Les participants et participantes de cette compétition mettront donc à profit leurs connaissances
-  acquises en ingénierie en plus d’administrer un budget consacré à l’achat des ressources
-  matérielles et d’élaborer les transformations pour faire de leurs idées une réalité. La
+  "TO BE TRANSLATED: La compétition de la machine robotique est l’épreuve maîtresse et le défi le
+  plus difficile à relever des Jeux de Génie. Il s’agit de la seule compétition où les délégations
+  travaillent à sa réalisation tout l’automne précédant les Jeux. Le défi : fabriquer une machine
+  robotique intelligente qui surmontera les diverses épreuves d’un parcours prédéterminé en un temps
+  donné. La fabrication de cette machine nécessite la formation d’équipes multidisciplinaires qui
+  devront investir beaucoup de temps afin d’en arriver à un prototype des plus compétitifs. Chaque
+  équipe devra œuvrer d’ingéniosité et de créativité en plus de développer la synergie nécessaire à
+  la création d’une machine robotique à la hauteur des attentes des juges tout en respectant les
+  devis. Les participants et participantes de cette compétition mettront donc à profit leurs
+  connaissances acquises en ingénierie en plus d’administrer un budget consacré à l’achat des
+  ressources matérielles et d’élaborer les transformations pour faire de leurs idées une réalité. La
   compétition de la machine robotique est un événement fortement médiatisé ouvert au public et fait
   la fierté des délégations et du comité organisateur."
 entrepreneurship: The Entrepreuneurship Competition
@@ -118,3 +118,8 @@ cultural-text:
   soirée culturelle qui se déroule sous le format d’une soirée de réseautage. Il s’agit d’une
   occasion en or pour échanger et agrandir son réseau professionnel auprès des partenaires dans une
   ambiance des plus conviviales."
+
+# Participants
+participants-text:
+  "TO BE TRANSLATED: Vous trouverez ici toutes les informations dont vous aurez besoin pour
+  participer aux Jeux de génie 2020."

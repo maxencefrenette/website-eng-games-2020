@@ -7,6 +7,7 @@ import Download from "../components/Download";
 import MiniHero from "../components/MiniHero";
 import styled from "styled-components";
 import { graphql } from "gatsby";
+import { FormattedMessage } from "react-intl";
 
 const Section = styled.div`
   margin-bottom: 10px;
@@ -35,18 +36,17 @@ const EspaceParticipantsPage = props => {
             <MiniHero backgrounds={backgrounds} theme={theme} />
             <Article>
               <header>
-                <h1>Espace Participants</h1>
+                <h1>
+                  <FormattedMessage id="participants" />
+                </h1>
               </header>
               <Section>
-                Vous trouverez ici toutes les informations dont vous aurez besoin pour participer
-                aux Jeux de génie 2020.
+                <FormattedMessage id="participants-text" />
               </Section>
               <Section>
                 <HContainer>
                   <Download>Cahier du participant (fr)</Download>
-                  <Download>
-                    Participant&#39;s handbook (en)
-                  </Download>
+                  <Download>Participant&#39;s handbook (en)</Download>
                 </HContainer>
                 <HContainer>
                   <Download>Cahier de délégation (fr)</Download>
