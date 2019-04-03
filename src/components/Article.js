@@ -30,13 +30,13 @@ const Article = styled.article`
     animation-name: headlineEntry;
     animation-duration: 1s;
 
-    span {
-      font-weight: normal;
-      display: block;
-      font-size: 0.5em;
-      letter-spacing: 0;
-      margin: 0 0 5px 0;
-    }
+    // span {
+    //   font-weight: normal;
+    //   display: block;
+    //   font-size: 0.5em;
+    //   letter-spacing: 0;
+    //   margin: 0 0 5px 0;
+    // }
 
     svg {
       height: 0.75em;
