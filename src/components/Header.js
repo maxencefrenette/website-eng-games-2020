@@ -12,10 +12,10 @@ const HeaderStyle = styled.div`
   .header {
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: transparent;
     display: flex;
-    height: 80px;
-    position: relative;
+    height: 120px;
+    position: absolute;
     top: 0;
     width: 100%;
     align-items: center;
@@ -29,12 +29,6 @@ const HeaderStyle = styled.div`
       .logo {
         flex-shrink: 0;
       }
-    }
-
-    &.hero-menu {
-      position: absolute;
-      background-color: transparent;
-      height: 100px;
     }
   }
 
@@ -77,7 +71,7 @@ const HeaderStyle = styled.div`
     left: 0;
     right: 0;
     height: 1px;
-    top: ${props => (props.path === "/" ? "100px" : "80px")};
+    top: 120px;
   }
 
   @media ${theme.tablet} {
@@ -109,7 +103,6 @@ const HeaderStyle = styled.div`
   @media ${theme.desktop} {
     .header {
       align-items: center;
-      background-color: white;
       display: flex;
       position: absolute;
       top: 0;
@@ -118,7 +111,7 @@ const HeaderStyle = styled.div`
       transition: padding 0.5s;
 
       &.fixed {
-        height: 50px;
+        height: 100px;
         background-color: white;
         left: 0;
         padding: 0 20px;
@@ -200,7 +193,7 @@ class Header extends React.Component {
     const fixed = this.state.fixed ? "fixed" : "";
     const homepage = this.props.path === "/" ? "homepage" : "";
 
-    return `${fixed} ${homepage} hero-menu`;
+    return `${fixed} ${homepage}`;
   };
 
   render() {
@@ -209,7 +202,7 @@ class Header extends React.Component {
 
     return (
       <HeaderStyle path={path}>
-        <header className={`header ${this.getHeaderSize()}`}>
+        <header className={`header hero-menu ${this.getHeaderSize()}`}>
           <div className="logoType">
             <div className="logo">
               <LLink to="/">

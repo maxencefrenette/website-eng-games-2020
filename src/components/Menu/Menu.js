@@ -15,7 +15,7 @@ const MenuStyle = styled.nav`
   display: flex;
   flex-grow: 1;
   left: 0;
-  max-height: ${props => props.open ? "1000px" : "50px"};
+
   padding: 0 10px;
   position: fixed;
   width: 100%;
@@ -34,6 +34,8 @@ const MenuStyle = styled.nav`
   }
 
   @media ${theme.belowDesktop} {
+    max-height: ${props => (props.open ? "1000px" : "50px")};
+
     &::after {
       position: absolute;
       content: "";
@@ -44,11 +46,7 @@ const MenuStyle = styled.nav`
       background: ${theme.colors.primary};
     }
 
-    &.open {
-      padding: 20px;
-    }
-
-    ${props => !props.fixed && `bottom: -100px;`};
+    ${props => props.open && `padding: 20px;`} ${props => !props.fixed && `bottom: -100px;`};
   }
 
   @media ${theme.desktop} {
@@ -59,6 +57,7 @@ const MenuStyle = styled.nav`
     justify-content: flex-end;
     padding-left: 50px;
     transition: none;
+    flex-wrap: wrap;
 
     .itemList {
       justify-content: flex-end;
@@ -70,8 +69,6 @@ const MenuStyle = styled.nav`
 class Menu extends React.Component {
   constructor(props) {
     super(props);
-    this.itemList = React.createRef();
-
     this.items = [
       { to: "/", label: "home" },
       { to: "/competitions/", label: "competitions" },
@@ -86,11 +83,13 @@ class Menu extends React.Component {
       { to: "https://twitter.com/jdgqc", icon: FaTwitter, label: "" }
     ].map((item, id) => ({ id, ...item }));
 
-    this.renderedItems = []; // will contain references to rendered DOM elements of menu
+    this.itemList = React.createRef();
+    this.itemRefs = this.items.map(React.createRef);
   }
 
   state = {
-    open: false
+    open: false,
+    visibleItems: 0
   };
 
   static propTypes = {
@@ -98,10 +97,6 @@ class Menu extends React.Component {
     fixed: PropTypes.bool.isRequired,
     screenWidth: PropTypes.number.isRequired
   };
-
-  componentDidMount() {
-    this.renderedItems = this.getRenderedItems();
-  }
 
   componentDidUpdate(prevProps) {
     if (
@@ -117,31 +112,31 @@ class Menu extends React.Component {
     }
   }
 
-  getRenderedItems = () => {
-    const itemList = this.itemList.current;
-    return Array.from(itemList.children);
-  };
-
   hideOverflowedMenuItems = () => {
     const itemsContainer = this.itemList.current;
     const maxWidth = itemsContainer.offsetWidth;
 
-    this.renderedItems.reduce(
-      (result, item) => {
-        item.classList.add("item");
-        item.classList.remove("hideItem");
+    const menu = this.itemRefs.reduce(
+      (result, item, i) => {
+        item.current.classList.add("item");
+        item.current.classList.remove("hideItem");
 
-        const currentCumulativeWidth = result.cumulativeWidth + item.offsetWidth;
+        const currentCumulativeWidth = result.cumulativeWidth + item.current.offsetWidth;
         result.cumulativeWidth = currentCumulativeWidth;
 
-        if (!item.classList.contains("more") && currentCumulativeWidth > maxWidth) {
-          item.classList.add("hideItem");
-          item.classList.remove("item");
+        if (!item.current.classList.contains("more") && currentCumulativeWidth > maxWidth) {
+          item.current.classList.add("hideItem");
+          item.current.classList.remove("item");
+        } else {
+          result.visibleItems = i - 1;
         }
+
         return result;
       },
-      { visibleItems: [], cumulativeWidth: 0, hiddenItems: [] }
+      { visibleItems: 0, cumulativeWidth: 0 }
     );
+
+    this.setState({ visibleItems: menu.visibleItems });
   };
 
   toggleMenu = e => {
@@ -179,18 +174,20 @@ class Menu extends React.Component {
   };
 
   render() {
-    const { fixed } = this.props;
+    const { fixed, screenWidth } = this.props;
     const { open } = this.state;
 
     return (
-      <MenuStyle open={open} fixed={fixed} className={`menu ${open ? "open" : ""}`} rel="js-menu">
+      <MenuStyle open={open} fixed={fixed} rel="js-menu">
         <ul className="itemList" ref={this.itemList}>
           {this.items.map((item, i) => (
-            <Item item={item} key={item.id} icon={item.icon} fixed={fixed} />
+            <Item item={item} key={item.id} fixed={fixed} ref={this.itemRefs[item.id]} />
           ))}
-          <LangSwitcher fixed={fixed} data-id={99} />
         </ul>
-        <Expand onClick={this.toggleMenu} open={open} />
+        <ul className="itemList">
+          <LangSwitcher fixed={fixed} />
+        </ul>
+        {screenWidth < 1024 && <Expand onClick={this.toggleMenu} open={open} />}
       </MenuStyle>
     );
   }

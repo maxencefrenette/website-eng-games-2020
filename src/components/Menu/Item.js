@@ -73,12 +73,13 @@ const ItemStyles = styled.li`
   }
 `;
 
-const Item = props => {
+const Item = React.forwardRef((props, ref) => {
   const {
     item: { label, to, icon: Icon },
     noLocalize,
     onClick,
-    fixed
+    fixed,
+    hiddenItem
   } = props;
 
   const inner = (
@@ -88,29 +89,19 @@ const Item = props => {
   );
 
   return (
-    <ItemStyles className={"hiddenItem" in props ? "hiddenItem" : "item"} fixed={fixed}>
+    <ItemStyles ref={ref} className={hiddenItem ? "hiddenItem" : "item"} fixed={fixed}>
       {to.match(/^http/) ? (
-        <a
-          href={to}
-          className={"hiddenItem" in props ? "inHiddenItem" : ""}
-          onClick={onClick}
-          data-slug={to}
-        >
+        <a href={to} className={hiddenItem ? "inHiddenItem" : ""} onClick={onClick} data-slug={to}>
           {inner}
         </a>
       ) : noLocalize ? (
-        <Link
-          to={to}
-          className={"hiddenItem" in props ? "inHiddenItem" : ""}
-          onClick={onClick}
-          data-slug={to}
-        >
+        <Link to={to} className={hiddenItem ? "inHiddenItem" : ""} onClick={onClick} data-slug={to}>
           {inner}
         </Link>
       ) : (
         <LLink
           to={to}
-          className={"hiddenItem" in props ? "inHiddenItem" : ""}
+          className={hiddenItem ? "inHiddenItem" : ""}
           onClick={onClick}
           data-slug={to}
         >
@@ -119,7 +110,7 @@ const Item = props => {
       )}
     </ItemStyles>
   );
-};
+});
 
 Item.propTypes = {
   item: PropTypes.object,
