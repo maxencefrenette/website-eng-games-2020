@@ -150,7 +150,7 @@ class Menu extends React.Component {
             ))}
             <LangSwitcher theme={theme} fixed={fixed} data-id={99} />
           </ul>
-          {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
+          {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} open={open} />}
           {open &&
             screenWidth >= 1024 && (
               <ul className="hiddenItemList">
