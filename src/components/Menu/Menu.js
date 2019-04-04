@@ -15,7 +15,7 @@ const MenuStyle = styled.nav`
   display: flex;
   flex-grow: 1;
   left: 0;
-  max-height: ${open ? "1000px" : "50px"};
+  max-height: ${props => props.open ? "1000px" : "50px"};
   padding: 0 10px;
   position: fixed;
   width: 100%;
@@ -197,7 +197,7 @@ class Menu extends React.Component {
     const { open } = this.state;
 
     return (
-      <MenuStyle fixed={fixed} className={`menu ${open ? "open" : ""}`} rel="js-menu">
+      <MenuStyle open={open} fixed={fixed} className={`menu ${open ? "open" : ""}`} rel="js-menu">
         <ul className="itemList" ref={this.itemList}>
           {this.items.map((item, i) => (
             <Item item={item} key={item.id} icon={item.icon} theme={theme} fixed={fixed} />
