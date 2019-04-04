@@ -51,12 +51,7 @@ const ItemStyles = styled.li`
       }
 
       &:hover svg {
-        /* fill: ${theme.colors.primary}; */
         opacity: 1;
-
-        .hero & svg {
-          fill: green;
-        }
       }
     }
 
