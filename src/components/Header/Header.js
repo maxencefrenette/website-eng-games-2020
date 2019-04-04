@@ -30,8 +30,7 @@ class Header extends React.Component {
     const { data, pages, path, theme } = this.props;
     const { fixed } = this.state;
 
-    return (
-      <React.Fragment>
+    return <React.Fragment>
         <header className={`header ${this.getHeaderSize()}`}>
           <div className="logoType">
             <div className="logo">
@@ -92,19 +91,17 @@ class Header extends React.Component {
             &.hero-menu {
               position: absolute;
               background-color: transparent;
-              height: ${theme.header.height.homepage};
+              height: 100px;
             }
           }
 
           h1 {
-            font-size: ${theme.font.size.m};
-            font-weight: ${theme.font.weight.standard};
-            margin: ${theme.space.stack.xs};
+            font-size: 1.35em;
+            margin: 0 0 5px 0;
           }
 
           h2 {
-            font-weight: ${theme.font.weight.standard};
-            font-size: ${theme.font.size.xxs};
+            font-size: 0.8em;
             letter-spacing: 0;
             margin: 0;
           }
@@ -114,7 +111,7 @@ class Header extends React.Component {
             // border: 1px solid #eee;
             display: inline-block;
             height: 44px;
-            margin: ${theme.space.inline.default};
+            margin: 0 20px 0 0;
             overflow: hidden;
             width: 44px;
             transition: all 0.5s;
@@ -137,39 +134,34 @@ class Header extends React.Component {
             left: 0;
             right: 0;
             height: 1px;
-            top: ${path === "/" ? theme.header.height.homepage : theme.header.height.default};
+            top: ${path === "/" ? "100px" : "80px"};
           }
 
-          @from-width tablet {
-            .header {
-              padding: ${theme.space.inset.l};
+          @from-width tablet {.header {
+              padding: 40px;
 
               &.homepage {
-                height: ${theme.header.height.homepage};
+                height: 100px;
               }
-            }
-          }
+            }}
 
-          @below desktop {
-            .header.homepage {
+          @below desktop {.header.homepage {
               .logo {
                 border: none;
               }
 
               :global(.logoType),
               h1 {
-                color: ${theme.color.neutral.white};
+                color: white;
               }
               h2 {
-                color: ${theme.color.neutral.gray.d};
+                color: #dddbda;
               }
-            }
-          }
+            }}
 
-          @from-width desktop {
-            .header {
+          @from-width desktop {.header {
               align-items: center;
-              background-color: ${theme.color.neutral.white};
+              background-color: white;
               display: flex;
               position: absolute;
               top: 0;
@@ -178,17 +170,17 @@ class Header extends React.Component {
               transition: padding 0.5s;
 
               &.fixed {
-                height: ${theme.header.height.fixed};
-                background-color: ${theme.color.neutral.white};
+                height: 50px;
+                background-color: white;
                 left: 0;
-                padding: 0 ${theme.space.m};
+                padding: 0 20px;
                 position: fixed;
                 top: 0;
                 width: 100%;
                 z-index: 1;
 
                 h1 {
-                  margin: ${theme.space.stack.xxs};
+                  margin: 0 0 2px 0;
                 }
 
                 h2 {
@@ -199,10 +191,10 @@ class Header extends React.Component {
               &.homepage:not(.fixed) {
                 :global(.logoType),
                 h1 {
-                  color: ${theme.color.neutral.white};
+                  color: white;
                 }
                 h2 {
-                  color: ${theme.color.neutral.gray.d};
+                  color: #dddbda;
                 }
               }
             }
@@ -215,7 +207,7 @@ class Header extends React.Component {
             }
 
             .logo {
-              margin: ${theme.space.inline.default};
+              margin: 0 20px 0 0;
 
               .fixed & {
                 height: 36px;
@@ -228,22 +220,17 @@ class Header extends React.Component {
             }
 
             h2 {
-              animation-duration: ${theme.time.duration.default};
+              animation-duration: 0.5s;
               animation-name: h2Entry;
             }
 
-            @keyframes h2Entry {
-              from {
+            @keyframes h2Entry {from {
                 opacity: 0;
               }
               to {
                 opacity: 1;
-              }
-            }
-          }
-        `}</style>
-      </React.Fragment>
-    );
+              }}}`}</style>
+      </React.Fragment>;
   }
 }
 
