@@ -5,6 +5,67 @@ import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa/"
 import Item from "./Item";
 import Expand from "./Expand";
 import LangSwitcher from "./LangSwitcher";
+import styled from "styled-components";
+import theme2 from "../../theme/theme2.yaml";
+
+const MenuStyle = styled.nav`
+  align-items: center;
+  background: white;
+  bottom: 0;
+  display: flex;
+  flex-grow: 1;
+  left: 0;
+  max-height: ${open ? "1000px" : "50px"};
+  padding: 0 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+
+  .itemList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  @media ${theme2.belowDesktop} {
+    &::after {
+      position: absolute;
+      content: "";
+      left: 20px;
+      right: 20px;
+      top: 0;
+      height: 1px;
+      background: ${theme2.colors.primary};
+    }
+
+    &.open {
+      padding: 20px;
+    }
+
+    ${props => !props.fixed && `bottom: -100px;`};
+  }
+
+  @media ${theme2.desktop} {
+    border-top: none;
+    background: transparent;
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    padding-left: 50px;
+    transition: none;
+
+    .itemList {
+      justify-content: flex-end;
+      padding: 0;
+    }
+  }
+`;
 
 class Menu extends React.Component {
   constructor(props) {
@@ -136,152 +197,25 @@ class Menu extends React.Component {
     const { open } = this.state;
 
     return (
-      <React.Fragment>
-        <nav className={`menu ${open ? "open" : ""}`} rel="js-menu">
-          <ul className="itemList" ref={this.itemList}>
-            {this.items.map((item, i) => (
-              <Item
-                item={item}
-                key={item.id}
-                icon={item.icon}
-                theme={theme}
-                fixed={fixed}
-              />
-            ))}
-            <LangSwitcher theme={theme} fixed={fixed} data-id={99} />
-          </ul>
-          {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} open={open} />}
-          {open &&
-            screenWidth >= 1024 && (
-              <ul className="hiddenItemList">
-                {this.state.hiddenItems.map(item => (
-                  <Item
-                    item={item}
-                    key={item.id}
-                    hiddenItem
-                    theme={theme}
-                    fixed={fixed}
-                  />
-                ))}
-              </ul>
-            )}
-        </nav>
-
-        {/* --- STYLES --- */}
-        <style jsx>{`
-          .menu {
-            align-items: center;
-            background: ${theme.color.neutral.white};
-            bottom: 0;
-            display: flex;
-            flex-grow: 1;
-            left: 0;
-            max-height: ${open ? "1000px" : "50px"};
-            padding: 0 ${theme.space.inset.s};
-            position: fixed;
-            width: 100%;
-            z-index: 1;
-            transition: all ${theme.time.duration.default};
-          }
-
-          .itemList {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            list-style: none;
-            margin: 0;
-            padding: 0; /* 0 ${theme.space.s}; */
-            position: relative;
-            width: 100%;
-          }
-
-          @below desktop {
-            .menu {
-              &::after {
-                position: absolute;
-                content: "";
-                left: ${theme.space.m};
-                right: ${theme.space.m};
-                top: 0;
-                height: 1px;
-                background: ${theme.color.brand.primary};
-              }
-
-              &.open {
-                padding: ${theme.space.inset.m};
-              }
-
-              :global(.hero-menu):not(.fixed) & {
-                bottom: -100px;
-              }
-            }
-          }
-
-          @from-width desktop {
-            .menu {
-              border-top: none;
-              background: transparent;
-              display: flex;
-              position: relative;
-              justify-content: flex-end;
-              padding-left: 50px;
-              transition: none;
-            }
-
-            .itemList {
-              justify-content: flex-end;
-              padding: 0;
-            }
-
-            .hiddenItemList {
-              list-style: none;
-              margin: 0;
-              position: absolute;
-              background: ${theme.background.color.primary};
-              border: 1px solid ${theme.line.color};
-              top: 48px;
-              right: ${theme.space.s};
-              display: flex;
-              flex-direction: column;
-              justify-content: flex-start;
-              padding: ${theme.space.m};
-              border-radius: ${theme.size.radius.small};
-              border-top-right-radius: 0;
-
-
-              &:after {
-                content: "";
-                background: ${theme.background.color.primary};
-                z-index: 10;
-                top: -10px;
-                right: -1px;
-                width: 44px;
-                height: 10px;
-                position: absolute;
-                border-left: 1px solid ${theme.line.color};
-                border-right: 1px solid ${theme.line.color};
-              }
-
-              :global(.hero-menu):not(.fixed) & {
-                border: 1px solid transparent;
-                background: color(white alpha(-10%));
-                top: 50px;
-
-                &:after {
-                  top: -11px;
-                  border-left: 1px solid transparent;
-                  border-right: 1px solid transparent;
-                  background: color(white alpha(-10%));
-                }
-              }
-
-              :global(.fixed) & {
-                top: 44px;
-              }
-            }
-          }
-        `}</style>
-      </React.Fragment>
+      <MenuStyle fixed={fixed} className={`menu ${open ? "open" : ""}`} rel="js-menu">
+        <ul className="itemList" ref={this.itemList}>
+          {this.items.map((item, i) => (
+            <Item item={item} key={item.id} icon={item.icon} theme={theme} fixed={fixed} />
+          ))}
+          <LangSwitcher theme={theme} fixed={fixed} data-id={99} />
+        </ul>
+        {this.state.hiddenItems.length > 0 && (
+          <Expand onClick={this.toggleMenu} theme={theme} open={open} />
+        )}
+        {open &&
+          screenWidth >= 1024 && (
+            <ul className="hiddenItemList">
+              {this.state.hiddenItems.map(item => (
+                <Item item={item} key={item.id} hiddenItem theme={theme} fixed={fixed} />
+              ))}
+            </ul>
+          )}
+      </MenuStyle>
     );
   }
 }
