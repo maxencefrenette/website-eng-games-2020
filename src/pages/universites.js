@@ -7,6 +7,35 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import MiniHero from "../components/MiniHero";
 import { FormattedMessage } from "react-intl";
+import styled from "styled-components";
+
+const Container = styled.div`
+  width: 1000px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const University = styled.div`
+  width: 150px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+
+  a {
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+  .description {
+    text-align: center;
+    font-size: 18px;
+  }
+`;
 
 const UniversitesPage = props => {
   const { data } = props;
@@ -39,15 +68,15 @@ const UniversitesPage = props => {
         {theme => (
           <>
             <MiniHero backgrounds={backgrounds} theme={theme} />
-            <Article theme={theme}>
+            <Article>
               <header>
                 <h1>
-                  <FormattedMessage id="uiversities" />
+                  <FormattedMessage id="universities" />
                 </h1>
               </header>
-              <div className="container">
+              <Container>
                 {universities.map(uni => (
-                  <div className="university" key={uni[0]}>
+                  <University key={uni[0]}>
                     {uni[1] ? (
                       <a href={uni[1]}>
                         <Img fixed={data[uni[0]].fixed} />
@@ -58,46 +87,15 @@ const UniversitesPage = props => {
                     <div className="description">
                       <FormattedMessage id={uni[0]} />
                     </div>
-                  </div>
+                  </University>
                 ))}
-              </div>
+              </Container>
             </Article>
           </>
         )}
       </ThemeContext.Consumer>
 
       <Seo facebook={facebook} />
-
-      <style jsx>{`
-        .container {
-          width: 1000px;
-          margin: 0 auto;
-
-          display: flex;
-          flex-wrap: wrap;
-        }
-
-        .university {
-          width: 150px;
-          margin-left: 50px;
-          margin-right: 50px;
-          margin-bottom: 50px;
-
-          a {
-            transition-duration: 0.3s;
-            transition-timing-function: ease;
-
-            &:hover {
-              opacity: 0.75;
-            }
-          }
-        }
-
-        .description {
-          text-align: center;
-          font-size: 18px;
-        }
-      `}</style>
     </React.Fragment>
   );
 };
