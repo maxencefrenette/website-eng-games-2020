@@ -1,6 +1,7 @@
 import React from "react";
 import Article from "../components/Article";
 import MiniHero from "../components/MiniHero";
+import { graphql } from "gatsby";
 
 const NotFoundPage = props => {
   const {
