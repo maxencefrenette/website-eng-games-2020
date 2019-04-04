@@ -32,7 +32,7 @@ history-text:
   leurs compétences générales et spécifiques, complémentaires à celles de la profession d’ingénieur
   en s’affrontant dans des défis de nature variée. Pour la trentième édition, l’événement se
   déroulera du 3 au 7 janvier 2020 à l’École de technologie supérieure de Montréal.
-mission-2020: La mission JDG 2020
+mission-2020: "Thématique : La mission JDG 2020"
 mission-2020-text:
   Les conséquences néfastes des activités humaines provoquent la dégradation de la couche d’ozone.
   Les climatologues du Bureau d’Ingénierie et de Planification des Compétitions Officielles
@@ -126,8 +126,10 @@ participants-text:
 # Sponsors
 thank-you: Merci à nos partenaires!
 thank-you-text:
-  Sans qui le succès de cet événement d’envergure ne serait possible ! Vous contribuez au
-  rayonnement de la relève en ingénierie!
+  Les Jeux de Génie, c'est une compétition interuniversitaire complexe et stimulante, 
+  mais elle ne serait rien sans ses précieux partenaires. 
+  Si vous aussi souhaitez faire la différence auprès des futurs professionnels 
+  de votre milieu, c’est par ici!
 host: Hôte
 platinum: Platine
 diamond: Diamant
@@ -170,4 +172,4 @@ aeets-address4: Montréal (Québec) H3C 1K3
 # Footer
 theme: Thème
 creiq: CRÉIQ
-cqi: Compétition québécoide d'ingénérie
+cqi: Compétition québécoise d'ingénierie

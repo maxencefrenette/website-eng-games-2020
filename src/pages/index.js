@@ -153,9 +153,9 @@ class IndexPage extends React.Component {
               <p>
                 <FormattedMessage id="history-text" />
               </p>
-              <h1>
+              <h2>
                 <FormattedMessage id="mission-2020" />
-              </h1>
+              </h2>
               <p>
                 <FormattedMessage id="mission-2020-text" />
               </p>
