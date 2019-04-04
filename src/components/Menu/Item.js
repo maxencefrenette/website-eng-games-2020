@@ -3,9 +3,88 @@ import PropTypes from "prop-types";
 import LLink from "../LLink";
 import { FormattedMessage } from "react-intl";
 import { Link } from "gatsby";
+import theme2 from "../../theme/theme2.yaml";
+import styled from "styled-components";
+
+const ItemStyles = styled.li`
+  font-family: ${theme2.font.body};
+
+  &.item,
+  .showItem {
+    background: transparent;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+    a {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    svg {
+      opacity: 1;
+    }
+  }
+
+  .itemList &.hideItem {
+    display: none;
+  }
+
+  @media ${theme2.desktop} {
+    &.item {
+      a {
+        color: ${props => (props.fixed ? "#3e3e3c" : "white")}
+        padding: 10px;
+        transition: all 0.5s;
+        border-radius: 5px;
+      }
+
+      a:hover {
+        color: ${theme2.colors.primary};
+        background: color(white alpha(-60%));
+      }
+
+      svg {
+        transition: all 0.5s;
+      }
+
+      &:hover svg {
+        /* fill: ${theme2.colors.primary}; */
+        opacity: 1;
+
+        .hero & svg {
+          fill: green;
+        }
+      }
+    }
+
+    .showItem {
+      display: none;
+    }
+
+    .hiddenItem {
+      text-align: left;
+      padding: 5px;
+
+      & a.inHiddenItem {
+        color: #3e3e3c;
+        &:hover {
+          color: ${theme2.colors.primary};
+        }
+      }
+    }
+  }
+`;
 
 const Item = props => {
-  const { theme, item: { label, to, icon: Icon }, noLocalize, onClick } = props;
+  const {
+    item: { label, to, icon: Icon },
+    noLocalize,
+    onClick,
+    fixed
+  } = props;
 
   const inner = (
     <>
@@ -14,108 +93,36 @@ const Item = props => {
   );
 
   return (
-    <React.Fragment>
-      <li className={"hiddenItem" in props ? "hiddenItem" : "item"} key={label}>
-        {to.match(/^http/) ? (
-          <a href={to} className={"hiddenItem" in props ? "inHiddenItem" : ""} onClick={onClick}>
-            {inner}
-          </a>
-        ) : noLocalize ? (
-          <Link
-            to={to}
-            className={"hiddenItem" in props ? "inHiddenItem" : ""}
-            onClick={onClick}
-            data-slug={to}
-          >
-            {inner}
-          </Link>
-        ) : (
-          <LLink
-            to={to}
-            className={"hiddenItem" in props ? "inHiddenItem" : ""}
-            onClick={onClick}
-            data-slug={to}
-          >
-            {inner}
-          </LLink>
-        )}
-      </li>
-
-      {/* --- STYLES --- */}
-      <style jsx>{`
-        .item,
-        .showItem {
-          background: transparent;
-          transition: all ${theme.time.duration.default};
-          display: flex;
-          align-items: center;
-          text-transform: uppercase;
-
-          :global(a) {
-            padding: ${theme.space.inset.s};
-            display: flex;
-            align-items: center;
-          }
-
-          :global(svg) {
-            opacity: 1;
-          }
-        }
-
-        :global(.itemList .hideItem) {
-          display: none;
-        }
-
-        @from-width desktop {
-          .item {
-            :global(a) {
-              color: ${theme.text.color.primary};
-              padding: ${theme.space.inset.s};
-              transition: all ${theme.time.duration.default};
-              border-radius: ${theme.size.radius.small};
-            }
-
-            :global(.hero-menu):not(.fixed) & :global(a) {
-              color: ${theme.color.neutral.white};
-            }
-
-            :global(a:hover) {
-              color: ${theme.color.brand.primary};
-              background: color(white alpha(-60%));
-            }
-
-            :global(svg) {
-              transition: all ${theme.time.duration.default};
-            }
-
-            &:hover :global(svg) {
-              /* fill: ${theme.color.brand.primary}; */
-              opacity: 1;
-
-              :global(.hero) & :global(svg) {
-                fill: green;
-              }
-            }
-          }
-
-          .showItem {
-            display: none;
-          }
-
-          .hiddenItem {
-            text-align: left;
-            padding: ${theme.space.xs};
-
-            & :global(a.inHiddenItem) {
-              color: ${theme.text.color.primary};
-              &:hover {
-                color: ${theme.color.brand.primary};
-              }
-            }
-          }
-        }
-      `}</style>
-    </React.Fragment>
+    <ItemStyles className={"hiddenItem" in props ? "hiddenItem" : "item"} fixed={fixed}>
+      {to.match(/^http/) ? (
+        <a
+          href={to}
+          className={"hiddenItem" in props ? "inHiddenItem" : ""}
+          onClick={onClick}
+          data-slug={to}
+        >
+          {inner}
+        </a>
+      ) : noLocalize ? (
+        <Link
+          to={to}
+          className={"hiddenItem" in props ? "inHiddenItem" : ""}
+          onClick={onClick}
+          data-slug={to}
+        >
+          {inner}
+        </Link>
+      ) : (
+        <LLink
+          to={to}
+          className={"hiddenItem" in props ? "inHiddenItem" : ""}
+          onClick={onClick}
+          data-slug={to}
+        >
+          {inner}
+        </LLink>
+      )}
+    </ItemStyles>
   );
 };
 
@@ -124,7 +131,8 @@ Item.propTypes = {
   hidden: PropTypes.bool,
   onClick: PropTypes.func,
   icon: PropTypes.func,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
+  fixed: PropTypes.bool.isRequired
 };
 
 export default Item;

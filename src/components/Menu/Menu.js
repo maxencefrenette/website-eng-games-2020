@@ -22,8 +22,8 @@ class Menu extends React.Component {
       { to: "https://www.facebook.com/jeuxdegenie/", icon: FaFacebook, label: "" },
       { to: "https://www.instagram.com/jeuxdegenieduquebec/", icon: FaInstagram, label: "" },
       { to: "https://www.linkedin.com/company/jdg-qc/", icon: FaLinkedin, label: "" },
-      { to: "https://twitter.com/jdgqc", icon: FaTwitter, label: "" },
-    ];
+      { to: "https://twitter.com/jdgqc", icon: FaTwitter, label: "" }
+    ].map((item, id) => ({ id, ...item }));
 
     this.renderedItems = []; // will contain references to rendered DOM elements of menu
   }
@@ -132,24 +132,36 @@ class Menu extends React.Component {
   };
 
   render() {
-    const { screenWidth, theme } = this.props;
+    const { screenWidth, theme, fixed } = this.props;
     const { open } = this.state;
 
     return (
       <React.Fragment>
         <nav className={`menu ${open ? "open" : ""}`} rel="js-menu">
           <ul className="itemList" ref={this.itemList}>
-            {this.items.map(item => (
-              <Item item={item} key={item.to} icon={item.icon} theme={theme} />
+            {this.items.map((item, i) => (
+              <Item
+                item={item}
+                key={item.id}
+                icon={item.icon}
+                theme={theme}
+                fixed={fixed}
+              />
             ))}
-            <LangSwitcher theme={theme}></LangSwitcher>
+            <LangSwitcher theme={theme} fixed={fixed} data-id={99} />
           </ul>
           {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
           {open &&
             screenWidth >= 1024 && (
               <ul className="hiddenItemList">
                 {this.state.hiddenItems.map(item => (
-                  <Item item={item} key={item.to} hiddenItem theme={theme} />
+                  <Item
+                    item={item}
+                    key={item.id}
+                    hiddenItem
+                    theme={theme}
+                    fixed={fixed}
+                  />
                 ))}
               </ul>
             )}

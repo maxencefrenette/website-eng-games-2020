@@ -2,7 +2,7 @@ import React from "react";
 import Item from "./Item";
 import { Location } from "@reach/router";
 
-export default function LangSwitcher({ theme }) {
+export default function LangSwitcher({ theme, fixed }) {
   return (
     <Location>
       {({ location }) => {
@@ -13,7 +13,7 @@ export default function LangSwitcher({ theme }) {
         } else if (location.pathname.startsWith("/en")) {
           to = location.pathname.replace(/^\/en/, "/fr");
         }
-        return <Item item={{ to, label: "switch-lang" }} theme={theme} noLocalize />;
+        return <Item item={{ to, label: "switch-lang" }} theme={theme} fixed={fixed} noLocalize />;
       }}
     </Location>
   );
