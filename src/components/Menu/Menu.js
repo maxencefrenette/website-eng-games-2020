@@ -90,8 +90,7 @@ class Menu extends React.Component {
   }
 
   state = {
-    open: false,
-    hiddenItems: []
+    open: false
   };
 
   static propTypes = {
@@ -124,14 +123,10 @@ class Menu extends React.Component {
   };
 
   hideOverflowedMenuItems = () => {
-    const PADDING_AND_SPACE_FOR_MORELINK = this.props.screenWidth >= 1024 ? 60 : 0;
-
     const itemsContainer = this.itemList.current;
-    const maxWidth = itemsContainer.offsetWidth - PADDING_AND_SPACE_FOR_MORELINK;
+    const maxWidth = itemsContainer.offsetWidth;
 
-    this.setState({ hiddenItems: [] }); // clears previous state
-
-    const menu = this.renderedItems.reduce(
+    this.renderedItems.reduce(
       (result, item) => {
         item.classList.add("item");
         item.classList.remove("hideItem");
@@ -140,21 +135,13 @@ class Menu extends React.Component {
         result.cumulativeWidth = currentCumulativeWidth;
 
         if (!item.classList.contains("more") && currentCumulativeWidth > maxWidth) {
-          const link = item.querySelector("a");
-
           item.classList.add("hideItem");
           item.classList.remove("item");
-          result.hiddenItems.push({
-            to: link.getAttribute("data-slug"),
-            label: link.text
-          });
         }
         return result;
       },
       { visibleItems: [], cumulativeWidth: 0, hiddenItems: [] }
     );
-
-    this.setState(prevState => ({ hiddenItems: menu.hiddenItems }));
   };
 
   toggleMenu = e => {
@@ -192,7 +179,7 @@ class Menu extends React.Component {
   };
 
   render() {
-    const { screenWidth, fixed } = this.props;
+    const { fixed } = this.props;
     const { open } = this.state;
 
     return (
@@ -203,17 +190,7 @@ class Menu extends React.Component {
           ))}
           <LangSwitcher fixed={fixed} data-id={99} />
         </ul>
-        {this.state.hiddenItems.length > 0 && (
-          <Expand onClick={this.toggleMenu} open={open} />
-        )}
-        {open &&
-          screenWidth >= 1024 && (
-            <ul className="hiddenItemList">
-              {this.state.hiddenItems.map(item => (
-                <Item item={item} key={item.id} hiddenItem fixed={fixed} />
-              ))}
-            </ul>
-          )}
+        <Expand onClick={this.toggleMenu} open={open} />
       </MenuStyle>
     );
   }
