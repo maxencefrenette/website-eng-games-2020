@@ -6,12 +6,65 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import I18n from "../components/I18n";
 import theme from "../theme/theme2.yaml";
+import themeObjectFromYaml from "../theme/theme.yaml";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const ThemeContext = React.createContext(null);
 export const ScreenWidthContext = React.createContext(0);
 export const FontLoadedContext = React.createContext(false);
 
-import themeObjectFromYaml from "../theme/theme.yaml";
+const GlobalStyle = createGlobalStyle`
+  html {
+    box-sizing: border-box;
+  }
+  *,
+  *:after,
+  *:before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: ${theme.font.body};
+    font-weight: ${theme.font.bodyWeight};
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: ${theme.font.heading};
+    font-weight: ${theme.font.headingWeight};
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0;
+  }
+  h1 {
+    letter-spacing: -0.04em;
+  }
+  p {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    color: #666;
+  }
+  main {
+    width: auto;
+    display: block;
+  }
+`;
+
+const Main = styled.main`
+  min-height: 80vh;
+`;
 
 class Layout extends React.Component {
   constructor() {
@@ -65,76 +118,26 @@ class Layout extends React.Component {
             pageContext: { locale }
           } = this.props;
 
-          return <ThemeContext.Provider value={this.state.theme}>
+          return (
+            <ThemeContext.Provider value={this.state.theme}>
               <FontLoadedContext.Provider value={this.state.font400loaded}>
                 <ScreenWidthContext.Provider value={this.state.screenWidth}>
                   <I18n locale={locale}>
                     <React.Fragment>
-                      <Header path={this.props.location.pathname} theme={this.state.theme} data={data} />
-                      <main>{children}</main>
+                      <GlobalStyle />
+                      <Header
+                        path={this.props.location.pathname}
+                        theme={this.state.theme}
+                        data={data}
+                      />
+                      <Main>{children}</Main>
                       <Footer theme={this.state.theme} />
-
-                      {/* --- STYLES --- */}
-                      <style jsx>{`
-                        main {
-                          min-height: 80vh;
-                        }`}</style>
-                      <style jsx global>{`
-                        html {
-                          box-sizing: border-box;
-                        }
-                        *,
-                        *:after,
-                        *:before {
-                          box-sizing: inherit;
-                          margin: 0;
-                          padding: 0;
-                        }
-                        body {
-                          font-family: ${theme.font.body};
-                          font-size: ${theme.font.bodyWeight};
-                        }
-
-                        h1,
-                        h2,
-                        h3,
-                        h4,
-                        h5,
-                        h6 {
-                          font-family: ${theme.font.heading};
-                          font-size: ${theme.font.headingWeight};
-                        }
-
-                        h1,
-                        h2,
-                        h3 {
-                          font-weight: ${this.state.font600loaded ? 600 : 400};
-                          line-height: 1.1;
-                          letter-spacing: -0.03em;
-                          margin: 0;
-                        }
-                        h1 {
-                          letter-spacing: -0.04em;
-                        }
-                        p {
-                          margin: 0;
-                        }
-                        strong {
-                          font-weight: ${this.state.font600loaded ? 600 : 400};
-                        }
-                        a {
-                          text-decoration: none;
-                          color: #666;
-                        }
-                        main {
-                          width: auto;
-                          display: block;
-                        }`}</style>
                     </React.Fragment>
                   </I18n>
                 </ScreenWidthContext.Provider>
               </FontLoadedContext.Provider>
-            </ThemeContext.Provider>;
+            </ThemeContext.Provider>
+          );
         }}
       />
     );
