@@ -35,7 +35,7 @@ const ItemStyles = styled.li`
   @media ${theme.desktop} {
     &.item {
       a {
-        color: ${props => (props.fixed ? "#3e3e3c" : "white")}
+        color: ${props => (props.fixed ? "#3e3e3c" : "white")};
         padding: 10px;
         transition: all 0.5s;
         border-radius: 5px;
