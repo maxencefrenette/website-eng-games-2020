@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-import theme from "../theme/theme2.yaml";
+import theme from "../theme/theme.yaml";
 
 const MiniHeroStyle = styled.section`
   align-items: center;

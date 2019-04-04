@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
-import theme from "../theme/theme2.yaml";
+import theme from "../theme/theme.yaml";
 
 const FooterStyle = styled.footer`
   padding: 20px;
@@ -37,9 +37,7 @@ const FooterStyle = styled.footer`
   }
 `;
 
-const Footer = props => {
-  const { theme } = props;
-
+const Footer = () => {
   return (
     <FooterStyle>
       <ul>
@@ -77,8 +75,7 @@ const Footer = props => {
 };
 
 Footer.propTypes = {
-  html: PropTypes.string,
-  theme: PropTypes.object.isRequired
+  html: PropTypes.string
 };
 
 export default Footer;

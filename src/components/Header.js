@@ -6,7 +6,7 @@ import Menu from "./Menu";
 import { graphql } from "gatsby";
 import LLink from "./LLink";
 import styled from "styled-components";
-import theme from "../theme/theme2.yaml";
+import theme from "../theme/theme.yaml";
 
 const HeaderStyle = styled.div`
   .header {
@@ -204,7 +204,7 @@ class Header extends React.Component {
   };
 
   render() {
-    const { data, pages, path, theme } = this.props;
+    const { data, pages, path } = this.props;
     const { fixed } = this.state;
 
     return (
@@ -231,7 +231,6 @@ class Header extends React.Component {
                     screenWidth={width}
                     fontLoaded={loaded}
                     pages={pages}
-                    theme={theme}
                   />
                 )}
               </ScreenWidthContext.Consumer>
@@ -247,8 +246,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  path: PropTypes.string.isRequired,
-  theme: PropTypes.object.isRequired
+  path: PropTypes.string.isRequired
 };
 
 export default Header;

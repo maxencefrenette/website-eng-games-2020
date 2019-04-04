@@ -6,7 +6,7 @@ import Item from "./Item";
 import Expand from "./Expand";
 import LangSwitcher from "./LangSwitcher";
 import styled from "styled-components";
-import theme2 from "../../theme/theme2.yaml";
+import theme from "../../theme/theme.yaml";
 
 const MenuStyle = styled.nav`
   align-items: center;
@@ -33,7 +33,7 @@ const MenuStyle = styled.nav`
     width: 100%;
   }
 
-  @media ${theme2.belowDesktop} {
+  @media ${theme.belowDesktop} {
     &::after {
       position: absolute;
       content: "";
@@ -41,7 +41,7 @@ const MenuStyle = styled.nav`
       right: 20px;
       top: 0;
       height: 1px;
-      background: ${theme2.colors.primary};
+      background: ${theme.colors.primary};
     }
 
     &.open {
@@ -51,7 +51,7 @@ const MenuStyle = styled.nav`
     ${props => !props.fixed && `bottom: -100px;`};
   }
 
-  @media ${theme2.desktop} {
+  @media ${theme.desktop} {
     border-top: none;
     background: transparent;
     display: flex;
@@ -97,8 +97,7 @@ class Menu extends React.Component {
   static propTypes = {
     path: PropTypes.string.isRequired,
     fixed: PropTypes.bool.isRequired,
-    screenWidth: PropTypes.number.isRequired,
-    theme: PropTypes.object.isRequired
+    screenWidth: PropTypes.number.isRequired
   };
 
   componentDidMount() {
@@ -193,25 +192,25 @@ class Menu extends React.Component {
   };
 
   render() {
-    const { screenWidth, theme, fixed } = this.props;
+    const { screenWidth, fixed } = this.props;
     const { open } = this.state;
 
     return (
       <MenuStyle open={open} fixed={fixed} className={`menu ${open ? "open" : ""}`} rel="js-menu">
         <ul className="itemList" ref={this.itemList}>
           {this.items.map((item, i) => (
-            <Item item={item} key={item.id} icon={item.icon} theme={theme} fixed={fixed} />
+            <Item item={item} key={item.id} icon={item.icon} fixed={fixed} />
           ))}
-          <LangSwitcher theme={theme} fixed={fixed} data-id={99} />
+          <LangSwitcher fixed={fixed} data-id={99} />
         </ul>
         {this.state.hiddenItems.length > 0 && (
-          <Expand onClick={this.toggleMenu} theme={theme} open={open} />
+          <Expand onClick={this.toggleMenu} open={open} />
         )}
         {open &&
           screenWidth >= 1024 && (
             <ul className="hiddenItemList">
               {this.state.hiddenItems.map(item => (
-                <Item item={item} key={item.id} hiddenItem theme={theme} fixed={fixed} />
+                <Item item={item} key={item.id} hiddenItem fixed={fixed} />
               ))}
             </ul>
           )}

@@ -9,7 +9,7 @@ import { FacebookProvider, Page } from "react-facebook";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
 import { Parallax } from "react-parallax";
-import theme from "../theme/theme2.yaml";
+import theme from "../theme/theme.yaml";
 import { FaRecycle, FaChild, FaCog } from "react-icons/fa";
 
 const PillarContainer = styled.div`

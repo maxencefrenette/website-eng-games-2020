@@ -8,7 +8,7 @@ import Img from "gatsby-image";
 import MiniHero from "../components/MiniHero";
 import styled from "styled-components";
 import Download from "../components/Download";
-import theme from "../theme/theme2.yaml";
+import theme from "../theme/theme.yaml";
 import { FormattedMessage } from "react-intl";
 
 const HContainer = styled.div`

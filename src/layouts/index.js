@@ -5,8 +5,7 @@ import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import I18n from "../components/I18n";
-import theme from "../theme/theme2.yaml";
-import themeObjectFromYaml from "../theme/theme.yaml";
+import theme from "../theme/theme.yaml";
 import styled, { createGlobalStyle } from "styled-components";
 
 export const ThemeContext = React.createContext(null);
@@ -72,8 +71,7 @@ class Layout extends React.Component {
 
     this.state = {
       screenWidth: 0,
-      headerMinimized: false,
-      theme: themeObjectFromYaml
+      headerMinimized: false
     };
   }
 
@@ -119,24 +117,22 @@ class Layout extends React.Component {
           } = this.props;
 
           return (
-            <ThemeContext.Provider value={this.state.theme}>
-              <FontLoadedContext.Provider value={this.state.font400loaded}>
-                <ScreenWidthContext.Provider value={this.state.screenWidth}>
-                  <I18n locale={locale}>
-                    <React.Fragment>
-                      <GlobalStyle />
-                      <Header
-                        path={this.props.location.pathname}
-                        theme={this.state.theme}
-                        data={data}
-                      />
-                      <Main>{children}</Main>
-                      <Footer theme={this.state.theme} />
-                    </React.Fragment>
-                  </I18n>
-                </ScreenWidthContext.Provider>
-              </FontLoadedContext.Provider>
-            </ThemeContext.Provider>
+            <FontLoadedContext.Provider value={this.state.font400loaded}>
+              <ScreenWidthContext.Provider value={this.state.screenWidth}>
+                <I18n locale={locale}>
+                  <React.Fragment>
+                    <GlobalStyle />
+                    <Header
+                      path={this.props.location.pathname}
+                      theme={this.state.theme}
+                      data={data}
+                    />
+                    <Main>{children}</Main>
+                    <Footer theme={this.state.theme} />
+                  </React.Fragment>
+                </I18n>
+              </ScreenWidthContext.Provider>
+            </FontLoadedContext.Provider>
           );
         }}
       />

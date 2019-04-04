@@ -2,7 +2,7 @@ import { FaAngleDown } from "react-icons/fa/";
 import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
-import theme from "../../theme/theme2.yaml";
+import theme from "../../theme/theme.yaml";
 
 const Button = styled.button`
   cursor: pointer;

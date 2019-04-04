@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FaArrowDown } from "react-icons/fa/";
 import { FormattedMessage } from "react-intl";
-import theme from "../theme/theme2.yaml";
+import theme from "../theme/theme.yaml";
 import styled from "styled-components";
 
 const HeroStyle = styled.section`

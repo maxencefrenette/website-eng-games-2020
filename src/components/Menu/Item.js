@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import LLink from "../LLink";
 import { FormattedMessage } from "react-intl";
 import { Link } from "gatsby";
-import theme2 from "../../theme/theme2.yaml";
+import theme from "../../theme/theme.yaml";
 import styled from "styled-components";
 
 const ItemStyles = styled.li`
-  font-family: ${theme2.font.body};
+  font-family: ${theme.font.body};
 
   &.item,
   .showItem {
@@ -32,7 +32,7 @@ const ItemStyles = styled.li`
     display: none;
   }
 
-  @media ${theme2.desktop} {
+  @media ${theme.desktop} {
     &.item {
       a {
         color: ${props => (props.fixed ? "#3e3e3c" : "white")}
@@ -42,7 +42,7 @@ const ItemStyles = styled.li`
       }
 
       a:hover {
-        color: ${theme2.colors.primary};
+        color: ${theme.colors.primary};
         background: color(white alpha(-60%));
       }
 
@@ -51,7 +51,7 @@ const ItemStyles = styled.li`
       }
 
       &:hover svg {
-        /* fill: ${theme2.colors.primary}; */
+        /* fill: ${theme.colors.primary}; */
         opacity: 1;
 
         .hero & svg {
@@ -71,7 +71,7 @@ const ItemStyles = styled.li`
       & a.inHiddenItem {
         color: #3e3e3c;
         &:hover {
-          color: ${theme2.colors.primary};
+          color: ${theme.colors.primary};
         }
       }
     }
@@ -131,7 +131,6 @@ Item.propTypes = {
   hidden: PropTypes.bool,
   onClick: PropTypes.func,
   icon: PropTypes.func,
-  theme: PropTypes.object.isRequired,
   fixed: PropTypes.bool.isRequired
 };
 

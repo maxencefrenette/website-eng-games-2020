@@ -7,7 +7,7 @@ import { graphql } from "gatsby";
 import MiniHero from "../components/MiniHero";
 import styled from "styled-components";
 import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import theme from "../theme/theme2.yaml";
+import theme from "../theme/theme.yaml";
 import { FormattedMessage } from "react-intl";
 
 const Container = styled.div`

@@ -8,7 +8,7 @@ import MiniHero from "../components/MiniHero";
 import Carousel from "../components/Carousel";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
-import theme from "../theme/theme2.yaml";
+import theme from "../theme/theme.yaml";
 
 const FloatRight = styled.div`
   float: right;
