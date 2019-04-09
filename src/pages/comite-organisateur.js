@@ -12,6 +12,7 @@ import { FormattedMessage } from "react-intl";
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const MembreCO = styled.div`
