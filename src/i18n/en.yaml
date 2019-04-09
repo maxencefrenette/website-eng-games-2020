@@ -3,7 +3,7 @@ home: Home
 competitions: Competitions
 participants: Participants # ???
 sponsors: Sponsors
-oc: Organising Committee
+oc: Organizing Committee
 universities: Universities
 contact: Contact
 switch-lang: FR
@@ -134,7 +134,7 @@ silver: Silver
 bronze: Bronze
 supporter: Supporter
 
-# Organising Committee
+# Organizing Committee
 president: President
 vp-comm: VP Communications
 vp-finances: VP Finances

@@ -59,12 +59,12 @@ const ComiteOrganisateurPage = props => {
   const CO = [
     ["anneSo", "Anne-Sophie Lachapelle", "president"],
     ["jeremie", "Jérémie Lesuise", "vp-sponsorship"],
-    ["francois", "François Pelletier", "vp-competitions"],
     ["alyssa", "Alyssa Bouchenak", "vp-comm"],
+    ["francois", "François Pelletier", "vp-competitions"],
     ["sacha", "Sacha Terral", "vp-logistics"],
     ["celia", "Célia-Nour Mahrour-Venturelli", "vp-finances"],
-    ["iman", "Iman Hassanein", "vp-social"],
     ["gabriel", "Gabriel Lévesque", "vp-machine"],
+    ["iman", "Iman Hassanein", "vp-social"],
     ["marc", "Marc Antoine Dumont", "vp-dd"],
     ["marieAude", "Marie-Aude Ardizzon", "vp-support"]
   ];
@@ -141,11 +141,11 @@ export const query = graphql`
       ...squareImage
     }
 
-    francois: imageSharp(fluid: { originalName: { regex: "/francois/" } }) {
+    alyssa: imageSharp(fluid: { originalName: { regex: "/alyssa/" } }) {
       ...squareImage
     }
 
-    alyssa: imageSharp(fluid: { originalName: { regex: "/alyssa/" } }) {
+    francois: imageSharp(fluid: { originalName: { regex: "/francois/" } }) {
       ...squareImage
     }
 
@@ -157,11 +157,11 @@ export const query = graphql`
       ...squareImage
     }
 
-    iman: imageSharp(fluid: { originalName: { regex: "/iman/" } }) {
+    gabriel: imageSharp(fluid: { originalName: { regex: "/gabriel/" } }) {
       ...squareImage
     }
 
-    gabriel: imageSharp(fluid: { originalName: { regex: "/gabriel/" } }) {
+    iman: imageSharp(fluid: { originalName: { regex: "/iman/" } }) {
       ...squareImage
     }
 
