@@ -15,11 +15,13 @@ const Container = styled.div`
 `;
 
 const MembreCO = styled.div`
-  margin-left: 75px;
-  margin-bottom: 50px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 50px;
+  margin-bottom: 25px;
 
-  &:nth-child(3n-2) {
-    margin-left: 0;
+  &:nth-child(10n) {
+    margin-left: 0px;
   }
 `;
 
@@ -55,13 +57,13 @@ const ComiteOrganisateurPage = props => {
 
   const CO = [
     ["anneSo", "Anne-Sophie Lachapelle", "president"],
+    ["jeremie", "Jérémie Lesuise", "vp-sponsorship"],
+    ["francois", "François Pelletier", "vp-competitions"],
     ["alyssa", "Alyssa Bouchenak", "vp-comm"],
+    ["sacha", "Sacha Terral", "vp-logistics"],
     ["celia", "Célia-Nour Mahrour-Venturelli", "vp-finances"],
     ["iman", "Iman Hassanein", "vp-social"],
-    ["jeremie", "Jérémie Lesuise", "vp-sponsorship"],
     ["gabriel", "Gabriel Lévesque", "vp-machine"],
-    ["francois", "François Pelletier", "vp-competitions"],
-    ["sacha", "Sacha Terral", "vp-logistics"],
     ["marc", "Marc Antoine Dumont", "vp-dd"],
     ["marieAude", "Marie-Aude Ardizzon", "vp-support"]
   ];
@@ -112,7 +114,7 @@ export default ComiteOrganisateurPage;
 //eslint-disable-next-line no-undef
 export const query = graphql`
   fragment squareImage on ImageSharp {
-    fixed(width: 350, height: 350, quality: 90, cropFocus: NORTH) {
+    fixed(width: 250, height: 250, quality: 90, cropFocus: NORTH) {
       ...GatsbyImageSharpFixed
     }
   }
@@ -134,7 +136,19 @@ export const query = graphql`
       ...squareImage
     }
 
+    jeremie: imageSharp(fluid: { originalName: { regex: "/jeremie/" } }) {
+      ...squareImage
+    }
+
+    francois: imageSharp(fluid: { originalName: { regex: "/francois/" } }) {
+      ...squareImage
+    }
+
     alyssa: imageSharp(fluid: { originalName: { regex: "/alyssa/" } }) {
+      ...squareImage
+    }
+
+    sacha: imageSharp(fluid: { originalName: { regex: "/sacha/" } }) {
       ...squareImage
     }
 
@@ -146,19 +160,7 @@ export const query = graphql`
       ...squareImage
     }
 
-    jeremie: imageSharp(fluid: { originalName: { regex: "/jeremie/" } }) {
-      ...squareImage
-    }
-
     gabriel: imageSharp(fluid: { originalName: { regex: "/gabriel/" } }) {
-      ...squareImage
-    }
-
-    francois: imageSharp(fluid: { originalName: { regex: "/francois/" } }) {
-      ...squareImage
-    }
-
-    sacha: imageSharp(fluid: { originalName: { regex: "/sacha/" } }) {
       ...squareImage
     }
 
