@@ -26,25 +26,22 @@ pillar3-message:
   enim.
 history: History
 history-text:
-  "TO BE TRANSLATED: Depuis maintenant 29 ans, les Jeux de génie du Québec représentent la plus
-  grande compétition d’ingénierie au Québec et le plus important rassemblement d’étudiant.e.s en
-  génie de la province. Les participant.e.s, provenant de 12 universités du Québec et de l’Ontario,
-  mettent à l’épreuve leurs compétences générales et spécifiques, complémentaires à celles de la
-  profession d’ingénieur en s’affrontant dans des défis de nature variée. Pour la trentième édition,
-  l’événement se déroulera du 3 au 7 janvier 2020 à l’École de technologie supérieure de Montréal."
-mission-2020: La mission JDG 2020 # TODO: euh ???
+  "For the past 29 years, Engineering Games has been the largest engineering competition in Quebec 
+  and the biggest gathering of engineering students in the province. Participants, from 12 universities 
+  in Quebec and Ontario, test their general and specific skills, complementary to those of the engineering 
+  profession, by confronting challenges of a varied nature. For the thirtieth edition, the event will take 
+  place from January 3 to 7, 2020 at the École de technologie supérieure in Montreal."
+mission-2020: "Theme : JDG 2020 Mission"
 mission-2020-text:
-  "TO BE TRANSLATED: Les conséquences néfastes des activités humaines provoquent la dégradation de
-  la couche d’ozone. Les climatologues du Bureau d’Ingénierie et de Planification des Compétitions
-  Officielles Multidisciplinaires (BIPCOM) assurent l’imminence d’une suite de catastrophes
-  naturelles qui auront pour effet de décimer à un rythme alarmant toute forme de vie sur Terre. Ces
-  événements sans précédent débuteront dès septembre 2019. En vue de la mission “JDG2020” qui aura
-  lieu en janvier prochain, chaque université québécoise est mandatée de sélectionner, parmi les
-  survivants, 40 étudiants et étudiantes en génie. Cette sélection se fera sur la base de leur
-  aptitude à résoudre les problématiques complexes liées à la reconstruction d’un monde meilleur,
-  durable et à leur image. L’objectif de cette mission est d’améliorer la situation sur la Terre,
-  préserver le savoir, exploiter responsablement les ressources restantes et relancer les activités
-  de manière durable."
+  "The harmful consequences of human activities are causing the degradation of the ozone layer. 
+  The climatologists of the Bureau of Engineering and Planning of Competitions Organized as Multidisciplinary 
+  (BEPCOM), ensure the imminence of a series of disasters which will have the effect of decimating all life 
+  on Earth at an alarming rate. These unprecedented events will begin in September 2019. In view of the 
+  JDG2020 mission which will be held next January, each Quebec university is mandated to select, among 
+  the survivors, 40 engineering students. This selection will be based on their ability to solve the complex 
+  problems associated with rebuilding a better world, sustainable and in their image. The objective of this 
+  mission is to improve the situation on Earth, preserve knowledge, responsibly use remaining resources and 
+  revitalize activities in a sustainable manner."
 news: News
 
 # Compétitions
@@ -127,8 +124,8 @@ participants-text:
 # Sponsors
 thank-you: Thanks to all our sponsors!
 thank-you-text:
-  "TO BE TRANSLATED: Sans qui le succès de cet événement d’envergure ne serait possible ! Vous
-  contribuez au rayonnement de la relève en ingénierie!"
+  "The Engineering Games is a complex and challenging inter-university competition, but it would be nothing without its valued partners. 
+If you also want to make a difference with future professionals in your field, it's here!"
 host: Host
 platinum: Platinum
 diamond: Diamond
@@ -146,7 +143,8 @@ vp-sponsorship: VP Sponsorship
 vp-machine: VP Machine
 vp-competitions: VP Competitions
 vp-logistics: VP Logistics
-vp-support: "TO BE TRANSLATED, euh"
+vp-support: Production Advisor
+vp-dd: Sustainability Advisor
 
 # Universities
 concordia: "Concordia University"
