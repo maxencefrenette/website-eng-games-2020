@@ -20,9 +20,10 @@ const MembreCO = styled.div`
   margin-right: 25px;
   margin-top: 50px;
   margin-bottom: 25px;
+  max-width: 250px; 
 
   &:nth-child(10n) {
-    margin-left: 0px;
+    margin-left: 25px;
   }
 `;
 
@@ -32,7 +33,7 @@ const Description = styled.div`
   }
 
   & .name {
-    margin-top: 4px;
+    margin-top: 12px;
     font-size: 18px;
   }
 
