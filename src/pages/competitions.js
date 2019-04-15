@@ -51,7 +51,7 @@ const CompetitionsPage = props => {
               </h2>
               <p>
                 <FloatRight>
-                  <Carousel>{[data.machine1, data.machine2]}</Carousel>
+                  <Carousel>{[data.machine1, data.machine2, data.machine3, data.machine4, data.machine5]}</Carousel>
                 </FloatRight>
                 <FormattedMessage id="machine-text" />
               </p>
@@ -71,7 +71,7 @@ const CompetitionsPage = props => {
               </h2>
               <p>
                 <FloatRight>
-                  <Carousel>{[data.acad1, data.acad2]}</Carousel>
+                  <Carousel>{[data.acad1, data.acad2, data.acad3, data.acad4, data.acad5, data.acad6, data.acad7]}</Carousel>
                 </FloatRight>
                 <FormattedMessage id="academic-text" />
               </p>
@@ -81,7 +81,7 @@ const CompetitionsPage = props => {
               </h2>
               <p>
                 <FloatLeft>
-                  <Carousel>{[data.acad1, data.acad2]}</Carousel>
+                  <Carousel>{[data.sports1, data.sports2, data.sports3]}</Carousel>
                 </FloatLeft>
                 <FormattedMessage id="sports-text" />
               </p>
@@ -156,6 +156,21 @@ export const query = graphql`
       ...CarouselImage
     }
     acad2: imageSharp(fluid: { originalName: { regex: "/acad2/" } }) {
+      ...CarouselImage
+    }
+    acad3: imageSharp(fluid: { originalName: { regex: "/acad3/" } }) {
+      ...CarouselImage
+    }
+    acad4: imageSharp(fluid: { originalName: { regex: "/acad4/" } }) {
+      ...CarouselImage
+    }
+    acad5: imageSharp(fluid: { originalName: { regex: "/acad5/" } }) {
+      ...CarouselImage
+    }
+    acad6: imageSharp(fluid: { originalName: { regex: "/acad6/" } }) {
+      ...CarouselImage
+    }
+    acad7: imageSharp(fluid: { originalName: { regex: "/acad7/" } }) {
       ...CarouselImage
     }
 
