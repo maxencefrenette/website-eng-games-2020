@@ -10,7 +10,8 @@ import { graphql } from "gatsby";
 import { FormattedMessage } from "react-intl";
 
 const Section = styled.div`
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
 `;
 
 const HContainer = styled.div`
