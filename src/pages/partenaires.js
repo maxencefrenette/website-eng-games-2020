@@ -77,16 +77,20 @@ const PartenairesPage = props => {
               <h2>
                 <FormattedMessage id="host" />
               </h2>
-              <a href="https://www.etsmtl.ca/">
-                <Img fixed={data.ets.fixed} />
-              </a>
+              <Centered>
+                <a href="https://www.etsmtl.ca/">
+                  <Img fixed={data.ets.fixed} />
+                </a>
+              </Centered>
 
               <h2>
                 <FormattedMessage id="platinum" />
               </h2>
-              <a href="https://aeets.com/">
-                <Img fixed={data.aeets.fixed} />
-              </a>
+              <Centered>
+                <a href="https://aeets.com/">
+                  <Img fixed={data.aeets.fixed} />
+                </a>
+              </Centered>
 
               {/* <h2><FormattedMessage id="diamond" /></h2> */}
 
@@ -97,7 +101,9 @@ const PartenairesPage = props => {
               <h2>
                 <FormattedMessage id="bronze" />
               </h2>
-              <Img fixed={data.boralex.fixed} />
+              <Centered>
+                <Img fixed={data.boralex.fixed} />
+              </Centered>
 
               {/* <h2><FormattedMessage id="supporter" /></h2> */}
 

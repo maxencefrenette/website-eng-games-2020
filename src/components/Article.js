@@ -22,6 +22,7 @@ const Article = styled.article`
   h5,
   h6 {
     text-transform: uppercase;
+    text-align: center;
   }
 
   h1 {
