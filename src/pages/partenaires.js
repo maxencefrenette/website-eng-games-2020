@@ -59,21 +59,17 @@ const PartenairesPage = props => {
                 </h1>
               </header>
 
-              <SponsorshipPackageDownload />
-              <br />
-              <br />
-
               <Centered>
-                <Big>
-                  <FormattedMessage id="thank-you" />
-                </Big>
                 <p>
                   <FormattedMessage id="thank-you-text" />
                 </p>
+                <SponsorshipPackageDownload />
+                <br />
+                <br />
+                <Big>
+                  <FormattedMessage id="thank-you" />
+                </Big>
               </Centered>
-
-              <br />
-              <br />
 
               <h2>
                 <FormattedMessage id="host" />
@@ -107,11 +103,6 @@ const PartenairesPage = props => {
               </Centered>
 
               {/* <h2><FormattedMessage id="supporter" /></h2> */}
-
-              <br />
-              <br />
-
-              <SponsorshipPackageDownload />
             </Article>
           </>
         )}
