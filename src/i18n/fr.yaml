@@ -4,7 +4,7 @@ competitions: Compétitions
 participants: Espace Participants
 sponsors: Partenaires
 oc: Comité organisateur
-universities: Universités
+delegations: Délégations
 contact: Contact
 switch-lang: EN
 
@@ -14,14 +14,11 @@ jdg: Jeux de Génie
 tagline: Changer le monde
 3-pillars: Nos 3 piliers
 pillar1: Diversité et inclusion
-pillar1-message:
-  L'esprit des jeux, solidarité, richesse de la diversité, ouverture, amour, etc.
+pillar1-message: L'esprit des jeux, solidarité, richesse de la diversité, ouverture, amour, etc.
 pillar2: Développement durable
-pillar2-message:
-  FAUT SAUVER LA PLANÈTE TBNK! (Mais aussi, aspect social + éco?)
+pillar2-message: FAUT SAUVER LA PLANÈTE TBNK! (Mais aussi, aspect social + éco?)
 pillar3: Excellence technique
-pillar3-message:
-  "Les ingénieurs on est pas bons, on est ex-cel-lents! #machine #acads #majeure"
+pillar3-message: "Les ingénieurs on est pas bons, on est ex-cel-lents! #machine #acads #majeure"
 history: Historique
 history-text:
   Depuis maintenant 29 ans, les Jeux de génie du Québec représentent la plus grande compétition
@@ -124,10 +121,9 @@ participants-text:
 # Sponsors
 thank-you: Merci à nos partenaires!
 thank-you-text:
-  Les Jeux de Génie, c'est une compétition interuniversitaire complexe et stimulante,
-  mais elle ne serait rien sans ses précieux partenaires.
-  Si vous aussi souhaitez faire la différence auprès des futurs professionnels
-  de votre milieu, c’est par ici!
+  Les Jeux de Génie, c'est une compétition interuniversitaire complexe et stimulante, mais elle ne
+  serait rien sans ses précieux partenaires. Si vous aussi souhaitez faire la différence auprès des
+  futurs professionnels de votre milieu, c’est par ici!
 host: Hôte
 platinum: Platine
 diamond: Diamant

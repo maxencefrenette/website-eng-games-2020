@@ -75,7 +75,7 @@ class Menu extends React.Component {
       { to: "/espace-participants/", label: "participants" },
       { to: "/partenaires/", label: "sponsors" },
       { to: "/comite-organisateur/", label: "oc" },
-      { to: "/universites/", label: "universities" },
+      { to: "/delegations/", label: "delegations" },
       { to: "/contact/", label: "contact" },
       { to: "https://www.facebook.com/jeuxdegenie/", icon: FaFacebook, label: "" },
       { to: "https://www.instagram.com/jeuxdegenieduquebec/", icon: FaInstagram, label: "" },
