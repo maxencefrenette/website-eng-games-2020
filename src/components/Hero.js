@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FaArrowDown } from "react-icons/fa/";
 import { FormattedMessage } from "react-intl";
 import theme from "../theme/theme.yaml";
 import styled from "styled-components";
+import Img from "gatsby-image";
+import { graphql } from "gatsby";
 
-const HeroStyle = styled.section`
+const HeroContainer = styled.section`
   align-items: center;
   background: linear-gradient(0deg, #e0306e, #6438b5);
   background-image: url(${props => props.backgrounds.mobile});
@@ -18,110 +19,90 @@ const HeroStyle = styled.section`
   height: 100px;
   padding: 40px;
   padding-top: 100px;
-  padding-bottom: 200px;
-
-  h1 {
-    text-align: center;
-    font-size: ${theme.hero.size.h1.mobile};
-    margin: 0 0 40px 0;
-    color: white;
-    line-height: 1.1;
-    text-remove-gap: both 0 ${theme.font.heading};
-    text-transform: uppercase;
-
-    & > small {
-      font-size: 0.7em;
-    }
-  }
-
-  button {
-    background: ${theme.colors.secondary};
-    border: 0;
-    border-radius: 50%;
-    font-size: 1.35em;
-    padding: 10px 20px;
-    cursor: pointer;
-    width: 80px;
-    height: 80px;
-
-    &:focus {
-      outline-style: none;
-      background: ${theme.colors.secondary};
-    }
-
-    svg {
-      position: relative;
-      top: 5px;
-      fill: white;
-      stroke-width: 40;
-      stroke: white;
-      animation-duration: 1s;
-      animation-name: buttonIconMove;
-      animation-iteration-count: infinite;
-    }
-  }
-
-  @keyframes buttonIconMove {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
+  padding-bottom: 100px;
 
   @media ${theme.tablet} {
     background-image: url(${props => props.backgrounds.tablet});
-
-    h1 {
-      max-width: 90%;
-      font-size: ${theme.hero.size.h1.tablet};
-    }
-
-    button {
-      font-size: 1.7em;
-    }
   }
 
   @media ${theme.desktop} {
     background-image: url(${props => props.backgrounds.desktop});
-
-    h1 {
-      max-width: 80%;
-      font-size: ${theme.hero.size.h1.desktop};
-    }
-
-    button {
-      font-size: 2.2em;
-    }
   }
 `;
 
+const Header = styled.h1`
+  text-align: center;
+  margin: 0 0 40px 0;
+  color: white;
+
+`;
+
+const Line = styled.span`
+  font-size: calc(${props => props.ratio} * ${theme.hero.size.h1.mobile});
+
+  @media ${theme.tablet} {
+    font-size: calc(${props => props.ratio} * ${theme.hero.size.h1.tablet});
+  }
+
+  @media ${theme.desktop} {
+    font-size: calc(${props => props.ratio} * ${theme.hero.size.h1.desktop});
+  }
+`;
+
+const LineUppercase = styled(Line)`
+  text-transform: uppercase;
+`;
+
 const Hero = props => {
-  const { scrollToContent, backgrounds } = props;
+  const { data, backgrounds } = props;
 
   return (
-    <HeroStyle backgrounds={backgrounds}>
-      <h1>
-        <FormattedMessage id="jdg" />
+    <HeroContainer backgrounds={backgrounds}>
+      <Header>
+        <Line ratio={0.3} >
+          <FormattedMessage id="30th-edition" />
+        </Line>
         <br />
-        <small>
-          <FormattedMessage id="tagline" />
-        </small>
-      </h1>
-      <button onClick={scrollToContent} aria-label="scroll">
-        <FaArrowDown />
-      </button>
-    </HeroStyle>
+        <LineUppercase ratio={1}>
+          <FormattedMessage id="jdg" />
+        </LineUppercase>
+        <br />
+        <Line ratio={2.2}>2020</Line>
+      </Header>
+
+      <Img fixed={data.logoHero.fixed} />
+    </HeroContainer>
   );
 };
 
 Hero.propTypes = {
-  scrollToContent: PropTypes.func.isRequired,
   backgrounds: PropTypes.object.isRequired
 };
 
 export default Hero;
+
+export const query = graphql`
+  fragment Hero on Query {
+    logoHero: imageSharp(fluid: { originalName: { regex: "/logo-2020/" } }) {
+      fixed(width: 250, height: 250, quality: 90, cropFocus: CENTER) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+
+    bgDesktop: imageSharp(fluid: { originalName: { regex: "/montreal-edited/" } }) {
+      resize(width: 1920, quality: 90, cropFocus: CENTER) {
+        src
+      }
+    }
+    bgTablet: imageSharp(fluid: { originalName: { regex: "/montreal-edited/" } }) {
+      resize(width: 1024, height: 384, quality: 90, cropFocus: CENTER) {
+        src
+      }
+    }
+    bgMobile: imageSharp(fluid: { originalName: { regex: "/montreal-edited/" } }) {
+      resize(width: 600, height: 300, quality: 90, cropFocus: CENTER) {
+        src
+      }
+    }
+  }
+`;

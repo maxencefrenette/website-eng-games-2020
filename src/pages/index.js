@@ -59,12 +59,6 @@ const Right = styled.div`
 `;
 
 class IndexPage extends React.Component {
-  separator = React.createRef();
-
-  scrollToContent = e => {
-    this.separator.current.scrollIntoView({ block: "start", behavior: "smooth" });
-  };
-
   render() {
     const { data } = this.props;
 
@@ -91,13 +85,7 @@ class IndexPage extends React.Component {
 
     return (
       <>
-        <ThemeContext.Consumer>
-          {theme => (
-            <Hero scrollToContent={this.scrollToContent} backgrounds={backgrounds} theme={theme} />
-          )}
-        </ThemeContext.Consumer>
-
-        <PhantomHr ref={this.separator} />
+        <Hero backgrounds={backgrounds} data={data} />
 
         <Article noPadding={true}>
           <h2>
@@ -200,21 +188,8 @@ export const query = graphql`
         }
       }
     }
-    bgDesktop: imageSharp(fluid: { originalName: { regex: "/montreal-edited/" } }) {
-      resize(width: 1920, quality: 90, cropFocus: CENTER) {
-        src
-      }
-    }
-    bgTablet: imageSharp(fluid: { originalName: { regex: "/montreal-edited/" } }) {
-      resize(width: 1024, height: 384, quality: 90, cropFocus: CENTER) {
-        src
-      }
-    }
-    bgMobile: imageSharp(fluid: { originalName: { regex: "/montreal-edited/" } }) {
-      resize(width: 600, height: 300, quality: 90, cropFocus: CENTER) {
-        src
-      }
-    }
+
+    ...Hero,
 
     parallax: imageSharp(fluid: { originalName: { regex: "/ets-aerial/" } }) {
       resize(width: 1920, quality: 90, cropFocus: CENTER) {
