@@ -5,6 +5,7 @@ import { FormattedMessage } from "react-intl";
 import { Link } from "gatsby";
 import theme from "../../theme/theme.yaml";
 import styled from "styled-components";
+import A from "../A";
 
 const ItemStyles = styled.li`
   font-family: ${theme.font.body};
@@ -91,9 +92,9 @@ const Item = React.forwardRef((props, ref) => {
   return (
     <ItemStyles ref={ref} className={hiddenItem ? "hiddenItem" : "item"} fixed={fixed}>
       {to.match(/^http/) ? (
-        <a href={to} className={hiddenItem ? "inHiddenItem" : ""} onClick={onClick} data-slug={to}>
+        <A href={to} className={hiddenItem ? "inHiddenItem" : ""} onClick={onClick} data-slug={to}>
           {inner}
-        </a>
+        </A>
       ) : noLocalize ? (
         <Link to={to} className={hiddenItem ? "inHiddenItem" : ""} onClick={onClick} data-slug={to}>
           {inner}

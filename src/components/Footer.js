@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
 import theme from "../theme/theme.yaml";
+import A from "../components/A";
 
 const FooterStyle = styled.footer`
   padding: 20px;
@@ -43,31 +44,31 @@ const Footer = () => {
       <ul>
         <li>
           <FormattedMessage id="theme" />:{" "}
-          <a href="https://github.com/greglobinski/gatsby-starter-hero-blog">
+          <A href="https://github.com/greglobinski/gatsby-starter-hero-blog">
             gatsby-starter-hero-blog
-          </a>
+          </A>
         </li>
         <li>
-          <a href="https://www.creiq.qc.ca/">
+          <A href="https://www.creiq.qc.ca/">
             <FormattedMessage id="creiq" />
-          </a>
+          </A>
         </li>
         <li>
-          <a href="https://cqi-qec.qc.ca">
+          <A href="https://cqi-qec.qc.ca">
             <FormattedMessage id="cqi" />
-          </a>
+          </A>
         </li>
         <li>
-          <a href="https://www.facebook.com/jeuxdegenie/">Facebook</a>
+          <A href="https://www.facebook.com/jeuxdegenie/">Facebook</A>
         </li>
         <li>
-          <a href="https://www.instagram.com/jeuxdegenieduquebec/">Instagram</a>
+          <A href="https://www.instagram.com/jeuxdegenieduquebec/">Instagram</A>
         </li>
         <li>
-          <a href="https://www.linkedin.com/company/jdg-qc/">LinkedIn</a>
+          <A href="https://www.linkedin.com/company/jdg-qc/">LinkedIn</A>
         </li>
         <li>
-          <a href="https://twitter.com/jdgqc">Twitter</a>
+          <A href="https://twitter.com/jdgqc">Twitter</A>
         </li>
       </ul>
     </FooterStyle>

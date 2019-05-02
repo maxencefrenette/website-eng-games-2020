@@ -8,6 +8,7 @@ import Img from "gatsby-image";
 import MiniHero from "../components/MiniHero";
 import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
+import A from "../components/A";
 
 const Container = styled.div`
   width: 1000px;
@@ -78,9 +79,9 @@ const UniversitesPage = props => {
                 {universities.map(uni => (
                   <University key={uni[0]}>
                     {uni[1] ? (
-                      <a href={uni[1]}>
+                      <A href={uni[1]}>
                         <Img fixed={data[uni[0]].fixed} />
-                      </a>
+                      </A>
                     ) : (
                       <Img fixed={data[uni[0]].fixed} />
                     )}

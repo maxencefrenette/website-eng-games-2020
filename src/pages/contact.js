@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import theme from "../theme/theme.yaml";
 import { FormattedMessage } from "react-intl";
+import A from "../components/A";
 
 const Container = styled.div`
   display: flex;
@@ -54,7 +55,7 @@ const ContactPage = props => {
                 <ContactInfo>
                   <FaEnvelope />
                   <div>
-                    <a href="mailto:info@jeuxdegenie.qc.ca">info@jeuxdegenie.qc.ca</a>
+                    <A href="mailto:info@jeuxdegenie.qc.ca">info@jeuxdegenie.qc.ca</A>
                   </div>
                 </ContactInfo>
                 <ContactInfo>

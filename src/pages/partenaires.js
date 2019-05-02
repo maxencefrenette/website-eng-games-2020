@@ -10,6 +10,7 @@ import styled from "styled-components";
 import Download from "../components/Download";
 import theme from "../theme/theme.yaml";
 import { FormattedMessage } from "react-intl";
+import A from "../components/A";
 
 const HContainer = styled.div`
   display: flex;
@@ -78,18 +79,18 @@ const PartenairesPage = props => {
                 <FormattedMessage id="host" />
               </h2>
               <Centered>
-                <a href="https://www.etsmtl.ca/">
+                <A href="https://www.etsmtl.ca/">
                   <Img fixed={data.ets.fixed} />
-                </a>
+                </A>
               </Centered>
 
               <h2>
                 <FormattedMessage id="platinum" />
               </h2>
               <Centered>
-                <a href="https://aeets.com/">
+                <A href="https://aeets.com/">
                   <Img fixed={data.aeets.fixed} />
-                </a>
+                </A>
               </Centered>
 
               {/* <h2><FormattedMessage id="diamond" /></h2> */}
