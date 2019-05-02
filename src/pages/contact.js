@@ -28,6 +28,12 @@ const ContactInfo = styled.div`
   }
 `;
 
+const Address = styled.div`
+  & > * {
+    margin-bottom: 3px;
+  }
+`;
+
 const ContactPage = props => {
   const {
     data: {
@@ -60,19 +66,19 @@ const ContactPage = props => {
                 </ContactInfo>
                 <ContactInfo>
                   <FaMapMarkerAlt />
-                  <div>
+                  <Address>
                     <b>
-                      <FormattedMessage id="aeets" />
+                      <FormattedMessage id="address1" />
                     </b>
                     <br />
-                    <FormattedMessage id="aeets-address1" />
+                    <FormattedMessage id="address2" />
                     <br />
-                    <FormattedMessage id="aeets-address2" />
+                    <FormattedMessage id="address3" />
                     <br />
-                    <FormattedMessage id="aeets-address3" />
+                    <FormattedMessage id="address4" />
                     <br />
-                    <FormattedMessage id="aeets-address4" />
-                  </div>
+                    <FormattedMessage id="address5" />
+                  </Address>
                 </ContactInfo>
               </Container>
 

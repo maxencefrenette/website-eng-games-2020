@@ -26,6 +26,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: ${theme.font.body};
     font-weight: ${theme.font.bodyWeight};
+
+    & b {
+      font-weight: bold;
+    }
   }
 
   h1,

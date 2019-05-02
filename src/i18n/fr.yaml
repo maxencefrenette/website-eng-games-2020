@@ -162,11 +162,11 @@ uqat: "Université du Québec en Abitibi-Témiscamingue"
 uqottawa: "Université du Québec en Outaouais & Université d'Ottawa"
 
 # Contact
-aeets: Association étudiante de l’ÉTS
-aeets-address1: École de technologie supérieure
-aeets-address2: 1100, rue Notre-Dame Ouest
-aeets-address3: Local A-1840
-aeets-address4: Montréal (Québec) H3C 1K3
+address1: Jeux de Génie du Québec
+address2: Gare Windsor, bureau 350
+address3: 1100, Avenue des Canadiens-de-Montréal
+address4: Montréal, Québec
+address5: H3B 2S2
 
 # Footer
 theme: Thème
