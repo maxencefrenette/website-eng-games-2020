@@ -10,7 +10,7 @@ colors:
   primary: '#2A2B7A'
   secondary: '#d55c0d'
 space:
-  default: 30px
+  default: 50px
 maxWidth:
   tablet: 650px
   desktop: 1200px
