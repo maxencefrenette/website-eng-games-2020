@@ -145,7 +145,10 @@ class IndexPage extends React.Component {
                 <FormattedMessage id="mission-2020" />
               </h2>
               <p>
-                <FormattedMessage id="mission-2020-text" />
+                <FormattedMessage id="mission-2020-text-1" />
+              </p>
+              <p>
+                <FormattedMessage id="mission-2020-text-2" />
               </p>
             </Left>
             <Right>
@@ -189,7 +192,7 @@ export const query = graphql`
       }
     }
 
-    ...Hero,
+    ...Hero
 
     parallax: imageSharp(fluid: { originalName: { regex: "/ets-aerial/" } }) {
       resize(width: 1920, quality: 90, cropFocus: CENTER) {

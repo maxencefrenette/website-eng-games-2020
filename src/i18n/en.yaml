@@ -28,21 +28,24 @@ pillar3-message:
 history: History
 history-text:
   "For the past 29 years, Engineering Games has been the largest engineering competition in Quebec
-  and the biggest gathering of engineering students in the province. Participants, from 12 universities
-  in Quebec and Ontario, test their general and specific skills, complementary to those of the engineering
-  profession, by confronting challenges of a varied nature. For the thirtieth edition, the event will take
-  place from January 3 to 7, 2020 at the École de technologie supérieure in Montreal."
+  and the biggest gathering of engineering students in the province. Participants, from 12
+  universities in Quebec and Ontario, test their general and specific skills, complementary to those
+  of the engineering profession, by confronting challenges of a varied nature. For the thirtieth
+  edition, the event will take place from January 3 to 7, 2020 at the École de technologie
+  supérieure in Montreal."
 mission-2020: "Theme : JDG 2020 Mission"
-mission-2020-text:
-  "The harmful consequences of human activities are causing the degradation of the ozone layer.
-  The climatologists of the Bureau of Engineering and Planning of Competitions Organized as Multidisciplinary
-  (BEPCOM), ensure the imminence of a series of disasters which will have the effect of decimating all life
-  on Earth at an alarming rate. These unprecedented events will begin in September 2019. In view of the
-  JDG2020 mission which will be held next January, each Quebec university is mandated to select, among
-  the survivors, 40 engineering students. This selection will be based on their ability to solve the complex
-  problems associated with rebuilding a better world, sustainable and in their image. The objective of this
-  mission is to improve the situation on Earth, preserve knowledge, responsibly use remaining resources and
-  revitalize activities in a sustainable manner."
+mission-2020-text-1:
+  The harmful consequences of human activities are causing the degradation of the ozone layer. The
+  climatologists of the Bureau of Engineering and Planning of Competitions Organized as
+  Multidisciplinary (BEPCOM), ensure the imminence of a series of disasters which will have the
+  effect of decimating all life on Earth at an alarming rate.
+mission-2020-text-2:
+  These unprecedented events will begin in September 2019. In view of the JDG2020 mission which will
+  be held next January, each Quebec university is mandated to select, among the survivors, 40
+  engineering students. This selection will be based on their ability to solve the complex problems
+  associated with rebuilding a better world, sustainable and in their image. The objective of this
+  mission is to improve the situation on Earth, preserve knowledge, responsibly use remaining
+  resources and revitalize activities in a sustainable manner.
 news: News
 
 # Compétitions
@@ -125,8 +128,9 @@ participants-text:
 # Sponsors
 thank-you: Thanks to all our sponsors!
 thank-you-text:
-  "The Engineering Games is a complex and challenging inter-university competition, but it would be nothing without its valued partners.
-If you also want to make a difference with future professionals in your field, it's here!"
+  "The Engineering Games is a complex and challenging inter-university competition, but it would be
+  nothing without its valued partners. If you also want to make a difference with future
+  professionals in your field, it's here!"
 host: Host
 platinum: Platinum
 diamond: Diamond
