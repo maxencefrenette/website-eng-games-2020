@@ -14,7 +14,9 @@
     "lint-errors": "eslint src/**/*.{js,jsx} --quiet",
     "lint": "eslint src/**/*.{js,jsx}",
     "stylelint": "stylelint src/**/*.js",
-    "generate-app-icons": "sh ./scripts/generate-app-icons.sh"
+    "generate-app-icons": "sh ./scripts/generate-app-icons.sh",
+    "precommit": "lint-staged",
+    "fmt": "prettier --write './**/*.js'"
   },
   "dependencies": {
     "antd": "^3.7.0",
@@ -73,7 +75,9 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.10.0",
+    "husky": "^2.2.0",
     "json-loader": "^0.5.7",
+    "lint-staged": "^8.1.6",
     "precss": "^3.1.2",
     "prettier": "^1.17.0",
     "serve": "^9.2.0",
@@ -83,5 +87,11 @@
     "stylelint-config-standard": "^18.2.0",
     "url-loader": "^1.1.1",
     "webpack-bundle-analyzer": "^2.13.1"
+  },
+  "lint-staged": {
+    "*.{js,json,yaml}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

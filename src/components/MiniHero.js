@@ -56,7 +56,7 @@ const MiniHero = props => {
 };
 
 MiniHero.propTypes = {
-  backgrounds: PropTypes.object.isRequired,
+  backgrounds: PropTypes.object.isRequired
 };
 
 export const query = graphql`

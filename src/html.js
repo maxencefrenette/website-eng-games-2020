@@ -27,11 +27,23 @@ export default class HTML extends React.Component {
           <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png" />
 
           {/* Carousel styles */}
-          <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            charSet="UTF-8"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+          />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+          />
 
           {/* Oswald and Lato */}
-          <link href="https://fonts.googleapis.com/css?family=Lato:300|Oswald:300" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Lato:300|Oswald:300"
+            rel="stylesheet"
+          />
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}

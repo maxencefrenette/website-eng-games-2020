@@ -34,7 +34,6 @@ const Header = styled.h1`
   text-align: center;
   margin: 0 0 40px 0;
   color: white;
-
 `;
 
 const Line = styled.span`
@@ -59,7 +58,7 @@ const Hero = props => {
   return (
     <HeroContainer backgrounds={backgrounds}>
       <Header>
-        <Line ratio={0.3} >
+        <Line ratio={0.3}>
           <FormattedMessage id="30th-edition" />
         </Line>
         <br />

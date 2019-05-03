@@ -15,9 +15,7 @@ addLocaleData([...enData, ...frData]);
 
 const I18n = ({ locale, children }) => (
   <IntlProvider locale={locale} messages={messages[locale]}>
-    <React.Fragment>
-      {children}
-    </React.Fragment>
+    <React.Fragment>{children}</React.Fragment>
   </IntlProvider>
 );
 

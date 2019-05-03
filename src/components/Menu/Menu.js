@@ -77,9 +77,21 @@ class Menu extends React.Component {
       { to: "/comite-organisateur/", label: "oc" },
       { to: "/delegations/", label: "delegations" },
       { to: "/contact/", label: "contact" },
-      { to: "https://www.facebook.com/jeuxdegenie/", icon: FaFacebook, label: "" },
-      { to: "https://www.instagram.com/jeuxdegenieduquebec/", icon: FaInstagram, label: "" },
-      { to: "https://www.linkedin.com/company/jdg-qc/", icon: FaLinkedin, label: "" },
+      {
+        to: "https://www.facebook.com/jeuxdegenie/",
+        icon: FaFacebook,
+        label: ""
+      },
+      {
+        to: "https://www.instagram.com/jeuxdegenieduquebec/",
+        icon: FaInstagram,
+        label: ""
+      },
+      {
+        to: "https://www.linkedin.com/company/jdg-qc/",
+        icon: FaLinkedin,
+        label: ""
+      },
       { to: "https://twitter.com/jdgqc", icon: FaTwitter, label: "" }
     ].map((item, id) => ({ id, ...item }));
 

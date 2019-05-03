@@ -20,7 +20,7 @@ const MembreCO = styled.div`
   margin-right: 25px;
   margin-top: 50px;
   margin-bottom: 25px;
-  max-width: 250px; 
+  max-width: 250px;
 
   &:nth-child(10n) {
     margin-left: 25px;

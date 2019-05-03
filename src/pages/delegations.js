@@ -63,9 +63,11 @@ const UniversitesPage = props => {
     ["uqottawa", "http://uqottawa.ca/"]
   ];
 
-  return <React.Fragment>
+  return (
+    <React.Fragment>
       <ThemeContext.Consumer>
-        {theme => <>
+        {theme => (
+          <>
             <MiniHero backgrounds={backgrounds} theme={theme} />
             <Article>
               <header>
@@ -74,21 +76,29 @@ const UniversitesPage = props => {
                 </h1>
               </header>
               <Container>
-                {universities.map(uni => <University key={uni[0]}>
-                    {uni[1] ? <A href={uni[1]}>
+                {universities.map(uni => (
+                  <University key={uni[0]}>
+                    {uni[1] ? (
+                      <A href={uni[1]}>
                         <Img fixed={data[uni[0]].fixed} />
-                      </A> : <Img fixed={data[uni[0]].fixed} />}
+                      </A>
+                    ) : (
+                      <Img fixed={data[uni[0]].fixed} />
+                    )}
                     <div className="description">
                       <FormattedMessage id={uni[0]} />
                     </div>
-                  </University>)}
+                  </University>
+                ))}
               </Container>
             </Article>
-          </>}
+          </>
+        )}
       </ThemeContext.Consumer>
 
       <Seo facebook={facebook} />
-    </React.Fragment>;
+    </React.Fragment>
+  );
 };
 
 UniversitesPage.propTypes = {

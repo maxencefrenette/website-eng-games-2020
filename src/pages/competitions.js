@@ -51,7 +51,9 @@ const CompetitionsPage = props => {
               </h2>
               <p>
                 <FloatRight>
-                  <Carousel>{[data.machine1, data.machine2, data.machine3, data.machine4, data.machine5]}</Carousel>
+                  <Carousel>
+                    {[data.machine1, data.machine2, data.machine3, data.machine4, data.machine5]}
+                  </Carousel>
                 </FloatRight>
                 <FormattedMessage id="machine-text" />
               </p>
@@ -71,7 +73,17 @@ const CompetitionsPage = props => {
               </h2>
               <p>
                 <FloatRight>
-                  <Carousel>{[data.acad1, data.acad2, data.acad3, data.acad4, data.acad5, data.acad6, data.acad7]}</Carousel>
+                  <Carousel>
+                    {[
+                      data.acad1,
+                      data.acad2,
+                      data.acad3,
+                      data.acad4,
+                      data.acad5,
+                      data.acad6,
+                      data.acad7
+                    ]}
+                  </Carousel>
                 </FloatRight>
                 <FormattedMessage id="academic-text" />
               </p>
