@@ -10,7 +10,7 @@ const Container = styled.div`
 export default function Carousel({ children }) {
   return (
     <Container>
-      <Slider width={500} adaptiveHeight={true} autoplay={true} easing="ease">
+      <Slider width={500} adaptiveHeight={true} autoplay={true} autoplaySpeed={6000} easing="ease">
         {children.map(imgData => (
           <Img fixed={imgData.fixed} />
         ))}
