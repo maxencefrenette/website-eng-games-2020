@@ -1,13 +1,12 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { graphql } from "gatsby";
-import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
 import Hero from "../components/Hero";
 import Seo from "../components/Seo";
 import { FacebookProvider, Page } from "react-facebook";
 import styled from "styled-components";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, FormattedHTMLMessage } from "react-intl";
 import { Parallax } from "react-parallax";
 import theme from "../theme/theme.yaml";
 import { FaRecycle, FaChild, FaCog } from "react-icons/fa";
@@ -145,7 +144,7 @@ class IndexPage extends React.Component {
                 <FormattedMessage id="mission-2020" />
               </h2>
               <p>
-                <FormattedMessage id="mission-2020-text-1" />
+                <FormattedHTMLMessage id="mission-2020-text-1" />
               </p>
               <p>
                 <FormattedMessage id="mission-2020-text-2" />
