@@ -7,7 +7,7 @@ import { graphql } from "gatsby";
 import MiniHero from "../components/MiniHero";
 import Carousel from "../components/Carousel";
 import styled from "styled-components";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, FormattedHTMLMessage } from "react-intl";
 import theme from "../theme/theme.yaml";
 
 const FloatRight = styled.div`
@@ -49,30 +49,30 @@ const CompetitionsPage = props => {
               <h2>
                 <FormattedMessage id="machine" />
               </h2>
-              <p>
-                <FloatRight>
+              <FloatRight>
+                <p>
                   <Carousel>
                     {[data.machine1, data.machine2, data.machine3, data.machine4, data.machine5]}
                   </Carousel>
-                </FloatRight>
-                <FormattedMessage id="machine-text" />
-              </p>
+                </p>
+              </FloatRight>
+              <FormattedHTMLMessage id="machine-text" />
 
               <h2>
                 <FormattedMessage id="entrepreneurship" />
               </h2>
-              <p>
-                <FloatLeft>
+              <FloatLeft>
+                <p>
                   <Carousel>{[data.entr1]}</Carousel>
-                </FloatLeft>
-                <FormattedMessage id="entrepreneurship-text" />
-              </p>
+                </p>
+              </FloatLeft>
+              <FormattedHTMLMessage id="entrepreneurship-text" />
 
               <h2>
                 <FormattedMessage id="academic" />
               </h2>
-              <p>
-                <FloatRight>
+              <FloatRight>
+                <p>
                   <Carousel>
                     {[
                       data.acad1,
@@ -84,29 +84,29 @@ const CompetitionsPage = props => {
                       data.acad7
                     ]}
                   </Carousel>
-                </FloatRight>
-                <FormattedMessage id="academic-text" />
-              </p>
+                </p>
+              </FloatRight>
+              <FormattedHTMLMessage id="academic-text" />
 
               <h2>
                 <FormattedMessage id="sports" />
               </h2>
-              <p>
-                <FloatLeft>
+              <FloatLeft>
+                <p>
                   <Carousel>{[data.sports1, data.sports2, data.sports3]}</Carousel>
-                </FloatLeft>
-                <FormattedMessage id="sports-text" />
-              </p>
+                </p>
+              </FloatLeft>
+              <FormattedHTMLMessage id="sports-text" />
 
               <h2>
                 <FormattedMessage id="cultural" />
               </h2>
-              <p>
-                <FloatRight>
+              <FloatRight>
+                <p>
                   <Carousel>{[data.culturelle1]}</Carousel>
-                </FloatRight>
-                <FormattedMessage id="cultural-text" />
-              </p>
+                </p>
+              </FloatRight>
+              <FormattedHTMLMessage id="cultural-text" />
             </Article>
           </>
         )}

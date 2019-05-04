@@ -23,6 +23,12 @@ const Article = styled.article`
   h6 {
     text-transform: uppercase;
     text-align: center;
+
+    &::before {
+      content: "";
+      clear: both;
+      display: table;
+    }
   }
 
   h1 {
@@ -98,12 +104,6 @@ const Article = styled.article`
     line-height: 1.6;
     margin: 0 0 1.5em;
     text-align: justify;
-
-    &::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
   }
   ul {
     list-style: circle;
