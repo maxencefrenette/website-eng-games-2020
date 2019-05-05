@@ -15,6 +15,7 @@ const MenuStyle = styled.nav`
   display: flex;
   flex-grow: 1;
   left: 0;
+  flex-wrap: wrap;
 
   padding: 0 10px;
   position: fixed;
@@ -46,7 +47,7 @@ const MenuStyle = styled.nav`
       background: ${theme.colors.primary};
     }
 
-    ${props => props.open && `padding: 20px;`} ${props => !props.fixed && `bottom: -100px;`};
+    ${props => props.open && `padding: 20px 0;`} ${props => !props.fixed && `bottom: -100px;`};
   }
 
   @media ${theme.desktop} {
@@ -57,7 +58,6 @@ const MenuStyle = styled.nav`
     justify-content: flex-end;
     padding-left: 50px;
     transition: none;
-    flex-wrap: wrap;
 
     .itemList {
       justify-content: flex-end;
@@ -80,28 +80,29 @@ class Menu extends React.Component {
       {
         to: "https://www.facebook.com/jeuxdegenie/",
         icon: FaFacebook,
-        label: ""
+        label: "",
+        secondRow: true
       },
       {
         to: "https://www.instagram.com/jeuxdegenieduquebec/",
         icon: FaInstagram,
-        label: ""
+        label: "",
+        secondRow: true
       },
       {
         to: "https://www.linkedin.com/company/jdg-qc/",
         icon: FaLinkedin,
-        label: ""
-      },
-      { to: "https://twitter.com/jdgqc", icon: FaTwitter, label: "" }
-    ].map((item, id) => ({ id, ...item }));
+        label: "",
+        secondRow: true
+      }
+    ].map((item, id) => ({ id, overflow: false, ...item }));
 
     this.itemList = React.createRef();
     this.itemRefs = this.items.map(React.createRef);
   }
 
   state = {
-    open: false,
-    visibleItems: 0
+    open: false
   };
 
   static propTypes = {
@@ -130,41 +131,39 @@ class Menu extends React.Component {
 
     const menu = this.itemRefs.reduce(
       (result, item, i) => {
-        item.current.classList.add("item");
-        item.current.classList.remove("hideItem");
+        if (!item.current) {
+          return result;
+        }
 
         const currentCumulativeWidth = result.cumulativeWidth + item.current.offsetWidth;
         result.cumulativeWidth = currentCumulativeWidth;
 
-        if (!item.current.classList.contains("more") && currentCumulativeWidth > maxWidth) {
-          item.current.classList.add("hideItem");
-          item.current.classList.remove("item");
+        if (currentCumulativeWidth > maxWidth) {
+          this.items[i].overflow = true;
         } else {
-          result.visibleItems = i - 1;
+          this.items[i].overflow = false;
         }
 
         return result;
       },
-      { visibleItems: 0, cumulativeWidth: 0 }
+      { cumulativeWidth: 0 }
     );
-
-    this.setState({ visibleItems: menu.visibleItems });
   };
 
   toggleMenu = e => {
     e.preventDefault();
 
-    if (this.props.screenWidth < 1024) {
-      this.renderedItems.map(item => {
-        const oldClass = this.state.open ? "showItem" : "hideItem";
-        const newClass = this.state.open ? "hideItem" : "showItem";
+    // if (this.props.screenWidth < 1024) {
+    //   this.renderedItems.map(item => {
+    //     const oldClass = this.state.open ? "showItem" : "hideItem";
+    //     const newClass = this.state.open ? "hideItem" : "showItem";
 
-        if (item.classList.contains(oldClass)) {
-          item.classList.add(newClass);
-          item.classList.remove(oldClass);
-        }
-      });
-    }
+    //     if (item.classList.contains(oldClass)) {
+    //       item.classList.add(newClass);
+    //       item.classList.remove(oldClass);
+    //     }
+    //   });
+    // }
 
     this.setState(prevState => ({ open: !prevState.open }));
   };
@@ -188,17 +187,30 @@ class Menu extends React.Component {
   render() {
     const { fixed, screenWidth } = this.props;
     const { open } = this.state;
+    const showSecondRow = open || screenWidth >= 1024;
 
     return (
-      <MenuStyle open={open} fixed={fixed} rel="js-menu">
+      <MenuStyle open={open} fixed={fixed}>
         <ul className="itemList" ref={this.itemList}>
-          {this.items.map((item, i) => (
-            <Item item={item} key={item.id} fixed={fixed} ref={this.itemRefs[item.id]} />
-          ))}
+          {this.items.map(
+            (item, i) =>
+              !item.secondRow &&
+              !item.overflow && (
+                <Item item={item} key={item.id} fixed={fixed} ref={this.itemRefs[item.id]} />
+              )
+          )}
         </ul>
-        <ul className="itemList">
-          <LangSwitcher fixed={fixed} />
-        </ul>
+        {showSecondRow && (
+          <ul className="itemList">
+            {this.items.map(
+              (item, i) =>
+                (item.secondRow || item.overflow) && (
+                  <Item item={item} key={item.id} fixed={fixed} ref={this.itemRefs[item.id]} />
+                )
+            )}
+            <LangSwitcher fixed={fixed} />
+          </ul>
+        )}
         {screenWidth < 1024 && <Expand onClick={this.toggleMenu} open={open} />}
       </MenuStyle>
     );
