@@ -115,9 +115,8 @@ const Article = styled.article`
     line-height: 1.5;
   }
   a {
-    font-weight: bold;
+    font-weight: 600;
     color: ${theme.colors.primary};
-    text-decoration: underline;
   }
   a.gatsby-resp-image-link {
     border: 0;
