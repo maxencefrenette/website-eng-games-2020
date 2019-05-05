@@ -44,7 +44,7 @@ const ItemStyles = styled.li`
 
       a:hover {
         color: ${theme.colors.primary};
-        background: color(white alpha(-60%));
+        background: rgba(255, 255, 255, 0.6);
       }
 
       svg {
