@@ -6,8 +6,11 @@ import { graphql } from "gatsby";
 import Seo from "../components/Seo";
 import Img from "gatsby-image";
 import MiniHero from "../components/MiniHero";
+import A from "../components/A";
 import styled from "styled-components";
 import { FormattedMessage } from "react-intl";
+import { FaEnvelope } from "react-icons/fa";
+import theme from "../theme/theme.yaml";
 
 const Container = styled.div`
   display: flex;
@@ -44,6 +47,12 @@ const Description = styled.div`
     background-color: #333;
     margin: 12px auto;
   }
+
+  & svg {
+    margin-left: 5px;
+    vertical-align: middle;
+    fill: ${theme.colors.primary};
+  }
 `;
 
 const ComiteOrganisateurPage = props => {
@@ -58,12 +67,12 @@ const ComiteOrganisateurPage = props => {
   } = props;
 
   const CO = [
-    ["anneSo", "Anne-Sophie Lachapelle", "president"],
-    ["jeremie", "Jérémie Lesuise", "vp-sponsorship"],
-    ["alyssa", "Alyssa Bouchenak", "vp-comm"],
+    ["anneSo", "Anne-Sophie Lachapelle", "president", "president"],
+    ["jeremie", "Jérémie Lesuise", "vp-sponsorship", "partenariats"],
+    ["alyssa", "Alyssa Bouchenak", "vp-comm", "communications"],
     ["francois", "François Pelletier", "vp-competitions"],
     ["sacha", "Sacha Terral", "vp-logistics"],
-    ["celia", "Célia-Nour Mahrour-Venturelli", "vp-finances"],
+    ["celia", "Célia-Nour Mahrour-Venturelli", "vp-finances", "finances"],
     ["gabriel", "Gabriel Lévesque", "vp-machine"],
     ["iman", "Iman Hassanein", "vp-social"],
     ["marc", "Marc Antoine Dumont", "vp-dd"],
@@ -92,6 +101,11 @@ const ComiteOrganisateurPage = props => {
                       <hr />
                       <p className="role">
                         <FormattedMessage id={membreCO[2]} />
+                        {membreCO[3] && (
+                          <A href={`mailto:${membreCO[3]}@jeuxdegenie.qc.ca`}>
+                            <FaEnvelope />
+                          </A>
+                        )}
                       </p>
                     </Description>
                   </MembreCO>
