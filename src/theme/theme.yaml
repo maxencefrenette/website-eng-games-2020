@@ -1,14 +1,14 @@
-tablet: '(min-width: 600px)'
-desktop: '(min-width: 1024px)'
-belowDesktop: '(max-width: 1023px)'
+tablet: "(min-width: 600px)"
+desktop: "(min-width: 1024px)"
+belowDesktop: "(max-width: 1023px)"
 font:
   heading: Oswald, sans-serif
   headingWeight: 300
   body: Lato, sans-serif
   bodyWeight: 300
 colors:
-  primary: '#2A2B7A'
-  secondary: '#d55c0d'
+  primary: "#35275a"
+  secondary: "#d55c0d"
 space:
   default: 50px
 maxWidth:

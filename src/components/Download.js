@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { FaFileAlt } from "react-icons/fa/";
 import styled from "styled-components";
+import theme from "../theme/theme.yaml";
 
 const padding = 20;
 
@@ -44,7 +45,7 @@ const Ribbon = styled.div`
   // Taken from https://codepen.io/Paulie-D/pen/gpgYvZ
   margin: 0;
   padding: 0;
-  background: rebeccapurple;
+  background: ${theme.colors.primary};
   color: white;
   padding: 5px 0;
   position: absolute;
@@ -61,7 +62,7 @@ const Ribbon = styled.div`
     margin: 0 -1px; /* tweak */
     width: 100%;
     height: 100%;
-    background: rebeccapurple;
+    background: ${theme.colors.primary};
   }
   &:before {
     right: 100%;
