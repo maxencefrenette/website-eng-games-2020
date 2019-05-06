@@ -26,6 +26,12 @@ const Big = styled.div`
 
 const Centered = styled.div`
   text-align: center;
+
+  & > a {
+    &:hover {
+      opacity: 0.75;
+    }
+  }
 `;
 
 const SponsorshipPackageDownload = () => (
