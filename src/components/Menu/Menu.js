@@ -70,7 +70,6 @@ class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.items = [
-      { to: "/", label: "home" },
       { to: "/competitions/", label: "competitions" },
       { to: "/espace-participants/", label: "participants" },
       { to: "/partenaires/", label: "sponsors" },
