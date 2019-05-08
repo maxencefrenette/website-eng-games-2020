@@ -67,15 +67,15 @@ const ComiteOrganisateurPage = props => {
   } = props;
 
   const CO = [
-    ["anneSo", "Anne-Sophie Lachapelle", "president", "president"],
+    ["anneSo", "Anne-Sophie Lachapelle", "president", "presidence"],
     ["jeremie", "Jérémie Lesuise", "vp-sponsorship", "partenariats"],
     ["alyssa", "Alyssa Bouchenak", "vp-comm", "communications"],
-    ["francois", "François Pelletier", "vp-competitions"],
-    ["sacha", "Sacha Terral", "vp-logistics"],
+    ["francois", "François Pelletier", "vp-competitions", "competitions"],
+    ["sacha", "Sacha Terral", "vp-logistics", "logistique"],
     ["celia", "Célia-Nour Mahrour-Venturelli", "vp-finances", "finances"],
-    ["gabriel", "Gabriel Lévesque", "vp-machine"],
-    ["iman", "Iman Hassanein", "vp-social"],
-    ["marc", "Marc Antoine Dumont", "vp-dd"],
+    ["gabriel", "Gabriel Lévesque", "vp-machine", "machine"],
+    ["iman", "Iman Hassanein", "vp-social", "social"],
+    ["marc", "Marc Antoine Dumont", "vp-dd", "developpementdurable"],
     ["marieAude", "Marie-Aude Ardizzon", "vp-support"]
   ];
 
