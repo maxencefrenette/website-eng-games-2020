@@ -53,65 +53,58 @@ const PartenairesPage = props => {
   } = props;
 
   return (
-    <React.Fragment>
-      <ThemeContext.Consumer>
-        {theme => (
-          <>
-            <MiniHero backgrounds={backgrounds} theme={theme}>
-              <FormattedMessage id="sponsors" />
-            </MiniHero>
-            <Article theme={theme}>
-              <Centered>
-                <p>
-                  <FormattedMessage id="thank-you-text" />
-                </p>
-                <SponsorshipPackageDownload />
-                <br />
-                <br />
-                <Big>
-                  <FormattedMessage id="thank-you" />
-                </Big>
-              </Centered>
+    <>
+      <MiniHero backgrounds={backgrounds} theme={theme}>
+        <FormattedMessage id="sponsors" />
+      </MiniHero>
+      <Article theme={theme}>
+        <Centered>
+          <p>
+            <FormattedMessage id="thank-you-text" />
+          </p>
+          <SponsorshipPackageDownload />
+          <br />
+          <br />
+          <Big>
+            <FormattedMessage id="thank-you" />
+          </Big>
+        </Centered>
 
-              <h2>
-                <FormattedMessage id="host" />
-              </h2>
-              <Centered>
-                <A href="https://www.etsmtl.ca/">
-                  <Img fixed={data.ets.fixed} />
-                </A>
-              </Centered>
+        <h2>
+          <FormattedMessage id="host" />
+        </h2>
+        <Centered>
+          <A href="https://www.etsmtl.ca/">
+            <Img fixed={data.ets.fixed} />
+          </A>
+        </Centered>
 
-              <h2>
-                <FormattedMessage id="platinum" />
-              </h2>
-              <Centered>
-                <A href="https://aeets.com/">
-                  <Img fixed={data.aeets.fixed} />
-                </A>
-              </Centered>
+        <h2>
+          <FormattedMessage id="platinum" />
+        </h2>
+        <Centered>
+          <A href="https://aeets.com/">
+            <Img fixed={data.aeets.fixed} />
+          </A>
+        </Centered>
 
-              {/* <h2><FormattedMessage id="diamond" /></h2> */}
+        {/* <h2><FormattedMessage id="diamond" /></h2> */}
 
-              {/* <h2><FormattedMessage id="gold" /></h2> */}
+        {/* <h2><FormattedMessage id="gold" /></h2> */}
 
-              {/* <h2><FormattedMessage id="silver" /></h2> */}
+        {/* <h2><FormattedMessage id="silver" /></h2> */}
 
-              <h2>
-                <FormattedMessage id="bronze" />
-              </h2>
-              <Centered>
-                <Img fixed={data.boralex.fixed} />
-              </Centered>
+        <h2>
+          <FormattedMessage id="bronze" />
+        </h2>
+        <Centered>
+          <Img fixed={data.boralex.fixed} />
+        </Centered>
 
-              {/* <h2><FormattedMessage id="supporter" /></h2> */}
-            </Article>
-          </>
-        )}
-      </ThemeContext.Consumer>
-
+        {/* <h2><FormattedMessage id="supporter" /></h2> */}
+      </Article>
       <Seo facebook={facebook} />
-    </React.Fragment>
+    </>
   );
 };
 
