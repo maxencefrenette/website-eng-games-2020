@@ -58,6 +58,12 @@ const Left = styled.div`
 `;
 
 const Right = styled.div`
+  display: none;
+
+  @media ${theme.tablet} {
+    display: block;
+  }
+
   @media ${theme.desktop} {
     flex: 0 0 auto;
   }
