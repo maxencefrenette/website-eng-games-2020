@@ -1,7 +1,8 @@
+import React from "react";
 import styled from "styled-components";
 import theme from "../theme/theme.yaml";
 
-const Article = styled.article`
+const Styles = styled.article`
   padding: 20px;
   margin: 0 auto;
 
@@ -134,5 +135,23 @@ const Article = styled.article`
     border-radius: 0.1em;
   }
 `;
+
+const Paper = styled.div`
+  padding: 20px;
+  margin-top: -140px;
+
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  background-color: white;
+`;
+
+const Article = ({ children }) => {
+  return (
+    <Styles>
+      <Paper>{children}</Paper>
+    </Styles>
+  );
+};
 
 export default Article;

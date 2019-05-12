@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   body {
+    background-color: #ccc;
     font-family: ${theme.font.body};
     font-weight: ${theme.font.bodyWeight};
 
