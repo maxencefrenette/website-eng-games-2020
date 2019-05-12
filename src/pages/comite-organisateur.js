@@ -144,7 +144,7 @@ export const query = graphql`
       }
     }
 
-    backgrounds: imageSharp(fluid: { originalName: { regex: "/group-smile-cropped/" } }) {
+    backgrounds: imageSharp(fluid: { originalName: { regex: "/group-banquet/" } }) {
       ...MiniHero
     }
 
