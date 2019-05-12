@@ -94,7 +94,7 @@ export const query = graphql`
       }
     }
     bgTablet: imageSharp(fluid: { originalName: { regex: "/montreal-edited/" } }) {
-      resize(width: 1024, height: 384, quality: 90, cropFocus: CENTER) {
+      resize(width: 1280, height: 384, quality: 90, cropFocus: CENTER) {
         src
       }
     }

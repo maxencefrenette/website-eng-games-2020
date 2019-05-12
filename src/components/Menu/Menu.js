@@ -98,11 +98,12 @@ class Menu extends React.Component {
 
     this.itemList = React.createRef();
     this.itemRefs = this.items.map(React.createRef);
-  }
 
-  state = {
-    open: false
-  };
+    this.state = {
+      open: false,
+      overflow: this.items.map(() => false)
+    };
+  }
 
   static propTypes = {
     path: PropTypes.string.isRequired,
@@ -127,8 +128,9 @@ class Menu extends React.Component {
   hideOverflowedMenuItems = () => {
     const itemsContainer = this.itemList.current;
     const maxWidth = itemsContainer.offsetWidth;
+    let overflow = [];
 
-    const menu = this.itemRefs.reduce(
+    this.itemRefs.reduce(
       (result, item, i) => {
         if (!item.current) {
           return result;
@@ -138,41 +140,29 @@ class Menu extends React.Component {
         result.cumulativeWidth = currentCumulativeWidth;
 
         if (currentCumulativeWidth > maxWidth) {
-          this.items[i].overflow = true;
+          overflow.push(true);
         } else {
-          this.items[i].overflow = false;
+          overflow.push(false);
         }
 
         return result;
       },
       { cumulativeWidth: 0 }
     );
+
+    this.setState({ overflow });
   };
 
   toggleMenu = e => {
     e.preventDefault();
 
-    // if (this.props.screenWidth < 1024) {
-    //   this.renderedItems.map(item => {
-    //     const oldClass = this.state.open ? "showItem" : "hideItem";
-    //     const newClass = this.state.open ? "hideItem" : "showItem";
-
-    //     if (item.classList.contains(oldClass)) {
-    //       item.classList.add(newClass);
-    //       item.classList.remove(oldClass);
-    //     }
-    //   });
-    // }
-
     this.setState(prevState => ({ open: !prevState.open }));
   };
 
-  closeMenu = e => {
-    //e.preventDefault();
-
+  closeMenu = () => {
     if (this.state.open) {
       this.setState({ open: false });
-      if (this.props.screenWidth < 1024) {
+      if (this.props.screenWidth < 1280) {
         this.renderedItems.map(item => {
           if (item.classList.contains("showItem")) {
             item.classList.add("hideItem");
@@ -186,31 +176,32 @@ class Menu extends React.Component {
   render() {
     const { fixed, screenWidth } = this.props;
     const { open } = this.state;
-    const showSecondRow = open || screenWidth >= 1024;
+    const showSecondRow = open || screenWidth >= 1280;
 
     return (
       <MenuStyle open={open} fixed={fixed}>
         <ul className="itemList" ref={this.itemList}>
-          {this.items.map(
-            (item, i) =>
+          {this.items.map((item, i) => {
+            return (
               !item.secondRow &&
-              !item.overflow && (
+              !this.state.overflow[i] && (
                 <Item item={item} key={item.id} fixed={fixed} ref={this.itemRefs[item.id]} />
               )
-          )}
+            );
+          })}
         </ul>
         {showSecondRow && (
           <ul className="itemList">
             {this.items.map(
               (item, i) =>
-                (item.secondRow || item.overflow) && (
+                (item.secondRow || this.state.overflow[i]) && (
                   <Item item={item} key={item.id} fixed={fixed} ref={this.itemRefs[item.id]} />
                 )
             )}
             <LangSwitcher fixed={fixed} />
           </ul>
         )}
-        {screenWidth < 1024 && <Expand onClick={this.toggleMenu} open={open} />}
+        {screenWidth < 1280 && <Expand onClick={this.toggleMenu} open={open} />}
       </MenuStyle>
     );
   }

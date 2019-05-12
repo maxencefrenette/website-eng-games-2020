@@ -1,6 +1,6 @@
 tablet: "(min-width: 600px)"
-desktop: "(min-width: 1024px)"
-belowDesktop: "(max-width: 1023px)"
+desktop: "(min-width: 1280px)"
+belowDesktop: "(max-width: 1279px)"
 font:
   heading: Oswald, sans-serif
   headingWeight: 300
@@ -13,7 +13,7 @@ space:
   default: 50px
 maxWidth:
   tablet: 580px
-  desktop: 1000px
+  desktop: 1200px
 hero:
   size:
     h1:
