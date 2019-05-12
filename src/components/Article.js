@@ -3,16 +3,15 @@ import styled from "styled-components";
 import theme from "../theme/theme.yaml";
 
 const Styles = styled.article`
-  padding: 20px;
   margin: 0 auto;
 
   @media ${theme.tablet} {
-    padding: ${props => (props.noPadding ? `0` : `40px`)} 20px;
+    padding-bottom: 20px;
     max-width: ${theme.maxWidth.tablet};
   }
 
   @media ${theme.desktop} {
-    padding: ${props => (props.noPadding ? `0` : `70px`)} 0 40px;
+    padding-bottom: 40px;
     max-width: ${theme.maxWidth.desktop};
   }
 
@@ -137,8 +136,8 @@ const Styles = styled.article`
 `;
 
 const Paper = styled.div`
-  padding: 20px;
-  margin-top: -140px;
+  padding: 32px;
+  margin-top: -100px;
 
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
     0px 2px 1px -1px rgba(0, 0, 0, 0.12);

@@ -15,7 +15,7 @@ const MiniHeroStyle = styled.section`
   flex-flow: column nowrap;
   justify-content: center;
   min-height: 400px;
-  height: 400px;
+  height: 500px;
   padding: 40px;
   padding-top: 100px;
 
@@ -63,7 +63,7 @@ export const query = graphql`
   fragment MiniHero on ImageSharp {
     desktop: resize(
       width: 1200
-      height: 400
+      height: 500
       quality: 90
       cropFocus: CENTER
       duotone: { highlight: "#EF9D4F", shadow: "#502F69" }
