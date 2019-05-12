@@ -11,6 +11,12 @@ import theme from "../theme/theme.yaml";
 import { FormattedMessage } from "react-intl";
 import A from "../components/A";
 
+const Centered = styled.p`
+  &&& {
+    text-align: center;
+  }
+`;
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -53,6 +59,9 @@ const ContactPage = props => {
               <FormattedMessage id="contact" />
             </MiniHero>
             <Article>
+              <Centered>
+                <FormattedMessage id="contact-text" />
+              </Centered>
               <Container>
                 <ContactInfo>
                   <FaEnvelope />
