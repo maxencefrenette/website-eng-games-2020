@@ -136,6 +136,7 @@ const Styles = styled.article`
 `;
 
 const Paper = styled.div`
+  min-height: 400px;
   padding: 32px;
   margin-top: -100px;
 
