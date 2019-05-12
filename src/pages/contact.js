@@ -49,14 +49,10 @@ const ContactPage = props => {
       <ThemeContext.Consumer>
         {theme => (
           <>
-            <MiniHero backgrounds={backgrounds} theme={theme} />
+            <MiniHero backgrounds={backgrounds} theme={theme}>
+              <FormattedMessage id="contact" />
+            </MiniHero>
             <Article>
-              <header>
-                <h1>
-                  <FormattedMessage id="contact" />
-                </h1>
-              </header>
-
               <Container>
                 <ContactInfo>
                   <FaEnvelope />

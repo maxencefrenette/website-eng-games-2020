@@ -68,13 +68,10 @@ const UniversitesPage = props => {
       <ThemeContext.Consumer>
         {theme => (
           <>
-            <MiniHero backgrounds={backgrounds} theme={theme} />
+            <MiniHero backgrounds={backgrounds} theme={theme}>
+              <FormattedMessage id="delegations" />
+            </MiniHero>
             <Article>
-              <header>
-                <h1>
-                  <FormattedMessage id="delegations" />
-                </h1>
-              </header>
               <Container>
                 {universities.map(uni => (
                   <University key={uni[0]}>

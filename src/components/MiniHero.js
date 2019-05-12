@@ -21,7 +21,7 @@ const MiniHeroStyle = styled.section`
 
   & h1 {
     text-align: center;
-    font-size: 2.2em;
+    font-size: 20px;
     margin: 0 0 40px 0;
     color: white;
     line-height: 1.1;
@@ -32,7 +32,7 @@ const MiniHeroStyle = styled.section`
     background-image: url(${props => props.backgrounds.tablet.src});
     & h1 {
       max-width: 90%;
-      font-size: ${`calc(1.7em * 1.3)`};
+      font-size: 40px;
     }
   }
 
@@ -40,7 +40,7 @@ const MiniHeroStyle = styled.section`
     background-image: url(${props => props.backgrounds.desktop.src});
     & h1 {
       max-width: 80%;
-      font-size: ${`calc(1.7em * 1.5)`};
+      font-size: 70px;
     }
   }
 `;

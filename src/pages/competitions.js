@@ -36,12 +36,10 @@ const CompetitionsPage = props => {
       <ThemeContext.Consumer>
         {theme => (
           <>
-            <MiniHero backgrounds={backgrounds} theme={theme} />
+            <MiniHero backgrounds={backgrounds} theme={theme}>
+              <FormattedMessage id="competitions" />
+            </MiniHero>
             <Article>
-              <h1>
-                <FormattedMessage id="competitions" />
-              </h1>
-
               <p>
                 <FormattedMessage id="competitions-text" />
               </p>

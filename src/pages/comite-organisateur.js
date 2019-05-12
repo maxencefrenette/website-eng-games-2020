@@ -84,14 +84,10 @@ const ComiteOrganisateurPage = props => {
       <ThemeContext.Consumer>
         {theme => (
           <>
-            <MiniHero backgrounds={backgrounds} theme={theme} />
+            <MiniHero backgrounds={backgrounds} theme={theme}>
+              <FormattedMessage id="oc" />
+            </MiniHero>
             <Article theme={theme}>
-              <header>
-                <h1>
-                  <FormattedMessage id="oc" />
-                </h1>
-              </header>
-
               <Container>
                 {CO.map(membreCO => (
                   <MembreCO key={membreCO[0]}>
