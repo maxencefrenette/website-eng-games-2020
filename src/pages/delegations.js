@@ -19,7 +19,7 @@ const Container = styled.div`
 `;
 
 const University = styled.div`
-  width: 150px;
+  width: 200px;
   margin-left: 50px;
   margin-right: 50px;
   margin-bottom: 50px;
@@ -32,10 +32,21 @@ const University = styled.div`
       opacity: 0.75;
     }
   }
+
   .description {
+    padding-top: 4px;
     text-align: center;
     font-size: 18px;
   }
+`;
+
+const ImageContainer = styled.div`
+  display: flex;
+  width: 200px;
+  height: 150px;
+
+  align-items: center;
+  justify-content: center;
 `;
 
 const UniversitesPage = props => {
@@ -75,13 +86,15 @@ const UniversitesPage = props => {
               <Container>
                 {universities.map(uni => (
                   <University key={uni[0]}>
-                    {uni[1] ? (
-                      <A href={uni[1]}>
+                    <ImageContainer>
+                      {uni[1] ? (
+                        <A href={uni[1]}>
+                          <Img fixed={data[uni[0]].fixed} />
+                        </A>
+                      ) : (
                         <Img fixed={data[uni[0]].fixed} />
-                      </A>
-                    ) : (
-                      <Img fixed={data[uni[0]].fixed} />
-                    )}
+                      )}
+                    </ImageContainer>
                     <div className="description">
                       <FormattedMessage id={uni[0]} />
                     </div>
@@ -107,7 +120,12 @@ export default UniversitesPage;
 //eslint-disable-next-line no-undef
 export const query = graphql`
   fragment universityImage on ImageSharp {
-    fixed(width: 150, height: 150, quality: 90, cropFocus: CENTER) {
+    fixed(height: 150, quality: 90) {
+      ...GatsbyImageSharpFixed
+    }
+  }
+  fragment universityImageWide on ImageSharp {
+    fixed(width: 200, quality: 90) {
       ...GatsbyImageSharpFixed
     }
   }
@@ -129,10 +147,10 @@ export const query = graphql`
       ...universityImage
     }
     epm: imageSharp(fluid: { originalName: { regex: "/epm/" } }) {
-      ...universityImage
+      ...universityImageWide
     }
     ets: imageSharp(fluid: { originalName: { regex: "/dele-ets/" } }) {
-      ...universityImage
+      ...universityImageWide
     }
     itr: imageSharp(fluid: { originalName: { regex: "/itr/" } }) {
       ...universityImage
