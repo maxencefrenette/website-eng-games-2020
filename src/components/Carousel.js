@@ -10,7 +10,13 @@ const StyledSlider = styled(Slider)`
 
 export default function Carousel({ children }) {
   return (
-    <StyledSlider adaptiveHeight={false} autoplay={true} autoplaySpeed={5000} easing="ease">
+    <StyledSlider
+      adaptiveHeight={false}
+      arrows={false}
+      autoplay={true}
+      autoplaySpeed={5000}
+      easing="ease"
+    >
       {children.map((imgData, i) => (
         <Img key={i} fluid={imgData.fluid} />
       ))}
