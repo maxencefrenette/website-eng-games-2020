@@ -13,7 +13,7 @@ space:
   default: 50px
 maxWidth:
   tablet: 580px
-  desktop: 1200px
+  desktop: 1264px
 hero:
   size:
     h1:
