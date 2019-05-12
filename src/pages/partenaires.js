@@ -36,7 +36,7 @@ const Centered = styled.div`
 
 const SponsorshipPackageDownload = () => (
   <HContainer>
-    <Download>Cahier de partenariats (fr)</Download>
+    <Download url="/downloads/partenariats.pdf">Cahier de partenariats (fr)</Download>
     <Download>Sponsorship Package (en)</Download>
   </HContainer>
 );
@@ -57,14 +57,10 @@ const PartenairesPage = props => {
       <ThemeContext.Consumer>
         {theme => (
           <>
-            <MiniHero backgrounds={backgrounds} theme={theme} />
+            <MiniHero backgrounds={backgrounds} theme={theme}>
+              <FormattedMessage id="sponsors" />
+            </MiniHero>
             <Article theme={theme}>
-              <header>
-                <h1>
-                  <FormattedMessage id="sponsors" />
-                </h1>
-              </header>
-
               <Centered>
                 <p>
                   <FormattedMessage id="thank-you-text" />

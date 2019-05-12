@@ -15,16 +15,17 @@ const MiniHeroStyle = styled.section`
   flex-flow: column nowrap;
   justify-content: center;
   min-height: 400px;
-  height: 400px;
+  height: 500px;
   padding: 40px;
   padding-top: 100px;
 
   & h1 {
     text-align: center;
-    font-size: 2.2em;
+    font-size: 20px;
     margin: 0 0 40px 0;
     color: white;
     line-height: 1.1;
+    text-transform: uppercase;
     text-remove-gap: both 0 ${theme.font.heading};
   }
 
@@ -32,7 +33,7 @@ const MiniHeroStyle = styled.section`
     background-image: url(${props => props.backgrounds.tablet.src});
     & h1 {
       max-width: 90%;
-      font-size: ${`calc(1.7em * 1.3)`};
+      font-size: 40px;
     }
   }
 
@@ -40,7 +41,7 @@ const MiniHeroStyle = styled.section`
     background-image: url(${props => props.backgrounds.desktop.src});
     & h1 {
       max-width: 80%;
-      font-size: ${`calc(1.7em * 1.5)`};
+      font-size: 70px;
     }
   }
 `;
@@ -63,7 +64,7 @@ export const query = graphql`
   fragment MiniHero on ImageSharp {
     desktop: resize(
       width: 1200
-      height: 400
+      height: 500
       quality: 90
       cropFocus: CENTER
       duotone: { highlight: "#EF9D4F", shadow: "#502F69" }

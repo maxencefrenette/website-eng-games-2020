@@ -2,6 +2,14 @@ import React from "react";
 import Article from "../components/Article";
 import MiniHero from "../components/MiniHero";
 import { graphql } from "gatsby";
+import styled from "styled-components";
+
+const Centered = styled.p`
+  padding: 20px 0;
+  &&& {
+    text-align: center;
+  }
+`;
 
 const NotFoundPage = props => {
   const {
@@ -10,10 +18,9 @@ const NotFoundPage = props => {
 
   return (
     <>
-      <MiniHero backgrounds={backgrounds} />
+      <MiniHero backgrounds={backgrounds}>NOT FOUND</MiniHero>
       <Article>
-        <h1>NOT FOUND</h1>
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+        <Centered>You just hit a route that doesn&#39;t exist... the sadness.</Centered>
       </Article>
     </>
   );
