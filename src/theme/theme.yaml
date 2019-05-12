@@ -12,8 +12,8 @@ colors:
 space:
   default: 50px
 maxWidth:
-  tablet: 650px
-  desktop: 1200px
+  tablet: 580px
+  desktop: 1000px
 hero:
   size:
     h1:

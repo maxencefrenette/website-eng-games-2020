@@ -4,6 +4,7 @@ import theme from "../theme/theme.yaml";
 
 const Styles = styled.article`
   margin: 0 auto;
+  max-width: calc(100% - 16px);
 
   @media ${theme.tablet} {
     padding-bottom: 20px;
