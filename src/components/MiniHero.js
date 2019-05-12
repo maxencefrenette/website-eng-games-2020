@@ -25,6 +25,7 @@ const MiniHeroStyle = styled.section`
     margin: 0 0 40px 0;
     color: white;
     line-height: 1.1;
+    text-transform: uppercase;
     text-remove-gap: both 0 ${theme.font.heading};
   }
 
