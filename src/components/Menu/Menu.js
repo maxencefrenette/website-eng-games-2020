@@ -139,7 +139,7 @@ class Menu extends React.Component {
         const currentCumulativeWidth = result.cumulativeWidth + item.current.offsetWidth;
         result.cumulativeWidth = currentCumulativeWidth;
 
-        if (currentCumulativeWidth > maxWidth) {
+        if (currentCumulativeWidth > maxWidth - 50) {
           overflow.push(true);
         } else {
           overflow.push(false);
