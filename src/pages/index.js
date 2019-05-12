@@ -7,20 +7,25 @@ import Seo from "../components/Seo";
 import { FacebookProvider, Page } from "react-facebook";
 import styled from "styled-components";
 import { FormattedMessage, FormattedHTMLMessage } from "react-intl";
-import { Parallax } from "react-parallax";
 import theme from "../theme/theme.yaml";
 import { FaRecycle, FaChild, FaCog } from "react-icons/fa";
 
 const PillarContainer = styled.div`
-  display: flex;
-  justify-content: center;
   margin-top: 10px;
+
+  @media ${theme.desktop} {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const Pillar = styled.div`
-  flex: 0 0 250px;
-  margin: 0 25px;
   text-align: center;
+
+  @media ${theme.desktop} {
+    flex: 0 0 250px;
+    margin: 0 25px;
+  }
 
   & > svg {
     font-size: 100px;
@@ -31,11 +36,6 @@ const Pillar = styled.div`
   & p {
     text-align: center;
   }
-`;
-
-const PhantomHr = styled.hr`
-  margin: 0;
-  border: 0;
 `;
 
 const Centered = styled.div`
@@ -125,13 +125,6 @@ class IndexPage extends React.Component {
               </div>
             </Pillar>
           </PillarContainer>
-        </Article>
-
-        <Parallax bgImage={data.parallax.resize.src} strength={-200}>
-          <div style={{ height: "500px" }} />
-        </Parallax>
-
-        <Article noPadding={true}>
           <Sides>
             <Left>
               <h2>
