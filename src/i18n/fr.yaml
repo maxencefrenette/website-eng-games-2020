@@ -65,8 +65,8 @@ competitions-text:
 machine: La Machine
 machine-text:
   "<p>La compétition de la machine robotique est l’épreuve maîtresse et le défi le plus difficile à
-  relever des Jeux de Génie. Il s’agit de la seule compétition où les délégations travaillent à sa
-  réalisation tout l’automne précédant les Jeux. Le défi : fabriquer une machine robotique
+  relever des Jeux de Génie. C'est l'une des épreuves qui nécessite un travail soutenu de la part des
+  délégations tout au long de l'automne précédant les Jeux. Le défi : fabriquer une machine robotique
   intelligente qui surmontera les diverses épreuves d’un parcours prédéterminé en un temps donné. La
   fabrication de cette machine nécessite la formation d’équipes multidisciplinaires qui devront
   investir beaucoup de temps afin d’en arriver à un prototype des plus compétitifs.</p> <p>Chaque
@@ -76,8 +76,7 @@ machine-text:
   connaissances acquises en ingénierie en plus d’administrer un budget consacré à l’achat des
   ressources matérielles et d’élaborer les transformations pour faire de leurs idées une
   réalité.</p> <p>La compétition de la machine robotique est un événement fortement médiatisé ouvert
-  au public et fait la fierté des délégations et du comité organisateur.</p> <p>Merci à Rheinmetall,
-  partenaire officiel de la compétition machine.</p>"
+  au public et fait la fierté des délégations et du comité organisateur.</p>"
 entrepreneurship: La compétition entrepreneuriale
 entrepreneurship-text:
   <p>La compétition d’entrepreneuriat est une nouvelle épreuve qui va mener ses participantes et participants à
@@ -174,7 +173,7 @@ uqottawa: "Université du Québec en Outaouais & Université d'Ottawa"
 
 # Contact
 contact-text:
-  N'hésitez pas à nous contacter si vous avez des questions, des préoccupations ou des propositions commerciales!
+  N'hésitez pas à nous contacter si vous avez besoin de plus de renseignements!
 address1: Jeux de Génie du Québec
 address2: Gare Windsor, bureau 350
 address3: 1100, Avenue des Canadiens-de-Montréal
