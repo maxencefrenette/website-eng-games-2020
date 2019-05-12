@@ -16,16 +16,21 @@ tagline: Change the world
 3-pillars: Our 3 Pillars
 pillar1: Diversity and Inclusion
 pillar1-message:
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis cursus libero, sed ullamcorper
-  enim.
+  The Engineering Games is also a community united by the pride of studying engineering. 
+  A welcoming and loving community, one that cares about including and celebrating the presence of everyone 
+  from a diverse background, since it is precisely this diversity that makes the engineering student community 
+  so rich and strong.
 pillar2: Sustainability
 pillar2-message:
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis cursus libero, sed ullamcorper
-  enim.
-pillar3: Technical Excellence # TODO: find a better translation ?
+  In 2020, sustainability will be a priority to ensure a quality of life for future generations. 
+  It is about time to exploit the influence of the professional body and the next generation is a fertile ground 
+  for raising awareness. The Engineering Games will test the skills of its participants to act responsibly while 
+  promoting a positive social, environmental and economic impact through our carbon neutral event.
+pillar3: Technical Excellence
 pillar3-message:
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis cursus libero, sed ullamcorper
-  enim.
+  Our event is a bridge between newly acquired knowledge and the applications of today's industry. 
+  After more than 4 months of preparation, participants will tackle tough and exciting challenges that showcase 
+  not only the expertise of local organizations, but also the talent of tomorrow's engineers.
 history: History
 history-text:
   "For the past 29 years, Engineering Games has been the largest engineering competition in Quebec
@@ -51,82 +56,72 @@ news: News
 
 # Compétitions
 competitions-text:
-  "TO BE TRANSLATED: Les Jeux de Génie du Québec, c’est la plus grande compétition d’ingénierie au
-  Québec et le plus important rassemblement étudiant de génie de la province. Les participants et
-  participantes devront mesurer leurs habiletés académiques, techniques, sportives et sociales au
-  cours de cette compétition. Ils devront faire preuve d’esprit d’équipe et de dépassement personnel
-  afin de surmonter les défis auxquels ils feront face lors de cet événement."
+  "Engineering games is the largest engineering competition in Québec and the largest engineering student 
+  gathering in the province. Participants will be required to measure their academic, technical, athletic 
+  and social skills during this competition. They will need to demonstrate team spirit and personal achievement 
+  in order to overcome the challenges they will face during this event."
 machine: The Machine
 machine-text:
-  "<p>TO BE TRANSLATED: La compétition de la machine robotique est l’épreuve maîtresse et le défi le
-  plus difficile à relever des Jeux de Génie. Il s’agit de la seule compétition où les délégations
-  travaillent à sa réalisation tout l’automne précédant les Jeux. Le défi : fabriquer une machine
-  robotique intelligente qui surmontera les diverses épreuves d’un parcours prédéterminé en un temps
-  donné. La fabrication de cette machine nécessite la formation d’équipes multidisciplinaires qui
-  devront investir beaucoup de temps afin d’en arriver à un prototype des plus compétitifs.</p>
-  <p>Chaque équipe devra œuvrer d’ingéniosité et de créativité en plus de développer la synergie
-  nécessaire à la création d’une machine robotique à la hauteur des attentes des juges tout en
-  respectant les devis. Les participants et participantes de cette compétition mettront donc à
-  profit leurs connaissances acquises en ingénierie en plus d’administrer un budget consacré à
-  l’achat des ressources matérielles et d’élaborer les transformations pour faire de leurs idées une
-  réalité.</p> <p>La compétition de la machine robotique est un événement fortement médiatisé ouvert
-  au public et fait la fierté des délégations et du comité organisateur.</p> <p>Merci à Rheinmetall,
-  partenaire officiel de la compétition machine.</p>"
-entrepreneurship: The Entrepreuneurship Competition
+  "<p>The competition of the robotic machine is the main challenge and the most difficult to overcome 
+  within the Engineering Games. This is the only competition where the delegations are working on it 
+  all fall long before the Games. The challenge is to manufacture a machine that will overcome the 
+  various obstacles of a predetermined journey. The manufacture of this machine requires the training 
+  of multidisciplinary teams that will have to invest a lot of time in order to achieve a highly 
+  competitive prototype.</p>
+  <p>Each team will have to work on ingeniousness and creativity as well as develop the synergy necessary 
+  to create a robotic machine that meets the judges' expectations while respecting the specifications. 
+  The participants in this competition will therefore use their engineering knowledge in addition to managing 
+  a budget dedicated to the purchase of material resources and developing transformations to make 
+  their ideas a reality. </p> 
+  <p>The robotics machine competition is a highly publicized event open to the public and is the 
+  pride of the delegations and the organizing committee.</p>"
+entrepreneurship: Entrepreneurship
 entrepreneurship-text:
-  "<p>TO BE TRANSLATED: La compétition d’entrepreneuriat est une nouvelle épreuve qui va mener ses
-  participants à mettre en pratique des compétences connexes et importantes dans un milieu innovant.
-  Il s’agit de l’une des deux compétitions qui requiert une forte préparation avant l’arrivée aux
-  jeux de génie.</p> <p> L’épreuve, qui se divise en trois volets, comprend le développement et la
-  production d’un prototype pour un nouveau produit qui répond à une problématique prédéfinie, la
-  rédaction d’un plan d’affaires afin de justifier le choix du produit, sa viabilité, et sa mise en
-  œuvre du point de vue d’une entreprise émergente, ainsi que la préparation d’un court discours de
-  vente afin de convaincre des juges qu’il s’agit de la meilleure solution pour la
-  problématique.</p> <p> Les participants devront avoir complètement terminé le prototype ainsi que
-  le plan d’affaires avant leur arrivée aux Jeux de Génie. Le “pitch” de vente sera effectué devant
-  un groupe de 3 à 5 juges qui choisiront par la suite les 5 meilleurs produits afin de donner la
-  chance à ces universités d’effectuer leur présentation devant tous les participants des jeux de
-  génie lors de la dernière journée.</p>"
-academic: The Academic Competitions
+  <p>The entrepreneurship competition is a challenge that will lead its participants to apply 
+  related and important skills in an innovative environment. This is one of the two competitions 
+  that requires a lot of preparation before arriving at the engineering games.</p> 
+  <p> The event, which is divided into three parts, includes the development and production of a 
+  prototype for a new product that addresses a predefined issue, the writing of a business plan to 
+  justify the choice of the product, its viability, and its implementation from the perspective of an 
+  emerging company, as well as the preparation of a short sales speech to convince judges that this is 
+  the best solution for the issue.</p>
+  <p> Participants must have completed the prototype and business plan before they arrive at the Engineering Games. 
+  The sales pitch will be made in front of a group of 3 to 5 judges who will then choose the 5 best products 
+  in order to give these universities the opportunity to make their presentation in front of all the participants 
+  of the engineering games on the last day.</p>
+academic: Academic competitions
 academic-text:
-  "<p>TO BE TRANSLATED: Les épreuves académiques regroupent les six disciplines de génie les plus
-  enseignés au Québec en plus de la catégorie génie-conseil. Les compétitions se déroulent lors d’un
-  avant-midi durant lequel les équipes doivent répondre à un questionnaire théorique et réaliser une
-  épreuve pratique qui prend la forme d’un montage, d’une expérience de laboratoire ou d’une étude
-  de cas reliée à un domaine spécifique de l’ingénierie. Pour ce faire, chaque délégation se divise
-  en sous-groupes composés de quatre à six personnes selon les champs de compétences des
-  participants et participantes. Ces derniers relèvent ainsi un défi couvrant tous les sujets
-  abordés au cours de leur formation universitaire. Un défi à la hauteur de la relève en
-  ingénierie!</p>"
-sports: The Sports Competitions
+  <p>The academic exams include the six most taught engineering disciplines in Quebec in addition to the 
+  consulting engineering category. The competitions take place in the morning during which the teams must 
+  answer a theoretical questionnaire and carry out a practical test in the form of a montage, a laboratory 
+  experiment or a case study related to a specific field of engineering. To do this, each delegation is divided 
+  into sub-groups of four to six people according to the participants' fields of expertise and participants. 
+  The latter thus take up a challenge covering all the topics covered during the their university education. 
+  A challenge for the next generation of engineers!</p>
+sports: Sports
 sports-text:
-  "<p>TO BE TRANSLATED: C’est en s’inspirant de l’adage « un esprit sain dans un corps sain » que
-  les compétitions sportives se sont frayées une place au sein du programme de la compétition. La
-  journée dédiée à ces épreuves est une occasion pour les délégations de se démarquer dans un
-  domaine autre que celui de l’ingénierie et de démontrer leur polyvalence. Les tournois sportifs
-  seront non seulement axés sur les habiletés athlétiques individuelles mais également sur l’esprit
-  et l’effort d’équipe, deux des valeurs les plus importantes de la compétition.</p>"
-cultural: The Cultural Competitions
+  <p>It is by drawing inspiration from the adage "a healthy mind in a healthy body" that the sports events 
+  have made their way into the competition program. The day dedicated to these events are an opportunity 
+  for delegations to stand out in a field other than that of engineering and to demonstrate their versatility. 
+  Sports tournaments will not only focus on on individual athletic skills but also on team spirit and effort, 
+  two of the most important values of the competition.</p>
+cultural: Cultural
 cultural-text:
-  "<p>TO BE TRANSLATED: Pour ajouter un peu de divertissement à toutes ces épreuves, des
-  compétitions culturelles sont au rendez-vous, soit l’improvisation, les débats oratoires et le
-  génie en herbe. Elles permettent aux délégations de faire valoir leurs talents cachés et de
-  partager leurs compétences complémentaires à celles nécessaires en ingénierie. La compétition
-  d’improvisation s’avère une soirée énergique et haute en couleurs, où les équipes mettent à profit
-  leur imagination, leur réceptivité et leur rapidité d’exécution. Les débats oratoires, quant à
-  eux, permettent à deux participants ou participantes de chaque université de démontrer leurs
-  talents d’orateurs. Ceux-ci doivent convaincre les juges en développant un argumentaire sur le vif
-  qui supplantera celui de leurs adversaires. Puis, la compétition de génie en herbe oppose quatre
-  membres de chaque délégation qui utiliseront leurs connaissances générales afin de répondre le
-  plus rapidement possible à des questions de sujets variés.</p> <p>Finalement, il ne faut pas
-  oublier la soirée culturelle qui se déroule sous le format d’une soirée de réseautage. Il s’agit
-  d’une occasion en or pour échanger et agrandir son réseau professionnel auprès des partenaires
-  dans une ambiance des plus conviviales.</p>"
+  <p>To add a little entertainment to all these events, cultural competitions are on the menu, including 
+  improvisation, oratory debates and "génie en herbe". They allow delegations to showcase their hidden 
+  talents and share their skills that complement those required in engineering. The improvisation competition 
+  is an energetic and colourful evening, where teams use their imagination, receptiveness and speed of execution. 
+  Oratory debates allow two participants from each university to demonstrate their oratory skills. They must 
+  convince the judges by developing a strong argument that will supplant that of their opponents. 
+  Then, the "génie en herbe" competition pits four members of each delegation against each other who will 
+  use their general knowledge to answer questions on a variety of topics as quickly as possible.</p> 
+  <p>Finally, we must not forget the cultural evening, which takes place in the form of a networking evening. 
+  This is a golden opportunity to exchange and expand your professional network with partners in a very friendly 
+  atmosphere.</p>
 
 # Participants
 participants-text:
-  "TO BE TRANSLATED: Vous trouverez ici toutes les informations dont vous aurez besoin pour
-  participer aux Jeux de génie 2020."
+  "Here you will find all the information you need to participate in the 2020 Engineering Games"
 
 # Sponsors
 thank-you: Thanks to all our sponsors!
@@ -169,9 +164,7 @@ uqottawa: "Université du Québec en Outaouais & Université d'Ottawa"
 
 # Contact
 contact-text:
-  "The Engineering Games is a complex and challenging inter-university competition, but it would be
-  nothing without its valued partners. If you also want to make a difference with future
-  professionals in your field, it's here!"
+  "Don't hesitate to contact us if you have any questions, concerns or business enquiries!"
 address1: Jeux de Génie du Québec
 address2: Gare Windsor, bureau 350
 address3: 1100, Avenue des Canadiens-de-Montréal

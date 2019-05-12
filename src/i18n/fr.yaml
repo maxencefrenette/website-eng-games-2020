@@ -22,7 +22,9 @@ pillar1-message: Les Jeux de génie, c’est aussi une communauté unie par la f
 pillar2: Développement durable
 pillar2-message: En 2020, le développement durable sera une priorité pour garantir une qualité de vie aux générations futures. 
   Il est plus que temps d’exploiter l’influence du corps professionnel et la relève est un terreau fertile à la 
-  sensibilisation.
+  sensibilisation. Les Jeux de génie vont mettre à l’épreuve les compétences de ses participants et participantes à agir 
+  responsablement tout en favorisant un impact social, environnemental et économique positif grâce à notre événement à 
+  tendance carboneutre.
 pillar3: Excellence technique
 pillar3-message: Notre événement est un pont entre le savoir fraîchement acquis et les applications du monde 
   de l’industrie actuelle. Après s’y être préparés pendant plus de 4 mois, les participantes et participants 
@@ -55,7 +57,7 @@ news: Actualités
 
 # Compétitions
 competitions-text:
-  Les Jeux de Génie du Québec, c’est la plus grande compétition d’ingénierie au Québec et le plus
+  Les Jeux de Génie du Québec sont la plus grande compétition d’ingénierie au Québec et le plus
   important rassemblement étudiant de génie de la province. Les participants et participantes
   devront mesurer leurs habiletés académiques, techniques, sportives et sociales au cours de cette
   compétition. Ils devront faire preuve d’esprit d’équipe et de dépassement personnel afin de
@@ -76,9 +78,9 @@ machine-text:
   réalité.</p> <p>La compétition de la machine robotique est un événement fortement médiatisé ouvert
   au public et fait la fierté des délégations et du comité organisateur.</p> <p>Merci à Rheinmetall,
   partenaire officiel de la compétition machine.</p>"
-entrepreneurship: La compétition entrepreunariale
+entrepreneurship: La compétition entrepreneuriale
 entrepreneurship-text:
-  <p>La compétition d’entrepreneuriat est une nouvelle épreuve qui va mener ses participants à
+  <p>La compétition d’entrepreneuriat est une nouvelle épreuve qui va mener ses participantes et participants à
   mettre en pratique des compétences connexes et importantes dans un milieu innovant. Il s’agit de
   l’une des deux compétitions qui requiert une forte préparation avant l’arrivée aux jeux de
   génie.</p> <p> L’épreuve, qui se divise en trois volets, comprend le développement et la
@@ -86,7 +88,7 @@ entrepreneurship-text:
   rédaction d’un plan d’affaires afin de justifier le choix du produit, sa viabilité, et sa mise en
   œuvre du point de vue d’une entreprise émergente, ainsi que la préparation d’un court discours de
   vente afin de convaincre des juges qu’il s’agit de la meilleure solution pour la
-  problématique.</p> <p> Les participants devront avoir complètement terminé le prototype ainsi que
+  problématique.</p> <p> Les participants et participantes devront avoir complètement terminé le prototype ainsi que
   le plan d’affaires avant leur arrivée aux Jeux de Génie. Le “pitch” de vente sera effectué devant
   un groupe de 3 à 5 juges qui choisiront par la suite les 5 meilleurs produits afin de donner la
   chance à ces universités d’effectuer leur présentation devant tous les participants des jeux de
@@ -172,9 +174,7 @@ uqottawa: "Université du Québec en Outaouais & Université d'Ottawa"
 
 # Contact
 contact-text:
-  Les Jeux de Génie, c'est une compétition interuniversitaire complexe et stimulante, mais elle ne
-  serait rien sans ses précieux partenaires. Si vous aussi souhaitez faire la différence auprès des
-  futurs professionnels de votre milieu, c’est par ici!
+  N'hésitez pas à nous contacter si vous avez des questions, des préoccupations ou des propositions commerciales!
 address1: Jeux de Génie du Québec
 address2: Gare Windsor, bureau 350
 address3: 1100, Avenue des Canadiens-de-Montréal
