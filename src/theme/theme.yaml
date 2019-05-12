@@ -17,6 +17,6 @@ maxWidth:
 hero:
   size:
     h1:
-      desktop: 110px
-      tablet: 70px
+      desktop: 90px
+      tablet: 60px
       mobile: 30px
