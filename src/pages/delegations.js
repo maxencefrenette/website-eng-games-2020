@@ -11,11 +11,11 @@ import styled from "styled-components";
 import A from "../components/A";
 
 const Container = styled.div`
-  width: 1000px;
   margin: 0 auto;
 
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const University = styled.div`
