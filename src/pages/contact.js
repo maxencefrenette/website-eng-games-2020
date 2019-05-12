@@ -18,13 +18,18 @@ const Centered = styled.p`
 `;
 
 const Container = styled.div`
-  display: flex;
-  justify-content: center;
+  @media ${theme.tablet} {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const ContactInfo = styled.div`
-  flex: 0 0 250px;
-  margin: 0 25px;
+  @media ${theme.tablet} {
+    flex: 0 0 250px;
+  }
+
+  margin: 25px 25px 0;
   text-align: center;
 
   & > svg {

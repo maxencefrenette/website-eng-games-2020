@@ -16,6 +16,13 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  max-width: 600px;
+  margin: 0 auto;
+
+  @media ${theme.desktop} {
+    max-width: unset;
+  }
 `;
 
 const MembreCO = styled.div`

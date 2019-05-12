@@ -5,9 +5,9 @@ import theme from "../theme/theme.yaml";
 const Styles = styled.article`
   margin: 0 auto;
   max-width: calc(100% - 16px);
+  padding-bottom: 20px;
 
   @media ${theme.tablet} {
-    padding-bottom: 20px;
     max-width: calc(100% - 32px);
   }
 
@@ -130,13 +130,21 @@ const Styles = styled.article`
 
 const Paper = styled.div`
   min-height: 400px;
-  padding: 32px;
+  padding: 8px;
   margin-top: -100px;
 
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
     0px 2px 1px -1px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   background-color: white;
+
+  @media ${theme.tablet} {
+    padding: 16px;
+  }
+
+  @media ${theme.desktop} {
+    padding: 32px;
+  }
 `;
 
 const Article = ({ children }) => {

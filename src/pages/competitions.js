@@ -14,12 +14,14 @@ const FloatRight = styled.div`
   float: right;
   margin-top: 5px;
   margin-left: ${theme.space.default};
+  max-width: 100%;
 `;
 
 const FloatLeft = styled.div`
   float: left;
   margin-top: 5px;
   margin-right: ${theme.space.default};
+  max-width: 100%;
 `;
 
 const CompetitionsPage = props => {
@@ -61,7 +63,9 @@ const CompetitionsPage = props => {
               </h2>
               <FloatLeft>
                 <p>
-                  <Carousel>{[data.entrep1, data.entrep2, data.entrep3, data.entrep4, data.entrep5]}</Carousel>
+                  <Carousel>
+                    {[data.entrep1, data.entrep2, data.entrep3, data.entrep4, data.entrep5]}
+                  </Carousel>
                 </p>
               </FloatLeft>
               <FormattedHTMLMessage id="entrepreneurship-text" />
@@ -101,7 +105,9 @@ const CompetitionsPage = props => {
               </h2>
               <FloatRight>
                 <p>
-                  <Carousel>{[data.debats1, data.improv1, data.debats2, data.improv2, data.debats3]}</Carousel>
+                  <Carousel>
+                    {[data.debats1, data.improv1, data.debats2, data.improv2, data.debats3]}
+                  </Carousel>
                 </p>
               </FloatRight>
               <FormattedHTMLMessage id="cultural-text" />
@@ -124,8 +130,8 @@ export default CompetitionsPage;
 //eslint-disable-next-line no-undef
 export const query = graphql`
   fragment CarouselImage on ImageSharp {
-    fixed(width: 500, quality: 90) {
-      ...GatsbyImageSharpFixed
+    fluid(maxWidth: 500, quality: 90) {
+      ...GatsbyImageSharpFluid
     }
   }
 
