@@ -8,7 +8,7 @@ const Styles = styled.article`
 
   @media ${theme.tablet} {
     padding-bottom: 20px;
-    max-width: ${theme.maxWidth.tablet};
+    max-width: calc(100% - 32px);
   }
 
   @media ${theme.desktop} {
@@ -37,14 +37,6 @@ const Styles = styled.article`
     margin: 0 0 0.5em;
     animation-name: headlineEntry;
     animation-duration: 1s;
-
-    // span {
-    //   font-weight: normal;
-    //   display: block;
-    //   font-size: 0.5em;
-    //   letter-spacing: 0;
-    //   margin: 0 0 5px 0;
-    // }
 
     svg {
       height: 0.75em;

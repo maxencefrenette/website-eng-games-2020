@@ -168,6 +168,10 @@ uqat: "Université du Québec en Abitibi-Témiscamingue"
 uqottawa: "Université du Québec en Outaouais & Université d'Ottawa"
 
 # Contact
+contact-text:
+  "The Engineering Games is a complex and challenging inter-university competition, but it would be
+  nothing without its valued partners. If you also want to make a difference with future
+  professionals in your field, it's here!"
 address1: Jeux de Génie du Québec
 address2: Gare Windsor, bureau 350
 address3: 1100, Avenue des Canadiens-de-Montréal

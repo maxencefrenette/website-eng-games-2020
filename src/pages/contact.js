@@ -11,6 +11,12 @@ import theme from "../theme/theme.yaml";
 import { FormattedMessage } from "react-intl";
 import A from "../components/A";
 
+const Centered = styled.p`
+  &&& {
+    text-align: center;
+  }
+`;
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -45,48 +51,44 @@ const ContactPage = props => {
   } = props;
 
   return (
-    <React.Fragment>
-      <ThemeContext.Consumer>
-        {theme => (
-          <>
-            <MiniHero backgrounds={backgrounds} theme={theme}>
-              <FormattedMessage id="contact" />
-            </MiniHero>
-            <Article>
-              <Container>
-                <ContactInfo>
-                  <FaEnvelope />
-                  <div>
-                    <A href="mailto:info@jeuxdegenie.qc.ca">info@jeuxdegenie.qc.ca</A>
-                  </div>
-                </ContactInfo>
-                <ContactInfo>
-                  <FaMapMarkerAlt />
-                  <Address>
-                    <b>
-                      <FormattedMessage id="address1" />
-                    </b>
-                    <br />
-                    <FormattedMessage id="address2" />
-                    <br />
-                    <FormattedMessage id="address3" />
-                    <br />
-                    <FormattedMessage id="address4" />
-                    <br />
-                    <FormattedMessage id="address5" />
-                  </Address>
-                </ContactInfo>
-              </Container>
-
+    <>
+      <MiniHero backgrounds={backgrounds} theme={theme}>
+        <FormattedMessage id="contact" />
+      </MiniHero>
+      <Article>
+        <Centered>
+          <FormattedMessage id="contact-text" />
+        </Centered>
+        <Container>
+          <ContactInfo>
+            <FaEnvelope />
+            <div>
+              <A href="mailto:info@jeuxdegenie.qc.ca">info@jeuxdegenie.qc.ca</A>
+            </div>
+          </ContactInfo>
+          <ContactInfo>
+            <FaMapMarkerAlt />
+            <Address>
+              <b>
+                <FormattedMessage id="address1" />
+              </b>
               <br />
+              <FormattedMessage id="address2" />
               <br />
-            </Article>
-          </>
-        )}
-      </ThemeContext.Consumer>
+              <FormattedMessage id="address3" />
+              <br />
+              <FormattedMessage id="address4" />
+              <br />
+              <FormattedMessage id="address5" />
+            </Address>
+          </ContactInfo>
+        </Container>
 
+        <br />
+        <br />
+      </Article>
       <Seo facebook={facebook} />
-    </React.Fragment>
+    </>
   );
 };
 

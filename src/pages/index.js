@@ -44,17 +44,29 @@ const Centered = styled.div`
 `;
 
 const Sides = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  @media ${theme.desktop} {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 const Left = styled.div`
-  flex: 1 0 500px;
-  margin-right: ${theme.space.default};
+  @media ${theme.desktop} {
+    flex: 1 0 500px;
+    margin-right: ${theme.space.default};
+  }
 `;
 
 const Right = styled.div`
-  flex: 0 0 auto;
+  display: none;
+
+  @media ${theme.tablet} {
+    display: block;
+  }
+
+  @media ${theme.desktop} {
+    flex: 0 0 auto;
+  }
 `;
 
 class IndexPage extends React.Component {
