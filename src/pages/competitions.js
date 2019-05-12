@@ -61,7 +61,7 @@ const CompetitionsPage = props => {
               </h2>
               <FloatLeft>
                 <p>
-                  <Carousel>{[data.entr1]}</Carousel>
+                  <Carousel>{[data.entrep1, data.entrep2, data.entrep3, data.entrep4, data.entrep5]}</Carousel>
                 </p>
               </FloatLeft>
               <FormattedHTMLMessage id="entrepreneurship-text" />
@@ -158,7 +158,23 @@ export const query = graphql`
       ...CarouselImage
     }
 
-    entr1: imageSharp(fluid: { originalName: { regex: "/machine1/" } }) {
+    entrep1: imageSharp(fluid: { originalName: { regex: "/entrep1/" } }) {
+      ...CarouselImage
+    }
+
+    entrep2: imageSharp(fluid: { originalName: { regex: "/entrep2/" } }) {
+      ...CarouselImage
+    }
+
+    entrep3: imageSharp(fluid: { originalName: { regex: "/entrep3/" } }) {
+      ...CarouselImage
+    }
+
+    entrep4: imageSharp(fluid: { originalName: { regex: "/entrep4/" } }) {
+      ...CarouselImage
+    }
+
+    entrep5: imageSharp(fluid: { originalName: { regex: "/entrep5/" } }) {
       ...CarouselImage
     }
 
