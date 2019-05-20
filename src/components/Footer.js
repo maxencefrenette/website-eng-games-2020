@@ -8,7 +8,11 @@ import A from "../components/A";
 const FooterStyle = styled.footer`
   padding: 20px;
   padding-top: 0;
-  padding-bottom: 120px;
+  padding-bottom: 20px;
+
+  @media ${theme.desktop} {
+    padding-bottom: 40px;
+  }
 
   & > ul {
     list-style: none;
@@ -31,10 +35,6 @@ const FooterStyle = styled.footer`
         content: "";
       }
     }
-  }
-
-  @media ${theme.desktop} {
-    padding: 0 1em 1.5em;
   }
 `;
 
