@@ -75,39 +75,32 @@ const UniversitesPage = props => {
   ];
 
   return (
-    <React.Fragment>
-      <ThemeContext.Consumer>
-        {theme => (
-          <>
-            <MiniHero backgrounds={backgrounds} theme={theme}>
-              <FormattedMessage id="delegations" />
-            </MiniHero>
-            <Article>
-              <Container>
-                {universities.map(uni => (
-                  <University key={uni[0]}>
-                    <ImageContainer>
-                      {uni[1] ? (
-                        <A href={uni[1]}>
-                          <Img fixed={data[uni[0]].fixed} />
-                        </A>
-                      ) : (
-                        <Img fixed={data[uni[0]].fixed} />
-                      )}
-                    </ImageContainer>
-                    <div className="description">
-                      <FormattedMessage id={uni[0]} />
-                    </div>
-                  </University>
-                ))}
-              </Container>
-            </Article>
-          </>
-        )}
-      </ThemeContext.Consumer>
-
+    <>
+      <MiniHero backgrounds={backgrounds}>
+        <FormattedMessage id="delegations" />
+      </MiniHero>
+      <Article>
+        <Container>
+          {universities.map(uni => (
+            <University key={uni[0]}>
+              <ImageContainer>
+                {uni[1] ? (
+                  <A href={uni[1]}>
+                    <Img fixed={data[uni[0]].fixed} />
+                  </A>
+                ) : (
+                  <Img fixed={data[uni[0]].fixed} />
+                )}
+              </ImageContainer>
+              <div className="description">
+                <FormattedMessage id={uni[0]} />
+              </div>
+            </University>
+          ))}
+        </Container>
+      </Article>
       <Seo facebook={facebook} />
-    </React.Fragment>
+    </>
   );
 };
 

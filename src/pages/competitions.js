@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
@@ -34,90 +33,85 @@ const CompetitionsPage = props => {
   } = data;
 
   return (
-    <React.Fragment>
-      <ThemeContext.Consumer>
-        {theme => (
-          <>
-            <MiniHero backgrounds={backgrounds} theme={theme}>
-              <FormattedMessage id="competitions" />
-            </MiniHero>
-            <Article>
-              <p>
-                <FormattedMessage id="competitions-text" />
-              </p>
+    <>
+      <MiniHero backgrounds={backgrounds} theme={theme}>
+        <FormattedMessage id="competitions" />
+      </MiniHero>
+      <Article>
+        <p>
+          <FormattedMessage id="competitions-text" />
+        </p>
 
-              <h2>
-                <FormattedMessage id="machine" />
-              </h2>
-              <FloatRight>
-                <p>
-                  <Carousel>
-                    {[data.machine1, data.machine2, data.machine3, data.machine4, data.machine5]}
-                  </Carousel>
-                </p>
-              </FloatRight>
-              <FormattedHTMLMessage id="machine-text" />
+        <h2>
+          <FormattedMessage id="machine" />
+        </h2>
+        <FloatRight>
+          <p>
+            <Carousel>
+              {[data.machine1, data.machine2, data.machine3, data.machine4, data.machine5]}
+            </Carousel>
+          </p>
+        </FloatRight>
+        <FormattedHTMLMessage id="machine-text" />
 
-              <h2>
-                <FormattedMessage id="entrepreneurship" />
-              </h2>
-              <FloatLeft>
-                <p>
-                  <Carousel>
-                    {[data.entrep1, data.entrep2, data.entrep3, data.entrep4, data.entrep5]}
-                  </Carousel>
-                </p>
-              </FloatLeft>
-              <FormattedHTMLMessage id="entrepreneurship-text" />
+        <h2>
+          <FormattedMessage id="entrepreneurship" />
+        </h2>
+        <FloatLeft>
+          <p>
+            <Carousel>
+              {[data.entrep1, data.entrep2, data.entrep3, data.entrep4, data.entrep5]}
+            </Carousel>
+          </p>
+        </FloatLeft>
+        <FormattedHTMLMessage id="entrepreneurship-text" />
 
-              <h2>
-                <FormattedMessage id="academic" />
-              </h2>
-              <FloatRight>
-                <p>
-                  <Carousel>
-                    {[
-                      data.acad1,
-                      data.acad2,
-                      data.acad3,
-                      data.acad4,
-                      data.acad5,
-                      data.acad6,
-                      data.acad7
-                    ]}
-                  </Carousel>
-                </p>
-              </FloatRight>
-              <FormattedHTMLMessage id="academic-text" />
+        <h2>
+          <FormattedMessage id="academic" />
+        </h2>
+        <FloatRight>
+          <p>
+            <Carousel>
+              {[data.acad1, data.acad2, data.acad3, data.acad4, data.acad5, data.acad6, data.acad7]}
+            </Carousel>
+          </p>
+        </FloatRight>
+        <FormattedHTMLMessage id="academic-text" />
 
-              <h2>
-                <FormattedMessage id="sports" />
-              </h2>
-              <FloatLeft>
-                <p>
-                  <Carousel>{[data.sports1, data.sports2, data.sports3, data.sports4, data.sports5, data.sports6, data.sports7]}</Carousel>
-                </p>
-              </FloatLeft>
-              <FormattedHTMLMessage id="sports-text" />
+        <h2>
+          <FormattedMessage id="sports" />
+        </h2>
+        <FloatLeft>
+          <p>
+            <Carousel>
+              {[
+                data.sports1,
+                data.sports2,
+                data.sports3,
+                data.sports4,
+                data.sports5,
+                data.sports6,
+                data.sports7
+              ]}
+            </Carousel>
+          </p>
+        </FloatLeft>
+        <FormattedHTMLMessage id="sports-text" />
 
-              <h2>
-                <FormattedMessage id="cultural" />
-              </h2>
-              <FloatRight>
-                <p>
-                  <Carousel>
-                    {[data.debats1, data.improv1, data.debats2, data.improv2, data.debats3]}
-                  </Carousel>
-                </p>
-              </FloatRight>
-              <FormattedHTMLMessage id="cultural-text" />
-            </Article>
-          </>
-        )}
-      </ThemeContext.Consumer>
-
+        <h2>
+          <FormattedMessage id="cultural" />
+        </h2>
+        <FloatRight>
+          <p>
+            <Carousel>
+              {[data.debats1, data.improv1, data.debats2, data.improv2, data.debats3]}
+            </Carousel>
+          </p>
+        </FloatRight>
+        <FormattedHTMLMessage id="cultural-text" />
+      </Article>
       <Seo facebook={facebook} />
-    </React.Fragment>
+    </>
   );
 };
 

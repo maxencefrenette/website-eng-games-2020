@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
 import { graphql } from "gatsby";
 import Seo from "../components/Seo";
@@ -88,36 +87,30 @@ const ComiteOrganisateurPage = props => {
 
   return (
     <>
-      <ThemeContext.Consumer>
-        {theme => (
-          <>
-            <MiniHero backgrounds={backgrounds} theme={theme}>
-              <FormattedMessage id="oc" />
-            </MiniHero>
-            <Article theme={theme}>
-              <Container>
-                {CO.map(membreCO => (
-                  <MembreCO key={membreCO[0]}>
-                    <Img fixed={data[membreCO[0]].fixed} />
-                    <Description>
-                      <p className="name">{membreCO[1]}</p>
-                      <hr />
-                      <p className="role">
-                        <FormattedMessage id={membreCO[2]} />
-                        {membreCO[3] && (
-                          <A href={`mailto:${membreCO[3]}@jeuxdegenie.qc.ca`}>
-                            <FaEnvelope />
-                          </A>
-                        )}
-                      </p>
-                    </Description>
-                  </MembreCO>
-                ))}
-              </Container>
-            </Article>
-          </>
-        )}
-      </ThemeContext.Consumer>
+      <MiniHero backgrounds={backgrounds} theme={theme}>
+        <FormattedMessage id="oc" />
+      </MiniHero>
+      <Article theme={theme}>
+        <Container>
+          {CO.map(membreCO => (
+            <MembreCO key={membreCO[0]}>
+              <Img fixed={data[membreCO[0]].fixed} />
+              <Description>
+                <p className="name">{membreCO[1]}</p>
+                <hr />
+                <p className="role">
+                  <FormattedMessage id={membreCO[2]} />
+                  {membreCO[3] && (
+                    <A href={`mailto:${membreCO[3]}@jeuxdegenie.qc.ca`}>
+                      <FaEnvelope />
+                    </A>
+                  )}
+                </p>
+              </Description>
+            </MembreCO>
+          ))}
+        </Container>
+      </Article>
 
       <Seo facebook={facebook} />
     </>

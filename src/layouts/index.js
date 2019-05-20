@@ -8,7 +8,6 @@ import I18n from "../components/I18n";
 import theme from "../theme/theme.yaml";
 import styled, { createGlobalStyle } from "styled-components";
 
-export const ThemeContext = React.createContext(null);
 export const ScreenWidthContext = React.createContext(0);
 export const FontLoadedContext = React.createContext(false);
 
