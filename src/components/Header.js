@@ -45,7 +45,6 @@ const HeaderStyle = styled.div`
 
   .logo {
     border-radius: 65% 75%;
-    // border: 1px solid #eee;
     display: inline-block;
     height: 44px;
     margin: 0 20px 0 0;
@@ -53,13 +52,16 @@ const HeaderStyle = styled.div`
     width: 44px;
     transition: all 0.5s;
 
-    .homepage & {
-      height: 60px;
-      width: 60px;
-    }
-
     img {
       width: 100%;
+    }
+  }
+
+  .logoType {
+    color: white;
+
+    & a {
+      color: white;
     }
   }
 
@@ -77,26 +79,6 @@ const HeaderStyle = styled.div`
   @media ${theme.tablet} {
     .header {
       padding: 40px;
-
-      &.homepage {
-        height: 100px;
-      }
-    }
-  }
-
-  @media ${theme.belowDesktop} {
-    .header.homepage {
-      .logo {
-        border: none;
-      }
-
-      .logoType,
-      h1 {
-        color: white;
-      }
-      h2 {
-        color: #dddbda;
-      }
     }
   }
 
@@ -123,22 +105,16 @@ const HeaderStyle = styled.div`
         box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
           0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 
+        .logoType {
+          color: black;
+
+          a {
+            color: black;
+          }
+        }
+
         h1 {
           margin: 0 0 2px 0;
-        }
-
-        h2 {
-          display: none;
-        }
-      }
-
-      &.homepage:not(.fixed) {
-        .logoType,
-        h1 {
-          color: white;
-        }
-        h2 {
-          color: #dddbda;
         }
       }
     }
@@ -156,24 +132,6 @@ const HeaderStyle = styled.div`
       .fixed & {
         height: 36px;
         width: 36px;
-      }
-
-      .header.homepage:not(.fixed) & {
-        border: none;
-      }
-    }
-
-    h2 {
-      animation-duration: 0.5s;
-      animation-name: h2Entry;
-    }
-
-    @keyframes h2Entry {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
       }
     }
   }
@@ -213,8 +171,12 @@ class Header extends React.Component {
               </LLink>
             </div>
             <div className="type">
-              <h1>Mission: Jeux de Génie 2020</h1>
-              <h2>Changer le Monde</h2>
+              <h1>
+                <LLink to="/">Mission: Jeux de Génie 2020</LLink>
+              </h1>
+              <h2>
+                <LLink to="/">Changer le Monde</LLink>
+              </h2>
             </div>
           </div>
           <FontLoadedContext.Consumer>
