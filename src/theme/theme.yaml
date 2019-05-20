@@ -9,6 +9,7 @@ font:
 colors:
   primary: "#35275a"
   secondary: "#d55c0d"
+  tertiary: "#b151a9"
 space:
   default: 50px
 maxWidth:

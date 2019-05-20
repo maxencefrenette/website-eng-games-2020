@@ -28,10 +28,11 @@ const DownloadLink = styled.a`
   width: 400px;
   align-items: center;
 
-  && {
+  &&& {
     font-size: 20px;
     font-weight: normal;
     text-decoration: none;
+    color: ${theme.colors.primary};
   }
 `;
 

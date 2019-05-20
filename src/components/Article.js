@@ -109,7 +109,11 @@ const Styles = styled.article`
   }
   a {
     font-weight: 600;
-    color: ${theme.colors.primary};
+    color: ${theme.colors.tertiary};
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
   a.gatsby-resp-image-link {
     border: 0;
