@@ -23,7 +23,7 @@ const Pillar = styled.div`
   text-align: center;
 
   @media ${theme.desktop} {
-    flex: 0 0 250px;
+    flex: 1 0 0;
     margin: 0 25px;
   }
 
