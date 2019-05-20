@@ -30,7 +30,7 @@ const EspaceParticipantsPage = props => {
 
   return (
     <>
-      <MiniHero backgrounds={backgrounds} theme={theme}>
+      <MiniHero backgrounds={backgrounds}>
         <FormattedMessage id="participants" />
       </MiniHero>
       <Article>

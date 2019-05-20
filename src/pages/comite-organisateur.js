@@ -87,7 +87,7 @@ const ComiteOrganisateurPage = props => {
 
   return (
     <>
-      <MiniHero backgrounds={backgrounds} theme={theme}>
+      <MiniHero backgrounds={backgrounds}>
         <FormattedMessage id="oc" />
       </MiniHero>
       <Article theme={theme}>

@@ -34,7 +34,7 @@ const CompetitionsPage = props => {
 
   return (
     <>
-      <MiniHero backgrounds={backgrounds} theme={theme}>
+      <MiniHero backgrounds={backgrounds}>
         <FormattedMessage id="competitions" />
       </MiniHero>
       <Article>

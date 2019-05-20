@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
@@ -54,7 +53,7 @@ const PartenairesPage = props => {
 
   return (
     <>
-      <MiniHero backgrounds={backgrounds} theme={theme}>
+      <MiniHero backgrounds={backgrounds}>
         <FormattedMessage id="sponsors" />
       </MiniHero>
       <Article theme={theme}>
