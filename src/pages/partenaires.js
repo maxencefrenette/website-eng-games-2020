@@ -89,7 +89,12 @@ const PartenairesPage = props => {
 
         {/* <h2><FormattedMessage id="diamond" /></h2> */}
 
-        {/* <h2><FormattedMessage id="gold" /></h2> */}
+        <h2>
+          <FormattedMessage id="gold" />
+        </h2>
+        <Centered>
+          <Img fixed={data.sintra.fixed} />
+        </Centered>
 
         {/* <h2><FormattedMessage id="silver" /></h2> */}
 
@@ -163,6 +168,11 @@ export const query = graphql`
     }
     aeets: imageSharp(fixed: { originalName: { regex: "/aeets/" } }) {
       ...ImageXl
+    }
+
+    # Gold
+    sintra: imageSharp(fixed: { originalName: { regex: "/sintra/" } }) {
+      ...ImageM
     }
 
     # Bronze
