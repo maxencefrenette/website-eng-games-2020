@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
@@ -9,6 +8,7 @@ import MiniHero from "../components/MiniHero";
 import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
 import A from "../components/A";
+import theme from "../theme/theme.yaml";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -16,6 +16,10 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media ${theme.desktop} {
+    max-width: 1425px;
+  }
 `;
 
 const University = styled.div`

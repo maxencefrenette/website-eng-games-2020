@@ -1,5 +1,6 @@
 tablet: "(min-width: 600px)"
 desktop: "(min-width: 1280px)"
+xl: "(min-width: 1920px)"
 belowDesktop: "(max-width: 1279px)"
 font:
   heading: Oswald, sans-serif
@@ -15,3 +16,4 @@ space:
 maxWidth:
   tablet: 580px
   desktop: 1264px
+  xl: 1700px

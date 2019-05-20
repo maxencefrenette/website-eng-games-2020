@@ -20,7 +20,7 @@ const Container = styled.div`
   margin: 0 auto;
 
   @media ${theme.desktop} {
-    max-width: unset;
+    max-width: 1425px;
   }
 `;
 

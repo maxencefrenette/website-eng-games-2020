@@ -16,6 +16,11 @@ const Styles = styled.article`
     max-width: ${theme.maxWidth.desktop};
   }
 
+  @media ${theme.xl} {
+    padding-bottom: 40px;
+    max-width: ${theme.maxWidth.xl};
+  }
+
   h1,
   h2,
   h3,

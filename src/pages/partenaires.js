@@ -33,6 +33,15 @@ const Centered = styled.div`
   }
 `;
 
+const ThankYou = styled.p`
+  max-width: 1000px;
+
+  && {
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
 const SponsorshipPackageDownload = () => (
   <HContainer>
     <Download url="/downloads/Partenariat-JDG2020.pdf">Cahier de partenariats (fr)</Download>
@@ -58,9 +67,9 @@ const PartenairesPage = props => {
       </MiniHero>
       <Article theme={theme}>
         <Centered>
-          <p>
+          <ThankYou>
             <FormattedMessage id="thank-you-text" />
-          </p>
+          </ThankYou>
           <SponsorshipPackageDownload />
           <br />
           <br />
