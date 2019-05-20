@@ -106,6 +106,13 @@ const PartenairesPage = props => {
         </Centered>
 
         {/* <h2><FormattedMessage id="supporter" /></h2> */}
+
+        <h2>
+          <FormattedMessage id="logistic" />
+        </h2>
+        <Centered>
+          <Img fixed={data.centreSportifEts.fixed} />
+        </Centered>
       </Article>
       <Seo facebook={facebook} />
     </>
@@ -144,6 +151,12 @@ export const query = graphql`
     }
   }
 
+  fragment ImageXsWide on ImageSharp {
+    fixed(width: 250, quality: 90) {
+      ...GatsbyImageSharpFixed
+    }
+  }
+
   fragment ImageXs on ImageSharp {
     fixed(width: 200, quality: 90) {
       ...GatsbyImageSharpFixed
@@ -176,7 +189,12 @@ export const query = graphql`
     }
 
     # Bronze
-    boralex: imageSharp(fixed: { originalName: { regex: "/boralex/" } }) {
+    boralex: imageSharp(fluid: { originalName: { regex: "/boralex/" } }) {
+      ...ImageXsWide
+    }
+
+    # Logistic
+    centreSportifEts: imageSharp(fluid: { originalName: { regex: "/centre-sportif-ets/" } }) {
       ...ImageXs
     }
   }

@@ -16,21 +16,23 @@ tagline: Change the world
 3-pillars: Our 3 Pillars
 pillar1: Diversity and Inclusion
 pillar1-message:
-  The Engineering Games is also a community united by the pride of studying engineering. 
-  A welcoming and loving community, one that cares about including and celebrating the presence of everyone 
-  from a diverse background, since it is precisely this diversity that makes the engineering student community 
-  so rich and strong.
+  The Engineering Games is also a community united by the pride of studying engineering. A welcoming
+  and loving community, one that cares about including and celebrating the presence of everyone from
+  a diverse background, since it is precisely this diversity that makes the engineering student
+  community so rich and strong.
 pillar2: Sustainability
 pillar2-message:
-  In 2020, sustainability will be a priority to ensure a quality of life for future generations. 
-  It is about time to exploit the influence of the professional body and the next generation is a fertile ground 
-  for raising awareness. The Engineering Games will test the skills of its participants to act responsibly while 
-  promoting a positive social, environmental and economic impact through our carbon neutral event.
+  In 2020, sustainability will be a priority to ensure a quality of life for future generations. It
+  is about time to exploit the influence of the professional body and the next generation is a
+  fertile ground for raising awareness. The Engineering Games will test the skills of its
+  participants to act responsibly while promoting a positive social, environmental and economic
+  impact through our carbon neutral event.
 pillar3: Technical Excellence
 pillar3-message:
-  Our event is a bridge between newly acquired knowledge and the applications of today's industry. 
-  After more than 4 months of preparation, participants will tackle tough and exciting challenges that showcase 
-  not only the expertise of local organizations, but also the talent of tomorrow's engineers.
+  Our event is a bridge between newly acquired knowledge and the applications of today's industry.
+  After more than 4 months of preparation, participants will tackle tough and exciting challenges
+  that showcase not only the expertise of local organizations, but also the talent of tomorrow's
+  engineers.
 history: History
 history-text:
   "For the past 29 years, Engineering Games has been the largest engineering competition in Quebec
@@ -56,67 +58,70 @@ news: News
 
 # Compétitions
 competitions-text:
-  "Engineering games is the largest engineering competition in Québec and the largest engineering student 
-  gathering in the province. Participants will be required to measure their academic, technical, athletic 
-  and social skills during this competition. They will need to demonstrate team spirit and personal achievement 
-  in order to overcome the challenges they will face during this event."
+  "Engineering games is the largest engineering competition in Québec and the largest engineering
+  student gathering in the province. Participants will be required to measure their academic,
+  technical, athletic and social skills during this competition. They will need to demonstrate team
+  spirit and personal achievement in order to overcome the challenges they will face during this
+  event."
 machine: The Machine
 machine-text:
-  "<p>The robotic machine competition is the main event and the most difficult challenge of the Engineering Games. 
-  This is one of the events that requires sustained work by delegations throughout the fall before the Games. 
-  The challenge is to manufacture a machine that will overcome the 
-  various obstacles of a predetermined journey. The manufacture of this machine requires the training 
-  of multidisciplinary teams that will have to invest a lot of time in order to achieve a highly 
-  competitive prototype.</p>
-  <p>Each team will have to work on ingeniousness and creativity as well as develop the synergy necessary 
-  to create a robotic machine that meets the judges' expectations while respecting the specifications. 
-  The participants in this competition will therefore use their engineering knowledge in addition to managing 
-  a budget dedicated to the purchase of material resources and developing transformations to make 
-  their ideas a reality. </p> 
-  <p>The robotics machine competition is a highly publicized event open to the public and is the 
+  "<p>The robotic machine competition is the main event and the most difficult challenge of the
+  Engineering Games. This is one of the events that requires sustained work by delegations
+  throughout the fall before the Games. The challenge is to manufacture a machine that will overcome
+  the various obstacles of a predetermined journey. The manufacture of this machine requires the
+  training of multidisciplinary teams that will have to invest a lot of time in order to achieve a
+  highly competitive prototype.</p> <p>Each team will have to work on ingeniousness and creativity
+  as well as develop the synergy necessary to create a robotic machine that meets the judges'
+  expectations while respecting the specifications. The participants in this competition will
+  therefore use their engineering knowledge in addition to managing a budget dedicated to the
+  purchase of material resources and developing transformations to make their ideas a reality. </p>
+  <p>The robotics machine competition is a highly publicized event open to the public and is the
   pride of the delegations and the organizing committee.</p>"
 entrepreneurship: Entrepreneurship
 entrepreneurship-text:
-  <p>The entrepreneurship competition is a challenge that will lead its participants to apply 
-  related and important skills in an innovative environment. This is one of the two competitions 
-  that requires a lot of preparation before arriving at the engineering games.</p> 
-  <p> The event, which is divided into three parts, includes the development and production of a 
-  prototype for a new product that addresses a predefined issue, the writing of a business plan to 
-  justify the choice of the product, its viability, and its implementation from the perspective of an 
-  emerging company, as well as the preparation of a short sales speech to convince judges that this is 
-  the best solution for the issue.</p>
-  <p> Participants must have completed the prototype and business plan before they arrive at the Engineering Games. 
-  The sales pitch will be made in front of a group of 3 to 5 judges who will then choose the 5 best products 
-  in order to give these universities the opportunity to make their presentation in front of all the participants 
-  of the engineering games on the last day.</p>
+  <p>The entrepreneurship competition is a challenge that will lead its participants to apply
+  related and important skills in an innovative environment. This is one of the two competitions
+  that requires a lot of preparation before arriving at the engineering games.</p> <p> The event,
+  which is divided into three parts, includes the development and production of a prototype for a
+  new product that addresses a predefined issue, the writing of a business plan to justify the
+  choice of the product, its viability, and its implementation from the perspective of an emerging
+  company, as well as the preparation of a short sales speech to convince judges that this is the
+  best solution for the issue.</p> <p> Participants must have completed the prototype and business
+  plan before they arrive at the Engineering Games. The sales pitch will be made in front of a group
+  of 3 to 5 judges who will then choose the 5 best products in order to give these universities the
+  opportunity to make their presentation in front of all the participants of the engineering games
+  on the last day.</p>
 academic: Academic competitions
 academic-text:
-  <p>The academic exams include the six most taught engineering disciplines in Quebec in addition to the 
-  consulting engineering category. The competitions take place in the morning during which the teams must 
-  answer a theoretical questionnaire and carry out a practical test in the form of a montage, a laboratory 
-  experiment or a case study related to a specific field of engineering. To do this, each delegation is divided 
-  into sub-groups of four to six people according to the participants' fields of expertise and participants. 
-  The latter thus take up a challenge covering all the topics covered during the their university education. 
-  A challenge for the next generation of engineers!</p>
+  <p>The academic exams include the six most taught engineering disciplines in Quebec in addition to
+  the consulting engineering category. The competitions take place in the morning during which the
+  teams must answer a theoretical questionnaire and carry out a practical test in the form of a
+  montage, a laboratory experiment or a case study related to a specific field of engineering. To do
+  this, each delegation is divided into sub-groups of four to six people according to the
+  participants' fields of expertise and participants. The latter thus take up a challenge covering
+  all the topics covered during the their university education. A challenge for the next generation
+  of engineers!</p>
 sports: Sports
 sports-text:
-  <p>It is by drawing inspiration from the adage "a healthy mind in a healthy body" that the sports events 
-  have made their way into the competition program. The day dedicated to these events are an opportunity 
-  for delegations to stand out in a field other than that of engineering and to demonstrate their versatility. 
-  Sports tournaments will not only focus on on individual athletic skills but also on team spirit and effort, 
-  two of the most important values of the competition.</p>
+  <p>It is by drawing inspiration from the adage "a healthy mind in a healthy body" that the sports
+  events have made their way into the competition program. The day dedicated to these events are an
+  opportunity for delegations to stand out in a field other than that of engineering and to
+  demonstrate their versatility. Sports tournaments will not only focus on on individual athletic
+  skills but also on team spirit and effort, two of the most important values of the
+  competition.</p>
 cultural: Cultural
 cultural-text:
-  <p>To add a little entertainment to all these events, cultural competitions are on the menu, including 
-  improvisation, oratory debates and "génie en herbe". They allow delegations to showcase their hidden 
-  talents and share their skills that complement those required in engineering. The improvisation competition 
-  is an energetic and colourful evening, where teams use their imagination, receptiveness and speed of execution. 
-  Oratory debates allow two participants from each university to demonstrate their oratory skills. They must 
-  convince the judges by developing a strong argument that will supplant that of their opponents. 
-  Then, the "génie en herbe" competition pits four members of each delegation against each other who will 
-  use their general knowledge to answer questions on a variety of topics as quickly as possible.</p> 
-  <p>Finally, we must not forget the cultural evening, which takes place in the form of a networking evening. 
-  This is a golden opportunity to exchange and expand your professional network with partners in a very friendly 
+  <p>To add a little entertainment to all these events, cultural competitions are on the menu,
+  including improvisation, oratory debates and "génie en herbe". They allow delegations to showcase
+  their hidden talents and share their skills that complement those required in engineering. The
+  improvisation competition is an energetic and colourful evening, where teams use their
+  imagination, receptiveness and speed of execution. Oratory debates allow two participants from
+  each university to demonstrate their oratory skills. They must convince the judges by developing a
+  strong argument that will supplant that of their opponents. Then, the "génie en herbe" competition
+  pits four members of each delegation against each other who will use their general knowledge to
+  answer questions on a variety of topics as quickly as possible.</p> <p>Finally, we must not forget
+  the cultural evening, which takes place in the form of a networking evening. This is a golden
+  opportunity to exchange and expand your professional network with partners in a very friendly
   atmosphere.</p>
 
 # Participants
@@ -136,6 +141,7 @@ gold: Gold
 silver: Silver
 bronze: Bronze
 supporter: Supporter
+logistic: Logistic
 
 # Organizing Committee
 president: President
