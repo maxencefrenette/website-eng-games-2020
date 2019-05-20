@@ -14,9 +14,3 @@ space:
 maxWidth:
   tablet: 580px
   desktop: 1264px
-hero:
-  size:
-    h1:
-      desktop: 90px
-      tablet: 60px
-      mobile: 30px

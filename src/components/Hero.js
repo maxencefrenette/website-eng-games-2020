@@ -20,7 +20,7 @@ const HeroContainer = styled.section`
   height: 100px;
   padding: 40px;
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: calc(8vh + 20px);
 
   @media ${theme.tablet} {
     background-image: url(${props => props.backgrounds.tablet});
@@ -46,19 +46,45 @@ const Header = styled.h1`
 `;
 
 const Line = styled.span`
-  font-size: calc(${props => props.ratio} * ${theme.hero.size.h1.mobile});
+  font-size: calc(${props => props.ratio} * 30px);
 
   @media ${theme.tablet} {
-    font-size: calc(${props => props.ratio} * ${theme.hero.size.h1.tablet});
+    font-size: calc(${props => props.ratio} * 40px);
   }
 
   @media ${theme.desktop} {
-    font-size: calc(${props => props.ratio} * ${theme.hero.size.h1.desktop});
+    font-size: calc(${props => props.ratio} * 60px);
+  }
+
+  @media (min-height: 800px) {
+    @media ${theme.tablet} {
+      font-size: calc(${props => props.ratio} * 60px);
+    }
+
+    @media ${theme.desktop} {
+      font-size: calc(${props => props.ratio} * 95px);
+    }
   }
 `;
 
 const LineUppercase = styled(Line)`
   text-transform: uppercase;
+`;
+
+const LogoContainer = styled.div`
+  display: none;
+
+  @media (min-height: 550px) {
+    display: block;
+    width: 150px;
+    height: 150px;
+  }
+
+  @media (min-height: 800px) {
+    display: block;
+    width: 240px;
+    height: 240px;
+  }
 `;
 
 const Hero = props => {
@@ -77,16 +103,9 @@ const Hero = props => {
         <br />
         <Line ratio={2.2}>2020</Line>
       </Header>
-
-      <ScreenWidthContext.Consumer>
-        {width => {
-          if (width < 600) {
-            return <Img fixed={data.logoHeroMobile.fixed} />;
-          } else {
-            return <Img fixed={data.logoHero.fixed} />;
-          }
-        }}
-      </ScreenWidthContext.Consumer>
+      <LogoContainer>
+        <Img fluid={data.logoHero.fluid} />
+      </LogoContainer>
     </HeroContainer>
   );
 };
@@ -100,13 +119,8 @@ export default Hero;
 export const query = graphql`
   fragment Hero on Query {
     logoHero: imageSharp(fluid: { originalName: { regex: "/logo-2020/" } }) {
-      fixed(width: 200, height: 200, quality: 90, cropFocus: CENTER) {
-        ...GatsbyImageSharpFixed
-      }
-    }
-    logoHeroMobile: imageSharp(fluid: { originalName: { regex: "/logo-2020/" } }) {
-      fixed(width: 150, height: 150, quality: 90, cropFocus: CENTER) {
-        ...GatsbyImageSharpFixed
+      fluid(maxWidth: 200, quality: 90, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
 
