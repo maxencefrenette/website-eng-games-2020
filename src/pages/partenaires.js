@@ -35,8 +35,8 @@ const Centered = styled.div`
 
 const SponsorshipPackageDownload = () => (
   <HContainer>
-    <Download url="/downloads/partenariats.pdf">Cahier de partenariats (fr)</Download>
-    <Download>Sponsorship Package (en)</Download>
+    <Download url="/downloads/Partenariat-JDG2020.pdf">Cahier de partenariats (fr)</Download>
+    <Download url="/downloads/Partnership-JDG2020.pdf">Sponsorship Package (en)</Download>
   </HContainer>
 );
 
