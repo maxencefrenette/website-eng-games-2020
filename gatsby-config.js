@@ -94,6 +94,11 @@ module.exports = {
         include: /svg-icons/
       }
     },
-    `gatsby-plugin-netlify`
+    `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-htaccess`,
+      RewriteBase: "/jdg/2020/"
+    },
+    `gatsby-plugin-htaccess-redirects`
   ]
 };
