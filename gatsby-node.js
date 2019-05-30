@@ -1,46 +1,7 @@
-//const webpack = require("webpack");
-const _ = require("lodash");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const locales = require("./src/i18n/locales");
-
-exports.createPages = ({ actions }) => {
-  const { createRedirect } = actions;
-  const redirectInBrowser = process.env.NODE_ENV === "development";
-
-  createRedirect({ fromPath: "/", toPath: "/fr", redirectInBrowser });
-  createRedirect({
-    fromPath: "/",
-    toPath: "/en",
-    redirectInBrowser,
-    Language: "en"
-  });
-  createRedirect({
-    fromPath: "/",
-    toPath: "/en",
-    redirectInBrowser,
-    Language: "en-ca"
-  });
-  createRedirect({
-    fromPath: "/",
-    toPath: "/en",
-    redirectInBrowser,
-    Language: "en-us"
-  });
-  createRedirect({
-    fromPath: "/",
-    toPath: "/fr",
-    redirectInBrowser,
-    Language: "fr"
-  });
-  createRedirect({
-    fromPath: "/",
-    toPath: "/fr",
-    redirectInBrowser,
-    Language: "fr-ca"
-  });
-};
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
@@ -52,8 +13,8 @@ exports.onCreatePage = ({ page, actions }) => {
   return new Promise(resolve => {
     deletePage(page);
 
-    Object.keys(locales).map(lang => {
-      const localizedPath = locales[lang].path + page.path;
+    Object.entries(locales).map(([lang, locale]) => {
+      const localizedPath = locale.default ? page.path : locale.path + page.path;
 
       return createPage({
         ...page,
@@ -74,20 +35,20 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const slug = createFilePath({ node, getNode });
     const fileNode = getNode(node.parent);
     const source = fileNode.sourceInstanceName;
-    const separtorIndex = ~slug.indexOf("--") ? slug.indexOf("--") : 0;
-    const shortSlugStart = separtorIndex ? separtorIndex + 2 : 0;
+    const separatorIndex = ~slug.indexOf("--") ? slug.indexOf("--") : 0;
+    const shortSlugStart = separatorIndex ? separatorIndex + 2 : 0;
 
     if (source !== "parts") {
       createNodeField({
         node,
         name: `slug`,
-        value: `${separtorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`
+        value: `${separatorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`
       });
     }
     createNodeField({
       node,
       name: `prefix`,
-      value: separtorIndex ? slug.substring(1, separtorIndex) : ""
+      value: separatorIndex ? slug.substring(1, separatorIndex) : ""
     });
     createNodeField({
       node,

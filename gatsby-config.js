@@ -98,7 +98,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-htaccess`,
       RewriteBase: "/jdg/2020/"
-    },
-    `gatsby-plugin-htaccess-redirects`
+    }
   ]
 };
