@@ -116,12 +116,12 @@ const PartenairesPage = props => {
 
         {/* <h2><FormattedMessage id="supporter" /></h2> */}
 
-        <h2>
+        {/* <h2>
           <FormattedMessage id="logistic" />
         </h2>
         <Centered>
           <Img fixed={data.centreSportifEts.fixed} />
-        </Centered>
+        </Centered> */}
       </Article>
       <Seo facebook={facebook} />
     </>
