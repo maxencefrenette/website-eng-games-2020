@@ -5,7 +5,7 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPl
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const locales = require("./src/i18n/locales");
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = ({ actions }) => {
   const { createRedirect } = actions;
   const redirectInBrowser = process.env.NODE_ENV === "development";
 
