@@ -3,6 +3,7 @@ import React from "react";
 import { FaFileAlt } from "react-icons/fa/";
 import styled from "styled-components";
 import theme from "../theme/theme.yaml";
+import config from "../../content/meta/config";
 
 const padding = 20;
 
@@ -84,7 +85,7 @@ const Download = props => {
   return (
     <Container>
       <RibbonContainer>
-        <DownloadLink href={url} active={!!url}>
+        <DownloadLink href={`${config.pathPrefix || ""}${url}`} active={!!url}>
           <FaFileAlt />
           <Name>{children}</Name>
         </DownloadLink>
