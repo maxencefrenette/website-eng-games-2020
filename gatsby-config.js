@@ -2,7 +2,7 @@ require("dotenv").config();
 const config = require("./content/meta/config");
 
 module.exports = {
-  // pathPrefix: config.pathPrefix,
+  pathPrefix: config.pathPrefix,
   siteMetadata: {
     title: config.siteTitle,
     description: config.siteDescription,
