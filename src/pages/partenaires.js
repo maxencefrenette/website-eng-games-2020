@@ -84,7 +84,11 @@ const PartenairesPage = props => {
         </h2>
         <Centered>
           <A href="https://www.etsmtl.ca/">
-            <Img fixed={data.ets.fixed} />
+            <Img
+              style={{ maxWidth: "100%" }}
+              imgStyle={{ objectFit: "contain" }}
+              fixed={data.ets.fixed}
+            />
           </A>
         </Centered>
 
@@ -93,7 +97,11 @@ const PartenairesPage = props => {
         </h2>
         <Centered>
           <A href="https://aeets.com/">
-            <Img fixed={data.aeets.fixed} />
+            <Img
+              style={{ maxWidth: "100%" }}
+              imgStyle={{ objectFit: "contain" }}
+              fixed={data.aeets.fixed}
+            />
           </A>
         </Centered>
 
@@ -103,7 +111,11 @@ const PartenairesPage = props => {
           <FormattedMessage id="gold" />
         </h2>
         <Centered>
-          <Img fixed={data.sintra.fixed} />
+          <Img
+            style={{ maxWidth: "100%" }}
+            imgStyle={{ objectFit: "contain" }}
+            fixed={data.sintra.fixed}
+          />
         </Centered>
 
         {/* <h2><FormattedMessage id="silver" /></h2> */}
@@ -112,7 +124,11 @@ const PartenairesPage = props => {
           <FormattedMessage id="bronze" />
         </h2>
         <Centered>
-          <Img fixed={data.boralex.fixed} />
+          <Img
+            style={{ maxWidth: "100%" }}
+            imgStyle={{ objectFit: "contain" }}
+            fixed={data.boralex.fixed}
+          />
         </Centered>
 
         {/* <h2><FormattedMessage id="supporter" /></h2> */}
