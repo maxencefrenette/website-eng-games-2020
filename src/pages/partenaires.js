@@ -12,8 +12,10 @@ import { FormattedMessage } from "react-intl";
 import A from "../components/A";
 
 const HContainer = styled.div`
-  display: flex;
-  justify-content: center;
+  @media ${theme.tablet} {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const Big = styled.div`

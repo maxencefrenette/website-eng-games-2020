@@ -26,7 +26,6 @@ const DownloadLink = styled.a`
 
   display: flex;
   height: ${2 * padding + 28}px;
-  width: 400px;
   align-items: center;
 
   &&& {
@@ -34,6 +33,10 @@ const DownloadLink = styled.a`
     font-weight: normal;
     text-decoration: none;
     color: ${theme.colors.primary};
+  }
+
+  @media ${theme.tablet} {
+    width: 400px;
   }
 `;
 
@@ -84,13 +87,13 @@ const Download = props => {
 
   return (
     <Container>
-      <RibbonContainer>
-        <DownloadLink href={`${config.pathPrefix || ""}${url}`} active={!!url}>
-          <FaFileAlt />
-          <Name>{children}</Name>
-        </DownloadLink>
-        {!url && <Ribbon>À venir</Ribbon>}
-      </RibbonContainer>
+      {/* <RibbonContainer> */}
+      <DownloadLink href={url ? `${config.pathPrefix || ""}${url}` : undefined} active={!!url}>
+        <FaFileAlt />
+        <Name>{children}</Name>
+      </DownloadLink>
+      {/* {!url && <Ribbon>À venir</Ribbon>}
+      </RibbonContainer> */}
     </Container>
   );
 };

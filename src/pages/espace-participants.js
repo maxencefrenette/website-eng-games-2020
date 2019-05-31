@@ -7,6 +7,7 @@ import MiniHero from "../components/MiniHero";
 import styled from "styled-components";
 import { graphql } from "gatsby";
 import { FormattedMessage } from "react-intl";
+import theme from "../theme/theme.yaml";
 
 const Section = styled.div`
   margin-bottom: 20px;
@@ -14,8 +15,10 @@ const Section = styled.div`
 `;
 
 const HContainer = styled.div`
-  display: flex;
-  justify-content: center;
+  @media ${theme.tablet} {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const EspaceParticipantsPage = props => {
