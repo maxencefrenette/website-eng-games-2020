@@ -15,10 +15,9 @@ const Section = styled.div`
 `;
 
 const HContainer = styled.div`
-  @media ${theme.tablet} {
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const EspaceParticipantsPage = props => {
@@ -42,20 +41,20 @@ const EspaceParticipantsPage = props => {
         </Section>
         <Section>
           <HContainer>
-            <Download>Cahier du participant (fr)</Download>
-            <Download>Participant&#39;s handbook (en)</Download>
+            <Download>Cahier du participant (fr) (À venir)</Download>
+            <Download>Participant&#39;s handbook (en) (Coming soon)</Download>
           </HContainer>
           <HContainer>
-            <Download>Cahier de délégation (fr)</Download>
-            <Download>{"Delegation's package (en)"}</Download>
+            <Download>Cahier de délégation (fr) (À venir)</Download>
+            <Download>{"Delegation's package (en) (Coming soon)"}</Download>
           </HContainer>
           <HContainer>
-            <Download>Cahier de compétitions (fr)</Download>
-            <Download>Competition handbook (en)</Download>
+            <Download>Cahier de compétitions (fr) (À venir)</Download>
+            <Download>Competition handbook (en) (Coming soon)</Download>
           </HContainer>
           <HContainer>
-            <Download>Cahier de la machine robotique (fr)</Download>
-            <Download>{"Machine package (en)"}</Download>
+            <Download>Cahier de la machine robotique (fr) (À venir)</Download>
+            <Download>{"Machine package (en) (Coming soon)"}</Download>
           </HContainer>
         </Section>
       </Article>

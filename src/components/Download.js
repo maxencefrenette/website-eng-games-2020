@@ -8,6 +8,7 @@ import config from "../../content/meta/config";
 const padding = 20;
 
 const Container = styled.div`
+  flex: 0 1 400px;
   box-sizing: border-box;
   padding: 10px;
 `;
@@ -34,48 +35,6 @@ const DownloadLink = styled.a`
     text-decoration: none;
     color: ${theme.colors.primary};
   }
-
-  @media ${theme.tablet} {
-    width: 400px;
-  }
-`;
-
-const RibbonContainer = styled.div`
-  position: relative;
-  overflow: hidden;
-  height: ${2 * padding + 28}px;
-`;
-
-const Ribbon = styled.div`
-  // Taken from https://codepen.io/Paulie-D/pen/gpgYvZ
-  margin: 0;
-  padding: 0;
-  background: ${theme.colors.primary};
-  color: white;
-  padding: 5px 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translateX(20%) translateY(0%) rotate(45deg);
-  transform-origin: top left;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    margin: 0 -1px; /* tweak */
-    width: 100%;
-    height: 100%;
-    background: ${theme.colors.primary};
-  }
-  &:before {
-    right: 100%;
-  }
-
-  &:after {
-    left: 100%;
-  }
 `;
 
 const Name = styled.span`
@@ -87,13 +46,10 @@ const Download = props => {
 
   return (
     <Container>
-      {/* <RibbonContainer> */}
       <DownloadLink href={url ? `${config.pathPrefix || ""}${url}` : undefined} active={!!url}>
         <FaFileAlt />
         <Name>{children}</Name>
       </DownloadLink>
-      {/* {!url && <Ribbon>À venir</Ribbon>}
-      </RibbonContainer> */}
     </Container>
   );
 };
