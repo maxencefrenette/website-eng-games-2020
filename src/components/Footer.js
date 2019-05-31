@@ -8,7 +8,7 @@ import A from "../components/A";
 const FooterStyle = styled.footer`
   padding: 20px;
   padding-top: 0;
-  padding-bottom: 20px;
+  padding-bottom: 100px;
 
   @media ${theme.desktop} {
     padding-bottom: 40px;
