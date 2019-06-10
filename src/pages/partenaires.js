@@ -105,7 +105,16 @@ const PartenairesPage = props => {
           </A>
         </Centered>
 
-        {/* <h2><FormattedMessage id="diamond" /></h2> */}
+        <h2>
+          <FormattedMessage id="diamond" />
+        </h2>
+        <Centered>
+          <Img
+            style={{ maxWidth: "100%" }}
+            imgStyle={{ objectFit: "contain" }}
+            fixed={data.centech.fixed}
+          />
+        </Centered>
 
         <h2>
           <FormattedMessage id="gold" />
@@ -207,6 +216,11 @@ export const query = graphql`
     }
     aeets: imageSharp(fixed: { originalName: { regex: "/aeets/" } }) {
       ...ImageXl
+    }
+
+    # Diamond
+    centech: imageSharp(fixed: { originalName: { regex: "/centech/" } }) {
+      ...ImageL
     }
 
     # Gold
