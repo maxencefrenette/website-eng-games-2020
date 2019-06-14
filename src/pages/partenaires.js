@@ -109,11 +109,13 @@ const PartenairesPage = props => {
           <FormattedMessage id="diamond" />
         </h2>
         <Centered>
-          <Img
-            style={{ maxWidth: "100%" }}
-            imgStyle={{ objectFit: "contain" }}
-            fixed={data.centech.fixed}
-          />
+          <A href="https://centech.co/">
+            <Img
+              style={{ maxWidth: "100%" }}
+              imgStyle={{ objectFit: "contain" }}
+              fixed={data.centech.fixed}
+            />
+          </A>
         </Centered>
 
         <h2>
@@ -137,6 +139,12 @@ const PartenairesPage = props => {
             style={{ maxWidth: "100%" }}
             imgStyle={{ objectFit: "contain" }}
             fixed={data.boralex.fixed}
+          />
+          <br />
+          <Img
+            style={{ maxWidth: "100%" }}
+            imgStyle={{ objectFit: "contain" }}
+            fixed={data.cnesst.fixed}
           />
         </Centered>
 
@@ -193,7 +201,7 @@ export const query = graphql`
   }
 
   fragment ImageXs on ImageSharp {
-    fixed(width: 200, quality: 90) {
+    fixed(width: 190, quality: 90) {
       ...GatsbyImageSharpFixed
     }
   }
@@ -231,6 +239,9 @@ export const query = graphql`
     # Bronze
     boralex: imageSharp(fluid: { originalName: { regex: "/boralex/" } }) {
       ...ImageXsWide
+    }
+    cnesst: imageSharp(fluid: { originalName: { regex: "/CNESST/" } }) {
+      ...ImageXs
     }
 
     # Logistic
