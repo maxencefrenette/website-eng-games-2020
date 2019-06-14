@@ -161,14 +161,6 @@ class Menu extends React.Component {
   closeMenu = () => {
     if (this.state.open) {
       this.setState({ open: false });
-      if (this.props.screenWidth < 1280) {
-        this.renderedItems.map(item => {
-          if (item.classList.contains("showItem")) {
-            item.classList.add("hideItem");
-            item.classList.remove("item");
-          }
-        });
-      }
     }
   };
 
