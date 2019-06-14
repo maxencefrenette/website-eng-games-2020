@@ -16,11 +16,10 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 
-  max-width: 600px;
   margin: 0 auto;
 
   @media ${theme.desktop} {
-    max-width: 1425px;
+    max-width: 1200px;
   }
 `;
 
@@ -29,7 +28,7 @@ const MembreCO = styled.div`
   margin-right: 25px;
   margin-top: 50px;
   margin-bottom: 25px;
-  max-width: 250px;
+  max-width: 300px;
 
   &:nth-child(10n) {
     margin-left: 25px;
@@ -80,7 +79,6 @@ const ComiteOrganisateurPage = props => {
     ["sacha", "Sacha Terral", "vp-logistics", "logistique"],
     ["celia", "Célia-Nour Mahrour-Venturelli", "vp-finances", "finances"],
     ["gabriel", "Gabriel Lévesque", "vp-machine", "machine"],
-    ["iman", "Iman Hassanein", "vp-social", "social"],
     ["marc", "Marc Antoine Dumont", "vp-dd", "developpementdurable"],
     ["marieAude", "Marie-Aude Ardizzon", "vp-support"]
   ];
@@ -126,7 +124,7 @@ export default ComiteOrganisateurPage;
 //eslint-disable-next-line no-undef
 export const query = graphql`
   fragment squareImage on ImageSharp {
-    fixed(width: 250, height: 250, quality: 90, cropFocus: NORTH) {
+    fixed(width: 300, height: 300, quality: 90, cropFocus: NORTH) {
       ...GatsbyImageSharpFixed
     }
   }
