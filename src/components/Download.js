@@ -2,10 +2,9 @@ import PropTypes from "prop-types";
 import React from "react";
 import { FaFileAlt } from "react-icons/fa/";
 import styled from "styled-components";
-import theme from "../theme/theme.yaml";
 import config from "../../content/meta/config";
-
-const padding = 20;
+import Button from "@material/react-button";
+import "@material/react-button/dist/button.css";
 
 const Container = styled.div`
   flex: 0 1 400px;
@@ -13,27 +12,13 @@ const Container = styled.div`
   padding: 10px;
 `;
 
-const DownloadLink = styled.a`
-  box-sizing: border-box;
-  padding: ${padding}px;
-  border-radius: 5px;
-  border-color: ${props => (props.active ? "lightblue" : "lightgray")};
-  border-width: 2px;
-  border-style: solid;
-
-  &:hover {
-    border-color: ${props => (props.active ? "darkblue" : "lightgray")};
-  }
-
-  display: flex;
-  height: ${2 * padding + 28}px;
-  align-items: center;
-
+const DownloadButton = styled(Button)`
   &&& {
-    font-size: 20px;
+    width: 100%;
+    height: 70px;
+    font-size: 16px;
     font-weight: normal;
     text-decoration: none;
-    color: ${theme.colors.primary};
   }
 `;
 
@@ -46,10 +31,14 @@ const Download = props => {
 
   return (
     <Container>
-      <DownloadLink href={url ? `${config.pathPrefix || ""}${url}` : undefined} active={!!url}>
+      <DownloadButton
+        raised
+        href={url ? `${config.pathPrefix || ""}${url}` : undefined}
+        disabled={!url}
+      >
         <FaFileAlt />
         <Name>{children}</Name>
-      </DownloadLink>
+      </DownloadButton>
     </Container>
   );
 };

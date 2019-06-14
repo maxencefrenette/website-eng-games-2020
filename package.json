@@ -19,6 +19,7 @@
     "fmt": "prettier --write './**/*.js'"
   },
   "dependencies": {
+    "@material/react-button": "^0.13.0",
     "antd": "^3.7.0",
     "babel-plugin-styled-components": "^1.10.0",
     "fontfaceobserver": "^2.0.13",

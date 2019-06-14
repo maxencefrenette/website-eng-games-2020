@@ -14,6 +14,7 @@ export const FontLoadedContext = React.createContext(false);
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
+    --mdc-theme-primary: ${theme.colors.primary}
   }
   *,
   *:after,

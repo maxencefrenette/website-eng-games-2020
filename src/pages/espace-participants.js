@@ -7,7 +7,6 @@ import MiniHero from "../components/MiniHero";
 import styled from "styled-components";
 import { graphql } from "gatsby";
 import { FormattedMessage } from "react-intl";
-import theme from "../theme/theme.yaml";
 
 const Section = styled.div`
   margin-bottom: 20px;
@@ -41,20 +40,52 @@ const EspaceParticipantsPage = props => {
         </Section>
         <Section>
           <HContainer>
-            <Download>Cahier du participant (fr) (À venir)</Download>
-            <Download>Participant&#39;s handbook (en) (Coming soon)</Download>
+            <Download>
+              Cahier du participant (fr)
+              <br />
+              (À venir)
+            </Download>
+            <Download>
+              Participant&#39;s handbook (en)
+              <br />
+              (Coming soon)
+            </Download>
           </HContainer>
           <HContainer>
-            <Download>Cahier de délégation (fr) (À venir)</Download>
-            <Download>{"Delegation's package (en) (Coming soon)"}</Download>
+            <Download>
+              Cahier de délégation (fr)
+              <br />
+              (À venir)
+            </Download>
+            <Download>
+              {"Delegation's package (en)"}
+              <br />
+              (Coming soon)
+            </Download>
           </HContainer>
           <HContainer>
-            <Download>Cahier de compétitions (fr) (À venir)</Download>
-            <Download>Competition handbook (en) (Coming soon)</Download>
+            <Download>
+              Cahier de compétitions (fr)
+              <br />
+              (À venir)
+            </Download>
+            <Download>
+              Competition handbook (en)
+              <br />
+              (Coming soon)
+            </Download>
           </HContainer>
           <HContainer>
-            <Download>Cahier de la machine robotique (fr) (À venir)</Download>
-            <Download>{"Machine package (en) (Coming soon)"}</Download>
+            <Download>
+              Cahier de la machine robotique (fr)
+              <br />
+              (À venir)
+            </Download>
+            <Download>
+              {"Machine package (en)"}
+              <br />
+              (Coming soon)
+            </Download>
           </HContainer>
         </Section>
       </Article>
