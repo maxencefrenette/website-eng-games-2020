@@ -127,6 +127,15 @@ const PartenairesPage = props => {
             imgStyle={{ objectFit: "contain" }}
             fixed={data.sintra.fixed}
           />
+          <br />
+          <br />
+          <br />
+          <br />
+          <Img
+            style={{ maxWidth: "100%" }}
+            imgStyle={{ objectFit: "contain" }}
+            fixed={data.olympus.fixed}
+          />
         </Centered>
 
         {/* <h2><FormattedMessage id="silver" /></h2> */}
@@ -140,6 +149,7 @@ const PartenairesPage = props => {
             imgStyle={{ objectFit: "contain" }}
             fixed={data.boralex.fixed}
           />
+          <br />
           <br />
           <br />
           <Img
@@ -234,6 +244,9 @@ export const query = graphql`
 
     # Gold
     sintra: imageSharp(fixed: { originalName: { regex: "/sintra/" } }) {
+      ...ImageM
+    }
+    olympus: imageSharp(fixed: { originalName: { regex: "/olympus/" } }) {
       ...ImageM
     }
 
