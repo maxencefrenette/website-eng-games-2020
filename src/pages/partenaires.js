@@ -141,6 +141,7 @@ const PartenairesPage = props => {
             fixed={data.boralex.fixed}
           />
           <br />
+          <br />
           <Img
             style={{ maxWidth: "100%" }}
             imgStyle={{ objectFit: "contain" }}
