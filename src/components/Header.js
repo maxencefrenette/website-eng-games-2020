@@ -172,7 +172,7 @@ class Header extends React.Component {
             </div>
             <div className="type">
               <h1>
-                <LLink to="/">Mission: Jeux de Génie 2020</LLink>
+                <LLink to="/">Mission: JDG2020</LLink>
               </h1>
               <h2>
                 <LLink to="/">Changer le Monde</LLink>
