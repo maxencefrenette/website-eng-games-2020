@@ -138,7 +138,16 @@ const PartenairesPage = props => {
           />
         </Centered>
 
-        {/* <h2><FormattedMessage id="silver" /></h2> */}
+        <h2>
+          <FormattedMessage id="silver" />
+        </h2>
+        <Centered>
+          <Img
+            style={{ maxWidth: "100%" }}
+            imgStyle={{ objectFit: "contain" }}
+            fixed={data.hatch.fixed}
+          />
+        </Centered>
 
         <h2>
           <FormattedMessage id="bronze" />
@@ -156,6 +165,14 @@ const PartenairesPage = props => {
             style={{ maxWidth: "100%" }}
             imgStyle={{ objectFit: "contain" }}
             fixed={data.cnesst.fixed}
+          />
+          <br />
+          <br />
+          <br />
+          <Img
+            style={{ maxWidth: "100%" }}
+            imgStyle={{ objectFit: "contain" }}
+            fixed={data.genik.fixed}
           />
         </Centered>
 
@@ -182,25 +199,25 @@ export default PartenairesPage;
 //eslint-disable-next-line no-undef
 export const query = graphql`
   fragment ImageXl on ImageSharp {
-    fixed(width: 500, quality: 90) {
+    fixed(width: 600, quality: 90) {
       ...GatsbyImageSharpFixed
     }
   }
 
   fragment ImageL on ImageSharp {
-    fixed(width: 400, quality: 90) {
+    fixed(width: 500, quality: 90) {
       ...GatsbyImageSharpFixed
     }
   }
 
   fragment ImageM on ImageSharp {
-    fixed(width: 300, quality: 90) {
+    fixed(width: 400, quality: 90) {
       ...GatsbyImageSharpFixed
     }
   }
 
   fragment ImageS on ImageSharp {
-    fixed(width: 200, quality: 90) {
+    fixed(width: 320, quality: 90) {
       ...GatsbyImageSharpFixed
     }
   }
@@ -250,12 +267,20 @@ export const query = graphql`
       ...ImageM
     }
 
+    # Silver
+    hatch: imageSharp(fixed: { originalName: { regex: "/hatch/" } }) {
+      ...ImageS
+    }
+
     # Bronze
     boralex: imageSharp(fluid: { originalName: { regex: "/boralex/" } }) {
       ...ImageXsWide
     }
     cnesst: imageSharp(fluid: { originalName: { regex: "/CNESST/" } }) {
       ...ImageXs
+    }
+    genik: imageSharp(fluid: { originalName: { regex: "/genik/" } }) {
+      ...ImageXsWide
     }
 
     # Logistic
