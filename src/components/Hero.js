@@ -67,7 +67,7 @@ const Line = styled.span`
   }
 `;
 
-const LineUppercase = styled(Line)`
+const LineUppercase = styled(props => <Line {...props} />)`
   text-transform: uppercase;
 `;
 
