@@ -147,6 +147,33 @@ const PartenairesPage = props => {
             imgStyle={{ objectFit: "contain" }}
             fixed={data.hatch.fixed}
           />
+          <br />
+          <br />
+          <br />
+          <br />
+          <Img
+            style={{ maxWidth: "100%" }}
+            imgStyle={{ objectFit: "contain" }}
+            fixed={data.criq.fixed}
+          />
+          <br />
+          <br />
+          <br />
+          <br />
+          <Img
+            style={{ maxWidth: "100%" }}
+            imgStyle={{ objectFit: "contain" }}
+            fixed={data.laporte.fixed}
+          />
+          <br />
+          <br />
+          <br />
+          <br />
+          <Img
+            style={{ maxWidth: "100%" }}
+            imgStyle={{ objectFit: "contain" }}
+            fixed={data.pmi.fixed}
+          />
         </Centered>
 
         <h2>
@@ -173,6 +200,14 @@ const PartenairesPage = props => {
             style={{ maxWidth: "100%" }}
             imgStyle={{ objectFit: "contain" }}
             fixed={data.genik.fixed}
+          />
+          <br />
+          <br />
+          <br />
+          <Img
+            style={{ maxWidth: "100%" }}
+            imgStyle={{ objectFit: "contain" }}
+            fixed={data.pajr.fixed}
           />
         </Centered>
 
@@ -218,6 +253,12 @@ export const query = graphql`
 
   fragment ImageS on ImageSharp {
     fixed(width: 320, quality: 90) {
+      ...GatsbyImageSharpFixed
+    }
+  }
+
+  fragment ImageSWide on ImageSharp {
+    fixed(width: 390, quality: 90) {
       ...GatsbyImageSharpFixed
     }
   }
@@ -271,6 +312,15 @@ export const query = graphql`
     hatch: imageSharp(fixed: { originalName: { regex: "/hatch/" } }) {
       ...ImageS
     }
+    criq: imageSharp(fixed: { originalName: { regex: "/criq/" } }) {
+      ...ImageS
+    }
+    laporte: imageSharp(fixed: { originalName: { regex: "/laporte/" } }) {
+      ...ImageS
+    }
+    pmi: imageSharp(fixed: { originalName: { regex: "/pmi/" } }) {
+      ...ImageS
+    }
 
     # Bronze
     boralex: imageSharp(fluid: { originalName: { regex: "/boralex/" } }) {
@@ -281,6 +331,9 @@ export const query = graphql`
     }
     genik: imageSharp(fluid: { originalName: { regex: "/genik/" } }) {
       ...ImageXsWide
+    }
+    pajr: imageSharp(fluid: { originalName: { regex: "/pajr/" } }) {
+      ...ImageXs
     }
 
     # Logistic
