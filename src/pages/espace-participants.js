@@ -39,30 +39,24 @@ const EspaceParticipantsPage = props => {
           <FormattedMessage id="participants-text" />
         </Section>
         <Section>
+          <h3>
+            <FormattedMessage id="cahier-participant-titre" />
+          </h3>
           <HContainer>
             <Download>
-              Cahier du participant (fr)
+              Cahier des délégué·e·s (fr)
               <br />
               (À venir)
             </Download>
             <Download>
-              Participant&#39;s handbook (en)
+              Delegates' handbook (en)
               <br />
               (Coming soon)
             </Download>
           </HContainer>
-          <HContainer>
-            <Download>
-              Cahier de délégation (fr)
-              <br />
-              (À venir)
-            </Download>
-            <Download>
-              {"Delegation's package (en)"}
-              <br />
-              (Coming soon)
-            </Download>
-          </HContainer>
+          <h3>
+            <FormattedMessage id="cahier-competition-titre" />
+          </h3>
           <HContainer>
             <Download>
               Cahier de compétitions (fr)
@@ -70,19 +64,49 @@ const EspaceParticipantsPage = props => {
               (À venir)
             </Download>
             <Download>
-              Competition handbook (en)
+              Competitions package (en)
+              <br />
+              (Coming soon)
+            </Download>
+          </HContainer>
+          <h3>
+            <FormattedMessage id="cahier-entrepreneuriat-titre" />
+          </h3>
+          <HContainer>
+            <Download>
+              Cahier entrepreneuriat (fr)
+              <br />
+              (À venir)
+            </Download>
+            <Download>
+              Entrepreneurship competition package (en)
+              <br />
+              (Coming soon)
+            </Download>
+          </HContainer>
+          <h3>
+            <FormattedMessage id="cahier-machine-titre" />
+          </h3>
+          <HContainer>
+            <Download>
+              Cahier de construction (fr)
+              <br />
+              (À venir)
+            </Download>
+            <Download>
+              Construction specifications (en)
               <br />
               (Coming soon)
             </Download>
           </HContainer>
           <HContainer>
             <Download>
-              Cahier de la machine robotique (fr)
+              Cahier du défi (fr)
               <br />
               (À venir)
             </Download>
             <Download>
-              {"Machine package (en)"}
+              Competition handbook (en)
               <br />
               (Coming soon)
             </Download>
