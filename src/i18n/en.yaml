@@ -127,7 +127,11 @@ cultural-text:
 
 # Participants
 participants-text:
-  "Here you will find all the information you need to participate in the 2020 Engineering Games"
+  "Here you will find all the information you need to participate in the 2020 Engineering Games."
+cahier-participant-titre: Delegates' handbook
+cahier-competition-titre: Competitions package
+cahier-entrepreneuriat-titre: Entrepreneurship competition package
+cahier-machine-titre: Machine competition package
 
 # Sponsors
 thank-you: Thanks to all our sponsors!

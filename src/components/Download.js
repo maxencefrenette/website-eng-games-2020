@@ -16,7 +16,7 @@ const DownloadButton = styled(Button)`
   &&& {
     width: 100%;
     height: 70px;
-    font-size: 16px;
+    font-size: 14.9px;
     font-weight: normal;
     text-decoration: none;
   }
