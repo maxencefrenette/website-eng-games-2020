@@ -111,15 +111,15 @@ const EspaceParticipantsPage = props => {
           <h3>
             <FormattedMessage id="cahier-machine-titre" />
           </h3>
-          {/* <HContainer>
-            <Download url = "/downloads/cahier-de-construction.pdf">
+          <HContainer>
+            <Download url="/downloads/cahier-de-construction.pdf">
               Cahier de construction (fr)
             </Download>
-            <Download url = "/downloads/construction-specifications.pdf">
+            <Download url="/downloads/construction-specifications.pdf">
               Construction specifications (en)
             </Download>
-          </HContainer> */}
-          <HContainer>
+          </HContainer>
+          {/* <HContainer>
             <Download>
               Cahier de construction (fr)
               <br />
@@ -130,7 +130,7 @@ const EspaceParticipantsPage = props => {
               <br />
               (Coming soon)
             </Download>
-          </HContainer>
+          </HContainer> */}
           {/* <HContainer>
             <Download url = "/downloads/cahier-machine.pdf">
               Cahier du défi (fr)
