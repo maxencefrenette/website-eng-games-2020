@@ -46,11 +46,11 @@ const CompetitionsPage = props => {
           <FormattedMessage id="machine" />
         </h2>
         <FloatRight>
-          <p>
+          <div>
             <Carousel>
               {[data.machine1, data.machine2, data.machine3, data.machine4, data.machine5]}
             </Carousel>
-          </p>
+          </div>
         </FloatRight>
         <FormattedHTMLMessage id="machine-text" />
 
@@ -58,11 +58,11 @@ const CompetitionsPage = props => {
           <FormattedMessage id="entrepreneurship" />
         </h2>
         <FloatLeft>
-          <p>
+          <div>
             <Carousel>
               {[data.entrep1, data.entrep2, data.entrep3, data.entrep4, data.entrep5]}
             </Carousel>
-          </p>
+          </div>
         </FloatLeft>
         <FormattedHTMLMessage id="entrepreneurship-text" />
 
@@ -70,11 +70,11 @@ const CompetitionsPage = props => {
           <FormattedMessage id="academic" />
         </h2>
         <FloatRight>
-          <p>
+          <div>
             <Carousel>
               {[data.acad1, data.acad2, data.acad3, data.acad4, data.acad5, data.acad6, data.acad7]}
             </Carousel>
-          </p>
+          </div>
         </FloatRight>
         <FormattedHTMLMessage id="academic-text" />
 
@@ -82,7 +82,7 @@ const CompetitionsPage = props => {
           <FormattedMessage id="sports" />
         </h2>
         <FloatLeft>
-          <p>
+          <div>
             <Carousel>
               {[
                 data.sports1,
@@ -94,7 +94,7 @@ const CompetitionsPage = props => {
                 data.sports7
               ]}
             </Carousel>
-          </p>
+          </div>
         </FloatLeft>
         <FormattedHTMLMessage id="sports-text" />
 
@@ -102,11 +102,11 @@ const CompetitionsPage = props => {
           <FormattedMessage id="cultural" />
         </h2>
         <FloatRight>
-          <p>
+          <div>
             <Carousel>
               {[data.debats1, data.improv1, data.debats2, data.improv2, data.debats3]}
             </Carousel>
-          </p>
+          </div>
         </FloatRight>
         <FormattedHTMLMessage id="cultural-text" />
       </Article>
