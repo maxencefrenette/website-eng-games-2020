@@ -43,13 +43,6 @@ const ThankYou = styled.p`
   }
 `;
 
-const SponsorshipPackageDownload = () => (
-  <HContainer>
-    <Download url="/downloads/Partenariat-JDG2020.pdf">Cahier de partenariats (fr)</Download>
-    <Download url="/downloads/Partnership-JDG2020.pdf">Sponsorship Package (en)</Download>
-  </HContainer>
-);
-
 const PartenairesPage = props => {
   const { data } = props;
   const {
@@ -71,7 +64,12 @@ const PartenairesPage = props => {
           <ThankYou>
             <FormattedMessage id="thank-you-text" />
           </ThankYou>
-          <SponsorshipPackageDownload />
+          <HContainer>
+            <Download url="/downloads/Partenariat-JDG2020.pdf">
+              Cahier de partenariats (fr)
+            </Download>
+            <Download url="/downloads/Partnership-JDG2020.pdf">Sponsorship Package (en)</Download>
+          </HContainer>
           <br />
           <br />
           <Big>
