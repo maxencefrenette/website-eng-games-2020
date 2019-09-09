@@ -55,7 +55,10 @@ const ThankYou = styled.p`
 `;
 
 const PartenairesPage = props => {
-  const { data } = props;
+  const {
+    data,
+    pageContext: { locale }
+  } = props;
   const {
     data: {
       site: {
@@ -115,6 +118,15 @@ const PartenairesPage = props => {
         <LogoContainer>
           <SponsorLogo image={data.sintra.fluid} size={400} />
           <SponsorLogo image={data.olympus.fluid} size={400} />
+          <SponsorLogo
+            image={data.riotinto.fluid}
+            size={400}
+            link={
+              locale === "fr"
+                ? "http://www.riotinto.com/canada-10512-fr.aspx"
+                : "http://www.riotinto.com/canada"
+            }
+          />
         </LogoContainer>
 
         <h2>
@@ -125,6 +137,7 @@ const PartenairesPage = props => {
           <SponsorLogo image={data.criq.fluid} size={320} />
           <SponsorLogo image={data.laporte.fluid} size={320} />
           <SponsorLogo image={data.pmi.fluid} size={320} />
+          <SponsorLogo image={data.giro.fluid} size={320} />
         </LogoContainer>
 
         <h2>
@@ -221,6 +234,9 @@ export const query = graphql`
     olympus: imageSharp(fixed: { originalName: { regex: "/olympus/" } }) {
       ...ImageM
     }
+    riotinto: imageSharp(fixed: { originalName: { regex: "/riotinto/" } }) {
+      ...ImageM
+    }
 
     # Silver
     hatch: imageSharp(fixed: { originalName: { regex: "/hatch/" } }) {
@@ -233,6 +249,9 @@ export const query = graphql`
       ...ImageS
     }
     pmi: imageSharp(fixed: { originalName: { regex: "/pmi/" } }) {
+      ...ImageS
+    }
+    giro: imageSharp(fixed: { originalName: { regex: "/giro/" } }) {
       ...ImageS
     }
 
