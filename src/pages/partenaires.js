@@ -11,6 +11,8 @@ import theme from "../theme/theme.yaml";
 import { FormattedMessage } from "react-intl";
 import A from "../components/A";
 
+import SponsorLogo from "../components/SponsorLogo";
+
 const HContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -26,11 +28,20 @@ const Big = styled.div`
 
 const Centered = styled.div`
   text-align: center;
+`;
 
-  & > a {
-    &:hover {
-      opacity: 0.75;
-    }
+const LogoContainer = styled.div`
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+  marign-bottom: -50px;
+
+  & > * {
+    flex: 0 1 auto;
+    margin: 50px;
   }
 `;
 
@@ -80,143 +91,60 @@ const PartenairesPage = props => {
         <h2>
           <FormattedMessage id="host" />
         </h2>
-        <Centered>
-          <A href="https://www.etsmtl.ca/">
-            <Img
-              style={{ maxWidth: "100%" }}
-              imgStyle={{ objectFit: "contain" }}
-              fixed={data.ets.fixed}
-            />
-          </A>
-        </Centered>
+        <LogoContainer>
+          <SponsorLogo image={data.ets.fluid} size={600} link="https://www.etsmtl.ca/" />
+        </LogoContainer>
 
         <h2>
           <FormattedMessage id="platinum" />
         </h2>
-        <Centered>
-          <A href="https://aeets.com/">
-            <Img
-              style={{ maxWidth: "100%" }}
-              imgStyle={{ objectFit: "contain" }}
-              fixed={data.aeets.fixed}
-            />
-          </A>
-        </Centered>
+        <LogoContainer>
+          <SponsorLogo image={data.aeets.fluid} size={600} link="https://aeets.com/" />
+        </LogoContainer>
 
         <h2>
           <FormattedMessage id="diamond" />
         </h2>
-        <Centered>
-          <A href="https://centech.co/">
-            <Img
-              style={{ maxWidth: "100%" }}
-              imgStyle={{ objectFit: "contain" }}
-              fixed={data.centech.fixed}
-            />
-          </A>
-        </Centered>
+        <LogoContainer>
+          <SponsorLogo image={data.centech.fluid} size={500} link="https://centech.co/" />
+        </LogoContainer>
 
         <h2>
           <FormattedMessage id="gold" />
         </h2>
-        <Centered>
-          <Img
-            style={{ maxWidth: "100%" }}
-            imgStyle={{ objectFit: "contain" }}
-            fixed={data.sintra.fixed}
-          />
-          <br />
-          <br />
-          <br />
-          <br />
-          <Img
-            style={{ maxWidth: "100%" }}
-            imgStyle={{ objectFit: "contain" }}
-            fixed={data.olympus.fixed}
-          />
-        </Centered>
+        <LogoContainer>
+          <SponsorLogo image={data.sintra.fluid} size={400} />
+          <SponsorLogo image={data.olympus.fluid} size={400} />
+        </LogoContainer>
 
         <h2>
           <FormattedMessage id="silver" />
         </h2>
-        <Centered>
-          <Img
-            style={{ maxWidth: "100%" }}
-            imgStyle={{ objectFit: "contain" }}
-            fixed={data.hatch.fixed}
-          />
-          <br />
-          <br />
-          <br />
-          <br />
-          <Img
-            style={{ maxWidth: "100%" }}
-            imgStyle={{ objectFit: "contain" }}
-            fixed={data.criq.fixed}
-          />
-          <br />
-          <br />
-          <br />
-          <br />
-          <Img
-            style={{ maxWidth: "100%" }}
-            imgStyle={{ objectFit: "contain" }}
-            fixed={data.laporte.fixed}
-          />
-          <br />
-          <br />
-          <br />
-          <br />
-          <Img
-            style={{ maxWidth: "100%" }}
-            imgStyle={{ objectFit: "contain" }}
-            fixed={data.pmi.fixed}
-          />
-        </Centered>
+        <LogoContainer>
+          <SponsorLogo image={data.hatch.fluid} size={320} />
+          <SponsorLogo image={data.criq.fluid} size={320} />
+          <SponsorLogo image={data.laporte.fluid} size={320} />
+          <SponsorLogo image={data.pmi.fluid} size={320} />
+        </LogoContainer>
 
         <h2>
           <FormattedMessage id="bronze" />
         </h2>
-        <Centered>
-          <Img
-            style={{ maxWidth: "100%" }}
-            imgStyle={{ objectFit: "contain" }}
-            fixed={data.boralex.fixed}
-          />
-          <br />
-          <br />
-          <br />
-          <Img
-            style={{ maxWidth: "100%" }}
-            imgStyle={{ objectFit: "contain" }}
-            fixed={data.cnesst.fixed}
-          />
-          <br />
-          <br />
-          <br />
-          <Img
-            style={{ maxWidth: "100%" }}
-            imgStyle={{ objectFit: "contain" }}
-            fixed={data.genik.fixed}
-          />
-          <br />
-          <br />
-          <br />
-          <Img
-            style={{ maxWidth: "100%" }}
-            imgStyle={{ objectFit: "contain" }}
-            fixed={data.pajr.fixed}
-          />
-        </Centered>
+        <LogoContainer>
+          <SponsorLogo image={data.boralex.fluid} size={190} />
+          <SponsorLogo image={data.cnesst.fluid} size={190} />
+          <SponsorLogo image={data.genik.fluid} size={190} />
+          <SponsorLogo image={data.pajr.fluid} size={190} />
+        </LogoContainer>
 
         {/* <h2><FormattedMessage id="supporter" /></h2> */}
 
         {/* <h2>
           <FormattedMessage id="logistic" />
         </h2>
-        <Centered>
-          <Img fixed={data.centreSportifEts.fixed} />
-        </Centered> */}
+        <LogoContainer>
+          <SponsorLogo image={data.centreSportifEts.fluid} size={190} />
+        </LogoContainer> */}
       </Article>
       <Seo facebook={facebook} />
     </>
@@ -232,44 +160,32 @@ export default PartenairesPage;
 //eslint-disable-next-line no-undef
 export const query = graphql`
   fragment ImageXl on ImageSharp {
-    fixed(width: 600, quality: 90) {
-      ...GatsbyImageSharpFixed
+    fluid(maxWidth: 600, quality: 90, fit: CONTAIN, background: "white") {
+      ...GatsbyImageSharpFluid
     }
   }
 
   fragment ImageL on ImageSharp {
-    fixed(width: 500, quality: 90) {
-      ...GatsbyImageSharpFixed
+    fluid(maxWidth: 500, quality: 90, fit: CONTAIN, background: "white") {
+      ...GatsbyImageSharpFluid
     }
   }
 
   fragment ImageM on ImageSharp {
-    fixed(width: 400, quality: 90) {
-      ...GatsbyImageSharpFixed
+    fluid(maxWidth: 400, quality: 90, fit: CONTAIN, background: "white") {
+      ...GatsbyImageSharpFluid
     }
   }
 
   fragment ImageS on ImageSharp {
-    fixed(width: 320, quality: 90) {
-      ...GatsbyImageSharpFixed
-    }
-  }
-
-  fragment ImageSWide on ImageSharp {
-    fixed(width: 390, quality: 90) {
-      ...GatsbyImageSharpFixed
-    }
-  }
-
-  fragment ImageXsWide on ImageSharp {
-    fixed(width: 250, quality: 90) {
-      ...GatsbyImageSharpFixed
+    fluid(maxWidth: 320, quality: 90, fit: CONTAIN, background: "white") {
+      ...GatsbyImageSharpFluid
     }
   }
 
   fragment ImageXs on ImageSharp {
-    fixed(width: 190, quality: 90) {
-      ...GatsbyImageSharpFixed
+    fluid(maxWidth: 190, quality: 90, fit: CONTAIN, background: "white") {
+      ...GatsbyImageSharpFluid
     }
   }
 
@@ -322,13 +238,13 @@ export const query = graphql`
 
     # Bronze
     boralex: imageSharp(fluid: { originalName: { regex: "/boralex/" } }) {
-      ...ImageXsWide
+      ...ImageXs
     }
     cnesst: imageSharp(fluid: { originalName: { regex: "/CNESST/" } }) {
       ...ImageXs
     }
     genik: imageSharp(fluid: { originalName: { regex: "/genik/" } }) {
-      ...ImageXsWide
+      ...ImageXs
     }
     pajr: imageSharp(fluid: { originalName: { regex: "/pajr/" } }) {
       ...ImageXs
