@@ -36,8 +36,8 @@ const LogoContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: -50px;
-  marign-bottom: -50px;
+  margin-top: -30px;
+  margin-bottom: -30px;
 
   & > * {
     flex: 0 1 auto;
