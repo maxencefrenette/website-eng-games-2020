@@ -88,15 +88,15 @@ const EspaceParticipantsPage = props => {
           <h3>
             <FormattedMessage id="cahier-entrepreneuriat-titre" />
           </h3>
-          {/* <HContainer>
-            <Download url = "/downloads/cahier-entrepreneuriat.pdf">
+          <HContainer>
+            <Download url="/downloads/cahier-entrepreneuriat.pdf">
               Cahier entrepreneuriat (fr)
             </Download>
-            <Download url = "/downloads/entrepreneurship-package.pdf">
+            <Download url="/downloads/entrepreneurship-package.pdf">
               Entrepreneurship competition package (en)
             </Download>
-          </HContainer> */}
-          <HContainer>
+          </HContainer>
+          {/* <HContainer>
             <Download>
               Cahier entrepreneuriat (fr)
               <br />
@@ -107,7 +107,7 @@ const EspaceParticipantsPage = props => {
               <br />
               (Coming soon)
             </Download>
-          </HContainer>
+          </HContainer> */}
           <h3>
             <FormattedMessage id="cahier-machine-titre" />
           </h3>
@@ -131,15 +131,11 @@ const EspaceParticipantsPage = props => {
               (Coming soon)
             </Download>
           </HContainer> */}
-          {/* <HContainer>
-            <Download url = "/downloads/cahier-machine.pdf">
-              Cahier du défi (fr)
-            </Download>
-            <Download url = "/downloads/machine-handbook.pdf">
-              Competition handbook (en)
-            </Download>
-          </HContainer> */}
           <HContainer>
+            <Download url="/downloads/cahier-machine.pdf">Cahier du défi (fr)</Download>
+            <Download url="/downloads/machine-handbook.pdf">Competition handbook (en)</Download>
+          </HContainer>
+          {/* <HContainer>
             <Download>
               Cahier du défi (fr)
               <br />
@@ -150,7 +146,7 @@ const EspaceParticipantsPage = props => {
               <br />
               (Coming soon)
             </Download>
-          </HContainer>
+          </HContainer> */}
         </Section>
       </Article>
       <Seo facebook={facebook} />
