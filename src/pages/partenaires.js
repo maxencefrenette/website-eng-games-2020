@@ -94,21 +94,21 @@ const PartenairesPage = props => {
           <FormattedMessage id="host" />
         </h2>
         <LogoContainer>
-          <SponsorLogo image={data.ets.fluid} size={600} link="https://www.etsmtl.ca/" />
+          <SponsorLogo image={data.ets.fluid} size={650} link="https://www.etsmtl.ca/" />
         </LogoContainer>
 
         <h2>
           <FormattedMessage id="platinum" />
         </h2>
         <LogoContainer>
-          <SponsorLogo image={data.aeets.fluid} size={600} link="https://aeets.com/" />
+          <SponsorLogo image={data.aeets.fluid} size={650} link="https://aeets.com/" />
         </LogoContainer>
 
         <h2>
           <FormattedMessage id="diamond" />
         </h2>
         <LogoContainer>
-          <SponsorLogo image={data.centech.fluid} size={500} link="https://centech.co/" />
+          <SponsorLogo image={data.centech.fluid} size={475} link="https://centech.co/" />
         </LogoContainer>
 
         <h2>
@@ -137,6 +137,7 @@ const PartenairesPage = props => {
           <SponsorLogo image={data.laporte.fluid} size={320} />
           <SponsorLogo image={data.pmi.fluid} size={320} />
           <SponsorLogo image={data.giro.fluid} size={320} />
+          <SponsorLogo image={data.demix.fluid} size={320} />
         </LogoContainer>
 
         <h2>
@@ -147,6 +148,7 @@ const PartenairesPage = props => {
           <SponsorLogo image={data.cnesst.fluid} size={190} />
           <SponsorLogo image={data.genik.fluid} size={190} />
           <SponsorLogo image={data.pajr.fluid} size={190} />
+          <SponsorLogo image={data.fempro.fluid} size={190} />
         </LogoContainer>
 
         {/* <h2><FormattedMessage id="supporter" /></h2> */}
@@ -172,13 +174,13 @@ export default PartenairesPage;
 //eslint-disable-next-line no-undef
 export const query = graphql`
   fragment ImageXl on ImageSharp {
-    fluid(maxWidth: 600, quality: 90, fit: CONTAIN, background: "white") {
+    fluid(maxWidth: 650, quality: 90, fit: CONTAIN, background: "white") {
       ...GatsbyImageSharpFluid
     }
   }
 
   fragment ImageL on ImageSharp {
-    fluid(maxWidth: 500, quality: 90, fit: CONTAIN, background: "white") {
+    fluid(maxWidth: 475, quality: 90, fit: CONTAIN, background: "white") {
       ...GatsbyImageSharpFluid
     }
   }
@@ -253,6 +255,9 @@ export const query = graphql`
     giro: imageSharp(fixed: { originalName: { regex: "/giro/" } }) {
       ...ImageS
     }
+    demix: imageSharp(fixed: { originalName: { regex: "/demix/" } }) {
+      ...ImageS
+    }
 
     # Bronze
     boralex: imageSharp(fluid: { originalName: { regex: "/boralex/" } }) {
@@ -265,6 +270,9 @@ export const query = graphql`
       ...ImageXs
     }
     pajr: imageSharp(fluid: { originalName: { regex: "/pajr/" } }) {
+      ...ImageXs
+    }
+    fempro: imageSharp(fluid: { originalName: { regex: "/fempro/" } }) {
       ...ImageXs
     }
 
