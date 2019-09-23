@@ -140,6 +140,7 @@ const PartenairesPage = props => {
           <SponsorLogo image={data.pmi.fluid} size={320} />
           <SponsorLogo image={data.giro.fluid} size={320} />
           <SponsorLogo image={data.demix.fluid} size={320} />
+          <SponsorLogo image={data.genium360.fluid} size={320} />
         </LogoContainer>
 
         <h2>
@@ -151,16 +152,9 @@ const PartenairesPage = props => {
           <SponsorLogo image={data.genik.fluid} size={190} />
           <SponsorLogo image={data.pajr.fluid} size={190} />
           <SponsorLogo image={data.fempro.fluid} size={190} />
+          <SponsorLogo image={data.antidote.fluid} size={190} />
+          <SponsorLogo image={data.cogeco.fluid} size={190} />
         </LogoContainer>
-
-        {/* <h2><FormattedMessage id="supporter" /></h2> */}
-
-        {/* <h2>
-          <FormattedMessage id="logistic" />
-        </h2>
-        <LogoContainer>
-          <SponsorLogo image={data.centreSportifEts.fluid} size={190} />
-        </LogoContainer> */}
       </Article>
       <Seo facebook={facebook} />
     </>
@@ -260,6 +254,9 @@ export const query = graphql`
     demix: imageSharp(fixed: { originalName: { regex: "/demix/" } }) {
       ...ImageS
     }
+    genium360: imageSharp(fixed: { originalName: { regex: "/genium360/" } }) {
+      ...ImageS
+    }
 
     # Bronze
     boralex: imageSharp(fluid: { originalName: { regex: "/boralex/" } }) {
@@ -277,9 +274,10 @@ export const query = graphql`
     fempro: imageSharp(fluid: { originalName: { regex: "/fempro/" } }) {
       ...ImageXs
     }
-
-    # Logistic
-    centreSportifEts: imageSharp(fluid: { originalName: { regex: "/centre-sportif-ets/" } }) {
+    antidote: imageSharp(fluid: { originalName: { regex: "/antidote/" } }) {
+      ...ImageXs
+    }
+    cogeco: imageSharp(fluid: { originalName: { regex: "/cogeco/" } }) {
       ...ImageXs
     }
   }
