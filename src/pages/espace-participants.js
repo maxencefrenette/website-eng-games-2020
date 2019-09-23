@@ -96,18 +96,6 @@ const EspaceParticipantsPage = props => {
               Entrepreneurship competition package (en)
             </Download>
           </HContainer>
-          {/* <HContainer>
-            <Download>
-              Cahier entrepreneuriat (fr)
-              <br />
-              (À venir)
-            </Download>
-            <Download>
-              Entrepreneurship competition package (en)
-              <br />
-              (Coming soon)
-            </Download>
-          </HContainer> */}
           <h3>
             <FormattedMessage id="cahier-machine-titre" />
           </h3>
@@ -119,36 +107,12 @@ const EspaceParticipantsPage = props => {
               Construction specifications (en)
             </Download>
           </HContainer>
-          {/* <HContainer>
-            <Download>
-              Cahier de construction (fr)
-              <br />
-              (À venir)
-            </Download>
-            <Download>
-              Construction specifications (en)
-              <br />
-              (Coming soon)
-            </Download>
-          </HContainer> */}
           <HContainer>
             <Download url="/downloads/Cahier machine_2019-09-12.pdf">Cahier du défi (fr)</Download>
             <Download url="/downloads/Machine Handbook_2019-09-12.pdf">
               Competition handbook (en)
             </Download>
           </HContainer>
-          {/* <HContainer>
-            <Download>
-              Cahier du défi (fr)
-              <br />
-              (À venir)
-            </Download>
-            <Download>
-              Competition handbook (en)
-              <br />
-              (Coming soon)
-            </Download>
-          </HContainer> */}
         </Section>
       </Article>
       <Seo facebook={facebook} />
