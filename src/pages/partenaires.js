@@ -3,13 +3,11 @@ import React from "react";
 import Article from "../components/Article";
 import Seo from "../components/Seo";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
 import MiniHero from "../components/MiniHero";
 import styled from "styled-components";
 import Download from "../components/Download";
 import theme from "../theme/theme.yaml";
 import { FormattedMessage } from "react-intl";
-import A from "../components/A";
 
 import SponsorLogo from "../components/SponsorLogo";
 
@@ -37,6 +35,7 @@ const LogoContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin: -30px;
+  margin-bottom: 110px;
 
   & > * {
     flex: 0 1 auto;
@@ -96,7 +95,7 @@ const PartenairesPage = props => {
           <FormattedMessage id="host" />
         </h2>
         <LogoContainer>
-          <SponsorLogo image={data.ets.fluid} size={650} link="https://www.etsmtl.ca/" />
+          <SponsorLogo image={data.ets.fluid} size={700} link="https://www.etsmtl.ca/" />
         </LogoContainer>
 
         <h2>
@@ -104,6 +103,11 @@ const PartenairesPage = props => {
         </h2>
         <LogoContainer>
           <SponsorLogo image={data.aeets.fluid} size={650} link="https://aeets.com/" />
+          <SponsorLogo
+            image={data.addison.fluid}
+            size={650}
+            link="https://addison-electronique.com/"
+          />
         </LogoContainer>
 
         <h2>
@@ -141,6 +145,7 @@ const PartenairesPage = props => {
           <SponsorLogo image={data.giro.fluid} size={320} />
           <SponsorLogo image={data.demix.fluid} size={320} />
           <SponsorLogo image={data.genium360.fluid} size={320} />
+          <SponsorLogo image={data.genieInc.fluid} size={320} />
         </LogoContainer>
 
         <h2>
@@ -151,9 +156,9 @@ const PartenairesPage = props => {
           <SponsorLogo image={data.cnesst.fluid} size={190} />
           <SponsorLogo image={data.genik.fluid} size={190} />
           <SponsorLogo image={data.pajr.fluid} size={190} />
-          <SponsorLogo image={data.fempro.fluid} size={190} />
           <SponsorLogo image={data.antidote.fluid} size={190} />
           <SponsorLogo image={data.cogeco.fluid} size={190} />
+          <SponsorLogo image={data.topAces.fluid} size={190} />
         </LogoContainer>
       </Article>
       <Seo facebook={facebook} />
@@ -169,6 +174,12 @@ export default PartenairesPage;
 
 //eslint-disable-next-line no-undef
 export const query = graphql`
+  fragment ImageXXl on ImageSharp {
+    fluid(maxWidth: 700, quality: 90, fit: CONTAIN, background: "white") {
+      ...GatsbyImageSharpFluid
+    }
+  }
+
   fragment ImageXl on ImageSharp {
     fluid(maxWidth: 650, quality: 90, fit: CONTAIN, background: "white") {
       ...GatsbyImageSharpFluid
@@ -213,9 +224,14 @@ export const query = graphql`
     }
 
     ets: imageSharp(fixed: { originalName: { regex: "/school-ets/" } }) {
+      ...ImageXXl
+    }
+
+    # Platinium
+    aeets: imageSharp(fixed: { originalName: { regex: "/aeets/" } }) {
       ...ImageXl
     }
-    aeets: imageSharp(fixed: { originalName: { regex: "/aeets/" } }) {
+    addison: imageSharp(fixed: { originalName: { regex: "/addison/" } }) {
       ...ImageXl
     }
 
@@ -257,6 +273,9 @@ export const query = graphql`
     genium360: imageSharp(fixed: { originalName: { regex: "/genium360/" } }) {
       ...ImageS
     }
+    genieInc: imageSharp(fixed: { originalName: { regex: "/genie-inc/" } }) {
+      ...ImageS
+    }
 
     # Bronze
     boralex: imageSharp(fluid: { originalName: { regex: "/boralex/" } }) {
@@ -271,13 +290,13 @@ export const query = graphql`
     pajr: imageSharp(fluid: { originalName: { regex: "/pajr/" } }) {
       ...ImageXs
     }
-    fempro: imageSharp(fluid: { originalName: { regex: "/fempro/" } }) {
-      ...ImageXs
-    }
     antidote: imageSharp(fluid: { originalName: { regex: "/antidote/" } }) {
       ...ImageXs
     }
     cogeco: imageSharp(fluid: { originalName: { regex: "/cogeco/" } }) {
+      ...ImageXs
+    }
+    topAces: imageSharp(fluid: { originalName: { regex: "/top-aces/" } }) {
       ...ImageXs
     }
   }
