@@ -146,6 +146,8 @@ const PartenairesPage = props => {
           <SponsorLogo image={data.demix.fluid} size={320} />
           <SponsorLogo image={data.genium360.fluid} size={320} />
           <SponsorLogo image={data.genieInc.fluid} size={320} />
+          <SponsorLogo image={data.gbi.fluid} size={320} />
+          <SponsorLogo image={data.alten.fluid} size={320} />
         </LogoContainer>
 
         <h2>
@@ -159,6 +161,7 @@ const PartenairesPage = props => {
           <SponsorLogo image={data.antidote.fluid} size={190} />
           <SponsorLogo image={data.cogeco.fluid} size={190} />
           <SponsorLogo image={data.topAces.fluid} size={190} />
+          <SponsorLogo image={data.foiq.fluid} size={190} />
         </LogoContainer>
       </Article>
       <Seo facebook={facebook} />
@@ -276,6 +279,12 @@ export const query = graphql`
     genieInc: imageSharp(fixed: { originalName: { regex: "/genie-inc/" } }) {
       ...ImageS
     }
+    gbi: imageSharp(fixed: { originalName: { regex: "/gbi/" } }) {
+      ...ImageS
+    }
+    alten: imageSharp(fixed: { originalName: { regex: "/alten/" } }) {
+      ...ImageS
+    }
 
     # Bronze
     boralex: imageSharp(fluid: { originalName: { regex: "/boralex/" } }) {
@@ -297,6 +306,9 @@ export const query = graphql`
       ...ImageXs
     }
     topAces: imageSharp(fluid: { originalName: { regex: "/top-aces/" } }) {
+      ...ImageXs
+    }
+    foiq: imageSharp(fluid: { originalName: { regex: "/foiq/" } }) {
       ...ImageXs
     }
   }
