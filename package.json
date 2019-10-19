@@ -16,7 +16,8 @@
     "stylelint": "stylelint src/**/*.js",
     "generate-app-icons": "sh ./scripts/generate-app-icons.sh",
     "precommit": "lint-staged",
-    "fmt": "prettier --write './**/*.js'"
+    "fmt": "prettier --write './**/*.js'",
+    "deploy": "lftp -c \"open -u $FTP_USERNAME,$FTP_PASSWORD jeuxdegenie.qc.ca; set ssl:verify-certificate no; set mirror:parallel-directories true; mirror -P=10 -vv --delete --recursion=always -R ./public/ /public_html/jdg/2020\""
   },
   "dependencies": {
     "@material/react-button": "^0.13.0",
