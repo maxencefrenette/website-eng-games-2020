@@ -167,6 +167,11 @@ vp-logistics: VP Logistique
 vp-support: Conseillère à la production
 vp-dd: Conseiller en développement durable
 
+adj-spons: Adjoint aux Partenariats
+adj-comm: Adjointe Communications
+adj-web: Adjoint Web
+adj-machine: Adjoint Machine
+
 # Universities
 concordia: "Université Concordia"
 epm: "École polytechnique de Montréal"

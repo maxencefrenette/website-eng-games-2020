@@ -29,10 +29,6 @@ const MembreCO = styled.div`
   margin-top: 50px;
   margin-bottom: 25px;
   max-width: 300px;
-
-  &:nth-child(10n) {
-    margin-left: 25px;
-  }
 `;
 
 const Description = styled.div`
@@ -72,15 +68,28 @@ const ComiteOrganisateurPage = props => {
   } = props;
 
   const CO = [
-    ["anneSo", "Anne-Sophie Lachapelle", "president", "presidence"],
-    ["jeremie", "Jérémie Lesuise", "vp-sponsorship", "partenariats"],
-    ["alyssa", "Alyssa Bouchenak", "vp-comm", "communications"],
-    ["francois", "François Pelletier", "vp-competitions", "competitions"],
-    ["sacha", "Sacha Terral", "vp-logistics", "logistique"],
-    ["celia", "Célia-Nour Mahrour-Venturelli", "vp-finances", "finances"],
-    ["gabriel", "Gabriel Lévesque", "vp-machine", "machine"],
-    ["marc", "Marc Antoine Dumont", "vp-dd", "developpementdurable"],
-    ["marieAude", "Marie-Aude Ardizzon", "vp-support"]
+    [
+      ["anneSo", "Anne-Sophie Lachapelle", "president", "presidence"],
+      ["jeremie", "Jérémie Lesuise", "vp-sponsorship", "partenariats"],
+      ["alyssa", "Alyssa Bouchenak", "vp-comm", "communications"],
+      ["francois", "François Pelletier", "vp-competitions", "competitions"],
+      ["sacha", "Sacha Terral", "vp-logistics", "logistique"],
+      ["celia", "Célia-Nour Mahrour-Venturelli", "vp-finances", "finances"],
+      ["gabriel", "Gabriel Lévesque", "vp-machine", "machine"],
+      ["marcAntoine", "Marc Antoine Dumont", "vp-dd", "developpementdurable"],
+      ["marieAude", "Marie-Aude Ardizzon", "vp-support"]
+    ],
+    [
+      ["rachelle", "Rachelle Sederof", "Cheffe Marraine"],
+      ["titi", "Thierry Meunier", "Chef Parrain"]
+    ],
+    [
+      ["cedric", "Cédric Vigneault", "adj-spons"],
+      ["christophe", "Christophe Duchesne", "adj-spons"],
+      ["claudia", "Claudia Caouette", "adj-comm"],
+      ["maxence", "Maxence Frenette", "adj-web"],
+      ["mongrain", "Alexandre Mongrain", "adj-machine"]
+    ]
   ];
 
   return (
@@ -89,25 +98,27 @@ const ComiteOrganisateurPage = props => {
         <FormattedMessage id="oc" />
       </MiniHero>
       <Article theme={theme}>
-        <Container>
-          {CO.map(membreCO => (
-            <MembreCO key={membreCO[0]}>
-              <Img fixed={data[membreCO[0]].fixed} />
-              <Description>
-                <p className="name">{membreCO[1]}</p>
-                <hr />
-                <p className="role">
-                  <FormattedMessage id={membreCO[2]} />
-                  {membreCO[3] && (
-                    <A href={`mailto:${membreCO[3]}@jeuxdegenie.qc.ca`}>
-                      <FaEnvelope />
-                    </A>
-                  )}
-                </p>
-              </Description>
-            </MembreCO>
-          ))}
-        </Container>
+        {CO.map(CoSection => (
+          <Container>
+            {CoSection.map(membreCO => (
+              <MembreCO key={membreCO[0]}>
+                <Img fixed={data[membreCO[0]].fixed} />
+                <Description>
+                  <p className="name">{membreCO[1]}</p>
+                  <hr />
+                  <p className="role">
+                    <FormattedMessage id={membreCO[2]} />
+                    {membreCO[3] && (
+                      <A href={`mailto:${membreCO[3]}@jeuxdegenie.qc.ca`}>
+                        <FaEnvelope />
+                      </A>
+                    )}
+                  </p>
+                </Description>
+              </MembreCO>
+            ))}
+          </Container>
+        ))}
       </Article>
 
       <Seo facebook={facebook} />
@@ -138,7 +149,7 @@ export const query = graphql`
       }
     }
 
-    backgrounds: imageSharp(fluid: { originalName: { regex: "/group-banquet/" } }) {
+    backgrounds: imageSharp(fluid: { originalName: { regex: "/group/" } }) {
       ...MiniHero
     }
 
@@ -170,15 +181,32 @@ export const query = graphql`
       ...squareImage
     }
 
-    iman: imageSharp(fluid: { originalName: { regex: "/iman/" } }) {
+    marcAntoine: imageSharp(fluid: { originalName: { regex: "/marc-antoine/" } }) {
       ...squareImage
     }
-
-    marc: imageSharp(fluid: { originalName: { regex: "/marc/" } }) {
-      ...squareImage
-    }
-
     marieAude: imageSharp(fluid: { originalName: { regex: "/marie-aude/" } }) {
+      ...squareImage
+    }
+
+    cedric: imageSharp(fluid: { originalName: { regex: "/cedric/" } }) {
+      ...squareImage
+    }
+    christophe: imageSharp(fluid: { originalName: { regex: "/christophe/" } }) {
+      ...squareImage
+    }
+    claudia: imageSharp(fluid: { originalName: { regex: "/claudia/" } }) {
+      ...squareImage
+    }
+    maxence: imageSharp(fluid: { originalName: { regex: "/maxence/" } }) {
+      ...squareImage
+    }
+    mongrain: imageSharp(fluid: { originalName: { regex: "/mongrain/" } }) {
+      ...squareImage
+    }
+    rachelle: imageSharp(fluid: { originalName: { regex: "/rachelle/" } }) {
+      ...squareImage
+    }
+    titi: imageSharp(fluid: { originalName: { regex: "/titi/" } }) {
       ...squareImage
     }
   }

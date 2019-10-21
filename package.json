@@ -7,8 +7,9 @@
     "gatsby"
   ],
   "scripts": {
-    "build": "rimraf .cache public && gatsby build --prefix-paths",
-    "develop": "rimraf .cache public && gatsby develop",
+    "clean": "rimraf .cache public",
+    "build": " gatsby build --prefix-paths",
+    "develop": "gatsby develop",
     "serve": "gatsby serve --prefix-paths",
     "format": "prettier --write 'src/**/*.js'",
     "lint-errors": "eslint src/**/*.{js,jsx} --quiet",

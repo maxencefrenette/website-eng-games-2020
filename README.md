@@ -5,13 +5,14 @@ This is the website for the 2020 edition of the Quebec Engineering Games
 ## Develop
 
 * `yarn install`
+* `yarn clean`
 * `yarn develop`
 * Open [http://localhost:8000](http://localhost:8000) in a browser
 
 ## Deploy
 
 * `yarn install`
+* `yarn clean`
 * `yarn build`
     * Sometimes there are issues and `sudo yarn build` is needed. No idea why.
-* Connect to the server via ftp at `ftp.jeuxdegenie.qc.ca`
-* Put the contents of the `public` directory in `public_html/jdg/2020` on the server.
+* `FTP_USERNAME="FTP username" FTP_PASSWORD="FTP password" yarn deploy`

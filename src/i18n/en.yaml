@@ -160,6 +160,11 @@ vp-logistics: VP Logistics
 vp-support: Production Advisor
 vp-dd: Sustainability Advisor
 
+adj-spons: Partnership Director
+adj-comm: Communications Director
+adj-web: Website Director
+adj-machine: Machine Director
+
 # Universities
 concordia: "Concordia University"
 epm: "École polytechnique de Montréal"
