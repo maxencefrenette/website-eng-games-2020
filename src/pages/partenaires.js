@@ -108,6 +108,11 @@ const PartenairesPage = props => {
             size={650}
             link="https://addison-electronique.com/"
           />
+          <SponsorLogo
+            image={data.rheinmetall.fluid}
+            size={650}
+            link="https://www.rheinmetall.ca/"
+          />
         </LogoContainer>
 
         <h2>
@@ -148,6 +153,7 @@ const PartenairesPage = props => {
           <SponsorLogo image={data.genieInc.fluid} size={320} />
           <SponsorLogo image={data.gbi.fluid} size={320} />
           <SponsorLogo image={data.alten.fluid} size={320} />
+          <SponsorLogo image={data.cmai.fluid} size={320} />
         </LogoContainer>
 
         <h2>
@@ -237,6 +243,9 @@ export const query = graphql`
     addison: imageSharp(fixed: { originalName: { regex: "/addison/" } }) {
       ...ImageXl
     }
+    rheinmetall: imageSharp(fixed: { originalName: { regex: "/rheinmetall/" } }) {
+      ...ImageXl
+    }
 
     # Diamond
     centech: imageSharp(fixed: { originalName: { regex: "/centech/" } }) {
@@ -283,6 +292,9 @@ export const query = graphql`
       ...ImageS
     }
     alten: imageSharp(fixed: { originalName: { regex: "/alten/" } }) {
+      ...ImageS
+    }
+    cmai: imageSharp(fixed: { originalName: { regex: "/CMAI/" } }) {
       ...ImageS
     }
 
