@@ -120,6 +120,7 @@ const PartenairesPage = props => {
         </h2>
         <LogoContainer>
           <SponsorLogo image={data.centech.fluid} size={475} link="https://centech.co/" />
+          <SponsorLogo image={data.eurovia.fluid} size={475} link="https://www.euroviaqc.ca/" />
         </LogoContainer>
 
         <h2>
@@ -249,6 +250,9 @@ export const query = graphql`
 
     # Diamond
     centech: imageSharp(fixed: { originalName: { regex: "/centech/" } }) {
+      ...ImageL
+    }
+    eurovia: imageSharp(fixed: { originalName: { regex: "/eurovia/" } }) {
       ...ImageL
     }
 
