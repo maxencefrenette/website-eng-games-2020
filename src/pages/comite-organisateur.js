@@ -84,6 +84,7 @@ const ComiteOrganisateurPage = props => {
       ["titi", "Thierry Meunier", "Chef Parrain"]
     ],
     [
+      ["camille", "Camille Lalancette", "adj-logictics"],
       ["cedric", "Cédric Vigneault", "adj-spons"],
       ["christophe", "Christophe Duchesne", "adj-spons"],
       ["claudia", "Claudia Caouette", "adj-comm"],
@@ -188,6 +189,9 @@ export const query = graphql`
       ...squareImage
     }
 
+    camille: imageSharp(fluid: { originalName: { regex: "/camille/" } }) {
+      ...squareImage
+    }
     cedric: imageSharp(fluid: { originalName: { regex: "/cedric/" } }) {
       ...squareImage
     }
