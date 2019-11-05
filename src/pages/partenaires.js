@@ -92,6 +92,13 @@ const PartenairesPage = props => {
         </Centered>
 
         <h2>
+          <FormattedMessage id="official" />
+        </h2>
+        <LogoContainer>
+          <SponsorLogo image={data.veolia.fluid} size={800} link="https://www.veolia.ca/" />
+        </LogoContainer>
+
+        <h2>
           <FormattedMessage id="host" />
         </h2>
         <LogoContainer>
@@ -184,6 +191,12 @@ export default PartenairesPage;
 
 //eslint-disable-next-line no-undef
 export const query = graphql`
+  fragment ImageXXXl on ImageSharp {
+    fluid(maxWidth: 800, quality: 90, fit: CONTAIN, background: "white") {
+      ...GatsbyImageSharpFluid
+    }
+  }
+
   fragment ImageXXl on ImageSharp {
     fluid(maxWidth: 700, quality: 90, fit: CONTAIN, background: "white") {
       ...GatsbyImageSharpFluid
@@ -231,6 +244,10 @@ export const query = graphql`
 
     backgrounds: imageSharp(fluid: { originalName: { regex: "/sponsors-edited/" } }) {
       ...MiniHero
+    }
+
+    veolia: imageSharp(fixed: { originalName: { regex: "/veolia/" } }) {
+      ...ImageXXXl
     }
 
     ets: imageSharp(fixed: { originalName: { regex: "/school-ets/" } }) {
