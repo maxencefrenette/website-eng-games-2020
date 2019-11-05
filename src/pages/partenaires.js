@@ -171,6 +171,7 @@ const PartenairesPage = props => {
           <SponsorLogo image={data.cmai.fluid} size={320} />
           <SponsorLogo image={data.kiewit.fluid} size={320} />
           <SponsorLogo image={data.tetratech.fluid} size={320} />
+          <SponsorLogo image={data.fddaeets.fluid} size={320} />
         </LogoContainer>
 
         <h2>
@@ -342,6 +343,9 @@ export const query = graphql`
       ...ImageS
     }
     tetratech: imageSharp(fixed: { originalName: { regex: "/tetratech/" } }) {
+      ...ImageS
+    }
+    fddaeets: imageSharp(fixed: { originalName: { regex: "/fddaeets/" } }) {
       ...ImageS
     }
 
