@@ -145,6 +145,7 @@ const PartenairesPage = props => {
                 : "http://www.riotinto.com/canada"
             }
           />
+          <SponsorLogo image={data.bell.fluid} size={400} />
         </LogoContainer>
 
         <h2>
@@ -281,6 +282,9 @@ export const query = graphql`
       ...ImageM
     }
     riotinto: imageSharp(fixed: { originalName: { regex: "/riotinto/" } }) {
+      ...ImageM
+    }
+    bell: imageSharp(fixed: { originalName: { regex: "/bell/" } }) {
       ...ImageM
     }
 
