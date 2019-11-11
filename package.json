@@ -16,7 +16,6 @@
     "lint": "eslint src/**/*.{js,jsx}",
     "stylelint": "stylelint src/**/*.js",
     "generate-app-icons": "sh ./scripts/generate-app-icons.sh",
-    "precommit": "lint-staged",
     "fmt": "prettier --write './**/*.js'",
     "deploy": "lftp -c \"open -u $FTP_USERNAME,$FTP_PASSWORD jeuxdegenie.qc.ca; set ssl:verify-certificate no; set mirror:parallel-directories true; mirror -P=10 -vv --delete --recursion=always -R ./public/ /public_html/jdg/2020\""
   },
@@ -90,6 +89,11 @@
     "stylelint-config-standard": "^18.2.0",
     "url-loader": "^1.1.1",
     "webpack-bundle-analyzer": "^2.13.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{js,json,yaml}": [
