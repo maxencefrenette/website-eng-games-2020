@@ -12,22 +12,13 @@ import { FaRecycle, FaChild, FaCog } from "react-icons/fa";
 import Img from "gatsby-image";
 
 const SponsorMessageContainer = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-
-  padding: 20px;
-`;
-
-const SponsorMessage = styled.div`
   flex: 0 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 
-  margin-bottom: 30px;
+  padding: 20px;
 
   & > div {
     max-width: 200px;
@@ -35,24 +26,22 @@ const SponsorMessage = styled.div`
   }
 
   & > p {
-    flex: 1 1 auto;
-
-    @media ${theme.desktop} {
-      flex: 0 1 auto;
-    }
-
+    flex: 0 1 600px;
     margin: 0;
   }
 `;
 
-const Vr = styled.div`
-  display: none;
+const SponsorMessageContainer2 = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 
-  @media ${theme.desktop} {
-    display: block;
-    height: 200px;
-    border-right: 1px solid #bbb;
-    margin: 0 20px;
+  padding: 20px;
+  padding-top: 10px;
+
+  & > p {
+    flex: 0 1 600px;
   }
 `;
 
@@ -187,21 +176,23 @@ class IndexPage extends React.Component {
             <FormattedMessage id="sponsor-messages" />
           </h2>
           <SponsorMessageContainer>
-            <SponsorMessage>
-              <div>
-                <Img fixed={data.veolia.fixed} />
-              </div>
-              <p style={{ maxWidth: 530 }}>
-                <FormattedHTMLMessage id="sponsor-message-1" />
-              </p>
-            </SponsorMessage>
-            <Vr />
-            <SponsorMessage>
-              <p style={{ maxWidth: 353 }}>
-                <FormattedHTMLMessage id="sponsor-message-2" />
-              </p>
-            </SponsorMessage>
+            <div>
+              <Img fixed={data.veolia.fixed} />
+            </div>
+            <p>
+              <FormattedHTMLMessage id="sponsor-message-1" />
+            </p>
           </SponsorMessageContainer>
+          <SponsorMessageContainer2>
+            <p>
+              <FormattedHTMLMessage id="sponsor-message-2" />
+            </p>
+            {/*
+            <p>
+              <FormattedHTMLMessage id="sponsor-message-3" />
+            </p>
+            */}
+          </SponsorMessageContainer2>
           <Sides>
             <Left>
               <h2>
