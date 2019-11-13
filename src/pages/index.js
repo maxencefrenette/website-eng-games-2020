@@ -9,6 +9,52 @@ import styled from "styled-components";
 import { FormattedMessage, FormattedHTMLMessage } from "react-intl";
 import theme from "../theme/theme.yaml";
 import { FaRecycle, FaChild, FaCog } from "react-icons/fa";
+import Img from "gatsby-image";
+
+const SponsorMessageContainer = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  padding: 20px;
+`;
+
+const SponsorMessage = styled.div`
+  flex: 0 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin-bottom: 30px;
+
+  & > div {
+    max-width: 200px;
+    margin-right: 30px;
+  }
+
+  & > p {
+    flex: 1 1 auto;
+
+    @media ${theme.desktop} {
+      flex: 0 1 auto;
+    }
+
+    margin: 0;
+  }
+`;
+
+const Vr = styled.div`
+  display: none;
+
+  @media ${theme.desktop} {
+    display: block;
+    height: 200px;
+    border-right: 1px solid #bbb;
+    margin: 0 20px;
+  }
+`;
 
 const PillarContainer = styled.div`
   margin-top: 10px;
@@ -137,6 +183,25 @@ class IndexPage extends React.Component {
               </div>
             </Pillar>
           </PillarContainer>
+          <h2>
+            <FormattedMessage id="sponsor-messages" />
+          </h2>
+          <SponsorMessageContainer>
+            <SponsorMessage>
+              <div>
+                <Img fixed={data.veolia.fixed} />
+              </div>
+              <p style={{ maxWidth: 530 }}>
+                <FormattedHTMLMessage id="sponsor-message-1" />
+              </p>
+            </SponsorMessage>
+            <Vr />
+            <SponsorMessage>
+              <p style={{ maxWidth: 353 }}>
+                <FormattedHTMLMessage id="sponsor-message-2" />
+              </p>
+            </SponsorMessage>
+          </SponsorMessageContainer>
           <Sides>
             <Left>
               <h2>
@@ -198,9 +263,9 @@ export const query = graphql`
 
     ...Hero
 
-    parallax: imageSharp(fluid: { originalName: { regex: "/ets-aerial/" } }) {
-      resize(width: 1920, quality: 90, cropFocus: CENTER) {
-        src
+    veolia: imageSharp(fixed: { originalName: { regex: "/veolia/" } }) {
+      fixed(width: 200, height: 49, quality: 90, cropFocus: CENTER) {
+        ...GatsbyImageSharpFixed
       }
     }
   }
