@@ -146,6 +146,7 @@ const PartenairesPage = props => {
             }
           />
           <SponsorLogo image={data.bell.fluid} size={400} />
+          <SponsorLogo image={data.oiq.fluid} size={400} />
         </LogoContainer>
 
         <h2>
@@ -163,6 +164,7 @@ const PartenairesPage = props => {
           <SponsorLogo image={data.gbi.fluid} size={320} />
           <SponsorLogo image={data.alten.fluid} size={320} />
           <SponsorLogo image={data.cmai.fluid} size={320} />
+          <SponsorLogo image={data.tetratech.fluid} size={320} />
         </LogoContainer>
 
         <h2>
@@ -177,6 +179,8 @@ const PartenairesPage = props => {
           <SponsorLogo image={data.cogeco.fluid} size={190} />
           <SponsorLogo image={data.topAces.fluid} size={190} />
           <SponsorLogo image={data.foiq.fluid} size={190} />
+          <SponsorLogo image={data.guru.fluid} size={190} />
+          <SponsorLogo image={data.beenox.fluid} size={190} />
         </LogoContainer>
       </Article>
       <Seo facebook={facebook} />
@@ -287,6 +291,9 @@ export const query = graphql`
     bell: imageSharp(fixed: { originalName: { regex: "/bell/" } }) {
       ...ImageM
     }
+    oiq: imageSharp(fixed: { originalName: { regex: "/^oiq/" } }) {
+      ...ImageM
+    }
 
     # Silver
     hatch: imageSharp(fixed: { originalName: { regex: "/hatch/" } }) {
@@ -322,6 +329,9 @@ export const query = graphql`
     cmai: imageSharp(fixed: { originalName: { regex: "/CMAI/" } }) {
       ...ImageS
     }
+    tetratech: imageSharp(fixed: { originalName: { regex: "/tetratech/" } }) {
+      ...ImageS
+    }
 
     # Bronze
     boralex: imageSharp(fluid: { originalName: { regex: "/boralex/" } }) {
@@ -346,6 +356,12 @@ export const query = graphql`
       ...ImageXs
     }
     foiq: imageSharp(fluid: { originalName: { regex: "/foiq/" } }) {
+      ...ImageXs
+    }
+    guru: imageSharp(fluid: { originalName: { regex: "/guru/" } }) {
+      ...ImageXs
+    }
+    beenox: imageSharp(fluid: { originalName: { regex: "/beenox/" } }) {
       ...ImageXs
     }
   }
