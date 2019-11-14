@@ -164,6 +164,7 @@ const PartenairesPage = props => {
           <SponsorLogo image={data.gbi.fluid} size={320} />
           <SponsorLogo image={data.alten.fluid} size={320} />
           <SponsorLogo image={data.cmai.fluid} size={320} />
+          <SponsorLogo image={data.kiewit.fluid} size={320} />
           <SponsorLogo image={data.tetratech.fluid} size={320} />
         </LogoContainer>
 
@@ -327,6 +328,9 @@ export const query = graphql`
       ...ImageS
     }
     cmai: imageSharp(fixed: { originalName: { regex: "/CMAI/" } }) {
+      ...ImageS
+    }
+    kiewit: imageSharp(fixed: { originalName: { regex: "/kiewit/" } }) {
       ...ImageS
     }
     tetratech: imageSharp(fixed: { originalName: { regex: "/tetratech/" } }) {
