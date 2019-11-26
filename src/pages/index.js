@@ -187,11 +187,9 @@ class IndexPage extends React.Component {
             <p>
               <FormattedHTMLMessage id="sponsor-message-2" />
             </p>
-            {/*
             <p>
               <FormattedHTMLMessage id="sponsor-message-3" />
             </p>
-            */}
           </SponsorMessageContainer2>
           <Sides>
             <Left>

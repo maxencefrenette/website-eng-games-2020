@@ -95,7 +95,11 @@ const PartenairesPage = props => {
           <FormattedMessage id="official" />
         </h2>
         <LogoContainer>
-          <SponsorLogo image={data.veolia.fluid} size={800} link="https://www.veolia.ca/" />
+          <SponsorLogo
+            image={data.veolia.fluid}
+            size={800}
+            link={locale === "fr" ? "https://www.veolia.ca/fr" : "https://www.veolia.ca/"}
+          />
         </LogoContainer>
 
         <h2>
@@ -128,6 +132,7 @@ const PartenairesPage = props => {
         <LogoContainer>
           <SponsorLogo image={data.centech.fluid} size={475} link="https://centech.co/" />
           <SponsorLogo image={data.eurovia.fluid} size={475} link="https://www.euroviaqc.ca/" />
+          <SponsorLogo image={data.videotron.fluid} size={475} link="https://videotron.com/" />
         </LogoContainer>
 
         <h2>
@@ -276,6 +281,9 @@ export const query = graphql`
       ...ImageL
     }
     eurovia: imageSharp(fixed: { originalName: { regex: "/eurovia/" } }) {
+      ...ImageL
+    }
+    videotron: imageSharp(fixed: { originalName: { regex: "/videotron/" } }) {
       ...ImageL
     }
 
