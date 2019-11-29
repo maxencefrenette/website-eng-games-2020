@@ -52,12 +52,12 @@ const EspaceParticipantsPage = props => {
           </HContainer> */}
           <HContainer>
             <Download>
-              Cahier des délégué·e·s (fr)
+              Cahier de mission (fr)
               <br />
               (À venir)
             </Download>
             <Download>
-              Delegates' handbook (en)
+              Mission handbook (en)
               <br />
               (Coming soon)
             </Download>
@@ -65,15 +65,15 @@ const EspaceParticipantsPage = props => {
           <h3>
             <FormattedMessage id="cahier-competition-titre" />
           </h3>
-          {/* <HContainer>
-            <Download url = "/downloads/cahier-competitions.pdf">
-              Cahier de compétitions (fr)
-            </Download>
-            <Download url = "/downloads/competitions-package.pdf">
-              Competitions package (en)
-            </Download>
-          </HContainer> */}
           <HContainer>
+            <Download url="/downloads/cahier-competitions-V1.pdf">
+              Cahier de Compétitions (FR)
+            </Download>
+            <Download url="/downloads/competitions-handbook-V1.pdf">
+              Competition Handbook (EN)
+            </Download>
+          </HContainer>
+          {/*<HContainer>
             <Download>
               Cahier de compétitions (fr)
               <br />
@@ -84,16 +84,16 @@ const EspaceParticipantsPage = props => {
               <br />
               (Coming soon)
             </Download>
-          </HContainer>
+          </HContainer>*/}
           <h3>
             <FormattedMessage id="cahier-entrepreneuriat-titre" />
           </h3>
           <HContainer>
             <Download url="/downloads/cahier-entrepreneuriat.pdf">
-              Cahier entrepreneuriat (fr)
+              Cahier entrepreneuriat (FR)
             </Download>
             <Download url="/downloads/entrepreneurship-package.pdf">
-              Entrepreneurship competition package (en)
+              Entrepreneurship competition package (EN)
             </Download>
           </HContainer>
           <h3>
@@ -101,16 +101,16 @@ const EspaceParticipantsPage = props => {
           </h3>
           <HContainer>
             <Download url="/downloads/Cahier de construction_2019-09-12.pdf">
-              Cahier de construction (fr)
+              Cahier de construction (FR)
             </Download>
             <Download url="/downloads/Construction specification_2019-09-12.pdf">
-              Construction specifications (en)
+              Construction specifications (EN)
             </Download>
           </HContainer>
           <HContainer>
-            <Download url="/downloads/Cahier machine_2019-09-12.pdf">Cahier du défi (fr)</Download>
+            <Download url="/downloads/Cahier machine_2019-09-12.pdf">Cahier du défi (FR)</Download>
             <Download url="/downloads/Machine Handbook_2019-09-12.pdf">
-              Competition handbook (en)
+              Competition handbook (EN)
             </Download>
           </HContainer>
         </Section>
