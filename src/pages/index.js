@@ -31,20 +31,6 @@ const SponsorMessageContainer = styled.div`
   }
 `;
 
-const SponsorMessageContainer2 = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-
-  padding: 20px;
-  padding-top: 10px;
-
-  & > p {
-    flex: 0 1 600px;
-  }
-`;
-
 const PillarContainer = styled.div`
   margin-top: 10px;
 
@@ -183,14 +169,22 @@ class IndexPage extends React.Component {
               <FormattedHTMLMessage id="sponsor-message-1" />
             </p>
           </SponsorMessageContainer>
-          <SponsorMessageContainer2>
-            <p>
-              <FormattedHTMLMessage id="sponsor-message-2" />
-            </p>
+          <SponsorMessageContainer>
+            <div>
+              <Img fixed={data.rheinmetall.fixed} />
+            </div>
             <p>
               <FormattedHTMLMessage id="sponsor-message-3" />
             </p>
-          </SponsorMessageContainer2>
+          </SponsorMessageContainer>
+          <SponsorMessageContainer>
+            <div>
+              <Img fixed={data.aeets.fixed} />
+            </div>
+            <p>
+              <FormattedHTMLMessage id="sponsor-message-3" />
+            </p>
+          </SponsorMessageContainer>
           <Sides>
             <Left>
               <h2>
@@ -254,6 +248,16 @@ export const query = graphql`
 
     veolia: imageSharp(fixed: { originalName: { regex: "/veolia/" } }) {
       fixed(width: 200, height: 49, quality: 90, cropFocus: CENTER) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+    rheinmetall: imageSharp(fixed: { originalName: { regex: "/rheinmetall/" } }) {
+      fixed(width: 200, height: 60, quality: 90, cropFocus: CENTER) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+    aeets: imageSharp(fixed: { originalName: { regex: "/aeets/" } }) {
+      fixed(width: 200, height: 83, quality: 90, cropFocus: CENTER) {
         ...GatsbyImageSharpFixed
       }
     }
