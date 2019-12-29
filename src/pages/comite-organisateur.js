@@ -80,7 +80,7 @@ const ComiteOrganisateurPage = props => {
       ["marieAude", "Marie-Aude Ardizzon", "vp-support"]
     ],
     [
-      ["rachelle", "Rachelle Sederof", "Cheffe Marraine"],
+      ["rachelle", "Rachelle Sederoff", "Cheffe Marraine"],
       ["titi", "Thierry Meunier", "Chef Parrain"]
     ],
     [
