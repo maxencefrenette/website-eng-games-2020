@@ -73,18 +73,6 @@ const EspaceParticipantsPage = props => {
               Competition Handbook (EN)
             </Download>
           </HContainer>
-          {/*<HContainer>
-            <Download>
-              Cahier de compétitions (fr)
-              <br />
-              (À venir)
-            </Download>
-            <Download>
-              Competitions package (en)
-              <br />
-              (Coming soon)
-            </Download>
-          </HContainer>*/}
           <h3>
             <FormattedMessage id="cahier-entrepreneuriat-titre" />
           </h3>
@@ -100,16 +88,16 @@ const EspaceParticipantsPage = props => {
             <FormattedMessage id="cahier-machine-titre" />
           </h3>
           <HContainer>
-            <Download url="/downloads/Cahier de construction_2019-09-12.pdf">
+            <Download url="/downloads/Cahier de construction_2019-12-29.pdf">
               Cahier de construction (FR)
             </Download>
-            <Download url="/downloads/Construction specification_2019-09-12.pdf">
+            <Download url="/downloads/Construction specification_2019-12-29.pdf">
               Construction specifications (EN)
             </Download>
           </HContainer>
           <HContainer>
-            <Download url="/downloads/Cahier machine_2019-09-12.pdf">Cahier du défi (FR)</Download>
-            <Download url="/downloads/Machine Handbook_2019-09-12.pdf">
+            <Download url="/downloads/Cahier machine_2019-12-29.pdf">Cahier du défi (FR)</Download>
+            <Download url="/downloads/Machine Handbook_2019-12-29.pdf">
               Competition handbook (EN)
             </Download>
           </HContainer>
