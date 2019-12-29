@@ -87,7 +87,6 @@ const ComiteOrganisateurPage = props => {
       ["camille", "Camille Lalancette", "adj-logictics"],
       ["cedric", "Cédric Vigneault", "adj-spons"],
       ["christophe", "Christophe Duchesne", "adj-spons"],
-      ["claudia", "Claudia Caouette", "adj-comm"],
       ["maxence", "Maxence Frenette", "adj-web"],
       ["mongrain", "Alexandre Mongrain", "adj-machine"]
     ]
