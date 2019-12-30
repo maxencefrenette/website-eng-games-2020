@@ -101,6 +101,23 @@ const EspaceParticipantsPage = props => {
               Competition handbook (EN)
             </Download>
           </HContainer>
+          <h3>
+            <FormattedMessage id="politique-titre" />
+          </h3>
+          <HContainer>
+            <Download url="/downloads/politique-FR.pdf">
+              Politique de discipline CRÉIQ (FR)
+            </Download>
+            <Download url="/downloads/politique-EN.pdf">QCESO Discipline Policy (EN)</Download>
+          </HContainer>
+          <h3>
+            <FormattedMessage id="formulaire-titre" />
+          </h3>
+          <HContainer>
+            <Download url="https://docs.google.com/forms/d/e/1FAIpQLSeaEdWKqvLb1h0Gr60jTJEd5MJwZTx9Y7lirZ0r9NCBtd_kdQ/viewform">
+              Formulaire de plainte / Complaint Form
+            </Download>
+          </HContainer>
         </Section>
       </Article>
       <Seo facebook={facebook} />
