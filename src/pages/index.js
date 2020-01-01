@@ -174,7 +174,7 @@ class IndexPage extends React.Component {
               <Img fixed={data.rheinmetall.fixed} />
             </div>
             <p>
-              <FormattedHTMLMessage id="sponsor-message-3" />
+              <FormattedHTMLMessage id="sponsor-message-2" />
             </p>
           </SponsorMessageContainer>
           <SponsorMessageContainer>
