@@ -27,13 +27,13 @@ const Name = styled.span`
 `;
 
 const Download = props => {
-  const { url, children } = props;
+  const { url, children, external } = props;
 
   return (
     <Container>
       <DownloadButton
         raised
-        href={url ? `${config.pathPrefix || ""}${url}` : undefined}
+        href={url ? `${(external && config.pathPrefix) || ""}${url}` : undefined}
         disabled={!url}
       >
         <FaFileAlt />

@@ -114,7 +114,10 @@ const EspaceParticipantsPage = props => {
             <FormattedMessage id="formulaire-titre" />
           </h3>
           <HContainer>
-            <Download url="https://docs.google.com/forms/d/e/1FAIpQLSeaEdWKqvLb1h0Gr60jTJEd5MJwZTx9Y7lirZ0r9NCBtd_kdQ/viewform">
+            <Download
+              url="https://docs.google.com/forms/d/e/1FAIpQLSeaEdWKqvLb1h0Gr60jTJEd5MJwZTx9Y7lirZ0r9NCBtd_kdQ/viewform"
+              external={true}
+            >
               Formulaire de plainte / Complaint Form
             </Download>
           </HContainer>
