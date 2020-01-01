@@ -28,7 +28,7 @@ const Name = styled.span`
 
 const Download = props => {
   const { url, children, external } = props;
-  const prefix = external ? "" : config.pathPrefix || "";
+  const prefix = external ? "" : config.pathPrefix;
 
   return (
     <Container>
