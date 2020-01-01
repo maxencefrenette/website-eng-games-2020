@@ -28,14 +28,11 @@ const Name = styled.span`
 
 const Download = props => {
   const { url, children, external } = props;
+  const prefix = external ? "" : config.pathPrefix || "";
 
   return (
     <Container>
-      <DownloadButton
-        raised
-        href={url ? `${(external && config.pathPrefix) || ""}${url}` : undefined}
-        disabled={!url}
-      >
+      <DownloadButton raised href={url ? `${prefix}${url}` : undefined} disabled={!url}>
         <FaFileAlt />
         <Name>{children}</Name>
       </DownloadButton>
