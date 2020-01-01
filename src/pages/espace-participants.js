@@ -77,10 +77,10 @@ const EspaceParticipantsPage = props => {
             <FormattedMessage id="cahier-entrepreneuriat-titre" />
           </h3>
           <HContainer>
-            <Download url="/downloads/cahier-entrepreneuriat.pdf">
+            <Download url="/downloads/Cahier-Entrepreneuriat-V3.pdf">
               Cahier entrepreneuriat (FR)
             </Download>
-            <Download url="/downloads/entrepreneurship-package.pdf">
+            <Download url="/downloads/Entrepreneurship-Challenge-V3.pdf">
               Entrepreneurship competition package (EN)
             </Download>
           </HContainer>
