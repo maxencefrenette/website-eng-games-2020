@@ -42,15 +42,11 @@ const EspaceParticipantsPage = props => {
           <h3>
             <FormattedMessage id="cahier-participant-titre" />
           </h3>
-          {/* <HContainer>
-            <Download url = "/downloads/cahier-deleguees.pdf">
-              Cahier des délégué·e·s (fr)
-            </Download>
-            <Download url = "/downloads/delegates-handbook.pdf">
-              Delegates' handbook (en)
-            </Download>
-          </HContainer> */}
           <HContainer>
+            <Download url="/downloads/cahier-mission-V1.pdf">Cahier des délégué·e·s (fr)</Download>
+            <Download url="/downloads/mission-handbook-V1.pdf">Delegates' handbook (en)</Download>
+          </HContainer>
+          {/* <HContainer>
             <Download>
               Cahier de mission (fr)
               <br />
@@ -61,7 +57,7 @@ const EspaceParticipantsPage = props => {
               <br />
               (Coming soon)
             </Download>
-          </HContainer>
+          </HContainer>*/}
           <h3>
             <FormattedMessage id="cahier-competition-titre" />
           </h3>
